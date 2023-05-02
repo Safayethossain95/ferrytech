@@ -1,0 +1,27 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+
+.mobile{
+    .whowearesection{
+        h4{
+            @include myfont(22px,400,$main_font);
+            line-height: 29px;
+            text-align: justify;
+        }
+    }
+    
+    .ourmission{
+        margin-bottom: 100px;
+        h4{
+            @include myfont(22px,400,$main_font);
+            line-height: 29px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+    }
+
+   
+}

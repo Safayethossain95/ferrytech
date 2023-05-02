@@ -1,0 +1,88 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+.mobile{
+    &.donationpagemb{
+        .bannerboxdonaitonmb{
+            .bmbbar{
+                width: 90%;
+                height: 368px;
+                background-color: #fff;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                transform: translateY(-80px);
+                margin:0 auto;
+                padding: 20px 25px ;
+                .basicinputmb{
+                    input{
+                        height: 50px;
+                        width: 100%;
+                        border-radius: 8px;
+                        border: 1px solid #ededed;
+                        margin-bottom: 10px;
+                        @include myfont(16px,400,$main_font);
+                        color:#4F547B;
+                        padding-left: 15px;
+                        &::placeholder{
+                            @include myfont(16px,400,$main_font);
+                            color:#4F547B;
+                        }
+                    }
+                    .basicinputdrp{
+                        .css-13cymwt-control,.css-t3ipsp-control{
+                            height: 50px;
+                            border: 1px solid #ededed;
+                            border-radius: 8px;
+                            &:focus{
+                                border: 1px solid #000;
+                            }
+                        }
+                        .css-1fdsijx-ValueContainer{
+                            height: 50px;
+                        }
+                        .css-qbdosj-Input{
+                            height: 50px;
+                            margin: 0;
+                        }
+                        .css-1jqq78o-placeholder{
+                            @include myfont(16px,400,$main_font);
+                            color:#4F547B;
+                        }
+                        margin-bottom: 10px;
+                    }
+                }
+                .mybutton{
+                    .commonbutton{
+                        text-align: center;
+                        button{
+                            border-radius: 12px;
+                            margin-top: 33px;
+                        }
+                    }
+                }
+            }
+        }
+        .aboutdonationprocess{
+            .mediumheading{
+                text-align: center;
+            }
+            .aboutdonationdetails{
+                @include myfont(16px,400,$main_font);
+                color:#0E2C39;
+                margin-top: 35px;
+            }
+        }
+        .donationevents{
+            padding-top: 60px;
+            .mediumheading{
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .imgcard{
+                margin-bottom: 4vw;
+            }
+        }
+    }
+}

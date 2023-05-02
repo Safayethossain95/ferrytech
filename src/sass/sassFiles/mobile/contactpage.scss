@@ -1,0 +1,103 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+.mobile{
+
+   
+    
+        .contactbarcomp{
+            padding:40px 0;
+            .contactbarcard{
+                height: 146px;
+                margin-bottom: 20px;
+                .upperpart{
+                    height: 67px;
+                }
+            }
+        }
+        .mediumsectionheader {
+            text-align: center;
+            h3{
+                margin-top: 55px;
+            }
+        }
+
+        .querysendmb{
+           .subheadingmb{
+            
+                margin-bottom: 30px!important;
+            
+           }
+
+           .basicinput{
+            &.basicinputmb{
+                input{
+                    border:1px solid #dfdfdf;
+                    margin-bottom: 10px;
+                }
+                textarea{
+                    border:1px solid #dfdfdf;
+                    height: 190px;
+                }
+            }
+           }
+           .sendbutton{
+            text-align: center;
+            button{
+                border-radius: 12px;
+                margin-top: 35px;
+            }
+           }
+           
+        }
+        .mapp{
+         &.mappmb{
+             margin-top: 50px;
+         }
+        }
+        .abouttarbiyahmb{
+            .paragraphofabout{
+             p{
+                 @include myfont(16px,400,$main_font);
+                 color:#0E2C39;
+             }
+            }
+
+        }
+        .aboutusgallerymb{
+            padding-top: 80px;
+            .visionmissioncardmb{
+                .img{
+                    img{
+                        height: 50vw;
+                    }
+                }
+                .textmb{
+                    padding:20px 30px 55px 30px;
+                    h5{
+                        @include myfont(10px,400,$main_font);
+                        color:#00ADD2;
+                    }
+                    h3{
+                        @include myfont(16px,700,$main_font);
+                        color:#00596E;
+                    }
+                    p{
+                        @include myfont(12px,400,$main_font);
+                        color:#4F547B;
+                    }
+                    ul{
+                        list-style-type: disc;
+                        li{
+                            @include myfont(12px,400,$main_font);
+                            color:#4F547B;
+                        }
+                    }
+                }
+            }
+
+        }
+    
+}

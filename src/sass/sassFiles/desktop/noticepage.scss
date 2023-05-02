@@ -1,0 +1,18 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+.desktop{
+    .noticepageComp{
+        .mediumheading{
+            margin-top: 60px;
+            text-align: center;
+        }
+    }
+    &.noticepagedesk{
+        .footersection{
+            margin-top: 80px;
+        }
+    }
+}

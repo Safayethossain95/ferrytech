@@ -1,0 +1,12 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+.mobile{
+    &.blogpagemb{
+        .subheading{
+            margin-top: 40px;
+        }
+    }
+}

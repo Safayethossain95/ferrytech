@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "BoxedRegular";
+    src: url("../../fonts/BoxedRegular.ttf");
+}
+
+$main_font: 'BoxedRegular', sans-serif;
+$footer_another_font: 'Jost', sans-serif;
+$main_font_color: #000;
+$button_font:'DM Sans', sans-serif;
+$fiftyblack: rgba(0,0,0,0.5);
+$footer_bg: #000;
+$social_icons_color:#fff;
+$contactinfo_font_color:#fff;
+$table_borer_color:rgba(0,0,0,0.2);
+$border_twenty:rgba(0,0,0,0.2);
+$seventyblack:rgba(0,0,0,0.7);
+$seventywhite:rgba(255,255,255,0.7);
+$sameboxHeadingsize:20px;
+$sameboxHeadingsizemb:16px;
+$viewallButtonSize:12px;
+$documentlistFontSize:17px;
+$documentlistParaFontSize:12px;
+$sameboxNoticeboxh5:16px;
+$sameboxNoticeboxpillFontSize:14px;
+$noticebarpillSamebox1st:#F939A1;
+$noticebarpillSamebox2nd:#FBD540;
+$noticebarpillSamebox3rd:#40DFCD;
+$noticebarpillFontSize:16px;
+$noticebarpillFontSizemb:12px;
+$noticebarpillFontWeight:600;
+$noticepartparagraphfontsize:12px;
+$noticepartparagraphfontweight:400;
+$noticepartheadingfontweightmb:600;
+$noticebarpillFontColor:#7FE4A9;
+$noticebarpillFontColormb:#ED1C24;
+$noticebarpillFontColorsecond:#FFD57F;
+$noticebarpillFontColorthird:#B1CEFF;
+$noticebarpillteacherFontColor:#ED1C24;
+$noticebarpillteacherFontColorsecond:#ED1C24;
+$noticebarpillteacherFontColorthird:#ED1C24;
+// $chartabsentcolor:#F939A1;
+// $chartpresentcolor:#40DFCD;
+// $chartlatecolor:#FBD540;
+$chartabsentcolor:rgba(245, 141, 145, 1);
+$chartpresentcolor:rgba(127, 228, 169, 1);
+$chartlatecolor:rgba(177, 206, 255, 1);
+$chartlebeltextsize:14px;
+$headingofduepaymentfontsize:16px;
+$headingduepaymentcolor:#000;
+$headingofduepaymentsubheadingfontsize:14px;
+$headingofduepaymentsubheadingfontsizemb:12px;
+$headingofduepaymentsubheadingfontcolor:#312783;
+$alltotalparafontsize:14px;
+$alltotalparafontsizemb:12px;
+$totalpresentpillcolor: rgba(0, 202, 85, 0.05);
+$totalpresentpilltextcolor: rgba(0, 202, 85, 1);
+$totalabsentpillcolor: rgba(237, 28, 36, 0.05);
+$totalabsentpilltextcolor: rgba(237, 28, 36, 1);
+$totallatepillcolor: rgba(255, 173, 0, 0.05);
+$totallatepilltextcolor: rgba(255, 173, 0, 1);
+$totalearlyleavecolor: rgba(100, 158, 255, 0.05);
+$totalearlyleavetextcolor: rgba(100, 158, 255, 1);
+
+

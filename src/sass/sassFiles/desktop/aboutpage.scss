@@ -1,0 +1,66 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+.desktop{
+    .abouttarbiyahsection{
+        p{
+            @include myfont(16px,400,$main_font);
+            color:#4F547B;
+            margin-top: 20px;
+        }
+    }
+    .visionmissionsubcomponent{
+        margin-top: 105px;
+        margin-bottom: 140px;
+        .text{
+            height: 100%;
+            padding-right: 30px;
+           
+            ul{
+                list-style-type: disc;
+
+            }
+            h5{
+                @include myfont(25px,400,$main_font);
+                color:#00ADD2;
+            }
+            h3{
+                @include myfont(32px,700,$main_font);
+                color:#00596E;
+            }
+            p{
+                @include myfont(16px,400,$main_font);
+                color:#4F547B;
+            }
+            ul{
+                li{
+                    @include myfont(16px,400,$main_font);
+                    color:#4F547B;
+                }
+            }
+        }
+        .text2{
+            height: 100%;
+            padding-left: 40px;
+            h5{
+                @include myfont(25px,400,$main_font);
+                color:#00ADD2;
+            }
+            h3{
+                @include myfont(32px,700,$main_font);
+                color:#00596E;
+            }
+            p{
+                @include myfont(16px,400,$main_font);
+                color:#4F547B;
+            }
+           
+        }
+    }
+}

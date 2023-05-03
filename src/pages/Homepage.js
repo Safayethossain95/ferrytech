@@ -9,30 +9,34 @@ import IntroComp from '../Components/Desktop/IntroComp';
 import IndustriesComp from '../Components/Desktop/IndustriesComp';
 import ProductLineComp from '../Components/Desktop/ProductLineComp';
 import PartnerBrandsComp from '../Components/Desktop/PartnerBrandsComp';
+import WhyFerrytechComp from '../Components/Desktop/WhyFerrytechComp';
+import Testimonial from '../Components/Desktop/Testimonial';
+import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp';
+import FooterComp from '../Components/Desktop/FooterComp';
 
 
 
 
 const Homepage = () => {
      
-  useEffect(()=>{
+  // useEffect(()=>{
   
     
-    var navbar = document.getElementById("mynavbar");
-    var navbarmini = document.getElementById("mynavbarmini");
+    // var navbar = document.getElementById("mynavbar");
+    // var navbarmini = document.getElementById("mynavbarmini");
     
-    function myFunction() {
+  //   function myFunction() {
      
-      if(window.pageYOffset > 99){
-        navbar.classList.add("sticky");
-      }else{
-        navbar.classList.remove("sticky");
-      }
-    }
-    window.onscroll = function() {myFunction()};
+  //     if(window.pageYOffset > 99){
+  //       navbar.classList.add("sticky");
+  //     }else{
+  //       navbar.classList.remove("sticky");
+  //     }
+  //   }
+  //   window.onscroll = function() {myFunction()};
     
    
-  },[])
+  // },[])
   useEffect(() => {
     AOS.init();
     
@@ -54,7 +58,10 @@ const Homepage = () => {
         <IndustriesComp/>
         <ProductLineComp/>
         <PartnerBrandsComp/>
-        
+        <WhyFerrytechComp/>
+        <Testimonial/>
+        <ReqAquoteComp/>
+        <FooterComp/>
     </div>
     </>
   )

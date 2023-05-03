@@ -17,6 +17,44 @@
 body{
     overflow-x: hidden;
 }
+.downloadbutton{
+    button{
+        width: 231px;   
+        height: 49px;
+        background-color: #ED1C24;
+        
+        color:#fff;
+        border-radius: 5px;
+        border:0;
+        margin-right: 25px;
+        @include myfont(16px,600,$main_font);
+    }
+}
+.inputgap{
+                                
+    margin-bottom: 15px;
+    position:relative;
+    label{
+        position:absolute;
+        bottom:-17px;
+        left:0px;
+        
+        @include myfont(13px,400,$main_font);
+        color: rgb(237, 28, 36);
+        @include media(lgDevice){
+            @include myfont(10px,400,$main_font);
+            
+        }
+        @include media(xlgDevice){
+            @include myfont(10px,400,$main_font);
+            
+        }
+        @include media(xxlgDevice){
+            @include myfont(11px,400,$main_font);
+            
+        }
+    }
+   }
 .scrolltop{
     position: fixed;
     width: 50px;
@@ -402,26 +440,28 @@ p{
         @include myfont(18px,400,$main_font);
     }
     input{
-        height: 50px;
+        height: 60px;
         width: 100%;
-        border-radius: 8px;
+        border-radius: 5px;
         border:1px solid #000;
         padding-left: 22px;
+        @include myfont(18px,500,$main_font);
         &::placeholder{
-            @include myfont(18px,400,$main_font);
-            color:$fiftyblack;
+            @include myfont(18px,500,$main_font);
+            color:#a3a3a3;
         }
     }
     textarea{
         width: 100%;
         height: 100px;
-        border-radius: 8px;
+        border-radius: 5px;
         border:1px solid #000;
         padding-left: 22px;
         padding-top: 10px;
+        @include myfont(18px,500,$main_font);
         &::placeholder{
-            @include myfont(18px,400,$main_font);
-            color:$fiftyblack;
+            @include myfont(18px,500,$main_font);
+            color:#a3a3a3;
         }
     }
 }

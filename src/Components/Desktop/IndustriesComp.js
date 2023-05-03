@@ -33,7 +33,7 @@ const IndustriesComp = () => {
             {
                 indcardApi.map((item,key)=>{
                     return(
-                        <Col lg={6}>
+                        <Col lg={6} key={key}>
                         <div className="indcard">
                             <div className="overlay">
                                 <h4>{item.heading}</h4>

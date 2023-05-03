@@ -25,7 +25,7 @@ const PartnerBrandsComp = () => {
         <div className="partnerbrandscomp">
         <div className={screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
 
-            <SubHeading subheading=""/>
+            <SubHeading subheading="Partner Brands"/>
 
             <div className="cardwrap">
             <div className="brandcard">

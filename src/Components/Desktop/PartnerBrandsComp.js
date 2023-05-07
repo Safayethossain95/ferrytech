@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import SubHeading from './SubComponents/SubHeading';
-const PartnerBrandsComp = () => {
+const PartnerBrandsComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
@@ -23,9 +23,9 @@ const PartnerBrandsComp = () => {
   return (
     <>
         <div className="partnerbrandscomp">
-        <div className={screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
+        <div className={props.version=="mobile"?"myContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
 
-            <SubHeading subheading="Partner Brands"/>
+            <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Partner Brands"/>
 
             <div className="cardwrap">
             <div className="brandcard">

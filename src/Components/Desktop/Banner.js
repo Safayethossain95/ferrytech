@@ -38,7 +38,7 @@ const Banner = (props) => {
   return (
     <div className="bannersection">
 
-      
+
 
       <Slider {...settings}>
           
@@ -67,6 +67,9 @@ const Banner = (props) => {
        <div className="cimg">
         <img src="./assets/images/Banner/cicon.png" alt="" />
        </div>
+
+
+
        
         
     </div>

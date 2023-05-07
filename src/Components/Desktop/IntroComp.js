@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-const IntroComp = () => {
+const IntroComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
@@ -24,7 +24,7 @@ const IntroComp = () => {
     <>
     <div className="introsection">
 
-        <div className={screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
+        <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
         
         <div className="headingofsubsection">
             <h3>We are one of the largest <br/> trading company in bangladesh</h3>
@@ -32,7 +32,7 @@ const IntroComp = () => {
 
         <div className="paraofsubsection">
             <p>
-            Ferrytech is the leading machinery trading company in Bangladesh. We provide a wide range of machinery trading services including hydraulic material handlers, variable reach trucks, heavy lifting machines, pumps, monitors and turrets, hose reels, hand nozzles, CAFS, air ambulances, airport vehicles, aerials, and industrial vehicles. <br/>
+            Ferrytech is the leading machinery trading company in Bangladesh. We provide a wide range of machinery trading services including hydraulic material handlers, variable reach trucks, heavy lifting machines, pumps, monitors and turrets, hose reels, hand nozzles, CAFS, air ambulances, airport vehicles, aerials, and industrial vehicles. <br/><br/>
 
             Our goal is to provide reliable and efficient services to meet all your trading needs. We offer a wide range of services including supply, installation, and maintenance, to ensure our clients' satisfaction.
             </p>
@@ -46,7 +46,7 @@ const IntroComp = () => {
                 </div>
             </div>
             <div className="arrowright">
-                <img src="./assets/images/Intro/vector.png" alt="" />
+                <img src={props.imgurl} alt="" />
             </div>
             <div className="introimgsdiv">
                 <div className="wrap">
@@ -55,7 +55,7 @@ const IntroComp = () => {
                 </div>
             </div>
             <div className="arrowright">
-                <img src="./assets/images/Intro/vector.png" alt="" />
+                <img src={props.imgurl} alt="" />
             </div>
             <div className="introimgsdiv">
                 <div className="wrap">

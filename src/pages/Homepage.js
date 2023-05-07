@@ -13,6 +13,7 @@ import WhyFerrytechComp from '../Components/Desktop/WhyFerrytechComp';
 import Testimonial from '../Components/Desktop/Testimonial';
 import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp';
 import FooterComp from '../Components/Desktop/FooterComp';
+import MyNavbarMb from '../Components/Mobile/MyNavbarMb';
 
 
 
@@ -42,19 +43,24 @@ const Homepage = () => {
     
   }, [])
  
-
+  const imgurldesk = "./assets/images/Intro/vector.png"
+  const imgurlmb = "./assets/images/Mobile/homepage/info/arrodown.png"
   return (
     <>
     <div className="mobile">
-    
-    
+        <MyNavbarMb/>
+        <Banner />
+        <IntroComp imgurl={imgurlmb} version="mobile"/>
+        <IndustriesComp version="mobile"/>
+        <PartnerBrandsComp version="mobile"/>
+        <WhyFerrytechComp version="mobile"/>
     </div>
     
     <div className="desktop">
         
         <MyNavbarDesk/>
         <Banner />
-        <IntroComp/>
+        <IntroComp imgurl={imgurldesk}/>
         <IndustriesComp/>
         <ProductLineComp/>
         <PartnerBrandsComp/>

@@ -21,7 +21,7 @@ const whyferrytechApi = [
         img:"./assets/images/whyferrytech/3.png"
     },
     {
-        id:2,
+        id:4,
         heading:"Flexible Support",
         paragraph:"We offer flexible support from supply, install to after sell service. We also help to claim international warranty to your products.",
         img:"./assets/images/whyferrytech/4.png"

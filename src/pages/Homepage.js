@@ -52,8 +52,12 @@ const Homepage = () => {
         <Banner />
         <IntroComp imgurl={imgurlmb} version="mobile"/>
         <IndustriesComp version="mobile"/>
+        <ProductLineComp/>
         <PartnerBrandsComp version="mobile"/>
         <WhyFerrytechComp version="mobile"/>
+        <Testimonial version="mobile"/>
+        <ReqAquoteComp version="mobile"/>
+        <FooterComp version="mobile"/>
     </div>
     
     <div className="desktop">

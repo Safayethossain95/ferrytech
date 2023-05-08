@@ -26,9 +26,9 @@ const WhyFerrytechComp = (props) => {
     <>
         <div className="whyferrytech ">
         <SubHeading version="mobile" subheading="Why FerryTech?"/>
-        <Row className="align-items-center mobile">
-                <Col xs={12} lg={6}>
-                    <div className="imgwgy">
+        <Row className="mx-0 align-items-center mobile">
+                <Col xs={12} lg={6} className='px-0'>
+                    <div className="imgwgymb">
                         <img className='w-100' src="./assets/images/Mobile/homepage/whyferrytech/main.png" alt="" />
                     </div>
                 </Col>
@@ -43,14 +43,14 @@ const WhyFerrytechComp = (props) => {
                 </Col>
                 <Col xs={12} lg={6} style={props.version=="mobile"?{paddingLeft:"0px"}:{paddingLeft:"60px"}}>
                     <SubHeading version="desktop" subheading="Why FerryTech?"/>
-                    <Row>
+                    <Row >
                     {
                         whyferrytechApi.map((item,key)=>{
                             return(
                             
                               props.version=="mobile"?
                                 <Col xs={6}>
-                                <div className="smcard" key={key}>
+                                <div className="smcard" key={key} style={props.version=="mobile"?{flexDirection:"column"}:{flexDirection:"row"}}>
                                 <div className="img">
                                     <img src={item.img} alt="" />
                                 </div>

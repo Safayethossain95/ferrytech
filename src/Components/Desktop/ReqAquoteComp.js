@@ -3,7 +3,7 @@ import SubHeading from './SubComponents/SubHeading'
 import {Row,Col,Form} from 'react-bootstrap'
 import {BsFacebook,BsTwitter,BsYoutube} from 'react-icons/bs'
 import {HiMail} from 'react-icons/hi'
-const ReqAquoteComp = () => {
+const ReqAquoteComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
@@ -134,9 +134,9 @@ const ReqAquoteComp = () => {
   return (
     <>
         <div className="reqaquote">
-            <div className={screenSize.dynamicWidth>=992 && screenSize.dynamicWidth<=1199?"myContainer896": screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":"myContainerMini"}>
+            <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=992 && screenSize.dynamicWidth<=1199?"myContainer896": screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":"myContainerMini"}>
 
-                <SubHeading subheading="Request a quote"/>
+                <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Request a quote"/>
 
                 <Row>
                     <Col lg={8}>
@@ -195,7 +195,7 @@ const ReqAquoteComp = () => {
                             </Col>
                         </Row>
                     </Col>
-                    <Col lg={5}>
+                    <Col lg={5} className="desktop">
                         <div className="contactcard">
                             <div className="item">
                                 <h4>Contact Number</h4>
@@ -220,13 +220,46 @@ const ReqAquoteComp = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={12}>
+                    <Col lg={12} className="desktop">
                         <div className="submitbutton text-center">
                             <button type="submit">
-                                Submit
+                                Send Message
                             </button>
                         </div>
                     </Col>
+                    <Col lg={12} className="mobile">
+                        <div className="submitbutton text-center">
+                            <button type="submit">
+                                Send Message
+                            </button>
+                        </div>
+                    </Col>
+                    <Col lg={5} className="mobile">
+                        <div className="contactcard">
+                            <div className="item">
+                                <h4>Contact Number</h4>
+                                <a href="tel:+880 123 456 789">+880 123 456 789</a>
+                            </div>
+                            <div className="item">
+                                <h4>Email</h4>
+                                <a href="mailto:exampleinfo@gmail.com 789">exampleinfo@gmail.com</a>
+                            </div>
+                            <div className="item">
+                                <h4>Socials</h4>
+                                <div className="icons">
+                                <a href="#"><BsFacebook/></a>
+                                <a href="#"><BsTwitter/></a>
+                                <a href="#"><BsYoutube/></a>
+                                <a href="#"><HiMail/></a>
+                                
+                                
+                                
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                   
                 </Row>
                 </Form>
                 

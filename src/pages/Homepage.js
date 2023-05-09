@@ -14,6 +14,8 @@ import Testimonial from '../Components/Desktop/Testimonial';
 import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp';
 import FooterComp from '../Components/Desktop/FooterComp';
 import MyNavbarMb from '../Components/Mobile/MyNavbarMb';
+import ProdLineMbComMp from '../Components/Mobile/ProdLineMbComMp';
+import { bannerApi } from '../utils/homepageApi';
 
 
 
@@ -42,6 +44,8 @@ const Homepage = () => {
     AOS.init();
     
   }, [])
+
+  
  
   const imgurldesk = "./assets/images/Intro/vector.png"
   const imgurlmb = "./assets/images/Mobile/homepage/info/arrodown.png"
@@ -49,10 +53,10 @@ const Homepage = () => {
     <>
     <div className="mobile">
         <MyNavbarMb/>
-        <Banner />
+        <Banner bannerapi={bannerApi.mobile} />
         <IntroComp imgurl={imgurlmb} version="mobile"/>
         <IndustriesComp version="mobile"/>
-        <ProductLineComp/>
+        <ProdLineMbComMp/>
         <PartnerBrandsComp version="mobile"/>
         <WhyFerrytechComp version="mobile"/>
         <Testimonial version="mobile"/>
@@ -63,7 +67,7 @@ const Homepage = () => {
     <div className="desktop">
         
         <MyNavbarDesk/>
-        <Banner />
+        <Banner bannerapi={bannerApi.desktop}/>
         <IntroComp imgurl={imgurldesk}/>
         <IndustriesComp/>
         <ProductLineComp/>

@@ -1,5 +1,106 @@
 import React from 'react'
 
+const bannerApi={
+    desktop:[
+        {
+            imgurl:"./assets/images/Banner/img1.png"
+        },
+        {
+            imgurl:"./assets/images/Banner/img2.png"
+        }
+    ],
+    mobile:[
+        {
+            imgurl:"./assets/images/Mobile/Banner/img1.png"
+        },
+        {
+            imgurl:"./assets/images/Mobile/Banner/img2.png"
+        },
+        {
+            imgurl:"./assets/images/Mobile/Banner/img3.png"
+        },
+    ]
+}
+
+
+const navbarApi = [
+    {
+        id:1,
+        name:"Dashboard",
+        link:"/studashboard",
+        imgurl:"./assets/images/icons/tinysquaresicon.png",
+        drpdwn:[]
+               
+    },
+    {
+        id:2,
+        name:"Document",
+        link:"/studashboard/document",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]
+              
+    },
+    {
+        id:3,
+        name:"Notice",
+        link:"/studashboard/notice",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]       
+    },
+    {
+        id:4,
+        name:"Routine",
+        link:"/studashboard/routine",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[
+            {
+                item:"Class Routine",
+                link:"/studashboard/classroutine"
+            },
+            {
+                item:"Exam Routine",
+                link:"/studashboard/examroutine"
+            }
+        ]      
+    },
+    
+    {
+        id:5,
+        name:"Attendance",
+        link:"/studashboard/attendance",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]       
+    },
+    {
+        id:6,
+        name:"Bill Info",
+        link:"/studashboard/billinfo",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]       
+    },
+    {
+        id:7,
+        name:"Result",
+        link:"/studashboard/result",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]       
+    },
+    {
+        id:8,
+        name:"Leave Form",
+        link:"/studashboard/leaveform",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]       
+    },
+    {
+        id:9,
+        name:"Profile",
+        link:"/studashboard/profile",
+        imgurl:"./assets/images/icons/tinysquaresicon.png", 
+        drpdwn:[]       
+    },
+]
+
 const whyferrytechApi = [
     {
         id:1,
@@ -74,6 +175,6 @@ const homepageApi = () => {
     </>
   )
 }
-export {indcardApi,whyferrytechApi}
+export {indcardApi,whyferrytechApi,navbarApi,bannerApi}
 
 export default homepageApi

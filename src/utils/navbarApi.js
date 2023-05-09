@@ -15,7 +15,7 @@ const navbarApidata = [
     {
       "menuId": 2,
       "menuName": "About",
-      "url": "/about",
+      "url": "/aboutus",
       "sequence": 2,
       "parentMenuId": 0,
       "status": false,
@@ -27,7 +27,7 @@ const navbarApidata = [
     {
       "menuId": 10,
       "menuName": "Product",
-      "url": "/notice",
+      "url": "",
       "sequence": 3,
       "parentMenuId": 0,
       "status": false,
@@ -100,7 +100,7 @@ const navbarApidata = [
     {
       "menuId": 11,
       "menuName": "Services",
-      "url": "/career",
+      "url": "",
       "sequence": 4,
       "parentMenuId": 0,
       "status": false,

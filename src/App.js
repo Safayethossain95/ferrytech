@@ -7,6 +7,7 @@ import {
   Link,
 } from "react-router-dom";
 import Homepage from "./pages/Homepage";
+import AboutUsPage from './pages/AboutUsPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/aboutus" element={<AboutUsPage />} />
         </Routes>
       </BrowserRouter>
       

@@ -16,24 +16,156 @@
         z-index: 999;
         justify-content: space-between;
         border:0!important;
+       
         #basic-navbar-nav{
             position:absolute;
             width:100%;
-            background-color: red;
+            background-color: #fff;
             height: 100vh;
+            // height: 540px;
+            overflow-y: scroll;
             top:60px;
-            opacity: 1;
+            transition: 0.5s;
+            z-index: -1;
             visibility: visible;
+            .contactpart{
+                position: absolute;
+                bottom: 88px;
+                width: 100%;
+                transition: opacity 0.7s;
+                .downloadbutton{
+                    text-align: center;
+                    button{
+                        margin-right: 0;
+                    }
+                }
+                .phone,.mail{
+                    padding-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 35px;
+                        height: 35px;
+                    }
+                    .wrap{
+                        margin-left: 12px;
+                        p{
+                            @include myfont(10px,500,$main_font);
+                        }
+                        h4{
+                            
+                            @include myfont(14px,600,$main_font);
+                        }
+                    }
+                }
+            }
+            .activei{
+                font-weight: 700!important;
+            }
             .mainmenu{
                 flex-direction: column;
+                position: relative;
+                .accordion-button::after{
+                    background-image: url(../../../../public/assets/images/Mobile/common/navabr/accdown.png) !important;
+                    background-size: contain;
+                    width: 13px;
+                    height: 13px;
+                }
+               
+                .accordion-header{
+            
+                    button{
+                        span{
+                            @include myfont(16px,500,$main_font);
+                            color:#000;
+                            display: inline-block;
+                            text-transform: uppercase;
+                        }
+                        &::after{
+                            margin-right: 15px;
+                            
+                        }
+            
+                    }
+                }
+                .accordion-item{
+                    border:0;
+                    .accordion-button:not(.collapsed){
+                        background-color: #005DBA;
+                        border-radius: 0;
+                        padding-left: 10px;
+                        span{
+                            color:#fff;
+                        }
+                    }
+                    .accordion-header{
+                        border-radius: 0;
+                        button{
+                            img{
+                                transition:transform 0.3s linear;
+                                transform: translateX(12px);
+                            }
+                            transition:0.4s ease-in-out;
+                            height: 40px;
+                            padding: 0;
+                            margin:3px 0;
+                            border-radius: 0;
+                            &:focus{
+                                border-color: transparent;
+                                box-shadow: none;
+                            }
+                            
+                            border-radius: 10px;
+                        }
+                    }
+                }
+                .nav-item{
+                    a{
+                        color:#000;
+                            @include myfont(16px,500,$main_font);
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            &.active{
+                                color:#005DBA;
+                            }
+                            padding:15px 0;
+                            display: inline-block;
+                    }
+                }
+                ul{
+                    li{
+                        .wr{
+                            color:#000;
+                            @include myfont(16px,500,$main_font);
+                            text-transform: uppercase;
+                             padding:5px 0;
+                            &.active{
+                                color:#005DBA;
+                                font-weight: 700!important;
+                            }
+                        }
+                    }
+                }
             }
             &.opened{
+                // top: calc(-100vh - 60px);
                 height: 0;
-                opacity: 0;
                 visibility: hidden;
+                .admissionclass{
+                    opacity: 0;
+                visibility: hidden;
+                }
+                .contactpart{
+                    opacity: 0;
+                    visibility: hidden;
+                }
             }
             .admissionclass{
                 position:relative;
+                transition:0.3s;
+                opacity: 1;
+                visibility: visible;
+                top:50px;
                 .admissionmenu{
                     position:absolute;
                     top:100%;
@@ -43,7 +175,7 @@
                     background-color: #fff;
                     opacity: 0;
                     visibility: hidden;
-                    transition:0.4s;
+                    transition:0.3s;
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                     padding: 15px 25px;
                     ul{
@@ -164,12 +296,12 @@
     }
 
     .bannersection{
-        height: 90vh;
+       
         position:relative;
         .div{
             
             .inneritem{
-                height: 90vh;
+                height: 90vw;
                 img{
                     width:100%;
                     height:100%;
@@ -184,7 +316,7 @@
         }
     }
     .introsection{
-        padding-top: 120px;
+        padding-top: 74px;
         .headingofsubsection{
             h3{
                 text-transform: uppercase;
@@ -273,7 +405,7 @@
                      width:100%;
                      height:100%;
                      background: linear-gradient(0deg, rgba(0, 93, 186, 0.5), rgba(0, 93, 186, 0.5));
-                     z-index: 999;
+                     z-index: 888;
                      display: flex;
                      align-items: center;
                      justify-content: center;
@@ -288,6 +420,182 @@
              }
          }
 
+    }
+    .productlineup{
+        
+       .headingofsubsectioncomp{
+        h3{
+            padding-bottom: 40px;
+        }
+       }
+       .slider2{
+        @include media(mdDevice){
+            width:50vw;
+            margin:0 auto;
+        }
+        @include media(smDevice){
+            width:70vw;
+            margin:0 auto;
+        }
+        
+       }
+        .slick-prev{
+            
+            line-height: 40px;
+            text-align: center;
+            position:absolute;
+            top:-36vw;
+            left:0px;
+            width: 40px;
+            height: 40px;
+            border:1px solid #000;
+            border-radius: 50%;
+            background-color: transparent;
+            img{
+                width:18px;
+            }
+            
+            @include media(lgDevice){
+                display:none;
+            }
+            @include media(xlgDevice){
+                left:-75px;
+            }
+            @include media(xxlgDevice){
+                left:-85px;
+            }
+            &::before{
+                display: none;
+            }
+            @include media(smDevice){
+                left:-60px;
+            }
+            @include media(mdDevice){
+                left:-150px;
+            }
+        }
+        .slick-next{
+            position:absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top:-36vw;
+            right:0px;
+            width: 40px;
+            height: 40px;
+            border:1px solid #000;
+            border-radius: 50%;
+            background-color: transparent;
+            img{
+                width:18px;
+            }
+            
+            @include media(smDevice){
+                right:-60px;
+            }
+            @include media(mdDevice){
+                right:-150px;
+            }
+            @include media(lgDevice){
+                display:none;
+            }
+            @include media(xlgDevice){
+                right:-75px;
+            }
+            @include media(xxlgDevice){
+                right:-85px;
+            }
+            &::before{
+                display: none;
+            }
+        }
+        .rightslide{
+            .slider1{
+                width: calc(100% - 90px);                
+                margin:0 auto;
+                @include media(mdDevice){
+                    width:70vw;
+                }
+                @include media(smDevice){
+                    width:70vw;
+                }
+                .div{
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+            
+        }
+        
+            
+            .leftslider{
+              
+                    position:relative;
+
+                    .slider2{
+                        .slick-slide{
+                            padding:40px 0;
+                        }
+                        .downloadbutton{
+                            text-align: center;
+                        }
+                    }
+                    
+                    .div{
+                        h3{
+                            @include myfont(25px,700,$main_font);
+                            color:#a3a3a3;
+                        }
+                        p{
+                            @include myfont(12px,500,$main_font);
+                            color:#231F20;
+                            padding-bottom: 25px;
+                            line-height: 16px;
+                        }
+                    }
+                    // .prevbutton{
+                    //     position:absolute;
+                    //     top:calc(100% + 35px);
+                    //     left:0px!important;
+                    //     width: 65px;
+                    //     height: 65px;
+                    //     border:1px solid #000;
+                    //     border-radius: 50%;
+                    //     background-color: transparent;
+                        
+                    //     @include media(lgDevice){
+                    //         display:none;
+                    //     }
+                    //     @include media(xlgDevice){
+                    //         left:-75px;
+                    //     }
+                    //     @include media(xxlgDevice){
+                    //         left:-85px;
+                    //     }
+                    // }
+                    // .nextbutton{
+                    //     position:absolute;
+                    //     top:calc(100% + 35px);
+                    //     left:100px!important;
+                    //     width: 65px;
+                    //     height: 65px;
+                    //     border:1px solid #000;
+                    //     border-radius: 50%;
+                    //     background-color: transparent;
+                        
+                    //     @include media(lgDevice){
+                    //         display:none;
+                    //     }
+                    //     @include media(xlgDevice){
+                    //         right:-75px;
+                    //     }
+                    //     @include media(xxlgDevice){
+                    //         right:-85px;
+                    //     }
+                    // }
+            }
+        
     }
     .partnerbrandscomp{
         .headingofsubsectioncomp{

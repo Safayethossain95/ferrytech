@@ -1,13 +1,12 @@
 import React,{useState,useEffect,useRef} from 'react'
-import SubHeading from './SubComponents/SubHeading';
+import { motion } from "framer-motion";
+import { TweenMax, Power2 } from "gsap";
+import SubHeading from '../Desktop/SubComponents/SubHeading';
 import {Row,Col} from "react-bootstrap"
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import { motion } from "framer-motion";
-import { TweenMax, Power2 } from "gsap";
-const ProductLineComp = () => {
-
+const ProdLineMbComMp = () => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
@@ -61,9 +60,9 @@ const ProductLineComp = () => {
         setstate({ activeSlide: current, slidecount: current.slideCount })
       }
       const beforeChangehandler2 = () => {
-        TweenMax.to(".slider1 .slick-current",1, {
-          x: -20,
-          opacity: 1,
+        TweenMax.to(".slider1 .slick-current",0.5, {
+          y: 20,
+          opacity: 0,
           ease: Power2.easeOut
         });
         
@@ -71,59 +70,19 @@ const ProductLineComp = () => {
       const afterChangehandler2 = (current) =>{
         TweenMax.fromTo(
           ".slider1 .slick-current",
-          1,
+          0.5,
           {
-            x: -20,
-            opacity: 1
+            y: 20,
+            opacity: 0
           },
           {
-            x: 0,
+            y: 0,
             opacity: 1,
             ease: Power2.easeOut
           }
         );
         setstate({ activeSlide: current, slidecount: current.slideCount })
       }
-      const settings2 = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows:false,
-        autoplay: false,
-        loop:true,
-        centerMode: true,
-        
-        aminate:false,
-        fade:false,
-        
-      };
-      const settings = {
-        dots: false,
-        infinite: false,
-        speed:300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows:true,
-        autoplay: false,
-        loop:true,
-        prevArrow: <SamplePrevArrow/>,
-        nextArrow: <SampleNextArrow/>,
-        // fade:true,
-        animate:true,
-        // cssEase: 'cubic-bezier(.68,-0.55,.27,1.55)',
-        cssEase: "bezier"
-        
-      };
-
-      const [totalSlide,settotalSlide] = useState(3)
-      const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
-      const slider1 = useRef(null);
-      const slider2 = useRef(null);
-      
-    
       function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -148,16 +107,59 @@ const ProductLineComp = () => {
           </div>
         );
       }
+      const settings2 = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows:false,
+        autoplay: false,
+        loop:true,
+        arrows:false,
+        
+        
+        
+        animate:true,
+        // cssEase: 'cubic-bezier(.68,-0.55,.27,1.55)',
+        cssEase: "bezier"
+      };
+      const settings = {
+        dots: false,
+        infinite: false,
+        speed:300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows:true,
+        autoplay: false,
+        loop:true,
+        // fade:true,
+        animate:true,
+        prevArrow: <SamplePrevArrow/>,
+        nextArrow: <SampleNextArrow/>,
+        // cssEase: 'cubic-bezier(.68,-0.55,.27,1.55)',
+        cssEase: "bezier"
+        
+      };
+
+      const [totalSlide,settotalSlide] = useState(3)
+      const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+      const slider1 = useRef(null);
+      const slider2 = useRef(null);
+      
+    
+     
   return (
     <>
-        <div className="productlineup">
+         <div className="productlineup">
         <SubHeading subheading="Product Line"/>
-        <Row>
-          <Col lg={{span:6,offset:6}}>
+        <Row className='mx-0'>
+          <Col xs={12} className='px-0-'>
           <div className="rightslide">
 
           <Slider className='slider1' beforeChange={beforeChangehandler2} 
-      afterChange={afterChangehandler2} asNavFor={nav2} ref={(slider1) => setNav1(slider1)} {...settings2} >
+      afterChange={afterChangehandler2} asNavFor={nav2} ref={(slider1) => setNav1(slider1)} {...settings2}>
 
             <div className="div">
               <img src="./assets/images/productLine/img1.png" alt="" />
@@ -172,13 +174,9 @@ const ProductLineComp = () => {
           </div>
           </Col>
         </Row>
-        <div className="sectionoverlay">
+        
 
-        <div className={screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
-
-            
-
-
+        <div className="mbContainer">
             <Row>
               <Col lg={5}>
                 <div className="leftslider">
@@ -229,10 +227,10 @@ const ProductLineComp = () => {
             </Row>
 
         </div>
-        </div>
+        
         </div>
     </>
   )
 }
 
-export default ProductLineComp
+export default ProdLineMbComMp

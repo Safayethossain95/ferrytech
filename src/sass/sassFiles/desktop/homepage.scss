@@ -26,6 +26,9 @@
                 align-items: center;
                 display: flex;
                 justify-content: flex-end;
+                @include media(lgDevice){
+                    width: 30%;
+                }
                 .phone,.mail{
                     display: flex;
                     align-items: center;
@@ -34,6 +37,9 @@
                         height: 35px;
                     }
                     .wrap{
+                        @include media(lgDevice){
+                            display: none;
+                        }
                         margin-left: 12px;
                         p{
                             @include myfont(10px,500,$main_font);
@@ -50,8 +56,23 @@
                 .downloadbutton{
                     button{
                         margin-left: 20px;
+                        @include media(lgDevice)
+                        {
+                            margin-left: 10px;
+                            width: 166px;
+                    height: 49px;
+                    background-color: #ED1C24;
+                    color: #fff;
+                    border-radius: 5px;
+                    border: 0;
+                    margin-right: 25px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    font-family: "BoxedRegular", sans-serif;
+                        }
                     }
                 }
+                
         }
         .navbar-brand{
             padding:0;
@@ -73,6 +94,9 @@
                     color: var(--navbarMenuItemColor);
                     margin:0 15px;
                     text-transform: uppercase;
+                    @include media(lgDevice){
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -223,6 +247,7 @@
                  
                  img{
                      width:100%;
+                     height: 100%;
                      transition:0.4s ease-in-out;
                  }
                  &:hover{
@@ -484,6 +509,10 @@
             padding-bottom: 40px;
         }
        }
+    //    .slider1{
+    //     padding: 0 15%;
+    //     padding-right: 0;
+    //    }
        
         .slick-prev{
             
@@ -498,9 +527,7 @@
             border-radius: 50%;
             background-color: transparent;
             
-            @include media(lgDevice){
-                display:none;
-            }
+           
             @include media(xlgDevice){
                 left:-75px;
             }
@@ -524,9 +551,7 @@
             border-radius: 50%;
             background-color: transparent;
             
-            @include media(lgDevice){
-                display:none;
-            }
+            
             @include media(xlgDevice){
                 right:-75px;
             }
@@ -539,12 +564,18 @@
         }
         .rightslide{
             .slick-slider{
-
+               .div{
+                img{
+                    width:100%;
+                }
+               }
                 .slick-list{
+                    // padding-right: 0;
                     padding-left: 0!important;
                     // .slick-slide{
-                    //     padding:0 0 0 10%;
+                    //     padding:0 10%  0 0%;
                     // }
+                    
                 }
                 
             }

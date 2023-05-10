@@ -23,7 +23,7 @@ const MyNavbarDesk = () => {
                   return (
                     <NavLink
                       key={element.menuId}
-                      className="admissionclass"
+                      className={window.location.pathname==element.url?"admissionclass activei":"admissionclass"}
                       to={element.url}
                       
                     >
@@ -36,7 +36,7 @@ const MyNavbarDesk = () => {
                                 return (
                                   <li key={item.menuId}>
                                     <NavLink
-                                      
+                                      className={window.location.pathname==item.url?`activei`:``}
                                       to={item.url}
                                       
                                     >
@@ -50,7 +50,7 @@ const MyNavbarDesk = () => {
                           </div>
                         </>
                       ) : (
-                        <>{element.menuName}</>
+                        <> <p className={window.location.pathname==element.url?`activei`:``}>{element.menuName}</p> </>
                       )}
                     </NavLink>
                   );

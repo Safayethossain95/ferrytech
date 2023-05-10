@@ -1,0 +1,25 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+
+.desktop{
+    .servicemaincomp{
+        padding-top: 60px;
+        h5{
+            @include myfont(40px,700,$main_font);
+            color:#005DBA;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        h3{
+            @include myfont(18px,600,$main_font);
+            color:#231F20;
+            line-height: 30px;
+        }
+       .textblock{
+        padding: 0 60px;
+       }
+    }
+}

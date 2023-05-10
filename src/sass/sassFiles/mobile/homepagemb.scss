@@ -61,6 +61,7 @@
             }
             .activei{
                 font-weight: 700!important;
+                color:#005DBA;
             }
             .mainmenu{
                 flex-direction: column;
@@ -642,10 +643,18 @@
         .imgwgymb{
             margin-bottom: 30px;
         }
+        .cardd{
+            &:last-child{
+                .smcard{
 
+                    margin-bottom: 0;
+                }
+            }
+        }
         .smcard{
             display: flex;
             margin-bottom: 40px;
+            
             .img{
                 img{
                     width: 50px;

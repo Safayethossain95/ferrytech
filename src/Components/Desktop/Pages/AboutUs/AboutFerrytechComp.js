@@ -1,6 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import SubHeading from '../../SubComponents/SubHeading'
 
+const value = [
+
+]
+
 const AboutFerrytechComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,

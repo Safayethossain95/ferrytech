@@ -49,7 +49,7 @@ const WhyFerrytechComp = (props) => {
                             return(
                             
                               props.version=="mobile"?
-                                <Col xs={6}>
+                                <Col xs={6} className="cardd">
                                 <div className="smcard" key={key} style={props.version=="mobile"?{flexDirection:"column"}:{flexDirection:"row"}}>
                                 <div className="img">
                                     <img src={item.img} alt="" />

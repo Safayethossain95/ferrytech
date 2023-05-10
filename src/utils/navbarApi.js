@@ -100,7 +100,7 @@ const navbarApidata = [
     {
       "menuId": 11,
       "menuName": "Services",
-      "url": "",
+      "url": "/services",
       "sequence": 4,
       "parentMenuId": 0,
       "status": false,

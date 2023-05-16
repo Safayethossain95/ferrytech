@@ -21,25 +21,6 @@ import { bannerApi } from '../utils/homepageApi';
 
 
 const Homepage = () => {
-     
-  // useEffect(()=>{
-  
-    
-    // var navbar = document.getElementById("mynavbar");
-    // var navbarmini = document.getElementById("mynavbarmini");
-    
-  //   function myFunction() {
-     
-  //     if(window.pageYOffset > 99){
-  //       navbar.classList.add("sticky");
-  //     }else{
-  //       navbar.classList.remove("sticky");
-  //     }
-  //   }
-  //   window.onscroll = function() {myFunction()};
-    
-   
-  // },[])
   useEffect(() => {
     AOS.init();
     

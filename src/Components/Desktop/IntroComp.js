@@ -1,5 +1,6 @@
-import React,{useState,useEffect} from 'react'
-
+import React,{useState,useEffect, useRef} from 'react'
+import { Power3,TweenMax, gsap } from 'gsap';
+import {motion} from 'framer-motion'
 const IntroComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -20,6 +21,15 @@ const IntroComp = (props) => {
             
         })
       }, [screenSize])
+
+      let supplyref = useRef(null)
+      let settingsref = useRef(null)
+      let solarref = useRef(null)
+      useEffect(()=>{
+
+        
+       
+      },[])
   return (
     <>
     <div className="introsection">
@@ -41,7 +51,18 @@ const IntroComp = (props) => {
         <div className="introimgparts">
             <div className="introimgsdiv">
                 <div className="wrap">
-                    <img src="./assets/images/Intro/carbon_delivery.png" alt="" />
+                    <motion.div className="imgdiv"    initial={{ x: -10 }}          // Initial position
+                    animate={{ x: 10 }}         // Final position
+                    transition={{
+                        duration: 1,              // Duration of each animation
+                        repeat: Infinity,         // Number of repetitions (Infinity for infinite repetition)
+                        repeatType: 'reverse',    // Type of repetition animation
+                        repeatDelay: 0,           // Delay between each repetition
+                        ease: 'linear'            // Easing function
+                    }}>
+                    <img  src="./assets/images/Intro/carbon_delivery.png" alt="" />
+
+                    </motion.div>
                     <h5>Supply</h5>
                 </div>
             </div>
@@ -50,7 +71,18 @@ const IntroComp = (props) => {
             </div>
             <div className="introimgsdiv">
                 <div className="wrap">
-                <img src="./assets/images/Intro/solar_settings.png" alt="" />
+                    <motion.div className="imgdiv" initial={{ rotate: 0 }}       // Initial rotation angle
+                    animate={{ rotate: 360 }}     // Final rotation angle
+                    transition={{
+                        duration: 4,                // Duration of each rotation
+                        repeat: Infinity,           // Number of repetitions (Infinity for infinite repetition)
+                        repeatType: 'loop',         // Type of repetition animation
+                        repeatDelay: 0,             // Delay between each repetition
+                        ease: 'linear'              // Easing function
+                    }}>
+                        <img src="./assets/images/Intro/solar_settings.png" alt="" />
+
+                    </motion.div>
                 <h5>installation</h5>
                 </div>
             </div>
@@ -59,7 +91,18 @@ const IntroComp = (props) => {
             </div>
             <div className="introimgsdiv">
                 <div className="wrap">
-                <img src="./assets/images/Intro/gear_icon_settings.png" alt="" />
+                    <motion.div className="imgdiv" initial={{ x: -10 }}          // Initial position
+                    animate={{ x: 10 }}         // Final position
+                    transition={{
+                        duration: 1,              // Duration of each animation
+                        repeat: Infinity,         // Number of repetitions (Infinity for infinite repetition)
+                        repeatType: 'reverse',    // Type of repetition animation
+                        repeatDelay: 0,           // Delay between each repetition
+                        ease: 'linear'            // Easing function
+                    }}>
+                        <img src="./assets/images/Intro/gear_icon_settings.png" alt="" />
+
+                    </motion.div>
                 <h5>maintenance</h5>
                 </div>
             </div>

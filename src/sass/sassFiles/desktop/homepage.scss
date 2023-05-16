@@ -25,13 +25,16 @@
         transition:0.5s ease-in-out;
         .contactpart{
             
-                width: 46%;
+                width: 47%;
                 height:62px;
                 align-items: center;
                 display: flex;
                 justify-content: flex-end;
                 @include media(lgDevice){
                     width: 30%;
+                }
+                @include media(xlgDevice){
+                    width: 37%;
                 }
                 .phone,.mail{
                     display: flex;
@@ -97,7 +100,7 @@
             .navbar-nav{
                 a{
                     text-decoration: none;
-                    @include myfont(16px,600,$main_font);
+                    @include myfont(15px,600,$main_font);
                     color: var(--navbarMenuItemColor);
                     margin:0 10px;
                     text-transform: uppercase;

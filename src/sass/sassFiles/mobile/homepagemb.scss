@@ -10,13 +10,21 @@
         padding: 0!important;
         height:60px;
         display: flex;
-        position:fixed;
-        top:0;
+        position:absolute;         
         width:100%;
         z-index: 999;
         justify-content: space-between;
         border:0!important;
-       
+        .img{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin-left: 18px;
+            img{
+                width: 143px;
+                
+            }
+        }
         #basic-navbar-nav{
             position:absolute;
             width:100%;
@@ -271,10 +279,10 @@
                       }
                       
                       #nav-icon4.open span:nth-child(1) {
-                        -webkit-transform: rotate(40deg);
-                        -moz-transform: rotate(40deg);
-                        -o-transform: rotate(40deg);
-                        transform: rotate(40deg);
+                        -webkit-transform: rotate(39deg);
+                        -moz-transform: rotate(39deg);
+                        -o-transform: rotate(39deg);
+                        transform: rotate(39deg);
                         top: 2px;
                         left: 3px;
                       }
@@ -285,10 +293,10 @@
                       }
                       
                       #nav-icon4.open span:nth-child(3) {
-                        -webkit-transform: rotate(-40deg);
-                        -moz-transform: rotate(-40deg);
-                        -o-transform: rotate(-40deg);
-                        transform: rotate(-40deg);
+                        -webkit-transform: rotate(-39deg);
+                        -moz-transform: rotate(-39deg);
+                        -o-transform: rotate(-39deg);
+                        transform: rotate(-39deg);
                         top: 18px;
                         left: 3px;
                       }

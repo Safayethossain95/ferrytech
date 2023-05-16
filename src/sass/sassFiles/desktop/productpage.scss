@@ -1,0 +1,218 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+
+.mobile{
+    .productcardscomp{
+        
+        .heading{
+            
+            h5{
+                @include myfont(25px,600,$main_font);
+
+            }
+            p{
+                @include myfont(18px,600,$main_font);
+                color:#a3a3a3;
+            }
+        }
+        .cardsloop{
+            margin-bottom: 20px;
+            .slick-slider{
+                
+                .slick-list{
+                    padding-top:30px!important;
+                    padding-bottom:30px!important;
+                    padding-left: 0!important;
+                    .slick-slide{
+                        padding:0 0 0 20px;
+                    }
+                }
+            }
+            
+            .pcard{
+                
+                width: 100%;
+                background-color: #fff;
+                text-align: center;
+                padding-bottom:27px;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
+                .pcarddetails{
+                    text-align: left;
+                    padding:0 17px;
+                    h5{
+                        @include myfont(18px,600,$main_font);
+        
+                    }
+                    p{
+                        @include myfont(13px,600,$main_font);
+                        color:#a3a3a3;
+                    }
+                }
+                .pcardbutton{
+                    margin-top: 10px;
+                    button{
+                        // display: flex;
+                        background-color: #005DBA;
+                        text-transform: uppercase;
+                        border:0;
+                                           
+                        @include myfont(12px,500,$main_font);
+                        color:#fff;
+                        border-radius: 5px;
+                        margin:0 auto;
+                        width: 117px;
+                        height: 36px;
+                        position:relative;
+                        padding-right: 20px;
+                        span{
+                            position:absolute;
+                            top:50%;
+                            transform: translateY(-50%);
+                            display: inline-block;
+                            
+                            img{
+                                width: 11px;
+                                padding-bottom: 0;
+                                margin-left: 6px;
+                                
+                            }
+                        }
+                    }
+                }
+                img{
+                    width:100%;
+                    margin:0 auto;
+                    padding-bottom: 23px;
+                }
+            }
+        }
+    }
+    .productbanner{
+        background-color: #005DBA;
+        margin-top: 60px;
+        height: 100vw;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+        overflow-x: hidden;
+        margin-bottom: 60px;
+        .overlay{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                height:100%;
+            }
+        }
+        h3{
+            @include myfont(80px,700,$main_font);
+            color:rgba(255, 255, 255, 0.30);
+            text-transform: uppercase;
+        }
+    }
+}
+
+.desktop{
+    .productbanner{
+        background-color: #005DBA;
+        height: 680px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+        .overlay{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h3{
+            @include myfont(200px,700,$main_font);
+            color:rgba(255, 255, 255, 0.30);
+            text-transform: uppercase;
+        }
+    }
+    .productcardscomp{
+        padding-top:115px;
+        .heading{
+            padding-bottom: 30px;
+            h5{
+                @include myfont(25px,600,$main_font);
+
+            }
+            p{
+                @include myfont(18px,600,$main_font);
+                color:#a3a3a3;
+            }
+        }
+        .cardsloop{
+            .pcard{
+                margin-bottom: 20px;
+                width: 100%;
+                background-color: #fff;
+                text-align: center;
+                padding-bottom:27px;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
+                .pcarddetails{
+                    text-align: left;
+                    padding:0 17px;
+                    h5{
+                        @include myfont(25px,600,$main_font);
+        
+                    }
+                    p{
+                        @include myfont(18px,600,$main_font);
+                        color:#a3a3a3;
+                    }
+                }
+                .pcardbutton{
+                    margin-top: 20px;
+                    button{
+                        // display: flex;
+                        background-color: #005DBA;
+                        text-transform: uppercase;
+                        border:0;
+                        padding:16px;
+                        
+                        @include myfont(16px,500,$main_font);
+                        color:#fff;
+                        border-radius: 5px;
+                        margin:0 auto;
+                        span{
+                            display: inline-block;
+                            img{
+                                width: 11px;
+                                padding-bottom: 0;
+                                margin-left: 6px;
+                            }
+                        }
+                    }
+                }
+                img{
+                    width:100%;
+                    margin:0 auto;
+                    padding-bottom: 23px;
+                }
+            }
+        }
+    }
+}

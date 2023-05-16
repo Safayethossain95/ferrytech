@@ -27,7 +27,7 @@ const navbarApidata = [
     {
       "menuId": 10,
       "menuName": "Product",
-      "url": "",
+      "url": "/product",
       "sequence": 3,
       "parentMenuId": 0,
       "status": false,

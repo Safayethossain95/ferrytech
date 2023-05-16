@@ -49,37 +49,39 @@ const ProductLineComp = () => {
           0.5,
           {
             y: 30,
-            opacity: 0.1
+            opacity: 0
           },
           {
             y: 0,
             opacity: 1,
-            ease: Power2.easeIn
+            ease: Power2.easeOut,
+            delay: 0.2,
           },
         
         );
         setstate({ activeSlide: current, slidecount: current.slideCount })
       }
       const beforeChangehandler2 = () => {
-        TweenMax.to(".slider1 .slick-current",1, {
-          x: -20,
+        TweenMax.to(".slider1 .slick-current",0.5, {
+          x: 20,
           opacity: 1,
-          ease: Power2.easeOut
+          ease: Power2.easeIn
         });
         
       };
       const afterChangehandler2 = (current) =>{
         TweenMax.fromTo(
           ".slider1 .slick-current",
-          1,
+          0.5,
           {
-            x: -20,
+            x: 20,
             opacity: 1
           },
           {
             x: 0,
             opacity: 1,
-            ease: Power2.easeOut
+            ease: Power2.easeOut,
+            
           }
         );
         setstate({ activeSlide: current, slidecount: current.slideCount })
@@ -148,6 +150,12 @@ const ProductLineComp = () => {
           </div>
         );
       }
+
+      // motion.div className="div custom-slide" initial={{ y : 30,opacity:0 }}
+      //                       whileInView={{ y:0,opacity:1}}
+      //                       transition={{delay:0,duration:2,type: "tween",
+      //                       stiffness: 30,
+      //                       }}
   return (
     <>
         <div className="productlineup">
@@ -191,38 +199,30 @@ const ProductLineComp = () => {
               <Slider className='slider2' beforeChange={beforeChangehandler} 
       afterChange={afterChangehandler} asNavFor={nav1} ref={(slider2) => setNav2(slider2)} {...settings}>
 
-                <motion.div className="div custom-slide" initial={{ y : 30,opacity:0 }}
-                            whileInView={{ y:0,opacity:1}}
-                            transition={{delay:0,duration:2,type: "tween",
-                            stiffness: 30,
-                            }}>
+                <div className="div custom-slide">
                     <h3>MANTSINEN 140</h3>
                     <p>Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.</p>
-                  <div className="downloadbutton">
-                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
+                  
                   </div>
-                  </motion.div>
                 {/* <div className="div"> */}
                   
                   <div className="div custom-slide">
 
                     <h3>MANTSINEN 540</h3>
                     <p>Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.</p>
-                  <div className="downloadbutton">
-                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
-                  </div>
+                 
                             </div>
                   
                   {/* </div> */}
                   <div className="div custom-slide">
                     <h3>MANTSINEN 140</h3>
                     <p>Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.</p>
-                  <div className="downloadbutton">
-                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
-                  </div>
+                  
                   </div>
               </Slider>
-              
+              <div className="downloadbutton">
+                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
+                  </div>
                 </div>
                   
               </Col>

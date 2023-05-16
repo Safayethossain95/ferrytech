@@ -34,7 +34,7 @@ const ServiceMainComp = (props) => {
                                     <img className='w-100' src={item.img} alt="" />
                                 </div>
                             </Col>
-                            <Col lg={6} className="px-0 d-flex align-items-center mbContainer" >
+                            <Col lg={6} className="px-0 d-flex align-items-center" >
                                 <div className="textblock">
                                     <h5>{item.subheading}</h5>
                                     <h3>{item.heading}</h3>

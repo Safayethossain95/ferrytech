@@ -1,14 +1,31 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { navbarApidata } from '../../utils/navbarApi';
 import { Navbar,Nav } from 'react-bootstrap';
 import { NavLink,Link } from 'react-router-dom';
 import { BsChevronDown } from 'react-icons/bs';
 const MyNavbarDesk = () => {
+  
+  useEffect(()=>{
+    const navbar = document.getElementById("mynavbardesk")
+    function myFunction() {
+     
+      if(window.pageYOffset > 99){
+        navbar.classList.add("sticky");
+      }else{
+        navbar.classList.remove("sticky");
+      }
+     
+    }
+    window.onscroll = function() {myFunction()};
+  },[])
+  
+  
+ 
   return (
     <>
        
             
-       <Navbar className="mynavbardesk" bg="light" expand="lg">
+       <Navbar id="mynavbardesk" className="mynavbardesk" bg="light" expand="lg">
       
         <Navbar.Brand href="#home">
         <div className="img">
@@ -16,7 +33,7 @@ const MyNavbarDesk = () => {
                 </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse >
         <Nav className="me-auto">
                 {navbarApidata.map((element, index) => {
                   const isChildValue = element.childNavbarVm;
@@ -59,17 +76,18 @@ const MyNavbarDesk = () => {
         </Navbar.Collapse>
         <div className="contactpart">
             <div className="phone">
-                <img src="./assets/images/icon/phone.png" alt="" />
+                <a href="tel:+088 123 456 789"><img src="./assets/images/icon/phone.png" alt="" /></a>
                 <div className="wrap">
                     <p>call us now</p>
                     <h4>+088 123 456 789</h4>
                 </div>
             </div>
             <div className="mail">
-                <img src="./assets/images/icon/talk.png" alt="" />
+              <a href="mailto:help@ferrytech.com"><img src="./assets/images/icon/talk.png" alt="" /></a>
+                
                 <div className="wrap">
-                    <p>call us now</p>
-                    <h4>+088 123 456 789</h4>
+                    <p>talk to us</p>
+                    <h4>help@ferrytech.com</h4>
                 </div>
             </div>
             <div className="downloadbutton">

@@ -38,16 +38,31 @@ const MyNavbarMb = () => {
         navigate(mylink)
        
       }
+
+      useEffect(()=>{
+        const navbar2 = document.getElementById("mynavbarmobi")
+        function myFunction() {
+         
+          if(window.pageYOffset > 65){
+            navbar2.classList.add("sticky");
+          }else{
+            navbar2.classList.remove("sticky");
+          }
+         
+        }
+        window.onscroll = function() {myFunction()};
+      },[])
+     
   return (
     <>
-         <div className="mynavbarmobi" bg="light" expand="lg">
+         <div className="mynavbarmobi" id="mynavbarmobi" bg="light" expand="lg">
       
       <Navbar.Brand href="#home">
       <div className="img">
                   <img src="./assets/images/Logo/logo.png" alt="" />
               </div>
       </Navbar.Brand>
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" > */}
+
       <div className="navbar-toggler">
 
       <div className="nav-icon4-wrap" onClick={handletoggler}>
@@ -59,8 +74,7 @@ const MyNavbarMb = () => {
         </div>
       </div>
       </div>
-                
-      {/* </Navbar.Toggle> */}
+   
       <div id="basic-navbar-nav" className='opened'>
      
 

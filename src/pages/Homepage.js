@@ -45,7 +45,6 @@ const Homepage = () => {
     
   }, [])
 
-  
  
   const imgurldesk = "./assets/images/Intro/vector.png"
   const imgurlmb = "./assets/images/Mobile/homepage/info/arrodown.png"

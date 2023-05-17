@@ -134,7 +134,7 @@ const ReqAquoteComp = (props) => {
   return (
     <>
         <div className="reqaquote">
-            <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=992 && screenSize.dynamicWidth<=1199?"myContainer896": screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":"myContainerMini"}>
+            <div className={props.version=="mobile"?"mbContainer" :screenSize.dynamicWidth>=992 && screenSize.dynamicWidth<=1199?"myContainer896": screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":"myContainerMini"}>
 
                 <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Request a quote"/>
 
@@ -197,15 +197,15 @@ const ReqAquoteComp = (props) => {
                     </Col>
                     <Col lg={5} className="desktop">
                         <div className="contactcard">
-                            <div className="item">
+                            <div className="item" >
                                 <h4>Contact Number</h4>
                                 <a href="tel:+880 123 456 789">+880 123 456 789</a>
                             </div>
-                            <div className="item">
+                            <div className="item" >
                                 <h4>Email</h4>
                                 <a href="mailto:exampleinfo@gmail.com 789">exampleinfo@gmail.com</a>
                             </div>
-                            <div className="item">
+                            <div className="item" >
                                 <h4>Socials</h4>
                                 <div className="icons">
                                 <a href="#"><BsFacebook/></a>
@@ -234,8 +234,8 @@ const ReqAquoteComp = (props) => {
                             </button>
                         </div>
                     </Col>
-                    <Col lg={5} className="mobile">
-                        <div className="contactcard">
+                    <Col lg={5} xs={12} className="mobile">
+                        <div className="contactcard" >
                             <div className="item">
                                 <h4>Contact Number</h4>
                                 <a href="tel:+880 123 456 789">+880 123 456 789</a>
@@ -251,10 +251,6 @@ const ReqAquoteComp = (props) => {
                                 <a href="#"><BsTwitter/></a>
                                 <a href="#"><BsYoutube/></a>
                                 <a href="#"><HiMail/></a>
-                                
-                                
-                                
-                                
                                 </div>
                             </div>
                         </div>

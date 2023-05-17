@@ -156,10 +156,10 @@ const ProdLineMbComMp = () => {
         <SubHeading subheading="Product Line"/>
         <Row className='mx-0'>
           <Col xs={12} className='px-0-'>
-          <div className="rightslide">
+          <div className="rightslide" data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">
 
           <Slider className='slider1' beforeChange={beforeChangehandler2} 
-      afterChange={afterChangehandler2} asNavFor={nav2} ref={(slider1) => setNav1(slider1)} {...settings2}>
+          afterChange={afterChangehandler2} asNavFor={nav2} ref={(slider1) => setNav1(slider1)} {...settings2}>
 
             <div className="div">
               <img src="./assets/images/productLine/img1.png" alt="" />
@@ -179,7 +179,7 @@ const ProdLineMbComMp = () => {
         <div className="mbContainer">
             <Row>
               <Col lg={5}>
-                <div className="leftslider">
+                <div className="leftslider" data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">
                 {/* <button className='prevbutton' style={state.activeSlide==0?{opacity:"0.3"}:{opacity:"1"}} onClick={() => slider?.current?.slickPrev()}>
                         <img src="./assets/images/productLine/arrowleft.png" alt="" />
                     </button>

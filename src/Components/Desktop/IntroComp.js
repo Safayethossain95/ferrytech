@@ -36,11 +36,11 @@ const IntroComp = (props) => {
 
         <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
         
-        <div className="headingofsubsection">
+        <div data-aos-delay="300" data-aos="fade-in" data-aos-duration="1000" className="headingofsubsection">
             <h3>We are one of the largest <br/> trading company in bangladesh</h3>
         </div>
 
-        <div className="paraofsubsection">
+        <div data-aos-delay="300" data-aos="fade-in" data-aos-duration="1000"  className="paraofsubsection">
             <p>
             Ferrytech is the leading machinery trading company in Bangladesh. We provide a wide range of machinery trading services including hydraulic material handlers, variable reach trucks, heavy lifting machines, pumps, monitors and turrets, hose reels, hand nozzles, CAFS, air ambulances, airport vehicles, aerials, and industrial vehicles. <br/><br/>
 
@@ -48,13 +48,13 @@ const IntroComp = (props) => {
             </p>
         </div>
 
-        <div className="introimgparts">
+        <div className="introimgparts" data-aos-delay="300" data-aos="fade-in" data-aos-duration="1000">
             <div className="introimgsdiv">
                 <div className="wrap">
                     <motion.div className="imgdiv"    initial={{ x: -10 }}          // Initial position
                     animate={{ x: 10 }}         // Final position
                     transition={{
-                        duration: 1,              // Duration of each animation
+                        duration: 4,              // Duration of each animation
                         repeat: Infinity,         // Number of repetitions (Infinity for infinite repetition)
                         repeatType: 'reverse',    // Type of repetition animation
                         repeatDelay: 0,           // Delay between each repetition
@@ -74,7 +74,7 @@ const IntroComp = (props) => {
                     <motion.div className="imgdiv" initial={{ rotate: 0 }}       // Initial rotation angle
                     animate={{ rotate: 360 }}     // Final rotation angle
                     transition={{
-                        duration: 4,                // Duration of each rotation
+                        duration: 6,                // Duration of each rotation
                         repeat: Infinity,           // Number of repetitions (Infinity for infinite repetition)
                         repeatType: 'loop',         // Type of repetition animation
                         repeatDelay: 0,             // Delay between each repetition
@@ -91,10 +91,10 @@ const IntroComp = (props) => {
             </div>
             <div className="introimgsdiv">
                 <div className="wrap">
-                    <motion.div className="imgdiv" initial={{ x: -10 }}          // Initial position
-                    animate={{ x: 10 }}         // Final position
+                    <motion.div className="imgdiv" initial={{ rotate:10 }}          // Initial position
+                    animate={{ rotate:-10 }}         // Final position
                     transition={{
-                        duration: 1,              // Duration of each animation
+                        duration: 4,              // Duration of each animation
                         repeat: Infinity,         // Number of repetitions (Infinity for infinite repetition)
                         repeatType: 'reverse',    // Type of repetition animation
                         repeatDelay: 0,           // Delay between each repetition

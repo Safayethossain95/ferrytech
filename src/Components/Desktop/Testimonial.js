@@ -4,6 +4,7 @@ import {Row,Col} from 'react-bootstrap'
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import { TweenMax, Power2 } from "gsap";
 const Testimonial = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -27,12 +28,16 @@ const Testimonial = (props) => {
 
       const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
+        loop:false,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows:false,
         autoplay: false,
+       animate:true,
+        // cssEase: 'cubic-bezier(.68,-0.55,.27,1.55)',
+        cssEase: "bezier"
         
       };
       const settingsmobi = {
@@ -52,10 +57,49 @@ const Testimonial = (props) => {
       };
      
       const slider = useRef(null);
+
+      const beforeChangehandler = (current) => {
+        const activeSlidemain = document.querySelector(`.slidertesimoniald .slick-slide[data-index="${current}"]`);
+        if(activeSlidemain){
+          activeSlidemain.style.visibility = "hidden";
+          TweenMax.to(".slidertesimoniald .slick-current",0.5, {
+            y: 0,
+            opacity: 0,
+            ease: Power2.easeIn
+          },
+          );
+
+        }
+        
+        
+      };
+      const afterChangehandler = (current) =>{
+        const activeSlidemain = document.querySelector(`.slidertesimoniald .slick-slide[data-index="${current}"]`);
+        if(activeSlidemain){
+          activeSlidemain.style.visibility = "visible";
+          TweenMax.fromTo(
+            ".slidertesimoniald .slick-current",
+            0.5,
+            {
+              y: -30,
+              opacity: 0
+            },
+            {
+              y: 0,
+              opacity: 1,
+              ease: Power2.easeOut,
+              
+            },
+          
+          );
+          
+        }
+        
+      }
       
   return (
     <>
-        <div className="testimonial">
+        <div className="testimonial" data-aos-delay="500" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="center-center">
             <div className="overlay">
                 <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Happy Customer"/>
 
@@ -68,9 +112,9 @@ const Testimonial = (props) => {
                     </button>
                     <button className={props.version=="mobile"?"d-none":'nextbutton'} onClick={() => slider?.current?.slickNext()}>
                     <img src="./assets/images/testimonial/slicknext.png" alt="" /></button>              
-                    <div className="mbslider mobile">
+                    <div className="mbslider mobile" >
 
-                      <Slider {...settingsmobi}>
+                      <Slider className='slidertesimonial' {...settingsmobi}>
                         
                         <div className="div">
                         <div className="slider_item">
@@ -94,7 +138,8 @@ const Testimonial = (props) => {
                     </Slider>
                     </div>
                       
-                      <Slider className='desktop' ref={slider} {...settings}>
+                      <Slider beforeChange={beforeChangehandler} 
+      afterChange={afterChangehandler} className='slidertesimoniald desktop' ref={slider} {...settings}>
                         
                         <div className="div">
                         <div className="slider_item">
@@ -104,7 +149,7 @@ const Testimonial = (props) => {
                         </div>
                         <div className="div">
                         <div className="slider_item">
-                            <p>"We have been using Mantsinen machines for several years now, and we couldn't be happier with their reliability and efficiency. Their after-sales service is also exceptional, with prompt and efficient support whenever we need it. I highly recommend Mantsinen machines to anyone in the industry."</p>
+                            <p>"We 2 have been using Mantsinen machines for several years now, and we couldn't be happier with their reliability and efficiency. Their after-sales service is also exceptional, with prompt and efficient support whenever we need it. I highly recommend Mantsinen machines to anyone in the industry."</p>
                             <h4> - John Smith, Operations Manager at ABC Company.</h4>
                         </div>
                         </div>

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Row,Col} from 'react-bootstrap'
 import SubHeading from './SubComponents/SubHeading';
 import { whyferrytechApi } from '../../utils/homepageApi';
+import {motion} from 'framer-motion'
 const WhyFerrytechComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -28,7 +29,7 @@ const WhyFerrytechComp = (props) => {
         <SubHeading version="mobile" subheading="Why FerryTech?"/>
         <Row className="mx-0 align-items-center mobile">
                 <Col xs={12} lg={6} className='px-0'>
-                    <div className="imgwgymb">
+                    <div className="imgwgymb" data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">
                         <img className='w-100' src="./assets/images/Mobile/homepage/whyferrytech/main.png" alt="" />
                     </div>
                 </Col>
@@ -37,9 +38,12 @@ const WhyFerrytechComp = (props) => {
 
               <Row className="align-items-center">
                 <Col xs={12} lg={6} className='desktop'>
-                    <div className="imgwgy">
+                    <motion.div initial={{  opacity:0}}
+                   
+                    whileInView={{ opacity:1 }}
+                    transition={{ duration:0.9, delay:0.3,ease: 'easeIn' }} className="imgwgy">
                         <img className='w-100' src="./assets/images/whyferrytech/1.png" alt="" />
-                    </div>
+                    </motion.div>
                 </Col>
                 <Col xs={12} lg={6} style={props.version=="mobile"?{paddingLeft:"0px"}:{paddingLeft:"60px"}}>
                     <SubHeading version="desktop" subheading="Why FerryTech?"/>
@@ -49,7 +53,7 @@ const WhyFerrytechComp = (props) => {
                             return(
                             
                               props.version=="mobile"?
-                                <Col xs={6} className="cardd">
+                                <Col xs={6} className="cardd" data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">
                                 <div className="smcard" key={key} style={props.version=="mobile"?{flexDirection:"column"}:{flexDirection:"row"}}>
                                 <div className="img">
                                     <img src={item.img} alt="" />
@@ -62,7 +66,14 @@ const WhyFerrytechComp = (props) => {
                                 </Col>
                               :
                               
-                              <div className="smcard" key={key}>
+                              <motion.div className="smcard" initial={{ opacity:0,x: 20 }}          // Initial position
+                              whileInView={{ x: 0, opacity:1 }} 
+                              viewport={{ once: true }}
+                              transition={{
+                                  duration: 0.3, 
+                                  delay: key * 0.2,
+                                  ease: 'linear'         
+                              }} key={key}>
                                 <div className="img">
                                     <img src={item.img} alt="" />
                                 </div>
@@ -70,7 +81,7 @@ const WhyFerrytechComp = (props) => {
                                     <h4>{item.heading}</h4>
                                     <p>{item.paragraph}</p>
                                 </div>
-                            </div>
+                            </motion.div>
 
 )
 })

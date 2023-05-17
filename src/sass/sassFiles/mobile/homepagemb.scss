@@ -322,6 +322,21 @@
             top: calc(100% + 5px);
             left:50%;
             transform: translateX(-50%);
+            img{
+
+                animation: myanim 2s infinite; 
+            }
+        }
+        @keyframes myanim{
+            0%{
+                transform:translateY(0)
+            }
+            50%{
+                transform:translateY(10px)
+            }
+            100%{
+                transform:translateY(0)
+            }
         }
     }
     .introsection{
@@ -620,7 +635,7 @@
             flex-wrap: wrap;
             .brandcard{
                 margin-bottom: 20px;
-                width: 30%;
+                width: 100%;
                 padding: 20px 15px;
                 display: flex;
                 align-items: center;

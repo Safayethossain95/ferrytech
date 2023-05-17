@@ -22,7 +22,7 @@ import { bannerApi } from '../utils/homepageApi';
 
 const Homepage = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({once:true});
     
   }, [])
 

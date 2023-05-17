@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import { TweenMax, Power2 } from "gsap";
 const ProductLineComp = () => {
 
+  let slider1ref = useRef(null)
+
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
@@ -61,29 +63,23 @@ const ProductLineComp = () => {
         );
         setstate({ activeSlide: current, slidecount: current.slideCount })
       }
-      const beforeChangehandler2 = () => {
-        TweenMax.to(".slider1 .slick-current",0.5, {
-          x: 20,
-          opacity: 1,
-          ease: Power2.easeIn
-        });
-        
+      const beforeChangehandler2 = (current,next) => {
+        // TweenMax.to(".slider1 .slick-current",0.5, { x: -20, opacity: 1 });
+        const activeSlidemain = document.querySelector(`.slider1 .slick-slide[data-index="${current}"]`);
+        if (activeSlidemain) {
+          TweenMax.to(".slider1 .slick-current", 0.3, { x: 0, opacity: 1 });
+        }
       };
       const afterChangehandler2 = (current) =>{
-        TweenMax.fromTo(
-          ".slider1 .slick-current",
-          0.5,
-          {
-            x: 20,
-            opacity: 1
-          },
-          {
-            x: 0,
-            opacity: 1,
-            ease: Power2.easeOut,
-            
-          }
-        );
+        const activeSlidemain = document.querySelector(`.slider1 .slick-slide[data-index="${current}"]`);
+        if(activeSlidemain){
+
+          TweenMax.fromTo(
+            ".slider1 .slick-current",
+            0.5,
+            { x: 0, opacity: 1 }, { x: -20, opacity: 1 }
+          );
+        }
         setstate({ activeSlide: current, slidecount: current.slideCount })
       }
       const settings2 = {
@@ -161,7 +157,7 @@ const ProductLineComp = () => {
         <div className="productlineup">
         <SubHeading subheading="Product Line"/>
         <Row>
-          <Col lg={{span:6,offset:6}}>
+          <Col lg={{span:6,offset:6}} data-aos-delay="500" data-aos="fade-in" data-aos-duration="2000">
           <div className="rightslide">
 
           <Slider className='slider1' beforeChange={beforeChangehandler2} 
@@ -188,7 +184,7 @@ const ProductLineComp = () => {
 
 
             <Row>
-              <Col lg={5}>
+              <Col lg={5} data-aos-delay="500" data-aos="fade-in" data-aos-duration="2000">
                 <div className="leftslider">
                 {/* <button className='prevbutton' style={state.activeSlide==0?{opacity:"0.3"}:{opacity:"1"}} onClick={() => slider?.current?.slickPrev()}>
                         <img src="./assets/images/productLine/arrowleft.png" alt="" />

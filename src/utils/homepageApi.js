@@ -1,5 +1,26 @@
 import React from 'react'
 
+export const partnerbrandsApi = [
+    {
+        img:"./assets/images/PartnerBrands/1.png"
+    },
+    {
+        img:"./assets/images/PartnerBrands/2.png"
+    },
+    {
+        img:"./assets/images/PartnerBrands/3.png"
+    },
+    {
+        img:"./assets/images/PartnerBrands/4.png"
+    },
+    {
+        img:"./assets/images/PartnerBrands/5.png"
+    },
+    {
+        img:"./assets/images/PartnerBrands/6.png"
+    },
+]
+
 const bannerApi={
     desktop:[
         {

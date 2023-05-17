@@ -1,5 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import SubHeading from './SubComponents/SubHeading';
+import { partnerbrandsApi } from '../../utils/homepageApi';
+import { motion } from 'framer-motion';
+import {Row,Col} from 'react-bootstrap'
 const PartnerBrandsComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -26,28 +29,27 @@ const PartnerBrandsComp = (props) => {
         <div className={props.version=="mobile"?"myContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
 
             <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Partner Brands"/>
+            <Row>
+            {
+            partnerbrandsApi.map((item,key)=>{
+                let e = (key % 2) + 1
+                return(
+                    <Col lg={4} xs={6} className="cardwrap" key={key}>
+                    <motion.div  initial={{  opacity:0 }}
+                    viewport={{ once: true }}
+                    whileInView={{ opacity:1 }}
+                    transition={{ duration:0.3, delay:e * 0.3,ease: 'linear' }} className="brandcard">
+                        <img src={item.img} alt="" />
+                    </motion.div>
+                
+    
+                    </Col>
+                )
+            })
 
-            <div className="cardwrap">
-            <div className="brandcard">
-                <img src="./assets/images/PartnerBrands/1.png" alt="" />
-            </div>
-            <div className="brandcard">
-                <img src="./assets/images/PartnerBrands/2.png" alt="" />
-            </div>
-            <div className="brandcard">
-                <img src="./assets/images/PartnerBrands/3.png" alt="" />
-            </div>
-            <div className="brandcard">
-                <img src="./assets/images/PartnerBrands/4.png" alt="" />
-            </div>
-            <div className="brandcard">
-                <img src="./assets/images/PartnerBrands/5.png" alt="" />
-            </div>
-            <div className="brandcard">
-                <img src="./assets/images/PartnerBrands/6.png" alt="" />
-            </div>
+        }
 
-            </div>
+            </Row>
 
         </div>
         </div>

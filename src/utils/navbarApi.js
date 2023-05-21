@@ -38,7 +38,7 @@ const navbarApidata = [
         {
           "menuId": 3,
           "menuName": "Sub Section",
-          "url": "/studentagecheck",
+          "url": "/product",
           "sequence": 0,
           "parentMenuId": 2,
           "status": false,
@@ -50,7 +50,7 @@ const navbarApidata = [
         {
           "menuId": 4,
           "menuName": "Sub Section",
-          "url": "/feestructure",
+          "url": "/product",
           "sequence": 0,
           "parentMenuId": 2,
           "status": false,
@@ -62,7 +62,7 @@ const navbarApidata = [
         {
           "menuId": 6,
           "menuName": "Sub Section",
-          "url": "/schooltiming",
+          "url": "/product",
           "sequence": 0,
           "parentMenuId": 2,
           "status": false,
@@ -74,7 +74,7 @@ const navbarApidata = [
         {
           "menuId": 7,
           "menuName": "Sub Section",
-          "url": "/trackadmission",
+          "url": "/product",
           "sequence": 0,
           "parentMenuId": 2,
           "status": false,
@@ -86,7 +86,7 @@ const navbarApidata = [
         {
           "menuId": 8,
           "menuName": "Sub Section",
-          "url": "/karatecourse",
+          "url": "/product",
           "sequence": 0,
           "parentMenuId": 2,
           "status": false,
@@ -111,7 +111,7 @@ const navbarApidata = [
         {
             "menuId": 13,
             "menuName": "Sub Section",
-            "url": "/karatecourse",
+            "url": "/services",
             "sequence": 0,
             "parentMenuId": 2,
             "status": false,

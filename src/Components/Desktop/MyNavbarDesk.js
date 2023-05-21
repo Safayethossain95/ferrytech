@@ -9,7 +9,7 @@ const MyNavbarDesk = () => {
     const navbar = document.getElementById("mynavbardesk")
     function myFunction() {
      
-      if(window.pageYOffset > 99){
+      if(window.pageYOffset > 200){
         navbar.classList.add("sticky");
       }else{
         navbar.classList.remove("sticky");

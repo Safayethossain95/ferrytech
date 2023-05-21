@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { Col, Row } from 'react-bootstrap'
-
+import {motion} from 'framer-motion'
 const ProductCardsComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -25,10 +25,16 @@ const ProductCardsComp = (props) => {
     <>
         <div className="productcardscomp">
         <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=992 && screenSize.dynamicWidth<=1199?"myContainer896": screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":"myContainerMini"}>
-            <div className="heading">
+            <motion.div className="heading" initial={{ opacity:0,y:0 }}          // Initial position
+                              whileInView={{ opacity:1,y:-20 }} 
+                              transition={{
+                                  duration: 0.9, 
+                                  delay: 0.2,
+                                  ease: 'linear'         
+                              }}>
                 <h5>{props.data.heading}</h5>
                 <p>{props.data.para}</p>
-            </div>
+            </motion.div>
             <div className="cardsloop">
                 <Row>
                     {
@@ -36,7 +42,9 @@ const ProductCardsComp = (props) => {
 
                             return(
                                 <Col lg={4} key={key}>
-                                <div className="pcard">
+                                <motion.div initial={{ opacity: 0, y:0 }}
+                        viewport={{ once: true }} whileInView={{ opacity: 1,y:-20 , transition: { delay: 0.3 }}} 
+                        transition={{ duration:2, delay: key * 0.5,ease: 'easeInOut' }} className="pcard">
                                     <img src={item.imgurl} alt="" />
                                     
                                 <div className="pcarddetails">
@@ -47,7 +55,7 @@ const ProductCardsComp = (props) => {
                                 <div className="pcardbutton">
                                     <button>view details <span><img src="./assets/images/ProductPage/cards/arr.png" alt="" /></span></button>
                                 </div>
-                                </div>
+                                </motion.div>
                             </Col>
                             )
                         })

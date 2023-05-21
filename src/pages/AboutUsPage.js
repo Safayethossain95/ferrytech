@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import MyNavbarDesk from '../Components/Desktop/MyNavbarDesk'
 import FooterComp from '../Components/Desktop/FooterComp'
 import MyNavbarMb from '../Components/Mobile/MyNavbarMb'
@@ -10,8 +10,13 @@ import WhyFerrytechComp from '../Components/Desktop/WhyFerrytechComp'
 import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp'
 import FAQComp from '../Components/Desktop/Pages/AboutUs/FAQComp'
 import AboutBannerCompmb from '../Components/Mobile/AboutUsPage/AboutBannerCompmb'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const AboutUsPage = () => {
+  useEffect(() => {
+    AOS.init({once:true});
+    
+  }, [])
   return (
     <>
         <div className="mobile">

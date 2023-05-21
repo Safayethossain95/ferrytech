@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {Row,Col} from 'react-bootstrap'
+import {motion} from 'framer-motion'
 const ServiceMainComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -34,13 +35,18 @@ const ServiceMainComp = (props) => {
                                     <img className='w-100' src={item.img} alt="" />
                                 </div>
                             </Col>
-                            <Col lg={6} className="px-0 d-flex align-items-center" >
-                                <div className="textblock">
+                            <Col lg={6} className={props.version} >
+                                <motion.div className="textblock" initial={{ opacity:0}} 
+                                    whileInView={{opacity:1 }} 
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6, 
+                                        delay: 0.3,
+                                        ease: 'linear'         
+                                    }}>
                                     <h5>{item.subheading}</h5>
                                     <h3>{item.heading}</h3>
-                                   
-                                   
-                                </div>
+                                </motion.div>
                             </Col>
                         </Row>
                     )

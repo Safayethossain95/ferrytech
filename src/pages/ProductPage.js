@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import MyNavbarDesk from '../Components/Desktop/MyNavbarDesk'
 import FooterComp from '../Components/Desktop/FooterComp'
 import ContactBanner from '../Components/Desktop/Pages/Contact/ContactBanner'
@@ -11,7 +11,13 @@ import ProductCardsComp from '../Components/Desktop/Pages/Product/ProductCardsCo
 import { productApi } from '../utils/productsApi'
 import ProdBanner from '../Components/Mobile/ProductPage/ProdBanner'
 import ProdCardsCompMb from '../Components/Mobile/ProductPage/ProdCardsCompMb'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ProductPage = () => {
+  useEffect(() => {
+    AOS.init({once:true});
+    
+  }, [])
   return (
     <>
          <div className="desktop">

@@ -59,7 +59,9 @@ const MyNavbarMb = () => {
       
       <Navbar.Brand href="#home">
       <div className="img">
-                  <img src="./assets/images/Logo/logo.png" alt="" />
+                  <Link to="/">
+                    <img src="./assets/images/Logo/logo.png" alt="" />
+                  </Link> 
               </div>
       </Navbar.Brand>
 
@@ -79,6 +81,7 @@ const MyNavbarMb = () => {
      
 
             <Nav className="mainmenu mbContainer">
+            <div className="wrapperlimit">
 
              {
                         navbarApidata.map((item,key)=>{
@@ -116,9 +119,7 @@ const MyNavbarMb = () => {
                             
                         })
                     }
-            </Nav>
-           
-     
+            </div>
       <div className="contactpart ">
         <div className="mbContainer">
 
@@ -141,6 +142,9 @@ const MyNavbarMb = () => {
           </div>
         </div>
       </div>
+            </Nav>
+           
+     
       </div>
   </div>
     </>

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-
+import {motion} from "framer-motion"
 const ProductBanner = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -24,12 +24,18 @@ const ProductBanner = (props) => {
     <>
         <div className="productbanner">
             <h3>Products</h3>
-            <div className="overlay">
+            <motion.div className="overlay"  initial={{ opacity:0 }}          // Initial position
+                              whileInView={{ opacity:1 }} 
+                              transition={{
+                                  duration: 1, 
+                                  delay: 0.2,
+                                  ease: 'linear'         
+                              }}>
                 <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=992 && screenSize.dynamicWidth<=1199?"myContainer896": screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":"myContainerMini"}>
 
                 <img className='w-100' src="./assets/images/ProductPage/productsbanner.png" alt="" />
                 </div>
-            </div>
+            </motion.div>
         </div>
     </>
   )

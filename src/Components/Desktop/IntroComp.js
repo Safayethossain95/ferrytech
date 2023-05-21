@@ -52,12 +52,10 @@ const IntroComp = (props) => {
             <div className="introimgsdiv">
                 <div className="wrap">
                     <motion.div className="imgdiv"    initial={{ x: -10 }}          // Initial position
-                    animate={{ x: 10 }}         // Final position
+                    whileHover={{ x: 10 }}         // Final position
                     transition={{
                         duration: 4,              // Duration of each animation
-                        repeat: Infinity,         // Number of repetitions (Infinity for infinite repetition)
-                        repeatType: 'reverse',    // Type of repetition animation
-                        repeatDelay: 0,           // Delay between each repetition
+                                  // Delay between each repetition
                         ease: 'linear'            // Easing function
                     }}>
                     <img  src="./assets/images/Intro/carbon_delivery.png" alt="" />
@@ -72,12 +70,10 @@ const IntroComp = (props) => {
             <div className="introimgsdiv">
                 <div className="wrap">
                     <motion.div className="imgdiv" initial={{ rotate: 0 }}       // Initial rotation angle
-                    animate={{ rotate: 360 }}     // Final rotation angle
+                    whileHover={{ rotate: 360 }}     // Final rotation angle
                     transition={{
                         duration: 6,                // Duration of each rotation
-                        repeat: Infinity,           // Number of repetitions (Infinity for infinite repetition)
-                        repeatType: 'loop',         // Type of repetition animation
-                        repeatDelay: 0,             // Delay between each repetition
+                                   // Delay between each repetition
                         ease: 'linear'              // Easing function
                     }}>
                         <img src="./assets/images/Intro/solar_settings.png" alt="" />
@@ -91,13 +87,11 @@ const IntroComp = (props) => {
             </div>
             <div className="introimgsdiv">
                 <div className="wrap">
-                    <motion.div className="imgdiv" initial={{ rotate:10 }}          // Initial position
-                    animate={{ rotate:-10 }}         // Final position
+                    <motion.div className="imgdiv" initial={{ rotate:0 }}          // Initial position
+                    whileHover={{ rotate:-10 }}         // Final position
                     transition={{
                         duration: 4,              // Duration of each animation
-                        repeat: Infinity,         // Number of repetitions (Infinity for infinite repetition)
-                        repeatType: 'reverse',    // Type of repetition animation
-                        repeatDelay: 0,           // Delay between each repetition
+                                   // Delay between each repetition
                         ease: 'linear'            // Easing function
                     }}>
                         <img src="./assets/images/Intro/gear_icon_settings.png" alt="" />

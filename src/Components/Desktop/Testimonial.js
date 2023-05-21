@@ -27,17 +27,16 @@ const Testimonial = (props) => {
       }, [screenSize])
 
       const settings = {
-        dots: false,
-        infinite: false,
+        dots: true,
+        infinite: true,
         speed: 500,
-        loop:false,
+        loop:true,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows:false,
         autoplay: false,
-       animate:true,
-        // cssEase: 'cubic-bezier(.68,-0.55,.27,1.55)',
-        cssEase: "bezier"
+        appendDots: (dots) => <ul>{dots}</ul>,
+        customPaging: (i) => <div className="ft-slick__dots--custom"></div>
         
       };
       const settingsmobi = {
@@ -58,48 +57,48 @@ const Testimonial = (props) => {
      
       const slider = useRef(null);
 
-      const beforeChangehandler = (current) => {
-        const activeSlidemain = document.querySelector(`.slidertesimoniald .slick-slide[data-index="${current}"]`);
-        if(activeSlidemain){
-          activeSlidemain.style.visibility = "hidden";
-          TweenMax.to(".slidertesimoniald .slick-current",0.5, {
-            y: 0,
-            opacity: 0,
-            ease: Power2.easeIn
-          },
-          );
+      // const beforeChangehandler = (current) => {
+      //   const activeSlidemain = document.querySelector(`.slidertesimoniald .slick-slide[data-index="${current}"]`);
+      //   if(activeSlidemain){
+      //     activeSlidemain.style.visibility = "hidden";
+      //     TweenMax.to(".slidertesimoniald .slick-current",0.5, {
+      //       y: 0,
+      //       opacity: 0,
+      //       ease: Power2.easeIn
+      //     },
+      //     );
 
-        }
+      //   }
         
         
-      };
-      const afterChangehandler = (current) =>{
-        const activeSlidemain = document.querySelector(`.slidertesimoniald .slick-slide[data-index="${current}"]`);
-        if(activeSlidemain){
-          activeSlidemain.style.visibility = "visible";
-          TweenMax.fromTo(
-            ".slidertesimoniald .slick-current",
-            0.5,
-            {
-              y: -30,
-              opacity: 0
-            },
-            {
-              y: 0,
-              opacity: 1,
-              ease: Power2.easeOut,
+      // };
+      // const afterChangehandler = (current) =>{
+      //   const activeSlidemain = document.querySelector(`.slidertesimoniald .slick-slide[data-index="${current}"]`);
+      //   if(activeSlidemain){
+      //     activeSlidemain.style.visibility = "visible";
+      //     TweenMax.fromTo(
+      //       ".slidertesimoniald .slick-current",
+      //       0.5,
+      //       {
+      //         y: -30,
+      //         opacity: 0
+      //       },
+      //       {
+      //         y: 0,
+      //         opacity: 1,
+      //         ease: Power2.easeOut,
               
-            },
+      //       },
           
-          );
+      //     );
           
-        }
+      //   }
         
-      }
+      // }
       
   return (
     <>
-        <div className="testimonial" data-aos-delay="500" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="center-center">
+        <div className="testimonial" data-aos-delay="500" data-aos="fade-in" data-aos-duration="3000" data-aos-anchor-placement="center-center">
             <div className="overlay">
                 <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Happy Customer"/>
 
@@ -137,9 +136,9 @@ const Testimonial = (props) => {
                         
                     </Slider>
                     </div>
-                      
-                      <Slider beforeChange={beforeChangehandler} 
-      afterChange={afterChangehandler} className='slidertesimoniald desktop' ref={slider} {...settings}>
+                    {/* beforeChange={beforeChangehandler}  */}
+      {/* afterChange={afterChangehandler} */}
+                      <Slider  className='slidertesimoniald desktop' ref={slider} {...settings}>
                         
                         <div className="div">
                         <div className="slider_item">

@@ -38,7 +38,7 @@ const ServiceMainComp = (props) => {
                             <Col lg={6} className={props.version} >
                                 <motion.div className="textblock" initial={{ opacity:0}} 
                                     whileInView={{opacity:1 }} 
-                                    viewport={{ once: true }}
+                                    
                                     transition={{
                                         duration: 0.6, 
                                         delay: 0.3,

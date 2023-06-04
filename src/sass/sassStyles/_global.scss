@@ -316,10 +316,10 @@ p{
     // box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 
     position: sticky !important;
-    top: 0px; /* Adjust the desired negative offset */
+    top: -20px; /* Adjust the desired negative offset */
     width: 100%;
     z-index: 1030;
-    transition: top 2s;
+    transition: top 6s;
     transform: translateY(0px);
     background: #fff !important;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);

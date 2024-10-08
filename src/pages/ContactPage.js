@@ -10,13 +10,7 @@ import ContactBannerMb from '../Components/Mobile/ContactPage/ContactBannerMb'
 const ContactPage = () => {
   return (
     <>
-        <div className="desktop">
-            <MyNavbarDesk />
-            <ContactBanner/>
-            <ReqAquoteComp/>
-            <ContactMap/>
-            <FooterComp/>
-        </div>
+        
 
         <div className="mobile">
             <MyNavbarMb/>
@@ -24,6 +18,13 @@ const ContactPage = () => {
             <ReqAquoteComp version="mobile"/>
             <ContactMap/>
             <FooterComp version="mobile"/>
+        </div>
+        <div className="desktop">
+            <MyNavbarDesk />
+            <ContactBanner/>
+            <ReqAquoteComp/>
+            <ContactMap/>
+            <FooterComp/>
         </div>
     </>
   )

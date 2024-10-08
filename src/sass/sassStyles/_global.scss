@@ -302,7 +302,30 @@ body{
 p{
     margin-bottom: 0!important;
 }
+.stickymb {
+    // position: fixed!important;
+    // top: -30px;
+    // width: 100%;
+    // z-index: 1030;
+    // transition: 0.4s;
+    // transform: translateY(30px);
+    // background:#fff!important;    
+    // -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    // -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    // box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 
+    position: sticky !important;
+    top: 0px; /* Adjust the desired negative offset */
+    width: 100%;
+    z-index: 1030;
+    transition: top 6s ease;
+    // transform: translateY(0px);
+    background: #fff !important;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    
+}
 .sticky {
     // position: fixed!important;
     // top: -30px;
@@ -316,16 +339,52 @@ p{
     // box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 
     position: sticky !important;
-    top: -20px; /* Adjust the desired negative offset */
+    top: -80px; /* Adjust the desired negative offset */
     width: 100%;
     z-index: 1030;
-    transition: top 6s;
-    transform: translateY(0px);
+    transition: top 6s ease;
+    // transform: translateY(0px);
     background: #fff !important;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
     
+}
+.stickyit2{
+    animation: ani2 2s;
+}
+@keyframes ani2{
+    0%{
+        top:-60px;
+    }
+    100%{
+        top:0!important;
+    
+    }
+}
+.stickyit{
+    animation: ani 2s;
+}
+@keyframes ani{
+    0%{
+        top:-80px;
+    }
+    100%{
+        top:0!important;
+    
+    }
+}
+.stickyit{
+    animation: ani 2s;
+}
+@keyframes ani{
+    0%{
+        top:-80px;
+    }
+    100%{
+        top:0!important;
+    
+    }
 }
 
 .stickymini{
@@ -340,9 +399,36 @@ p{
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 }
 
-
-
-
+.marquee-container {
+    width: 100%;
+    /* Hide overflow */
+    position: relative; /* Position relative for absolute children */
+  }
+  
+  .marquee {
+    display: flex; /* Flexbox to align items in a row */
+    animation: marquee 25s linear infinite; /* Duration of the animation */
+    gap: 30px; /* Add a 30px gap between each item */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0); /* Move left by 100% of the width */
+    }
+  }
+  
+  .cardwrap {
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  
+  
 // .scrolltop{
 //     position: fixed;
 //     width: 50px;
@@ -1006,9 +1092,7 @@ button{
 }
 
 .upcomingcardwrapper{
-    .collapseablepart{
-        
-    }
+    
     margin-bottom: 30px;
 }
 .upcomingevent{

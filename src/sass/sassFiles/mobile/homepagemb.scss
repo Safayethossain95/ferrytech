@@ -76,6 +76,13 @@
                             h4{
                                 
                                 @include myfont(14px,600,$main_font);
+                                p{
+                                    a{
+                                        @include myfont(14px,600,$main_font);
+                                        color:unset;
+                                        text-decoration: none;
+                                    }
+                                }
                             }
                         }
                     }

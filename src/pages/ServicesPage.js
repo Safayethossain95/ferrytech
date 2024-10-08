@@ -16,17 +16,18 @@ const ServicesPage = () => {
   }, [])
   return (
     <>
-        <div className="desktop">
-            <MyNavbarDesk/>
-            <ServiceMainComp myprops={servicesmainAPI} />
-            <ReqAquoteComp/>
-            <FooterComp/>
-        </div>
+       
         <div className="mobile">
             <MyNavbarMb/>
             <ServiceMainComp version="mobile" myprops={servicesmainAPI} />
             <ReqAquoteComp version="mobile"/>
             <FooterComp version="mobile"/>
+        </div>
+        <div className="desktop">
+            <MyNavbarDesk/>
+            <ServiceMainComp myprops={servicesmainAPI} />
+            <ReqAquoteComp/>
+            <FooterComp/>
         </div>
     </>
   )

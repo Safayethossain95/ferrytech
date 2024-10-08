@@ -1,9 +1,8 @@
+/* eslint-disable eqeqeq */
 import React,{useEffect,useState} from 'react'
 import { Navbar,Nav,Accordion } from 'react-bootstrap';
 import { NavLink,Link } from 'react-router-dom';
-import { BsChevronDown } from 'react-icons/bs';
 import  { navbarApidata } from '../../utils/navbarApi';
-import { navbarApi } from '../../utils/homepageApi';
 import { useNavigate } from 'react-router-dom';
 const MyNavbarMb = () => {
 
@@ -44,13 +43,21 @@ const MyNavbarMb = () => {
         function myFunction() {
          
           if(window.pageYOffset > 65){
-            navbar2.classList.add("sticky");
+            navbar2.classList.add("stickymb");
+            navbar2.classList.add("stickyit2");
           }else{
-            navbar2.classList.remove("sticky");
+            navbar2.classList.remove("stickymb");
+            navbar2.classList.remove("stickyit2");
           }
          
         }
-        window.onscroll = function() {myFunction()};
+        window.addEventListener("scroll", myFunction);
+
+        // Clean up the event listener on component unmount
+        return () => {
+          window.removeEventListener("scroll", myFunction);
+        };
+        // window.onscroll = function() {myFunction()};
       },[])
      
   return (
@@ -123,19 +130,32 @@ const MyNavbarMb = () => {
       <div className="contactpart ">
         <div className="mbContainer">
 
-          <div className="mail">
+        <div className="mail">
+            <a href="mailto:info@ferrytech.net">
               <img src="./assets/images/icon/talk.png" alt="" />
-              <div className="wrap">
-                  <p>call us now</p>
-                  <h4>+088 123 456 789</h4>
-              </div>
+            </a>
+
+            <div className="wrap">
+              <p>talk to us</p>
+              <h4><p>
+                          <a href="mailto:info@ferrytech.net">
+                            info@ferrytech.net
+                          </a>
+                        </p></h4>
+            </div>
           </div>
           <div className="phone">
+            <a style={{cursor:"pointer"}} href="tel:+8802333312349">
               <img src="./assets/images/icon/phone.png" alt="" />
-              <div className="wrap">
-                  <p>call us now</p>
-                  <h4>+088 123 456 789</h4>
-              </div>
+            </a>
+            <div className="wrap">
+            <a style={{cursor:"pointer",textDecoration:"none",color:"unset"}} href="tel:+8802333312349">
+
+              <p>call us now</p>
+              <h4>+8802333312349</h4>
+            </a>
+            
+            </div>
           </div>
           <div className="downloadbutton">
               <button>Download Brochures <img src="./assets/images/icon/arrsm.png" alt="" /></button>

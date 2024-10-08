@@ -3,8 +3,7 @@ import ScrollToTop from './helpers/ScrollToTop';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link,
+  Route
 } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import AboutUsPage from './pages/AboutUsPage';

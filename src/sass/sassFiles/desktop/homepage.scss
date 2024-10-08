@@ -46,6 +46,7 @@
                         height: 35px;
                     }
                     .wrap{
+                        
                         @include media(lgDevice){
                             display: none;
                         }
@@ -59,6 +60,13 @@
                         h4{
                             
                             @include myfont(14px,600,$main_font);
+                            p{
+                                a{
+                                    @include myfont(14px,600,$main_font);
+                                    color:unset;
+                                    text-decoration: none;
+                                }
+                            }
                         }
                     }
                 }
@@ -271,7 +279,7 @@
                  height: 150px;
                  position:relative;
                  background-color: red;
-                 overflow: hidden;
+                 
                  margin-bottom: 20px;
                  
                  img{
@@ -279,19 +287,37 @@
                      height: 100%;
                      transition:0.4s ease-in-out;
                  }
-                 &:hover{
-                     img{
-                         transform: scale(1.06);
-                     }
+                //  &:hover{
+                //      img{
+                //          transform: scale(1.06);
+                //      }
+                //  }
+                &:hover {
+                    .overlay2{
+                        top:10px;
+                     left:-10px;
+                    }
+                }
+                 .overlay2{
+                    position:absolute;
+                    transition:0.4s ease-in-out;
+                     top:0px;
+                     left:0px;
+                     width:100%;
+                     height:100%;
+                     background: rgba(0, 93, 186, 1);
+                     z-index: -1;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
                  }
-                 
                  .overlay{
                      position:absolute;
                      top:0;
                      left:0;
                      width:100%;
                      height:100%;
-                     background: linear-gradient(0deg, rgba(0, 93, 186, 0.5), rgba(0, 93, 186, 0.5));
+                     background: linear-gradient(0deg, rgba(0, 93, 186, 0.3), rgba(0, 93, 186, 0.3));
                      z-index: 888;
                      display: flex;
                      align-items: center;
@@ -322,6 +348,58 @@
             justify-content: space-between;
             flex-wrap: wrap;
             .brandcard{
+                position:relative;
+                .overlay3{
+                    position:absolute;
+                    transition:0.4s ease-in-out;
+                     top:0px;
+                     left:0px;
+                     width:100%;
+                     height:100%;
+                     background: rgba(0, 93, 186, 1);
+                     z-index: -1;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     border-radius: 10px;
+                 }
+                .overlay5{
+                    border-radius: 10px;
+                    position:absolute;
+                    transition:0.4s ease-in-out;
+                     top:0px;
+                     left:0px;
+                     width:100%;
+                     height:100%;
+                     background: rgba(0, 93, 186, 1);
+                     z-index: -1;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                 }
+                 &:hover{
+                    .overlay3{
+                        top:10px;
+                        left:-10px;
+                    }
+                    .overlay5{
+                        top:-10px;
+                        left:10px;
+                    }
+                 }
+                .overlay4{
+                    position:absolute;
+                    transition:0.4s ease-in-out;
+                     top:0px;
+                     left:0px;
+                     width:100%;
+                     height:100%;
+                     background: rgb(255, 255, 255);
+                     z-index: -1;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                 }
                 margin-bottom: 20px;
                 width: 357px;
                 height: 200px;
@@ -329,11 +407,13 @@
                 align-items: center;
                 justify-content: center;
                 transition:0.4s ease-in-out;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
                 img{
                     transition:0.4s ease-in-out;
                 }
                 &:hover{
-                    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
+                    
                     img{
                         transform: scale(1.06);
                     }

@@ -40,6 +40,7 @@ const IndustriesComp = (props) => {
                         whileInView={{ opacity: 1,y:-5 , transition: { delay: 0.5 }}} viewport={{ once: true }}
                         transition={{ duration:0.5, delay:key * 0.2,ease: 'easeInOut' }}
                          className="indcard">
+                          <div className="overlay2"></div>
                             <div className="overlay">
                                 <h4>{item.heading}</h4>
                             </div>

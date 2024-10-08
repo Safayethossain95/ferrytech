@@ -49,6 +49,7 @@
                 }
                 .lowerpart{
                     .contentdown{
+                        padding:0 20px;
                         p{
                             a{
                                 @include myfont(16px,400,$main_font);
@@ -95,6 +96,7 @@
                 }
                 .lowerpart{
                     .contentdown{
+                        padding:0 20px;
                         p{
                             a{
                                 @include myfont(16px,400,$main_font);

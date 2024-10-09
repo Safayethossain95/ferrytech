@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React,{useState,useEffect} from 'react'
 import { aboutusbannerApi } from '../../../../utils/aboutUsApi'
 import {motion} from "framer-motion"
@@ -27,7 +28,7 @@ const AboutBannerComp = (props) => {
         <div className="aboutbannercomp">
             <div className="aboutbanner">
                 <div className="overlay">
-                <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
+                <div className={props.version=="mobile"?"mbaboutcontainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
                      <Row>
                         <Col lg={6} className="coltwenty rowgaptwenty">
                             <motion.div className="div" initial={{ opacity: 0, y:0 }}

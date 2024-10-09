@@ -35,66 +35,7 @@ const navbarApidata = [
       "effectiveFrom": null,
       "effectiveTo": null,
       "childNavbarVm": [
-        {
-          "menuId": 3,
-          "menuName": "Sub Section",
-          "url": "/product",
-          "sequence": 0,
-          "parentMenuId": 2,
-          "status": false,
-          "isActive": "",
-          "effectiveFrom": null,
-          "effectiveTo": null,
-          "childNavbarVm": []
-        },
-        {
-          "menuId": 4,
-          "menuName": "Sub Section",
-          "url": "/product",
-          "sequence": 0,
-          "parentMenuId": 2,
-          "status": false,
-          "isActive": "",
-          "effectiveFrom": null,
-          "effectiveTo": null,
-          "childNavbarVm": []
-        },
-        {
-          "menuId": 6,
-          "menuName": "Sub Section",
-          "url": "/product",
-          "sequence": 0,
-          "parentMenuId": 2,
-          "status": false,
-          "isActive": "",
-          "effectiveFrom": null,
-          "effectiveTo": null,
-          "childNavbarVm": []
-        },
-        {
-          "menuId": 7,
-          "menuName": "Sub Section",
-          "url": "/product",
-          "sequence": 0,
-          "parentMenuId": 2,
-          "status": false,
-          "isActive": "",
-          "effectiveFrom": null,
-          "effectiveTo": null,
-          "childNavbarVm": []
-        },
-        {
-          "menuId": 8,
-          "menuName": "Sub Section",
-          "url": "/product",
-          "sequence": 0,
-          "parentMenuId": 2,
-          "status": false,
-          "isActive": "",
-          "effectiveFrom": null,
-          "effectiveTo": null,
-          "childNavbarVm": []
-        }
+       
       ]
     },
     {
@@ -108,30 +49,30 @@ const navbarApidata = [
       "effectiveFrom": null,
       "effectiveTo": null,
       "childNavbarVm": [
-        {
-            "menuId": 13,
-            "menuName": "Sub Section",
-            "url": "/services",
-            "sequence": 0,
-            "parentMenuId": 2,
-            "status": false,
-            "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
-            "childNavbarVm": []
-          },
-          {
-            "menuId": 14,
-            "menuName": "Sub Section",
-            "url": "/karatecourse",
-            "sequence": 0,
-            "parentMenuId": 2,
-            "status": false,
-            "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
-            "childNavbarVm": []
-          }
+        // {
+        //     "menuId": 13,
+        //     "menuName": "Sub Section",
+        //     "url": "/services",
+        //     "sequence": 0,
+        //     "parentMenuId": 2,
+        //     "status": false,
+        //     "isActive": "",
+        //     "effectiveFrom": null,
+        //     "effectiveTo": null,
+        //     "childNavbarVm": []
+        //   },
+        //   {
+        //     "menuId": 14,
+        //     "menuName": "Sub Section",
+        //     "url": "/karatecourse",
+        //     "sequence": 0,
+        //     "parentMenuId": 2,
+        //     "status": false,
+        //     "isActive": "",
+        //     "effectiveFrom": null,
+        //     "effectiveTo": null,
+        //     "childNavbarVm": []
+        //   }
       ]
     },
     {

@@ -36,10 +36,7 @@ const bannerApi={
         },
         {
             imgurl:"./assets/images/Mobile/Banner/img2.png"
-        },
-        {
-            imgurl:"./assets/images/Mobile/Banner/img3.png"
-        },
+        }
     ]
 }
 

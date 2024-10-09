@@ -25,7 +25,7 @@ const ServicesPage = () => {
         </div>
         <div className="desktop">
             <MyNavbarDesk/>
-            <ServiceMainComp myprops={servicesmainAPI} />
+            <ServiceMainComp version="desktop" myprops={servicesmainAPI} />
             <ReqAquoteComp/>
             <FooterComp/>
         </div>

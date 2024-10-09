@@ -81,6 +81,7 @@ const IntroComp = (props) => {
               data-aos-duration="1000"
             >
               <div className="introimgsdiv">
+                <div className="overlay1">
                 <div className="wrap">
                   <motion.div
                     className="imgdiv"
@@ -100,11 +101,17 @@ const IntroComp = (props) => {
                   </motion.div>
                   <h5>Supply</h5>
                 </div>
+
+                </div>
+                <div className="overlay3"></div>
+                <div className="overlay5"></div>
               </div>
               <div className="arrowright">
                 <img src={props.imgurl} alt="" />
               </div>
               <div className="introimgsdiv">
+                <div className="overlay1">
+
                 <div className="wrap">
                   <motion.div
                     className="imgdiv"
@@ -123,11 +130,16 @@ const IntroComp = (props) => {
                   </motion.div>
                   <h5>installation</h5>
                 </div>
+                </div>
+                <div className="overlay3"></div>
+                <div className="overlay5"></div>
               </div>
               <div className="arrowright">
                 <img src={props.imgurl} alt="" />
               </div>
               <div className="introimgsdiv">
+                <div className="overlay1">
+
                 <div className="wrap">
                   <motion.div
                     className="imgdiv"
@@ -135,8 +147,8 @@ const IntroComp = (props) => {
                     animate={{ rotate: 10 }} // Final position
                     transition={{
                       repeat: Infinity,
-                      duration: 4, 
-                      repeatType: "mirror",// Duration of each animation
+                      duration: 4,
+                      repeatType: "mirror", // Duration of each animation
                       // Delay between each repetition
                       ease: "linear", // Easing function
                     }}
@@ -148,6 +160,9 @@ const IntroComp = (props) => {
                   </motion.div>
                   <h5>maintenance</h5>
                 </div>
+                </div>
+                <div className="overlay3"></div>
+                <div className="overlay5"></div>
               </div>
             </div>
           </div>
@@ -159,6 +174,8 @@ const IntroComp = (props) => {
               data-aos-duration="1000"
             >
               <div className="introimgsdiv">
+                <div className="overlay1">
+
                 <div className="wrap">
                   <motion.div
                     className="imgdiv"
@@ -177,6 +194,9 @@ const IntroComp = (props) => {
                   </motion.div>
                   <h5>Supply</h5>
                 </div>
+                </div>
+                <div className="overlay3"></div>
+                <div className="overlay5"></div>
               </div>
               <div className="arrowright">
                 <img src={props.imgurl} alt="" />

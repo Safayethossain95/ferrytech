@@ -21,7 +21,7 @@ const AboutUsPage = () => {
     <>
         <div className="mobile">
         <MyNavbarMb/>
-        <AboutBannerCompmb/>
+        <AboutBannerCompmb version="mobile"/>
         <AboutFerrytechComp version="mobile"/>
         <WhyFerrytechComp version="mobile"/>
         <FAQComp version="mobile"/>

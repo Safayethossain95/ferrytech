@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React,{useState,useEffect} from 'react'
 import {Row,Col} from 'react-bootstrap'
 import {motion} from 'framer-motion'
@@ -45,7 +46,21 @@ const ServiceMainComp = (props) => {
                                         ease: 'linear'         
                                     }}>
                                     <h5>{item.subheading}</h5>
-                                    <h3>{item.heading}</h3>
+                                    {
+                                        item.heading!=="" ?
+
+                                        <h3>{item.heading}</h3>
+                                        :
+                                        <ul>
+                                        {item.mylist.map((my,key4)=>{
+                                            return(
+                                                <>
+                                                <li>{my}</li>
+                                                </>
+                                            )
+                                        })}
+                                                </ul>
+                                    }
                                 </motion.div>
                             </Col>
                         </Row>

@@ -8,7 +8,7 @@ const AboutBannerCompmb = () => {
         <div className="aboutbannercompmb">
         <div className="aboutbanner">
                 <div className="overlay">
-                <div className="mbContainer">
+                <div className="mbaboutcontainer">
 
                      <Row className="columnheightab">
                         <Col xs={6} className="lcommoncol cbten prten">

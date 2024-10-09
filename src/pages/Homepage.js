@@ -22,7 +22,7 @@ import { bannerApi } from '../utils/homepageApi';
 
 const Homepage = () => {
   useEffect(() => {
-    AOS.init({once:true});
+    AOS.init({once:false});
     
   }, [])
 
@@ -33,7 +33,7 @@ const Homepage = () => {
     <>
     <div className="mobile">
         <MyNavbarMb/>
-        <Banner bannerapi={bannerApi.mobile} />
+        <Banner version="mobile" bannerapi={bannerApi.mobile} />
         <IntroComp imgurl={imgurlmb} version="mobile"/>
         <IndustriesComp version="mobile"/>
         <ProdLineMbComMp/>

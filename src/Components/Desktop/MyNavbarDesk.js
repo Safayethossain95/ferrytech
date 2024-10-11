@@ -8,19 +8,28 @@ import { navbarApidata } from "../../utils/navbarApi";
 const MyNavbarDesk = () => {
   useEffect(() => {
     const navbar = document.getElementById("mynavbardesk");
-    function myFunction() {
-      if (window.pageYOffset > 200) {
-        navbar.classList.add("sticky");
-        navbar.classList.add("stickyit");
-      } else {
-        navbar.classList.remove("sticky");
-        navbar.classList.remove("stickyit");
-      }
-    }
-    window.onscroll = function () {
-      myFunction();
+
+    const handleScroll = () => {
+        console.log("Scroll position:", window.pageYOffset);
+
+        if (window.pageYOffset > 100) {
+            navbar.classList.add("sticky");
+            navbar.classList.add("stickyit");
+        } else {
+            navbar.classList.remove("sticky");
+            navbar.classList.remove("stickyit");
+        }
     };
-  }, []);
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+}, []); // Empty dependency array ensures this runs only once on mount
+
 
   return (
     <>

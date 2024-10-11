@@ -63,10 +63,11 @@ const IndustriesComp = (props) => {
                     }}
                     viewport={{ once: true }}
                     className="indcard"
+                    style={props.version=="mobile"?{height:"100px"}:{}}
                   >
                     <div className="overlay2"></div>
                     <div className="overlay">
-                      <h4>{item.heading}</h4>
+                      <h4 style={props.version=="mobile"?{fontSize:"15px"}:{}}>{item.heading}</h4>
                     </div>
                     <img src={item.imgurl} alt="" />
                   </motion.div>

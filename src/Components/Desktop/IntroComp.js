@@ -32,14 +32,14 @@ const IntroComp = (props) => {
         <div
           className={
             props.version == "mobile"
-              ? "mbContainer"
-              : screenSize.dynamicWidth >= 1200 &&
+              ? "mbContainer":
+              screenSize.dynamicWidth >= 1200 &&
                 screenSize.dynamicWidth <= 1399
               ? "myContainerMinimini"
               : screenSize.dynamicWidth >= 992 &&
                 screenSize.dynamicWidth <= 1199
               ? "myContainer896"
-              : "myContainerMini"
+              : "myContainerMinimini" 
           }
         >
           <div
@@ -173,18 +173,21 @@ const IntroComp = (props) => {
               data-aos="fade-in"
               data-aos-duration="1000"
             >
+              <div className="grid-cols-2">
+
               <div className="introimgsdiv">
                 <div className="overlay1">
 
                 <div className="wrap">
-                  <motion.div
+                <motion.div
                     className="imgdiv"
                     initial={{ x: -10 }} // Initial position
-                    whileInView={{ x: 10 }} // Final position
+                    animate={{ x: 10 }} // Final position
                     transition={{
-                      duration: 4, // Duration of each animation
-                      // Delay between each repetition
-                      ease: "linear", // Easing function
+                      duration: 4,
+                      repeat: Infinity, // Repeat infinitely
+                      repeatType: "mirror", // Smooth reverse back and forth
+                      ease: "linear", // Easing function for constant smooth movement
                     }}
                   >
                     <img
@@ -198,19 +201,19 @@ const IntroComp = (props) => {
                 <div className="overlay3"></div>
                 <div className="overlay5"></div>
               </div>
-              <div className="arrowright">
-                <img src={props.imgurl} alt="" />
-              </div>
+            
               <div className="introimgsdiv">
+                <div className="overlay1">
+
                 <div className="wrap">
-                  <motion.div
+                <motion.div
                     className="imgdiv"
                     initial={{ rotate: 0 }} // Initial rotation angle
-                    whileInView={{ rotate: 360 }} // Final rotation angle
+                    animate={{ rotate: 360 }} // Final rotation angle for each loop
                     transition={{
+                      repeat: Infinity, // Infinite repetition
                       duration: 6, // Duration of each rotation
-                      // Delay between each repetition
-                      ease: "linear", // Easing function
+                      ease: "linear", // Easing function for smooth rotation
                     }}
                   >
                     <img
@@ -220,18 +223,26 @@ const IntroComp = (props) => {
                   </motion.div>
                   <h5>installation</h5>
                 </div>
+                </div>
+                <div className="overlay3"></div>
+                <div className="overlay5">
+
+                </div>
               </div>
-              <div className="arrowright">
-                <img src={props.imgurl} alt="" />
               </div>
+             
               <div className="introimgsdiv">
+                <div className="overlay1">
+
                 <div className="wrap">
-                  <motion.div
+                <motion.div
                     className="imgdiv"
-                    initial={{ rotate: 0 }} // Initial position
-                    whileInView={{ rotate: -10 }} // Final position
+                    initial={{ rotate: -10 }} // Initial position
+                    animate={{ rotate: 10 }} // Final position
                     transition={{
-                      duration: 4, // Duration of each animation
+                      repeat: Infinity,
+                      duration: 4,
+                      repeatType: "mirror", // Duration of each animation
                       // Delay between each repetition
                       ease: "linear", // Easing function
                     }}
@@ -242,6 +253,11 @@ const IntroComp = (props) => {
                     />
                   </motion.div>
                   <h5>maintenance</h5>
+                </div>
+                </div>
+                <div className="overlay3"></div>
+                <div className="overlay5">
+
                 </div>
               </div>
             </div>

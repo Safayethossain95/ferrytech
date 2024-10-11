@@ -47,7 +47,7 @@ const Homepage = () => {
     <div className="desktop">
         
         <MyNavbarDesk/>
-        <Banner bannerapi={bannerApi.desktop}/>
+        <Banner version="desktop" bannerapi={bannerApi.desktop}/>
         <IntroComp imgurl={imgurldesk}/>
         <IndustriesComp/>
         <ProductLineComp/>

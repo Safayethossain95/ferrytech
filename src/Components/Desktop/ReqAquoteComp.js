@@ -268,13 +268,12 @@ const ReqAquoteComp = (props) => {
                 <div className="contactcard">
                   <div className="item">
                     <h4>Contact Number</h4>
-                    <a href="tel:+880 123 456 789">+880 123 456 789</a>
+                    <a href="tel:+8802333312349">+8802333312349</a>
                   </div>
-                  <div className="item">
+                  <div className="item d-flex flex-column">
                     <h4>Email</h4>
-                    <a href="mailto:exampleinfo@gmail.com 789">
-                      exampleinfo@gmail.com
-                    </a>
+                    <a href="mailto:info@ferrytech.net">info@ferrytech.net</a>
+                    <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
                   </div>
                   <div className="item">
                     <h4>Socials</h4>
@@ -307,15 +306,14 @@ const ReqAquoteComp = (props) => {
               </Col>
               <Col lg={5} xs={12} className="mobile">
                 <div className="contactcard">
-                  <div className="item">
+                <div className="item">
                     <h4>Contact Number</h4>
-                    <a href="tel:+880 123 456 789">+880 123 456 789</a>
+                    <a href="tel:+8802333312349">+8802333312349</a>
                   </div>
-                  <div className="item">
+                  <div className="item d-flex flex-column">
                     <h4>Email</h4>
-                    <a href="mailto:exampleinfo@gmail.com 789">
-                      exampleinfo@gmail.com
-                    </a>
+                    <a href="mailto:info@ferrytech.net">info@ferrytech.net</a>
+                    <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
                   </div>
                   <div className="item">
                     <h4>Socials</h4>

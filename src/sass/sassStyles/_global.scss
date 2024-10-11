@@ -14,6 +14,11 @@
 .rowgaptwenty{
     margin-bottom: 20px;
 }
+.grid-cols-2{
+    display: grid;
+grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+gap: 20px;
+}
 
 .headingofsubsectioncomp{
     text-align: center;
@@ -308,16 +313,6 @@ p{
     margin-bottom: 0!important;
 }
 .stickymb {
-    // position: fixed!important;
-    // top: -30px;
-    // width: 100%;
-    // z-index: 1030;
-    // transition: 0.4s;
-    // transform: translateY(30px);
-    // background:#fff!important;    
-    // -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
-    // -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
-    // box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 
     position: sticky !important;
     top: 0px; /* Adjust the desired negative offset */
@@ -332,19 +327,9 @@ p{
     
 }
 .sticky {
-    // position: fixed!important;
-    // top: -30px;
-    // width: 100%;
-    // z-index: 1030;
-    // transition: 0.4s;
-    // transform: translateY(30px);
-    // background:#fff!important;    
-    // -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
-    // -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
-    // box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 
     position: sticky !important;
-    top: -80px; /* Adjust the desired negative offset */
+    top: 0px; /* Adjust the desired negative offset */
     width: 100%;
     z-index: 1030;
     transition: top 6s ease;
@@ -356,41 +341,24 @@ p{
     
 }
 .stickyit2{
-    animation: ani2 2s;
+    animation: ani 2s;
 }
-@keyframes ani2{
+.stickyit{
+    animation: ani 2s;
+}
+@keyframes ani{
     0%{
         top:-60px;
     }
     100%{
-        top:0!important;
+        top:0px;
     
     }
 }
-.stickyit{
-    animation: ani 2s;
-}
-@keyframes ani{
-    0%{
-        top:-80px;
-    }
-    100%{
-        top:0!important;
-    
-    }
-}
-.stickyit{
-    animation: ani 2s;
-}
-@keyframes ani{
-    0%{
-        top:-80px;
-    }
-    100%{
-        top:0!important;
-    
-    }
-}
+
+
+
+
 
 .stickymini{
     position:fixed!important;
@@ -406,9 +374,12 @@ p{
 
 .marquee-container {
     width: 100%;
-    /* Hide overflow */
-    position: relative; /* Position relative for absolute children */
-  }
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: visible; /* Allow vertical content to overflow */
+    white-space: nowrap; /* Ensure that content inside the container doesn't wrap (for the marquee effect) */
+    position: relative;
+    padding:20px 0; /* Allows absolute positioning for children, if needed */
+}
   
   .marquee {
     display: flex; /* Flexbox to align items in a row */

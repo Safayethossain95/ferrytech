@@ -599,28 +599,30 @@
                         right:-85px;
                     }
                 }
-                .slider_item{
-                    height: 384px;
-                    width: 100%;
-                    background-color: #fff;
-                    text-align: center;
-                    padding:0 90px;
-                    p{
-                        @include myfont(25px,400,$main_font);
-                        font-style: italic;
-                        line-height: 35px;
-                        padding-top: 100px;
-                    }
-                    h4{
-                        @include myfont(25px,700,$main_font);
-                        color:#005DBA;
-                        line-height: 20px;
-                        margin-top: 30px;
+               
+                    .slider_item{
+                        height: 384px;
+                        width: 100%;
+                        background-color: #fff;
+                        text-align: center;
+                        padding:0 90px;
+                        p{
+                            @include myfont(25px,400,$main_font);
+                            font-style: italic;
+                            line-height: 35px;
+                            padding-top: 10%;
+                        }
+                        h4{
+                            @include myfont(25px,700,$main_font);
+                            color:#005DBA;
+                            line-height: 20px;
+                            margin-top: 30px;
+                        }
                     }
                 }
             }
 
-        }
+        
     }
 
     .reqaquote{

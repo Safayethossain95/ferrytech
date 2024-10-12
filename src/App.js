@@ -10,6 +10,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import ProductPage from './pages/ProductPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product" element={<ProductPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
       </BrowserRouter>
       

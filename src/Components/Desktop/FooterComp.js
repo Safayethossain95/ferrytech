@@ -62,7 +62,7 @@ const FooterComp = (props) => {
             <div className="item">
                 <div className="wrap">
                     <h5>Legal</h5>
-                    <Link to="/">Privacy Policy</Link> <br/>
+                    <Link to="/privacy-policy">Privacy Policy</Link> <br/>
                     <Link to="/">Cookies Information</Link> <br/>
                     <Link to="/">Terms and Conditions</Link>
                 </div>
@@ -107,7 +107,7 @@ const FooterComp = (props) => {
                 <div className="item">
                 <div className="wrap">
                     <h5>Legal</h5>
-                    <Link to="/">Privacy Policy</Link> <br/>
+                    <Link to="/privacy-policy">Privacy Policy</Link> <br/>
                     <Link to="/">Cookies Information</Link> <br/>
                     <Link to="/">Terms and Conditions</Link>
                 </div>

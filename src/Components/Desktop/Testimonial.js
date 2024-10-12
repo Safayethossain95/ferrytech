@@ -93,15 +93,11 @@ const Testimonial = (props) => {
 
   return (
     <>
-      <div
-        className="testimonial"
-        
-      >
-        <div className="overlay" 
-        data-aos-anchor-placement="center-center">
+      <div className="testimonial">
+        <div className="overlay" data-aos-anchor-placement="center-center">
           <SubHeading
             version={props.version == "mobile" ? "mobile" : ""}
-            subheading="Happy Customer"
+            subheading="Happy Customers"
           />
 
           <div
@@ -135,42 +131,32 @@ const Testimonial = (props) => {
                   <div className="div">
                     <div className="slider_item">
                       <p>
-                        "We l have been using Mantsinen machines for several
-                        years now, and we couldn't be happier with their
-                        reliability and efficiency. Their after-sales service is
-                        also exceptional, with prompt and efficient support
-                        whenever we need it. I highly recommend Mantsinen
-                        machines to anyone in the industry."
+                        "We've had the pleasure of working with Ferrytech for
+                        several years, and their commitment to excellence has
+                        been outstanding. The equipment they provide is
+                        top-tier, with exceptional performance and reliability
+                        that have greatly enhanced our operations. "
                       </p>
-                      <h4> - John Smith, Operations Manager at ABC Company.</h4>
+                      <h4> - Lachlan Mitchell, Operations Manager at Aussie Built Contractors.</h4>
                     </div>
                   </div>
                   <div className="div">
                     <div className="slider_item">
                       <p>
-                        "We have been using Mantsinen machines for several years
-                        now, and we couldn't be happier with their reliability
-                        and efficiency. Their after-sales service is also
-                        exceptional, with prompt and efficient support whenever
-                        we need it. I highly recommend Mantsinen machines to
-                        anyone in the industry."
+                        "Mantsinen machines are great to work with—they're
+                        reliable and efficient, making our operations run
+                        smoothly. The machines provided by Ferrytech are also
+                        outstanding, offering top-notch quality and performance.
+                        We couldn't be more satisfied with both Mantsinen and
+                        Ferrytech for their excellent products and service."
                       </p>
-                      <h4> - John Smith, Operations Manager at ABC Company.</h4>
+                      <h4>
+                        {" "}
+                        - Thomas Madison, CEO at Southern Cross Builders.
+                      </h4>
                     </div>
                   </div>
-                  <div className="div">
-                    <div className="slider_item">
-                      <p>
-                        "We have been using Mantsinen machines for several years
-                        now, and we couldn't be happier with their reliability
-                        and efficiency. Their after-sales service is also
-                        exceptional, with prompt and efficient support whenever
-                        we need it. I highly recommend Mantsinen machines to
-                        anyone in the industry."
-                      </p>
-                      <h4> - John Smith, Operations Manager at ABC Company.</h4>
-                    </div>
-                  </div>
+                  
                 </Slider>
               </div>
               {/* beforeChange={beforeChangehandler}  */}
@@ -181,29 +167,28 @@ const Testimonial = (props) => {
                 {...settings}
               >
                 <div className="div">
-                  <div className="slider_item">
-                    <p>
-                      "We have been using Mantsinen machines for several years
-                      now, and we couldn't be happier with their reliability and
-                      efficiency. Their after-sales service is also exceptional,
-                      with prompt and efficient support whenever we need it. I
-                      highly recommend Mantsinen machines to anyone in the
-                      industry."
-                    </p>
-                    <h4> - John Smith, Operations Manager at ABC Company.</h4>
-                  </div>
+                <div className="slider_item">
+                      <p>
+                        "We've had the pleasure of working with Ferrytech for
+                        several years, and their commitment to excellence has
+                        been outstanding. The equipment they provide is
+                        top-tier, with exceptional performance and reliability
+                        that have greatly enhanced our operations. "
+                      </p>
+                      <h4> - Lachlan Mitchell, Operations Manager at Aussie Built Contractors.</h4>
+                    </div>
                 </div>
                 <div className="div">
                   <div className="slider_item">
                     <p>
-                      "We 2 have been using Mantsinen machines for several years
-                      now, and we couldn't be happier with their reliability and
-                      efficiency. Their after-sales service is also exceptional,
-                      with prompt and efficient support whenever we need it. I
-                      highly recommend Mantsinen machines to anyone in the
-                      industry."
+                      "Mantsinen machines are great to work with—they're
+                      reliable and efficient, making our operations run
+                      smoothly. The machines provided by Ferrytech are also
+                      outstanding, offering top-notch quality and performance.
+                      We couldn't be more satisfied with both Mantsinen and
+                      Ferrytech for their excellent products and service."
                     </p>
-                    <h4> - John Smith, Operations Manager at ABC Company.</h4>
+                    <h4> - Thomas Madison, CEO at Southern Cross Builders.</h4>
                   </div>
                 </div>
               </Slider>

@@ -50,7 +50,7 @@ const Banner = (props) => {
 
                 className="inneritem"
                 initial={{ scale: 1 }} // Initial state
-                animate={{ scale: activeSlide === key ? 1 : 1 }} // Zoom only if it's the active slide
+                animate={{ scale: activeSlide === key ? 1.1 : 1 }} // Zoom only if it's the active slide
                 transition={{
                   duration: 3, // Duration of the zoom effect (2 seconds)
                   ease: "easeInOut", // Easing function

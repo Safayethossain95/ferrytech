@@ -26,55 +26,93 @@
     .aboutbannercompmb{
        
         .aboutbanner{
-            height: 620px;
+            height: 100vh;
             width: 100%;
             position: relative;
             .img {
-                height: 100%;
-                img{
-                    height: 100%;
+                height: 100vh;
+                position:relative;
+                .overlay {
+                    position: absolute;
+                    width: 100%;
+                    height: 80%;
+                    background-color: rgba(110, 111, 111, 0.5);
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    align-items: center;
+                    // padding-top: 140px;
+                    img {
+                      width: 100%;
+                    }
+                    .div {
+                      h3 {
+                          @include media(xsmDevice){
+                              @include myfont(40px!important, 700, $main_font);
+                          }
+                          @include media(smDevice){
+                              @include myfont(40px!important, 700, $main_font);
+                          }
+                        @include myfont(80px, 700, $main_font);
+                        color: #fff;
+                        text-transform: uppercase;
+                        margin-bottom: 30px;
+                      }
+                      p {
+                        @include myfont(20px, 400, $main_font);
+                        color: #fff;
+                        text-align: justify;
+                      }
+                    }
+                  }
+                img {
+                  height: 100%;
+                  object-fit: cover;
                 }
-            }
-            .overlay{
-                padding-top: 80px;
-                position:absolute;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 93, 186, 0.5);
-                top:0;
-                left:0;
-                img{
-                    width:100%;
-                }
-                .columnheightab{
-                    .lcommoncol{
-                        img{
-                            height: 163px;
+                .overlay2 {
+                    height: auto;
+                   
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 99;
+                    background: rgba(51, 119, 207, 1);
+                    .div{
+                        text-align: center;
+                        margin: 20px 0;
+                        h3{
+                            @include myfont(50px, 700, $main_font);
+                            color: #fff;
+                            text-transform: uppercase;
+                            margin-bottom: 0px;
+                            @include media(xsmDevice){
+                                @include myfont(40px, 700, $main_font);
+                            }
+                           
+                        }
+                        p{
+                            @include myfont(20px, 400, $main_font);
+                            color: #fff;
+                            @include media(xsmDevice){
+                                @include myfont(20px, 700, $main_font);
+                            }
+                           
                             
                         }
                     }
-                    .rcommoncol{
-                        img{
-                            height: 250px;
-                            
-                        }
+                    .coldiv {
+                      height: 100%;
                     }
-                    
-                }
-                .cbten{
-                    img{
-                        margin-bottom: 10px;
+                    .mbaboutcontainer,
+                    .myContainerMinimini,
+                    .myContainer896,
+                    .myContainerMini {
+                      height: 100%;
                     }
-                }
-                .prten{
-                    padding-right: 10px;
-                }
-                .plzero{
-                    padding-left: 0;
-                }
-               
-               
-            }
+                  }
+              }
+           
         }
     }
 
@@ -85,11 +123,77 @@
                 @include myfont(25px,700,$main_font);
             }
         }
-        .para{
-            p{
-                @include myfont(14px,600,$main_font);
+        .para {
+      
+            margin-top: 18px;
+            .leftside{
+              .listitems{
+                  ul{
+                      padding-left: 0;
+                      list-style-type: none;
+                      li{
+                          svg{
+                              margin-right: 10px;
+                          }
+                          @include myfont(16px, 500, $main_font);
+                          color:#000;
+                          line-height: 30px;
+                          @include media(xsmDevice){
+                            line-height: 20px;
+      
+                        }
+                        @include media(smDevice){
+                           line-height: 20px;
+      
+                        }
+                          
+                      }
+                  }
+              }
+              h6{
+                  @include myfont(14px, 700, $main_font);
+                  color:#005DBA;
+                  letter-spacing: 2px; 
+                  
+              }
+              h2{
+                  @include myfont(3.1rem, 700, $main_font);
+                  color:#000;
+                  @include media(xsmDevice){
+                      @include myfont(1.6rem, 700, $main_font);
+
+                  }
+                  @include media(smDevice){
+                      @include myfont(2.1rem, 700, $main_font);
+
+                  }
+                  span{
+                      color:#005DBA;
+                  }
+              }
+              p{
+                  text-align: left;
+                  text-align: justify;
+                  @include myfont(1rem, 400, $main_font);
+                  padding-top: 30px;
+                  line-height: 22px;
+                  margin-bottom: 0;
+                  @include media(xsmDevice){
+                    line-height: 20px;
+
+                }
+                @include media(smDevice){
+                   line-height: 20px;
+
+                }
+              }
             }
-        }
+            p {
+              @include myfont(18px, 500, $main_font);
+              color: #231f20;
+              line-height: 20px;
+            }
+          }
     }
 
     .faqcomp{

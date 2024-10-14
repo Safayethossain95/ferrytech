@@ -12,6 +12,7 @@ import FAQComp from '../Components/Desktop/Pages/AboutUs/FAQComp'
 import AboutBannerCompmb from '../Components/Mobile/AboutUsPage/AboutBannerCompmb'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQuote'
 const AboutUsPage = () => {
   useEffect(() => {
     AOS.init({once:true});
@@ -22,6 +23,7 @@ const AboutUsPage = () => {
         <div className="mobile">
         <MyNavbarMb/>
         <AboutBannerCompmb version="mobile"/>
+        
         <AboutFerrytechComp version="mobile"/>
         <WhyFerrytechComp version="mobile"/>
         <FAQComp version="mobile"/>
@@ -33,6 +35,7 @@ const AboutUsPage = () => {
         <MyNavbarDesk/>
         <AboutBannerComp/>
         <AboutFerrytechComp/>
+        <ConstructionQuote/>
         <WhyFerrytechComp/>
         <FAQComp/>
         <ReqAquoteComp/>

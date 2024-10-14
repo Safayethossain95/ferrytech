@@ -49,18 +49,12 @@ const IndustriesComp = (props) => {
               return (
                 <Col xs={6} lg={6} key={key}>
                   <motion.div
-                    initial={{ scale: 0.9, opacity: 0.5 }}
+                    initial={{ y:5  }}
                     whileInView={{
-                      scale: 1.01, // Scale up to 1.06
-                      opacity: 1,
+                      y:0,
                       transition: { delay: key * 0.2, duration: 0.5 },
                     }}
-                    onAnimationComplete={(definition) => {
-                      // Reset the scale back to 1 after zooming in
-                      if (definition.scale === 1.02) {
-                        definition.scale = 1; // Reset scale to 1
-                      }
-                    }}
+                    
                     viewport={{ once: true }}
                     className="indcard"
                     style={props.version=="mobile"?{height:"100px"}:{}}

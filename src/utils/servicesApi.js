@@ -33,4 +33,12 @@ export const servicesmainAPI = [
         mylist:["Designing and redesigning of the equipment","Control system design and installations","PLC Programming"],
         list:false
     },
+    {
+        img:"./assets/images/ServicePage/5.png",
+        subheading:"Spare Parts Supply",
+        heading:"",
+        flip:false,
+        mylist:["We are able to supply Genuine, OEM and Replacement partst","Manufacturing and sourcing of spare parts","Re-engineering and re-designing of spares","Subassembly of components and assembling of mechanical parts"],
+        list:false
+    },
 ]

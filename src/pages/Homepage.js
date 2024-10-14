@@ -22,7 +22,7 @@ import { bannerApi } from '../utils/homepageApi';
 
 const Homepage = () => {
   useEffect(() => {
-    AOS.init({once:false});
+    AOS.init({});
     
   }, [])
 
@@ -40,7 +40,7 @@ const Homepage = () => {
         <PartnerBrandsComp version="mobile"/>
         <WhyFerrytechComp version="mobile"/>
         <Testimonial version="mobile"/>
-        <ReqAquoteComp version="mobile"/>
+        <ReqAquoteComp version="mobile"/>        
         <FooterComp version="mobile"/>
     </div>
     
@@ -54,7 +54,7 @@ const Homepage = () => {
         <PartnerBrandsComp/>
         <WhyFerrytechComp/>
         <Testimonial/>
-        <ReqAquoteComp/>
+        <ReqAquoteComp/>        
         <FooterComp/>
     </div>
     </>

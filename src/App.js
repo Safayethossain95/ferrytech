@@ -13,7 +13,7 @@ import ProductPage from './pages/ProductPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import CookiesInfoPage from './pages/CookiesInfoPage';
 import TermsnConditionsPage from './pages/TermsnConditionsPage';
-
+import ScrollTop from './Components/Desktop/SubComponents/ScrollTop';
 function App() {
 
   
@@ -22,6 +22,7 @@ function App() {
        <BrowserRouter>
         
           <ScrollToTop/>
+          <ScrollTop/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />

@@ -82,10 +82,19 @@ body{
     transition:0.4s;
     opacity: 0;
     visibility: hidden;
-    background-color: #000;
+    background-color: #005DBA;
     border-radius: 50%;
     text-align: center;
+    @include media(xsmDevice){
+        height: 40px;
+        width:40px;
+        
+    }
     svg{
+        @include media(xsmDevice){
+            width:20px;
+            padding-bottom: 10px;
+        }
         width: 35px;
         color:#fff;
         margin:0 auto;

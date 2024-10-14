@@ -1,4 +1,5 @@
-import React,{useState,useEffect,useRef} from 'react'
+/* eslint-disable eqeqeq */
+import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {Row,Col} from 'react-bootstrap'
 const FooterComp = (props) => {
@@ -40,9 +41,10 @@ const FooterComp = (props) => {
                 <div className="wrap">
                     <h5>Contact</h5>
                     <ul>
-                        <li> <a href="tel:+880 123 456 789">+880 123 456 789</a></li>
-                        <li><a href="mailto:exampleinfo@gmail.com 789">exampleinfo@gmail.com</a></li>
-                        <li> <a target="_blank" href="https://goo.gl/maps/ipSgQkeAQPZSviu47">123  motijhill, dhaka- 1200</a></li>
+                        <li> <a href="tel:+8802333312349">+8802333312349</a></li>
+                        <li><a href="mailto:info@ferrytech.net">info@ferrytech.net</a></li>
+                        <li> <a target="_blank" href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6" rel="noreferrer">House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
+                        Bangladesh.</a></li>
                     </ul>
                    
                     
@@ -60,9 +62,9 @@ const FooterComp = (props) => {
             <div className="item">
                 <div className="wrap">
                     <h5>Legal</h5>
-                    <Link to="/">Privacy Policy</Link> <br/>
-                    <Link to="/">Cookies Information</Link> <br/>
-                    <Link to="/">Terms and Conditions</Link>
+                    <Link to="/privacy-policy">Privacy Policy</Link> <br/>
+                    <Link to="/cookies-information">Cookies Information</Link> <br/>
+                    <Link to="/terms-conditions">Terms and Conditions</Link>
                 </div>
             </div>
             </div>
@@ -79,10 +81,11 @@ const FooterComp = (props) => {
                         <div className="wrap">
                             <h5>Contact</h5>
                             <ul>
-                                <li> <a href="tel:+880 123 456 789">+880 123 456 789</a></li>
-                                <li><a href="mailto:exampleinfo@gmail.com 789">exampleinfo@gmail.com</a></li>
-                                <li> <a target="_blank" href="https://goo.gl/maps/ipSgQkeAQPZSviu47">123  motijhill, dhaka- 1200</a></li>
-                            </ul>
+                        <li> <a href="tel:+8802333312349">+8802333312349</a></li>
+                        <li><a href="mailto:info@ferrytech.net">info@ferrytech.net</a></li>
+                        <li> <a target="_blank" href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6" rel="noreferrer">House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
+                        Bangladesh.</a></li>
+                    </ul>
                         
                             
                         
@@ -104,9 +107,9 @@ const FooterComp = (props) => {
                 <div className="item">
                 <div className="wrap">
                     <h5>Legal</h5>
-                    <Link to="/">Privacy Policy</Link> <br/>
-                    <Link to="/">Cookies Information</Link> <br/>
-                    <Link to="/">Terms and Conditions</Link>
+                    <Link to="/privacy-policy">Privacy Policy</Link> <br/>
+                    <Link to="/cookies-information">Cookies Information</Link> <br/>
+                    <Link to="/terms-conditions">Terms and Conditions</Link>
                 </div>
             </div>
                 </Col>
@@ -115,7 +118,7 @@ const FooterComp = (props) => {
             </div>
         </div>
             <div className="copyright">
-                <p>&copy; This website is copyrighted by BSSIT 2023</p>
+                <p>Website copyright &copy; BSSIT 2023</p>
             </div>
         </div>
     </>

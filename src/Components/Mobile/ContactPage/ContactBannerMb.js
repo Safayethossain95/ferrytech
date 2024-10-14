@@ -1,4 +1,5 @@
-import React,{useEffect,useState} from 'react'
+/* eslint-disable react/jsx-no-target-blank */
+import React from 'react'
 import {Row,Col} from "react-bootstrap"
 import {MdLocationOn} from "react-icons/md"
 import {FaPhone} from 'react-icons/fa'
@@ -30,7 +31,8 @@ const ContactBannerMb = (props) => {
                             </div>
                             <div className="lowerpart">
                             <div className="contentdown">
-                                    <p> <a target="_blank" href="https://goo.gl/maps/A6DVWbZTkcA6qMvp6">123 motijhil, Dhaka- 1200</a> </p>
+                                    <p> <a target="_blank" href="https://goo.gl/maps/A6DVWbZTkcA6qMvp6">House# 79, Flat# 2B, Road# 12/A,
+                                    Dhanmondi, Dhaka, Bangladesh.</a> </p>
                                 </div>
                             </div>
                             </div>
@@ -51,7 +53,7 @@ const ContactBannerMb = (props) => {
                             </div>
                             <div className="lowerpart">
                             <div className="contentdown">
-                                 <p><a href="tel:+880 123 456 789">+880 123 456 789</a></p>
+                            <p><a href="tel:+8802333312349">+8802333312349</a></p>
                               
                                 </div>
                             </div>
@@ -73,7 +75,8 @@ const ContactBannerMb = (props) => {
                             </div>
                             <div className="lowerpart">
                             <div className="contentdown">
-                            <p><a href="mailto:exampleinfo@gmail.com">exampleinfo@gmail.com</a></p>
+                            <p><a href="mailto:info@ferrytech.net">info@ferrytech.net</a></p>
+                            <p><a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a></p>
                                 </div>
                             </div>
                             </div>

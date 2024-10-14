@@ -3,30 +3,34 @@ export const servicesmainAPI = [
     
     {
         img:"./assets/images/ServicePage/1.png",
-        subheading:"Delivery heavy machines for your needs",
-        heading:"Ferrytech can customize their shipping approach to suit the machine's operational site, the accessibility of offloading berths, and the availability of space at the port or terminal. This tailored shipping concept is designed to reduce costs and minimize interruptions to the customer's business.",
+        subheading:"Erection & Commissioning",
+        heading:"",
+        mylist:["Erection sequence, mode of erection, and site designing.","Equipment selection for erection.","Installation and aligning of structural and mechanical components.","Installation of electrical equipment, cable laying, and termination.","Testing of the equipment with power, followed by cold testing.","Commissioning of the drives, followed by equipment programming and setting of PLCs.","Load and performance guarantee testing and handover.","Coordination with electrical equipment supplier and dock safety regulations."],
         flip:false,
         list:false
     },
     {
         img:"./assets/images/ServicePage/2.png",
-        subheading:"Consulting, Configuration and Simulations",
-        heading:"Our configurator tool quickly determines the optimal machine size for specific needs and applications. It can create project-specific load charts and simulate machines based on environmental conditions. The process takes just 15 minutes, and global support is available through Mantsinen's dealer network.",
+        subheading:"Maintenance & Servicing",
+        heading:"",
+        mylist:["Warranty maintenance","Attending Breakdown & Emergency calls","Total maintenance round the clock 24 x 7","AMC Contracts","Scheduled and predictive maintenance"],
         flip:true,
         list:false
     },
     {
         img:"./assets/images/ServicePage/3.png",
-        subheading:"Spare parts & accessories for your machines ",
-        heading:"We offers high-quality spare parts and accessories that are compatible with our machines. Our comprehensive range of accessories, including buckets, grabs, magnets, and rotators, is designed to enhance machine productivity. Contact us for the right spare parts and accessories for your machine.",
+        subheading:"Refurbishment",
+        heading:"",
         flip:false,
+        mylist:["NDT/UT test followed by welding and touch-up painting","Renovation overhauling and revamping of the equipment","Up gradation of the equipments","AMC Contracts","Assessment of the life of the equipment"],
         list:false
     },
     {
         img:"./assets/images/ServicePage/4.png",
-        subheading:"after sales service and 24/7 support",
-        heading:"Ferrytech provides reliable after-sales service and 24/7 support for our machines. Our skilled technicians and engineers are available for technical assistance and maintenance services. With our global network, we ensure fast response times and efficient service delivery. Contact us anytime for dependable after-sales service and support.",
+        subheading:"Automation",
+        heading:"",
         flip:true,
+        mylist:["Designing and redesigning of the equipment","Control system design and installations","PLC Programming"],
         list:false
     },
 ]

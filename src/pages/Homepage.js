@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import Banner from '../Components/Desktop/Banner'
 import '../sass/sassFiles/desktop/homepage.scss'
 import '../sass/sassFiles/mobile/homepagemb.scss'
@@ -21,27 +21,8 @@ import { bannerApi } from '../utils/homepageApi';
 
 
 const Homepage = () => {
-     
-  // useEffect(()=>{
-  
-    
-    // var navbar = document.getElementById("mynavbar");
-    // var navbarmini = document.getElementById("mynavbarmini");
-    
-  //   function myFunction() {
-     
-  //     if(window.pageYOffset > 99){
-  //       navbar.classList.add("sticky");
-  //     }else{
-  //       navbar.classList.remove("sticky");
-  //     }
-  //   }
-  //   window.onscroll = function() {myFunction()};
-    
-   
-  // },[])
   useEffect(() => {
-    AOS.init();
+    AOS.init({once:false});
     
   }, [])
 
@@ -52,7 +33,7 @@ const Homepage = () => {
     <>
     <div className="mobile">
         <MyNavbarMb/>
-        <Banner bannerapi={bannerApi.mobile} />
+        <Banner version="mobile" bannerapi={bannerApi.mobile} />
         <IntroComp imgurl={imgurlmb} version="mobile"/>
         <IndustriesComp version="mobile"/>
         <ProdLineMbComMp/>
@@ -66,7 +47,7 @@ const Homepage = () => {
     <div className="desktop">
         
         <MyNavbarDesk/>
-        <Banner bannerapi={bannerApi.desktop}/>
+        <Banner version="desktop" bannerapi={bannerApi.desktop}/>
         <IntroComp imgurl={imgurldesk}/>
         <IndustriesComp/>
         <ProductLineComp/>

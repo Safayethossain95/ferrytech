@@ -18,8 +18,20 @@
             color:#231F20;
             line-height: 30px;
         }
-       .textblock{
-        padding: 0 60px;
-       }
+        .textblock {
+            padding: 0 60px;            
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            ul{
+                li{
+                    @include myfont(18px,600,$main_font);
+            color:#231F20;
+            line-height: 30px;
+                }
+            }
+        }
     }
 }

@@ -31,7 +31,7 @@ const FAQComp = (props) => {
             {
                 faqApi.map((item,key)=>{
                     return(
-                        <Accordion className='myaccordion' defaultActiveKey="2" key={key}>
+                        <Accordion data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000" className='myaccordion' defaultActiveKey="2" key={key}>
                         <Accordion.Item eventKey={item.id}>
                             <Accordion.Header>
                                 <div className="myacchead">

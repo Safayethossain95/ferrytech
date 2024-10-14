@@ -14,6 +14,11 @@
 .rowgaptwenty{
     margin-bottom: 20px;
 }
+.grid-cols-2{
+    display: grid;
+grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+gap: 20px;
+}
 
 .headingofsubsectioncomp{
     text-align: center;
@@ -270,6 +275,11 @@ body{
     width:calc(100% - 36px);
     margin:0 auto;
 }
+.mbaboutcontainer{
+   max-width: 588px;
+    margin:0 auto;
+    padding:0 25px;
+}
 .myContainer{
     width:80%;
     margin:0 auto;
@@ -302,19 +312,54 @@ body{
 p{
     margin-bottom: 0!important;
 }
+.stickymb {
 
-.sticky {
-    position: fixed!important;
-    top: -30px;
+    position: sticky !important;
+    top: 0px; /* Adjust the desired negative offset */
     width: 100%;
     z-index: 1030;
-    transition: 0.4s;
-    transform: translateY(30px);
-    background:#fff!important;    
-    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
-    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    transition: top 6s ease;
+    // transform: translateY(0px);
+    background: #fff !important;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    
 }
+.sticky {
+
+    position: sticky !important;
+    top: 0px; /* Adjust the desired negative offset */
+    width: 100%;
+    z-index: 1030;
+    transition: top 6s ease;
+    // transform: translateY(0px);
+    background: #fff !important;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    
+}
+.stickyit2{
+    animation: ani 2s;
+}
+.stickyit{
+    animation: ani 2s;
+}
+@keyframes ani{
+    0%{
+        top:-60px;
+    }
+    100%{
+        top:0px;
+    
+    }
+}
+
+
+
+
+
 .stickymini{
     position:fixed!important;
     transform: translateY(15px);
@@ -327,9 +372,39 @@ p{
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
 }
 
-
-
-
+.marquee-container {
+    width: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: visible; /* Allow vertical content to overflow */
+    white-space: nowrap; /* Ensure that content inside the container doesn't wrap (for the marquee effect) */
+    position: relative;
+    padding:20px 0; /* Allows absolute positioning for children, if needed */
+}
+  
+  .marquee {
+    display: flex; /* Flexbox to align items in a row */
+    animation: marquee 25s linear infinite; /* Duration of the animation */
+    gap: 30px; /* Add a 30px gap between each item */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0); /* Move left by 100% of the width */
+    }
+  }
+  
+  .cardwrap {
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  
+  
 // .scrolltop{
 //     position: fixed;
 //     width: 50px;
@@ -993,9 +1068,7 @@ button{
 }
 
 .upcomingcardwrapper{
-    .collapseablepart{
-        
-    }
+    
     margin-bottom: 30px;
 }
 .upcomingevent{

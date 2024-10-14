@@ -1,56 +1,84 @@
-import React,{useState,useEffect} from 'react'
-import SubHeading from './SubComponents/SubHeading'
-import {Row,Col} from 'react-bootstrap'
-import { indcardApi } from '../../utils/homepageApi';
+/* eslint-disable eqeqeq */
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { indcardApi } from "../../utils/homepageApi";
+import SubHeading from "./SubComponents/SubHeading";
 const IndustriesComp = (props) => {
-    const [screenSize, getDimension] = useState({
-        dynamicWidth: window.innerWidth,
-        dynamicHeight: window.innerHeight
-      });
-      const setDimension = () => {
-        getDimension({
-          dynamicWidth: window.innerWidth,
-          dynamicHeight: window.innerHeight
-        })
-      }
-      
-      useEffect(() => {
-        window.addEventListener('resize', setDimension);
-        
-        return(() => {
-            window.removeEventListener('resize', setDimension);
-            
-        })
-      }, [screenSize])
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight,
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
   return (
     <>
-        <div className="industriescomp">
-        <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
+      <div className="industriescomp">
+        <div
+          className={
+            props.version == "mobile"
+              ? "mbContainer"
+              : screenSize.dynamicWidth >= 1200 &&
+                screenSize.dynamicWidth <= 1399
+              ? "myContainerMinimini"
+              : screenSize.dynamicWidth >= 992 &&
+                screenSize.dynamicWidth <= 1199
+              ? "myContainer896"
+              : "myContainerMini"
+          }
+        >
+          <SubHeading
+            version={props.version == "mobile" ? "mobile" : ""}
+            subheading="Industries we serve"
+          />
 
-            <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Industries we serve"/>
-
-        <Row className='indcardwrap'>
-            {
-                indcardApi.map((item,key)=>{
-                    return(
-                        <Col xs={6} lg={6} key={key}>
-                        <div className="indcard">
-                            <div className="overlay">
-                                <h4>{item.heading}</h4>
-                            </div>
-                            <img src={item.imgurl} alt="" />
-                        </div>
-                    </Col>
-                    )
-                })
-            }
-           
-        </Row>
-
+          <Row className="indcardwrap">
+            {indcardApi.map((item, key) => {
+              return (
+                <Col xs={6} lg={6} key={key}>
+                  <motion.div
+                    initial={{ scale: 0.9, opacity: 0.5 }}
+                    whileInView={{
+                      scale: 1.01, // Scale up to 1.06
+                      opacity: 1,
+                      transition: { delay: key * 0.2, duration: 0.5 },
+                    }}
+                    onAnimationComplete={(definition) => {
+                      // Reset the scale back to 1 after zooming in
+                      if (definition.scale === 1.02) {
+                        definition.scale = 1; // Reset scale to 1
+                      }
+                    }}
+                    viewport={{ once: true }}
+                    className="indcard"
+                    style={props.version=="mobile"?{height:"100px"}:{}}
+                  >
+                    <div className="overlay2"></div>
+                    <div className="overlay">
+                      <h4 style={props.version=="mobile"?{fontSize:"15px"}:{}}>{item.heading}</h4>
+                    </div>
+                    <img src={item.imgurl} alt="" />
+                  </motion.div>
+                </Col>
+              );
+            })}
+          </Row>
         </div>
-        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default IndustriesComp
+export default IndustriesComp;

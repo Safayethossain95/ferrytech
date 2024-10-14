@@ -1,0 +1,78 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/typography";
+@import "../../sassStyles/mixins";
+
+.privacypolicydesk {
+  div {
+    @include myfont(25px, 500, $main_font);
+    color: #231f20;
+    line-height: 30px;
+    margin-bottom: 25px;
+  
+    @include media(xsmDevice) {
+      @include myfont(20px, 500, $main_font);
+    }
+   
+    h1, h2 {
+      @include myfont(28px, 500, $main_font);
+      color: #231f20;
+      margin-bottom: 20px;
+      
+      @include media(xsmDevice) {
+        @include myfont(24px, 500, $main_font);
+      }
+    }
+    h2{
+      font-weight: 600;
+     }
+    p{
+      margin-bottom: 25px!important;
+    }
+    p, ul {
+      @include myfont(25px, 400, $main_font);
+      color: #231f20;
+      line-height: 30px;
+      margin-bottom: 35px;
+      
+      @include media(xsmDevice) {
+        @include myfont(20px, 400, $main_font);
+      }
+    }
+    
+  
+    ul {
+      padding-left: 20px;
+  
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  
+    li {
+      @include myfont(25px, 400, $main_font);
+      color: #231f20;
+      line-height: 30px;
+  
+      @include media(xsmDevice) {
+        @include myfont(20px, 400, $main_font);
+      }
+    }
+  }
+  
+  .textblock {
+    padding: 60px 0px;
+    height: 100%;
+    ul {
+      li {
+        @include myfont(25px, 500, $main_font);
+        color: #231f20;
+        line-height: 30px;
+        margin-bottom: 25px;
+        @include media(xsmDevice){
+            @include myfont(20px, 500, $main_font);
+            
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
+import {motion} from "framer-motion"
 const ProdCardsCompMb = (props) => {
     const settings = {
         dots: false,
@@ -16,11 +17,23 @@ const ProdCardsCompMb = (props) => {
     <>
         <div className="productcardscomp">
         <div className={`mbContainer2`}>
-            <div className="heading mbContainer">
+            <motion.div className="heading mbContainer" initial={{ opacity:0,y:0 }}          // Initial position
+                              whileInView={{ opacity:1,y:-20 }} 
+                              transition={{
+                                  duration: 0.9, 
+                                  delay: 0.2,
+                                  ease: 'linear'         
+                              }}>
                 <h5>{props.data.heading}</h5>
                 <p>{props.data.para}</p>
-            </div>
-            <div className="cardsloop">
+            </motion.div>
+            <motion.div className="cardsloop"  initial={{ opacity:0,y:0 }}          // Initial position
+                              whileInView={{ opacity:1,y:-20 }} 
+                              transition={{
+                                  duration: 1, 
+                                  delay: 0.2,
+                                  ease: 'linear'         
+                              }}>
                 
                     <Slider {...settings}>
                     {
@@ -48,7 +61,7 @@ const ProdCardsCompMb = (props) => {
                     </Slider>
                    
                 
-            </div>
+            </motion.div>
 
         </div>
         </div>

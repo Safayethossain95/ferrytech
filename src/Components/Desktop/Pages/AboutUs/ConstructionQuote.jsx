@@ -1,47 +1,75 @@
 /* eslint-disable eqeqeq */
 
-import React, { useRef,useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
 import { partnerbrandsApi } from "../../../../utils/homepageApi";
-import { motion } from "framer-motion";;
 const ConstructionQuote = (props) => {
-    const slider = useRef(null);
-    const [screenSize, getDimension] = useState({
-        dynamicWidth: window.innerWidth,
-        dynamicHeight: window.innerHeight,
-      });
-      const setDimension = () => {
-        getDimension({
-          dynamicWidth: window.innerWidth,
-          dynamicHeight: window.innerHeight,
-        });
-      };
-    
-      useEffect(() => {
-        window.addEventListener("resize", setDimension);
-    
-        return () => {
-          window.removeEventListener("resize", setDimension);
-        };
-      }, [screenSize]);
-      const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        loop: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: false,
-        autoplay: false,
-        appendDots: (dots) => <ul>{dots}</ul>,
-        customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
-      };
+  const slider = useRef(null);
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight,
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
+  const settings4 = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    loop: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024, // When the screen width is 1024px or less
+        settings: {
+          slidesToShow: 3, // Show 3 slides
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // When the screen width is 768px or less
+        settings: {
+          slidesToShow: 2, // Show 2 slides
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // When the screen width is 480px or less
+        settings: {
+          slidesToShow: 1, // Show 1 slide
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const handlenavigate=()=>{
+    // alert("dsfaa")
+    // navigate("/contact")
+  }
   return (
     <>
-    <div>
-    <div
+      <div>
+        
+        <div className="aboutquotebg">
+        <div
+        style={{position: "absolute",zIndex:10, left:"50%" , top:"-35%", transform: "translateX(-50%)"}}
           className={
             props.version == "mobile"
               ? "mbContainer"
@@ -54,15 +82,11 @@ const ConstructionQuote = (props) => {
               : "myContainerMini"
           }
         >
-              <div className="marquee-containe ">
-              <div className="marque quotemarquee">
-                {/* Render the items multiple times for seamless scrolling */}
-                <Slider
-                className="slidertesimoniald"
-                ref={slider}
-                {...settings}
-              >
-{[
+          <div className="marquee-containe ">
+            <div className="marque quotemarquee">
+              {/* Render the items multiple times for seamless scrolling */}
+              <Slider className="slidertesimoniald" ref={slider} {...settings4}>
+                {[
                   ...partnerbrandsApi,
                   ...partnerbrandsApi,
                   ...partnerbrandsApi,
@@ -78,17 +102,26 @@ const ConstructionQuote = (props) => {
                   </div>
                 ))}
               </Slider>
-                
-              </div>
             </div>
+          </div>
         </div>
-        <div className="aboutquotebg">
-
+          <div className="overlay">
+            <div className="divcontent">
+              <h6>GET A QUOTE FOR CONSTRUCTION USE</h6>
+              <h2>
+                Are you prepared to get <span>Started?</span>
+              </h2>
+              <h2>Get a Quote Right Now</h2>
+              <button onClick={handlenavigate} className="custom-button">
+                <span className="icon">➤</span>
+                <span ><a href="#reqaquote">Get Started</a></span>
+              </button>
+            </div>
+          </div>
         </div>
-         
-        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default ConstructionQuote
+export default ConstructionQuote;

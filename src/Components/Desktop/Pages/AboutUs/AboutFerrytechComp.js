@@ -110,7 +110,7 @@ const AboutFerrytechComp = (props) => {
                 </div>
               </Col>
               <Col lg={6}>
-              <img src="./assets/images/AboutPage/manstein.webp" alt="" />
+              <img className="w-100" src="./assets/images/AboutPage/manstein.webp" alt="" />
               </Col>
             </Row>
           </div>

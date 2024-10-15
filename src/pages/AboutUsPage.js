@@ -6,18 +6,22 @@ import AboutBannerComp from '../Components/Desktop/Pages/AboutUs/AboutBannerComp
 import '../sass/sassFiles/desktop/aboutuspage.scss'
 import '../sass/sassFiles/mobile/aboutuspagemb.scss'
 import AboutFerrytechComp from '../Components/Desktop/Pages/AboutUs/AboutFerrytechComp'
-import WhyFerrytechComp from '../Components/Desktop/WhyFerrytechComp'
+
 import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp'
 import FAQComp from '../Components/Desktop/Pages/AboutUs/FAQComp'
 import AboutBannerCompmb from '../Components/Mobile/AboutUsPage/AboutBannerCompmb'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQuote'
+import MeetOurFactory from '../Components/Desktop/Pages/AboutUs/MeetOurFactory'
+import MeetOurCertificate from '../Components/Desktop/Pages/AboutUs/MeetOurCertificate'
 const AboutUsPage = () => {
   useEffect(() => {
     AOS.init({once:true});
     
   }, [])
+  
+  
   return (
     <>
         <div className="mobile">
@@ -25,7 +29,10 @@ const AboutUsPage = () => {
         <AboutBannerCompmb version="mobile"/>
         
         <AboutFerrytechComp version="mobile"/>
-        <WhyFerrytechComp version="mobile"/>
+        <ConstructionQuote version="mobile"/>
+        <MeetOurFactory version="mobile"/>
+        <MeetOurCertificate version="mobile"/>
+        {/* <WhyFerrytechComp version="mobile"/> */}
         <FAQComp version="mobile"/>
         <FooterComp version="mobile"/>
     </div>
@@ -36,9 +43,11 @@ const AboutUsPage = () => {
         <AboutBannerComp/>
         <AboutFerrytechComp/>
         <ConstructionQuote/>
-        <WhyFerrytechComp/>
+        <MeetOurFactory/>
+        <MeetOurCertificate/>
+        {/* <WhyFerrytechComp/> */}
         <FAQComp/>
-        <ReqAquoteComp/>
+        <ReqAquoteComp />
         <FooterComp/>
     </div>
     </>

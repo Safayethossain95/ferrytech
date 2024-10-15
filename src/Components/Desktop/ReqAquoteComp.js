@@ -121,7 +121,7 @@ const ReqAquoteComp = (props) => {
   };
   return (
     <>
-      <div className="reqaquote">
+      <div  className="reqaquote" id="reqaquote">
         <div
           className={
             props.version == "mobile"

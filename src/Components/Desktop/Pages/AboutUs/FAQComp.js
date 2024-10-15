@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React,{useEffect,useState} from 'react'
 import { faqApi } from '../../../../utils/aboutUsApi'
 import SubHeading from '../../SubComponents/SubHeading'
@@ -31,7 +32,7 @@ const FAQComp = (props) => {
             {
                 faqApi.map((item,key)=>{
                     return(
-                        <Accordion data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000" className='myaccordion' defaultActiveKey="2" key={key}>
+                        <Accordion data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000" className='myaccordion' defaultActiveKey="1" key={key}>
                         <Accordion.Item eventKey={item.id}>
                             <Accordion.Header>
                                 <div className="myacchead">

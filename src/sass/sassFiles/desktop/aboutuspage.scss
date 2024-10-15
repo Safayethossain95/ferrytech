@@ -3,11 +3,53 @@
 @import "../../sassStyles/mixins";
 @import "../../sassStyles/global";
 
-.quotemarquee{
-    .slidertesimoniald{
+.sliderMeetOurCertificate2{
+  .slick-list{
+    .slick-track{
+      .slick-slide{
+        padding:0 5px!important;
+      }
+    }
+  }
+}
+.slidermeetourfactory{
+  .slick-list{
+    .slick-track{
+      .slick-slide.slick-active {
+        border: none !important; /* Remove border on active slide */
+    }
+    
+    /* Remove border on focus */
+    .slick-slide.slick-active:focus {
+        outline: none; /* Prevent outline on focus */
+    }
+    
+    /* Optional: Remove any border or styling on all slides */
+    .slick-slide {
+        border: none !important; /* Remove border from all slides */
+    }
+    
+    /* Optionally, prevent outline on all slides */
+    .slick-slide:focus {
+        outline: none; /* Prevent outline on focus for all slides */
+    }
+    
+    .slick-slide{
+        border: none !important;
+        padding:0 10px!important;
+       
+      }
+    }
+  }
+}
 
-        background-color: red;
+.quotemarquee{
+  margin-top: 100px;
+    .slidertesimoniald{
+        
+        background-color: #2a76c2;
         align-items: center;
+        border-radius: 13px;
         .cardwrap{
 
             .brandcard{
@@ -15,6 +57,7 @@
                     padding: 40px 0;
                     img{
                         height:60px;
+                        
                         margin:0 auto;
                     }
                 }
@@ -22,21 +65,37 @@
         }
     }
 }
-.desktop {
-    .aboutquotebg{
-        margin-bottom:100px;
-        margin-top: -70px;
-        background-image: url("../../../../public/assets/images/AboutPage/quotebg.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: bottom;
+.aboutquotebg{
+ position:relative;
+
+  .overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(87, 86, 86, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  margin-top: 80px;
+    margin-bottom:100px;
+    
+    background-image: url("../../../../public/assets/images/AboutPage/quotebg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    height: 500px;
+    margin-bottom: 50px;
+    @include media(lgDevice) {
         height: 500px;
-        margin-bottom: 50px;
-        @include media(lgDevice) {
-            height: 500px;
-        }
-       
     }
+   
+}
+.desktop {
   .aboutbannercomp {
     .aboutbanner {
       width: 100%;
@@ -194,11 +253,15 @@
         border: none;
       }
       .accordion-button {
-        padding: 38px;
+        padding: 18px;
       }
+      
       .accordion-button:not(.collapsed) {
-        background-color: #fff;
+        background-color: #2a76c2;
         color: #231f20;
+        h4{
+          color:#fff;
+        }
       }
       .accordion {
         --bs-accordion-btn-icon: url(../../../../public/assets/images/AboutPage/accordionicon.png) !important;

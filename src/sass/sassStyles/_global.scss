@@ -382,6 +382,7 @@ p{
 }
 
 .marquee-container {
+    
     width: 100%;
     overflow-x: hidden; /* Hide horizontal scrollbar */
     overflow-y: visible; /* Allow vertical content to overflow */
@@ -418,7 +419,62 @@ p{
   }
   
   
-  
+  .divcontent{
+    text-align: center;
+    margin-top: 80px;
+    h6{
+      @include myfont(14px, 700, $main_font);
+      color:#2a76c2;
+      letter-spacing: 2px; 
+      
+  }
+  h2{
+    @include myfont(3.1rem, 700, $main_font);
+    color:#fff;
+    @include media(xsmDevice){
+        @include myfont(1.1rem, 700, $main_font);
+    }
+    @include media(smDevice){
+        @include myfont(2.2rem, 700, $main_font);
+    }
+    span{
+        color:#2a76c2;
+    }
+}
+/* Button.scss */
+.custom-button {
+background-color: #2a76c2; // Yellow color
+color: #333; // Darker text color
+font-size: 16px;
+font-weight: bold;
+padding: 12px 24px;
+margin:0 auto;
+border: none;
+border-radius: 8px;
+display: flex;
+align-items: center;
+cursor: pointer;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease;
+span{
+    color:#fff;
+}
+a{
+    color:#fff;
+    text-decoration: none;
+}
+&:hover {
+background-color: #1c47c5; // Darker shade on hover
+}
+
+.icon {
+display: inline-block;
+margin-right: 8px;
+font-size: 18px; // Adjust the size of the icon
+}
+}
+
+  }
 // .scrolltop{
 //     position: fixed;
 //     width: 50px;

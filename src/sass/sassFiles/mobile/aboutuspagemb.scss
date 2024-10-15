@@ -53,6 +53,9 @@
                           @include media(smDevice){
                               @include myfont(40px!important, 700, $main_font);
                           }
+                          @include media(mdDevice){
+                              @include myfont(40px!important, 700, $main_font);
+                          }
                         @include myfont(80px, 700, $main_font);
                         color: #fff;
                         text-transform: uppercase;
@@ -62,6 +65,18 @@
                         @include myfont(20px, 400, $main_font);
                         color: #fff;
                         text-align: justify;
+                        @include media(xsmDevice){
+                            @include myfont(14px, 400, $main_font);
+  
+                        }
+                        @include media(smDevice){
+                            @include myfont(15px, 400, $main_font);
+  
+                        }
+                        @include media(mdDevice){
+                            @include myfont(15px, 400, $main_font);
+  
+                        }
                       }
                     }
                   }
@@ -236,10 +251,9 @@
            
         }
         .accordion-button:not(.collapsed) {
-            background-color: #fff;
-            color:#231F20;
-            
-        }
+            background-color: #F9A825;
+            color: #231f20;
+          }
         .accordion{
             --bs-accordion-btn-icon: url(../../../../public/assets/images/AboutPage/accordionicon.png)!important;
             --bs-accordion-btn-active-icon: url(../../../../public/assets/images/AboutPage/accordionicon.png)!important;

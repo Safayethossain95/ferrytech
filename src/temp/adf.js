@@ -1,90 +1,31 @@
 import React from 'react'
 
-const blogmenuAPI = {
-    defaultActiveKey:"mostpopular",
-    tabname:[
-        {
-            tbname:"Most Popular",
-            tabkey:"mostpopular",
-            data:[
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card1.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card2.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card3.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card4.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card5.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card6.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-            ]
-        },
-        {
-            tbname:"Top Seller",
-            tabkey:"topseller",
-            data:[
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card1.png",
-                    title:"Blog Title 1",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card2.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card3.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-            ]
-        },
-        {
-            tbname:"Top Rated",
-            tabkey:"topratex",
-            data:[
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card1.png",
-                    title:"Blog Title 2",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card2.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card3.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-            ]
-        },
-    ],
-
-}
-
+// forkliftMountedCrane:
+//         {
+//             heading:"LET'S CHOOSE",
+//             para:"Choose From Our Forklift Mounted Cranes",
+//             card:[
+//                 {
+//                     id:1,
+//                     imgurl:"./assets/images/ProductPage/forklift-mounted-crane/forklift-mounted-crane1.webp",
+//                     name:"3.5 ton Forklift Mounted Crane",
+//                     detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+//                 },
+//                 {
+//                     id:2,
+//                     imgurl:"./assets/images/ProductPage/forklift-mounted-crane/forklift-mounted-crane2.webp",
+//                     name:"5 ton Forklift Mounted Crane",
+//                     detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+//                 },
+//                 {
+//                     id:3,
+//                     imgurl:"./assets/images/ProductPage/forklift-mounted-crane/forklift-mounted-crane3.webp",
+//                     name:"8 ton Forklift Mounted Crane",
+//                     detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+//                 },
+                
+//             ]
+//         },
 
 const adf = () => {
   return (

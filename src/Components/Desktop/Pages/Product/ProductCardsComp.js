@@ -78,7 +78,7 @@ const ProductCardsComp = (props) => {
                       </div>
 
                       <div className="pcardbutton">
-                        <button>
+                        <button className="w-75 mx-2">
                           view details{" "}
                           <span>
                             <img

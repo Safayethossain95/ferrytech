@@ -8,13 +8,31 @@
 }
 
 .bdirectors{
-    height: 70vh;
+    height: 80vh;
+    @include media(xsmDevice){
+        height: 50vh;
+    }
+    @include media(smDevice){
+        height: 60vh;
+    }
+    @include media(mdDevice){
+        height: 60vh;
+    }
     position:relative;
     
         img{
             height: 100%;
             width: 100%;
-            
+            @include media(xsmDevice){
+                margin-top: 60px;
+            }
+            @include media(smDevice){
+                margin-top: 60px;
+            }
+            @include media(mdDevice){
+                margin-top: 60px;
+            }
+            margin-top:60px;
         }
     
     .overlay{
@@ -27,11 +45,30 @@
       height: 100%;
       content:'';
       background-color: rgba(0, 0, 0, 0.6);
+      margin-top:60px;
+      @include media(xsmDevice){
+        margin-top: 60px;
+    }
+    @include media(smDevice){
+        margin-top: 60px;
+    }
+    @include media(mdDevice){
+        margin-top: 60px;
+    }
     }
     h3{
       @include myfont(80px,400,$main_font);
       color:#fff;
       text-align: center;
+      @include media(xsmDevice){
+        @include myfont(30px,400,$main_font);
+    }
+      @include media(smDevice){
+        @include myfont(40px,400,$main_font);
+    }
+      @include media(mdDevice){
+        @include myfont(50px,400,$main_font);
+    }
     }
    
   }

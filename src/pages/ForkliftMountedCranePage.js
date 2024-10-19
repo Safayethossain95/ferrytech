@@ -11,6 +11,8 @@ const ForkliftMountedCranePage = () => {
     <>
         <div className="mobile">
         <MyNavbarMb/>
+        <CommonBannerComp img="./assets/images/ProductPage/categories/forklift-mounted-crane.webp" title="Forklift Mounted Crane" version="desktop"/>
+        <ProductCardsComp version="mobile" data={productApi.forkliftMountedCrane}/>
         <FooterComp version="mobile"/>
     </div>
     <div className="desktop">

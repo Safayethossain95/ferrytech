@@ -54,7 +54,7 @@ const ProductCardsComp = (props) => {
             <Row>
               {props.data.card.map((item, key) => {
                 return (
-                  <Col lg={4} key={key}>
+                  <Col lg={4} md={6} sm={6} key={key}>
                     <motion.div
                       initial={{ opacity: 0, y: 0 }}
                       viewport={{ once: true }}

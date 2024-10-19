@@ -5,8 +5,10 @@ import {motion} from "framer-motion"
 const CommonBannerComp = ({version,title,img}) => {
     let screenSize = useScreenSize()
   return (
+    <>
+    
     <div className="bdirectors">
-       
+         
             <img src={img} alt="" />
         
           <motion.div
@@ -36,6 +38,7 @@ const CommonBannerComp = ({version,title,img}) => {
             </div>
           </motion.div>
         </div>
+    </>
   )
 }
 

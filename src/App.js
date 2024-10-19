@@ -18,6 +18,9 @@ import BoardOfDirectorsPage from './pages/BoardOfDirectorsPage';
 import TruckCraneProductsPage from './pages/TruckCraneProductsPage';
 import TruckMountedCranePage from './pages/TruckMountedCranePage';
 import ForkliftMountedCranePage from './pages/ForkliftMountedCranePage';
+import SelfErectingCranePage from './pages/SelfErectingCranePage';
+import ForkliftPage from './pages/ForkliftPage';
+import SpiderCranePage from './pages/SpiderCranePage';
 function App() {
 
   
@@ -37,6 +40,9 @@ function App() {
           <Route path="/truck-crane" element={<TruckCraneProductsPage />} />
           <Route path="/truck-mounted-crane" element={<TruckMountedCranePage />} />
           <Route path="/forklift-mounted-crane" element={<ForkliftMountedCranePage />} />
+          <Route path="/self-erecting-crane" element={<SelfErectingCranePage />} />
+          <Route path="/fork-lift" element={<ForkliftPage />} />
+          <Route path="/spider-crane" element={<SpiderCranePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/cookies-information" element={<CookiesInfoPage />} />
           <Route path="/terms-conditions" element={<TermsnConditionsPage />} />

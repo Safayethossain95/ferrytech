@@ -226,7 +226,89 @@ export const productApi = {
             ]
         },
 
-
-    
+        selfEretingCrane:
+        {
+            heading:"LET'S CHOOSE",
+            para:"Choose From Our Self Erecting Cranes",
+            card:[
+                {
+                    id:1,
+                    imgurl:"./assets/images/ProductPage/self-erecting-crane/self-erecting-crane1.webp",
+                    name:"1 ton Self Erecting Crane",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:2,
+                    imgurl:"./assets/images/ProductPage/self-erecting-crane/self-erecting-crane2.webp",
+                    name:"2 ton Self Erecting Crane",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:3,
+                    imgurl:"./assets/images/ProductPage/self-erecting-crane/self-erecting-crane3.webp",
+                    name:"3 ton Self Erecting Crane",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:4,
+                    imgurl:"./assets/images/ProductPage/self-erecting-crane/self-erecting-crane4.webp",
+                    name:"4 ton Self Erecting Crane",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                
+            ]
+        },
+        forklift:
+        {
+            heading:"LET'S CHOOSE",
+            para:"Choose From Our Forklifts",
+            card:[
+                {
+                    id:1,
+                    imgurl:"./assets/images/ProductPage/forklift/forklift1.webp",
+                    name:"3.5 ton Forklift",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:2,
+                    imgurl:"./assets/images/ProductPage/forklift/forklift2.webp",
+                    name:"5 ton Forklift",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:3,
+                    imgurl:"./assets/images/ProductPage/forklift/forklift3.webp",
+                    name:"8 ton Forklift",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                
+            ]
+        },
+        spiderCrane:
+        {
+            heading:"LET'S CHOOSE",
+            para:"Choose From Our Spider Cranes",
+            card:[
+                {
+                    id:1,
+                    imgurl:"./assets/images/ProductPage/spider-crane/spider-crane1.webp",
+                    name:"3 ton Spider Cranes",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:2,
+                    imgurl:"./assets/images/ProductPage/spider-crane/spider-crane2.webp",
+                    name:"5 ton Spider Cranes",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                {
+                    id:3,
+                    imgurl:"./assets/images/ProductPage/spider-crane/spider-crane3.webp",
+                    name:"8 ton Spider Cranes",
+                    detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+                },
+                
+            ]
+        },
     
 }

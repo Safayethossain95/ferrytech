@@ -70,6 +70,8 @@ const ProductCardsComp = (props) => {
                       }}
                       className="pcard"
                     >
+                      <div className="over">
+
                       <img src={item.imgurl} alt="" />
 
                       <div className="pcarddetails">
@@ -87,6 +89,7 @@ const ProductCardsComp = (props) => {
                             />
                           </span>
                         </button>
+                      </div>
                       </div>
                     </motion.div>
                   </Col>

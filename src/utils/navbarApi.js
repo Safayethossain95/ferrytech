@@ -22,12 +22,37 @@ const navbarApidata = [
       "isActive": "",
       "effectiveFrom": null,
       "effectiveTo": null,
-      "childNavbarVm": []
+      "childNavbarVm": [
+        {
+            "menuId": 13,
+            "menuName": "Introduction",
+            "url": "/aboutus",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
+          {
+            "menuId": 14,
+            "menuName": "Board of Directors",
+            "url": "/boardofdirectors",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          }
+      ]
     },
     {
       "menuId": 10,
       "menuName": "Product",
-      "url": "/product",
+      "url": "",
       "sequence": 3,
       "parentMenuId": 0,
       "status": false,
@@ -35,7 +60,79 @@ const navbarApidata = [
       "effectiveFrom": null,
       "effectiveTo": null,
       "childNavbarVm": [
-       
+        {
+            "menuId":15,
+            "menuName": "Truck Crane",
+            "url": "/truck-crane",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
+          {
+            "menuId": 16,
+            "menuName": "Truck Mounted Crane",
+            "url": "/truck-mounted-crane",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
+          {
+            "menuId": 17,
+            "menuName": "Forklift Mounted Crane",
+            "url": "/forklift-mounted-crane",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
+          {
+            "menuId": 19,
+            "menuName": "Self-Erecting Crane",
+            "url": "/self-erecting-crane",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
+          {
+            "menuId": 18,
+            "menuName": "Spider Crane",
+            "url": "/spider-crane",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
+         
+          {
+            "menuId": 20,
+            "menuName": "Forklift",
+            "url": "/fork-lift",
+            "sequence": 0,
+            "parentMenuId": 2,
+            "status": false,
+            "isActive": "",
+            "effectiveFrom": null,
+            "effectiveTo": null,
+            "childNavbarVm": []
+          },
       ]
     },
     {

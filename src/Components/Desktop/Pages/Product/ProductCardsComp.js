@@ -54,7 +54,7 @@ const ProductCardsComp = (props) => {
             <Row>
               {props.data.card.map((item, key) => {
                 return (
-                  <Col lg={4} key={key}>
+                  <Col lg={4} md={6} sm={6} key={key}>
                     <motion.div
                       initial={{ opacity: 0, y: 0 }}
                       viewport={{ once: true }}
@@ -70,6 +70,8 @@ const ProductCardsComp = (props) => {
                       }}
                       className="pcard"
                     >
+                      <div className="over">
+
                       <img src={item.imgurl} alt="" />
 
                       <div className="pcarddetails">
@@ -78,7 +80,7 @@ const ProductCardsComp = (props) => {
                       </div>
 
                       <div className="pcardbutton">
-                        <button>
+                        <button className="w-75 mx-2">
                           view details{" "}
                           <span>
                             <img
@@ -87,6 +89,7 @@ const ProductCardsComp = (props) => {
                             />
                           </span>
                         </button>
+                      </div>
                       </div>
                     </motion.div>
                   </Col>

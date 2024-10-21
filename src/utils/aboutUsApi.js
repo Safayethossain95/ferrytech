@@ -15,7 +15,7 @@ const aboutusbannerApi={
     details:"Ferrytech provides a comprehensive range of spare parts for their machines. You can contact Mantsinen directly to order spare parts or get in touch with their dealer network for local support."
   },
   {
-    id:"1",
+    id:"3",
     heading:"Does Ferrytech offer financing options for their machines?",
     details:"Ferrytech provides a comprehensive range of spare parts for their machines. You can contact Mantsinen directly to order spare parts or get in touch with their dealer network for local support."
   },

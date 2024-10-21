@@ -126,7 +126,7 @@
             position:relative;
             .admissionmenu{
                 position:absolute;
-                top:100%;
+                top:42px;
                 left:0;
                 height:auto;
                 width:275px;
@@ -147,7 +147,7 @@
                             @include myfont(16px,600,$main_font);
                             color:#000;
                             &:hover{
-                                color:#ED1C24;
+                                color:#005DBA;
                             }
                         }
                     }

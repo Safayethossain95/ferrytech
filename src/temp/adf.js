@@ -1,90 +1,31 @@
 import React from 'react'
 
-const blogmenuAPI = {
-    defaultActiveKey:"mostpopular",
-    tabname:[
-        {
-            tbname:"Most Popular",
-            tabkey:"mostpopular",
-            data:[
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card1.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card2.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card3.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card4.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card5.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card6.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-            ]
-        },
-        {
-            tbname:"Top Seller",
-            tabkey:"topseller",
-            data:[
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card1.png",
-                    title:"Blog Title 1",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card2.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card3.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-            ]
-        },
-        {
-            tbname:"Top Rated",
-            tabkey:"topratex",
-            data:[
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card1.png",
-                    title:"Blog Title 2",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card2.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-                {
-                    img:"./assets/images/Common/megamenu/mostpopular/card3.png",
-                    title:"Blog Title",
-                    paragraph:"Lorem ipsum dolor sit amet consectetur. Neque mauris"
-                },
-            ]
-        },
-    ],
-
-}
-
+// spiderCrane:
+//         {
+//             heading:"LET'S CHOOSE",
+//             para:"Choose From Our Spider Cranes",
+//             card:[
+//                 {
+//                     id:1,
+//                     imgurl:"./assets/images/ProductPage/spider-crane/spider-crane1.webp",
+//                     name:"3 ton Spider Cranes",
+//                     detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+//                 },
+//                 {
+//                     id:2,
+//                     imgurl:"./assets/images/ProductPage/spider-crane/spider-crane2.webp",
+//                     name:"5 ton Spider Cranes",
+//                     detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+//                 },
+//                 {
+//                     id:3,
+//                     imgurl:"./assets/images/ProductPage/spider-crane/spider-crane3.webp",
+//                     name:"8 ton Spider Cranes",
+//                     detail:"Strong mobility, Simple operation, High efficiency, Strong versatility"
+//                 },
+                
+//             ]
+//         },
 
 const adf = () => {
   return (

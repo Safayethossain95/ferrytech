@@ -1,40 +1,28 @@
-import React,{useState,useEffect} from 'react'
+// useScreenSize.js
+import { useState, useEffect } from 'react';
 
+const useScreenSize = () => {
+  const [screenSize, setScreenSize] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight,
+  });
 
-
-
-    
-
-
-const Helpers = () => {
-  
-  const [screenSize, getDimension] = useState({
+  const updateDimensions = () => {
+    setScreenSize({
       dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight
+      dynamicHeight: window.innerHeight,
     });
-    const setDimension = () => {
-      getDimension({
-        dynamicWidth: window.innerWidth,
-        dynamicHeight: window.innerHeight
-      })
-    }
-    
-    useEffect(() => {
-      window.addEventListener('resize', setDimension);
-      
-      return(() => {
-          window.removeEventListener('resize', setDimension);
-          console.log(screenSize.dynamicWidth)
-      })
-    }, [screenSize])
+  };
 
-  return (
-    
-    <>
-    
-    </>
-  )
-}
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
 
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+    };
+  }, []);
 
-export default Helpers
+  return screenSize;
+};
+
+export default useScreenSize;

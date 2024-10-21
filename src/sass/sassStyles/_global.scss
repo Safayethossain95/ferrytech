@@ -7,6 +7,72 @@
     
 }
 
+.bdirectors{
+    height: 80vh;
+    @include media(xsmDevice){
+        height: 50vh;
+    }
+    @include media(smDevice){
+        height: 60vh;
+    }
+    @include media(mdDevice){
+        height: 60vh;
+    }
+    position:relative;
+    
+        img{
+            height: 100%;
+            width: 100%;
+            @include media(xsmDevice){
+                margin-top: 60px;
+            }
+            @include media(smDevice){
+                margin-top: 60px;
+            }
+            @include media(mdDevice){
+                margin-top: 60px;
+            }
+            margin-top:60px;
+        }
+    
+    .overlay{
+      position:absolute;
+      display: flex;
+      align-items: center;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      content:'';
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top:60px;
+      @include media(xsmDevice){
+        margin-top: 60px;
+    }
+    @include media(smDevice){
+        margin-top: 60px;
+    }
+    @include media(mdDevice){
+        margin-top: 60px;
+    }
+    }
+    h3{
+      @include myfont(80px,400,$main_font);
+      color:#fff;
+      text-align: center;
+      @include media(xsmDevice){
+        @include myfont(30px,400,$main_font);
+    }
+      @include media(smDevice){
+        @include myfont(40px,400,$main_font);
+    }
+      @include media(mdDevice){
+        @include myfont(50px,400,$main_font);
+    }
+    }
+   
+  }
+
 .coltwenty{
     padding-right: 20px;
     padding-left: 0;
@@ -382,17 +448,23 @@ p{
 }
 
 .marquee-container {
+    
     width: 100%;
     overflow-x: hidden; /* Hide horizontal scrollbar */
     overflow-y: visible; /* Allow vertical content to overflow */
     white-space: nowrap; /* Ensure that content inside the container doesn't wrap (for the marquee effect) */
     position: relative;
     padding:20px 0; /* Allows absolute positioning for children, if needed */
+    &.quotemarquee{
+        padding:30px;
+        background-color: #005DBA;
+    }
 }
   
   .marquee {
     display: flex; /* Flexbox to align items in a row */
     animation: marquee 25s linear infinite; /* Duration of the animation */
+    align-items: center;
     gap: 30px; /* Add a 30px gap between each item */
   }
   
@@ -412,8 +484,80 @@ p{
     flex-shrink: 0; /* Prevent shrinking */
   }
   
-  
-  
+  .hexagon {
+    width: 100%;          /* Width of the hexagon */
+    height: auto; 
+    @include media(xsmDevice){
+        width:150px;
+        margin:0 auto;
+    }     /* Height of the hexagon */
+    @include media(smDevice){
+        width:120px;
+        margin:0 auto;
+    }     /* Height of the hexagon */
+    @include media(mdDevice){
+        width:240px;
+        margin:0 auto;
+    }     /* Height of the hexagon */
+    background-color: #2A76C2; /* Color of the hexagon */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);         /* Margin for spacing */
+}
+  .divcontent{
+    text-align: center;
+    margin-top: 80px;
+    h6{
+      @include myfont(14px, 700, $main_font);
+      color:#2a76c2;
+      letter-spacing: 2px; 
+      
+  }
+  h2{
+    @include myfont(3.1rem, 700, $main_font);
+    color:#fff;
+    @include media(xsmDevice){
+        @include myfont(1.1rem, 700, $main_font);
+    }
+    @include media(smDevice){
+        @include myfont(2.2rem, 700, $main_font);
+    }
+    span{
+        color:#2a76c2;
+    }
+}
+/* Button.scss */
+.custom-button {
+background-color: #2a76c2; // Yellow color
+color: #333; // Darker text color
+font-size: 16px;
+font-weight: bold;
+padding: 12px 24px;
+margin:0 auto;
+border: none;
+border-radius: 8px;
+display: flex;
+align-items: center;
+cursor: pointer;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease;
+span{
+    color:#fff;
+}
+a{
+    color:#fff;
+    text-decoration: none;
+}
+&:hover {
+background-color: #1c47c5; // Darker shade on hover
+}
+
+.icon {
+display: inline-block;
+margin-right: 8px;
+font-size: 18px; // Adjust the size of the icon
+}
+}
+
+  }
 // .scrolltop{
 //     position: fixed;
 //     width: 50px;

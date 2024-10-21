@@ -92,7 +92,13 @@ const ConstructionQuote = (props) => {
                   ...partnerbrandsApi,
                 ].map((item, key) => (
                   <div className="cardwrap" key={key}>
-                    <motion.div className="brandcard px-4">
+                    <motion.div initial={{ opacity:0  }}
+                    whileInView={{
+                      opacity:1,
+                      transition: { delay: key * 0.2, duration: 0.5 },
+                    }}
+                    
+                    viewport={{ once: false }} className="brandcard px-4">
                       <div className="overlay3"></div>
                       <div className="overlay5"></div>
                       <div className="overlay4">
@@ -107,15 +113,39 @@ const ConstructionQuote = (props) => {
         </div>
           <div className="overlay">
             <div className="divcontent">
-              <h6>GET A QUOTE FOR CONSTRUCTION USE</h6>
-              <h2>
+              <motion.h6  initial={{ opacity: 0 , y:-5}}
+                    whileInView={{
+                      opacity: 1,
+                      y:0,
+                      transition: { delay: 1 * 0.2, duration: 0.5 },
+                    }}
+                    viewport={{ once: false }}>GET A QUOTE FOR CONSTRUCTION USE</motion.h6>
+              <motion.h2  initial={{ opacity: 0 , y:-5}}
+                    whileInView={{
+                      opacity: 1,
+                      y:0,
+                      transition: { delay: 1 * 0.2, duration: 0.5 },
+                    }}
+                    viewport={{ once: false }}>
                 Are you prepared to get <span>Started?</span>
-              </h2>
-              <h2>Get a Quote Right Now</h2>
-              <button onClick={handlenavigate} className="custom-button">
+              </motion.h2>
+              <motion.h2  initial={{ opacity: 0 , y:-5}}
+                    whileInView={{
+                      opacity: 1,
+                      y:0,
+                      transition: { delay: 1 * 0.2, duration: 0.5 },
+                    }}
+                    viewport={{ once: false }}>Get a Quote Right Now</motion.h2>
+              <motion.button  initial={{ opacity: 0 , y:-5}}
+                    whileInView={{
+                      opacity: 1,
+                      y:0,
+                      transition: { delay: 1 * 0.2, duration: 0.5 },
+                    }}
+                    viewport={{ once: false }} onClick={handlenavigate} className="custom-button">
                 <span className="icon">➤</span>
                 <span ><a href="#reqaquote">Get Started</a></span>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

@@ -57,16 +57,15 @@ const ProductCardsComp = (props) => {
                   <Col lg={4} md={6} sm={6} key={key}>
                     <motion.div
                       initial={{ opacity: 0, y: 0 }}
-                      viewport={{ once: true }}
-                      whileInView={{
+                      viewport={{ once: false }}
+                      animate={{
                         opacity: 1,
                         y: -20,
-                        transition: { delay: 0.3 },
                       }}
                       transition={{
-                        duration: 2,
-                        delay: key * 0.5,
-                        ease: "easeInOut",
+                        duration: 0.4,
+                        delay: item.id * 0.5,
+                        ease: "linear",
                       }}
                       className="pcard"
                     >

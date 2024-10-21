@@ -21,19 +21,13 @@ const ProdCardsCompMb = (props) => {
                               whileInView={{ opacity:1,y:-20 }} 
                               transition={{
                                   duration: 0.9, 
-                                  delay: 0.2,
+                                  delay:  0.2,
                                   ease: 'linear'         
                               }}>
                 <h5>{props.data.heading}</h5>
                 <p>{props.data.para}</p>
             </motion.div>
-            <motion.div className="cardsloop"  initial={{ opacity:0,y:0 }}          // Initial position
-                              whileInView={{ opacity:1,y:-20 }} 
-                              transition={{
-                                  duration: 1, 
-                                  delay: 0.2,
-                                  ease: 'linear'         
-                              }}>
+            <div className="cardsloop">
                 
                     <Slider {...settings}>
                     {
@@ -41,7 +35,13 @@ const ProdCardsCompMb = (props) => {
 
                             return(
                                 <div key={key}>
-                                <div className="pcard">
+                                <motion.div className="pcard" initial={{ opacity:0,y:0 }}          // Initial position
+                              whileInView={{ opacity:1,y:-20 }} 
+                              transition={{
+                                  duration: 1, 
+                                  delay: item.id * 0.2,
+                                  ease: 'linear'         
+                              }}>
                                     <img src={item.imgurl} alt="" />
                                     
                                 <div className="pcarddetails">
@@ -52,7 +52,7 @@ const ProdCardsCompMb = (props) => {
                                 <div className="pcardbutton">
                                     <button>view details <span><img src="./assets/images/ProductPage/cards/arr.png" alt="" /></span></button>
                                 </div>
-                                </div>
+                                </motion.div>
                             </div>
                             )
                         })
@@ -61,7 +61,7 @@ const ProdCardsCompMb = (props) => {
                     </Slider>
                    
                 
-            </motion.div>
+            </div>
 
         </div>
         </div>

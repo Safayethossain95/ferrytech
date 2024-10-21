@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
+import {motion} from 'framer-motion'
 const MeetOurCertificate = (props) => {
   const slider4 = useRef(null);
   const [screenSize, getDimension] = useState({
@@ -62,10 +63,22 @@ const MeetOurCertificate = (props) => {
 
   return (
     <div className="divcontent">
-      <h6>Our Certificate</h6>
-      <h2 style={{ color: "#000", marginBottom: "30px" }}>
+      <motion.h6  initial={{ opacity: 0 , y:-5}}
+                    whileInView={{
+                      opacity: 1,
+                      y:0,
+                      transition: { delay: 1 * 0.2, duration: 0.5 },
+                    }}
+                    viewport={{ once: false }}>Our Certificate</motion.h6>
+      <motion.h2  initial={{ opacity: 0 , y:-5}}
+                    whileInView={{
+                      opacity: 1,
+                      y:0,
+                      transition: { delay: 1 * 0.2, duration: 0.5 },
+                    }}
+                    viewport={{ once: false }} style={{ color: "#000", marginBottom: "30px" }}>
         Meet <span>Our</span> Certificate
-      </h2>
+      </motion.h2>
       <div
         className={
           props.version == "mobile"

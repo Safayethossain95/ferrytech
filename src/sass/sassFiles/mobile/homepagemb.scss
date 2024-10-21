@@ -106,6 +106,11 @@
           }
         }
         .accordion-item {
+          .accordion-body{
+            ul{
+              list-style-type: none;
+            }
+          }
           border: 0;
           .accordion-button:not(.collapsed) {
             background-color: #005dba;

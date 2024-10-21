@@ -158,7 +158,12 @@ const MyNavbarMb = () => {
             </div>
           </div>
           <div className="downloadbutton">
-              <button>Download Brochures <img src="./assets/images/icon/arrsm.png" alt="" /></button>
+          <button>
+              <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
+              Download Brochures{" "}
+              <img src="./assets/images/icon/arrsm.png" alt="" />
+              </a>
+            </button>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@
 .boardofdirectors{
   
   .rightofdirector{
+   
     img{
       width:100%;
     }
@@ -22,6 +23,9 @@
       @include myfont(14px, 700, $main_font);
       color:#005DBA;
       letter-spacing: 2px; 
+      @include allmobile(mb){
+        margin-top: 20px;
+      }
       
   }
   p{

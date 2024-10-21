@@ -144,18 +144,17 @@ const ReqAquoteComp = (props) => {
             <Col lg={8}>
               <div
                 className="para"
-                data-aos-delay="500"
-                data-aos="fade-in"
-                data-aos-duration="1500"
               >
                 <p>
                   Fill all your information we will reach to you with budget
                   planning and best deal. You can also download our brochures
                   for get budget ideas.
+                  <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
                   <span>
                     Download Brochures{" "}
                     <img src="./assets/images/reqaquote/Arrow.png" alt="  " />
                   </span>
+                  </a>
                 </p>
               </div>
             </Col>

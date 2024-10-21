@@ -38,7 +38,7 @@ const BoardOfDirectorsComp = (props) => {
             <Col
               lg={8} xs={12} sm={9} md={6}
               data-aos-delay="300"
-              data-aos="fade-left"
+              data-aos={props.version=="mobile"?"fade-in":"fade-left"}
               data-aos-duration="1000"
             >
               <h6>Chairperson</h6>
@@ -62,7 +62,7 @@ const BoardOfDirectorsComp = (props) => {
               </div>
             </Col>
             <Col lg={8} xs={12} sm={9} md={6} data-aos-delay="300"
-              data-aos="fade-right"
+              data-aos={props.version=="mobile"?"fade-in":"fade-right"}
               data-aos-duration="1000">
               <h6>Chief Executive Officer (CEO)</h6>
               <p>Sarah Thompson</p>
@@ -85,7 +85,7 @@ const BoardOfDirectorsComp = (props) => {
               </div>
             </Col>
             <Col lg={8} xs={12} sm={9} md={6} data-aos-delay="300"
-              data-aos="fade-left"
+              data-aos={props.version=="mobile"?"fade-in":"fade-left"}
               data-aos-duration="1000">
               <h6>Non-Executive Director</h6>
               <p>Maria Gomez</p>

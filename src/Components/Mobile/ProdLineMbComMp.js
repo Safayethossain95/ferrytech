@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
 import React,{useState,useEffect,useRef} from 'react'
 import { motion } from "framer-motion";
 import { TweenMax, Power2 } from "gsap";
@@ -116,7 +118,7 @@ const ProdLineMbComMp = () => {
         arrows:false,
         autoplay: false,
         loop:true,
-        arrows:false,
+        
         
         
         
@@ -197,7 +199,12 @@ const ProdLineMbComMp = () => {
                     <h3>MANTSINEN 140</h3>
                     <p>Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.</p>
                   <div className="downloadbutton">
-                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
+                  <button>
+              <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
+              Download Brochures{" "}
+              <img src="./assets/images/icon/arrsm.png" alt="" />
+              </a>
+            </button>
                   </div>
                   </motion.div>
                 {/* <div className="div"> */}
@@ -207,7 +214,12 @@ const ProdLineMbComMp = () => {
                     <h3>MANTSINEN 540</h3>
                     <p>Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.</p>
                   <div className="downloadbutton">
-                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
+                  <button>
+              <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
+              Download Brochures{" "}
+              <img src="./assets/images/icon/arrsm.png" alt="" />
+              </a>
+            </button>
                   </div>
                             </div>
                   
@@ -216,7 +228,12 @@ const ProdLineMbComMp = () => {
                     <h3>MANTSINEN 140</h3>
                     <p>Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.</p>
                   <div className="downloadbutton">
-                    <button>Download Brochures <img style={{display:"inline-block"}} src="./assets/images/icon/arrsm.png" alt="" /></button>
+                  <button>
+              <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
+              Download Brochures{" "}
+              <img  src="./assets/images/icon/arrsm.png" alt="" />
+              </a>
+            </button>
                   </div>
                   </div>
               </Slider>

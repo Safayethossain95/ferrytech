@@ -13,11 +13,11 @@
         .heading{
             
             h5{
-                @include myfont(25px,600,$main_font);
-
+                @include myfont(18px,600,$main_font);
+                
             }
             p{
-                @include myfont(18px,600,$main_font);
+                @include myfont(14px,600,$main_font);
                 color:#a3a3a3;
             }
         }

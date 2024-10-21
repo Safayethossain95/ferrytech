@@ -23,6 +23,11 @@
     @media (min-width: 320px) and (max-width: 375px) { @content; }
   }
 }
+@mixin allmobile($size2){
+  @if $size2 == mb {
+    @media (min-width: 320px) and (max-width: 767px) { @content; }
+  }
+}
 
 @mixin myfont($font_size,$font_weight,$font_family){
   font-size: $font_size;

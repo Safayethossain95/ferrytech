@@ -59,8 +59,8 @@ const WhyFerrytechComp = (props) => {
           <Row className="align-items-center">
             <Col xs={12} lg={6} className="desktop">
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ scale: 0.97,opacity: 0.5}}
+                whileInView={{ scale: 1,opacity: 1  }}
                 transition={{ duration: 0.9, delay: 0.3, ease: "easeIn" }}
                 className="imgwgy"
               >
@@ -114,7 +114,6 @@ const WhyFerrytechComp = (props) => {
                       className="smcard"
                       initial={{ opacity: 0, x: 20 }} // Initial position
                       whileInView={{ x: 0, opacity: 1 }}
-                      viewport={{ once: false }}
                       transition={{
                         duration: 0.3,
                         delay: key * 0.2,

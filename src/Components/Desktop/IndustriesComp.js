@@ -49,13 +49,13 @@ const IndustriesComp = (props) => {
               return (
                 <Col xs={6} lg={6} key={key}>
                   <motion.div
-                    initial={{ y:5  }}
+                    initial={{ opacity:0  }}
                     whileInView={{
-                      y:0,
+                      opacity:1,
                       transition: { delay: key * 0.2, duration: 0.5 },
                     }}
                     
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="indcard"
                     style={props.version=="mobile"?{height:"100px"}:{}}
                   >

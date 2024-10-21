@@ -2,6 +2,8 @@
 import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {Row,Col} from 'react-bootstrap'
+import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
+import { HiMail } from "react-icons/hi";
 const FooterComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -35,7 +37,12 @@ const FooterComp = (props) => {
 
 
             <div className="item logopart">
-                <img  src="./assets/images/footer/footer_logo.png" alt="" />
+                <div className="wrapper">
+
+                <img style={{width:"200px"}} src="./assets/images/Logo/logo.png" alt="" />
+
+                <p>we are committed to providing top quality heavy equipment that empowers construction professionals to tackle projects of any size with confidence and efficiency.</p>
+                </div>
             </div>
             <div className="item contacts">
                 <div className="wrap">
@@ -53,27 +60,69 @@ const FooterComp = (props) => {
             </div>
             <div className="item support">
                 <div className="wrap">
+                    <h5>Legal</h5>
+                    <ul>
+
+                    <Link to="/privacy-policy">Privacy Policy</Link> <br/>
+                    <Link to="/cookies-information">Cookies Information</Link> <br/>
+                    <Link to="/terms-conditions">Terms and Conditions</Link>
+                    </ul>
+                </div>
+            </div>
+            <div className="item ">
+                <div className="wrap">
+                    <h5>Documents</h5>
+                    <ul>
+
+                    <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank" style={{marginBottom:"10px"}}>Brochures</a> <br/>
+                    </ul>
+                  
+                </div>
+                <div className="wrap">
+                    <h5>
+                        Socials
+                    </h5>
+                  <ul>
+
+                    <div className="icons">
+                      <a href="#">
+                        <BsFacebook />
+                      </a>
+                      <a href="#">
+                        <BsTwitter />
+                      </a>
+                      <a href="#">
+                        <BsYoutube />
+                      </a>
+                      <a href="#">
+                        <HiMail />
+                      </a>
+                      </div>
+                  </ul>
+                    
+                </div>
+            </div>
+            {/* <div className="item ">
+                {/* <div className="wrap">
                     <h5>Support</h5>
                     <Link to="/">Warranty Info</Link> <br/>
                     <Link to="/">Aftersales service</Link> <br/>
                     <Link to="/">Brochures</Link>
-                </div>
-            </div>
-            <div className="item">
-                <div className="wrap">
-                    <h5>Legal</h5>
-                    <Link to="/privacy-policy">Privacy Policy</Link> <br/>
-                    <Link to="/cookies-information">Cookies Information</Link> <br/>
-                    <Link to="/terms-conditions">Terms and Conditions</Link>
-                </div>
-            </div>
+                </div> */}
+            {/* </div>  */}
+           
             </div>
             </div>
             <div className="mobile">
                 <div className="footerflexwrap">
 
-            <div className="logopart">
-                <img  src="./assets/images/footer/footer_logo.png" alt="" />
+                <div className="item logopart">
+                <div className="wrapper">
+
+                <img style={{width:"200px"}} src="./assets/images/Logo/logo.png" alt="" />
+
+                <p>we are committed to providing top quality heavy equipment that empowers construction professionals to tackle projects of any size with confidence and efficiency.</p>
+                </div>
             </div>
             <Row>
                 <Col xs={12}>
@@ -94,13 +143,34 @@ const FooterComp = (props) => {
 
                 </Col>
                 <Col xs={6}>
-                <div className="item support">
+                <div className="item ">
                 <div className="wrap">
-                    <h5>Support</h5>
-                    <Link to="/">Warranty Info</Link> <br/>
-                    <Link to="/">Aftersales service</Link> <br/>
-                    <Link to="/">Brochures</Link>
+                    <h5>Documents</h5>
+                    <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank" style={{marginBottom:"10px"}}>Brochures</a> <br/>
+                  
                 </div>
+                <div className="wrap">
+                    <h5>
+                        Socials
+                    </h5>
+                  
+                    <div className="icons">
+                      <a href="#">
+                        <BsFacebook />
+                      </a>
+                      <a href="#">
+                        <BsTwitter />
+                      </a>
+                      <a href="#">
+                        <BsYoutube />
+                      </a>
+                      <a href="#">
+                        <HiMail />
+                      </a>
+                      </div>
+                    
+                </div>
+         
             </div>
                 </Col>
                 <Col xs={6}>

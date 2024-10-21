@@ -972,7 +972,7 @@
   }
   .footer {
     width: 100%;
-    background: linear-gradient(0deg, #005dba 0%, rgba(0, 93, 186, 0) 100%);
+    background: #232323;
     position: relative;
     .copyright {
       text-align: center;
@@ -985,6 +985,20 @@
     }
     .footerflexwrap {
       .logopart {
+        .wrapper{
+          p{
+              @include myfont(17px,400,$main_font);
+              color:#fff;
+              margin-top: 30px;
+          }
+          margin:0 30px;
+          padding:20px;
+          background-color: #005DBA;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      height: 100%;
+      width: 85%;
+      }
         margin-bottom: 40px;
         text-align: center;
         img {

@@ -147,7 +147,10 @@ const FooterComp = (props) => {
                 <div className="item ">
                 <div className="wrap">
                     <h5>Documents</h5>
+                    <ul>
+
                     <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank" style={{marginBottom:"10px"}}>Brochures</a> <br/>
+                    </ul>
                   
                 </div>
                 <div className="wrap">
@@ -155,6 +158,7 @@ const FooterComp = (props) => {
                         Socials
                     </h5>
                   
+                    <ul>
                     <div className="icons">
                       <a href="#">
                         <BsFacebook />
@@ -169,6 +173,7 @@ const FooterComp = (props) => {
                         <HiMail />
                       </a>
                       </div>
+                    </ul>
                     
                 </div>
          
@@ -178,9 +183,11 @@ const FooterComp = (props) => {
                 <div className="item">
                 <div className="wrap">
                     <h5>Legal</h5>
+                    <ul>
                     <Link to="/privacy-policy">Privacy Policy</Link> <br/>
                     <Link to="/cookies-information">Cookies Information</Link> <br/>
                     <Link to="/terms-conditions">Terms and Conditions</Link>
+                    </ul>
                 </div>
             </div>
                 </Col>
@@ -189,7 +196,7 @@ const FooterComp = (props) => {
             </div>
         </div>
             <div className="copyright">
-                <p>Website copyright &copy; BSSIT 2023</p>
+                <p>Website copyright &copy; BSSIT 2024</p>
             </div>
         </div>
     </>

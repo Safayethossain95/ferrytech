@@ -4,6 +4,17 @@
 @import "../../sassStyles/global";
 
 .mobile {
+  .icons{
+    svg{
+      
+        font-size: 15px;
+        color:rgba(255, 255, 255, 0.70);
+        margin-right: 10px;
+        &:last-child{
+            font-size: 17px;
+        }
+    }
+}
   .mynavbarmobi {
     background-color: #005dba !important;
     padding: 0 !important;
@@ -972,7 +983,7 @@
   }
   .footer {
     width: 100%;
-    background: #232323;
+    background-color: #0052a4;
     position: relative;
     .copyright {
       text-align: center;
@@ -990,10 +1001,12 @@
               @include myfont(17px,400,$main_font);
               color:#fff;
               margin-top: 30px;
-          }
+            }
+            border:1px solid #fff;
+                      border-top:none;
           margin:0 30px;
           padding:20px;
-          background-color: #005DBA;
+        
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
       height: 100%;
@@ -1018,8 +1031,30 @@
         .wrap {
           h5 {
             @include myfont(16px, 700, $main_font);
-            color: #005dba;
+            color: #fff;
             text-transform: uppercase;
+            position:relative;
+                        display: inline-block;
+                        &::after{
+                            position:absolute;
+                            content:'';
+                            bottom:-4px;
+                            width:40%;
+                            left:0;
+                            background-color: #ffffff98;
+                            height: 4px;
+                            ;
+                        }
+                        &::before{
+                            position:absolute;
+                            content:'';
+                            bottom:-4px;
+                            width:20%;
+                            left:calc(40% + 4px);
+                            background-color: #ffffffb4;
+                            height: 4px;
+                            ;
+                        }
           }
           a {
             display: inline-block;

@@ -5,6 +5,7 @@ import { Col, Form, Row } from "react-bootstrap";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 import SubHeading from "./SubComponents/SubHeading";
+import { Element } from "react-scroll";
 
 const ReqAquoteComp = (props) => {
   const [screenSize, getDimension] = useState({
@@ -121,7 +122,7 @@ const ReqAquoteComp = (props) => {
   };
   return (
     <>
-      <div  className="reqaquote" id="reqaquote">
+      <Element name="reqaquote"  className="reqaquote" id="reqaquote">
         <div
           className={
             props.version == "mobile"
@@ -337,7 +338,7 @@ const ReqAquoteComp = (props) => {
             </div>
           </Form>
         </div>
-      </div>
+      </Element>
     </>
   );
 };

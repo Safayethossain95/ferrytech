@@ -1,8 +1,9 @@
+/* eslint-disable eqeqeq */
 import React from 'react'
 import {motion} from 'framer-motion'
 const SubHeading = (props) => {
   return (
-    <motion.div initial={{ opacity:0}} 
+    <motion.div style={props.mb?{marginBottom:props.mb}:{}} initial={{ opacity:0}} 
     whileInView={{opacity:1 }} 
     viewport={{ once: true }}
     transition={{

@@ -7,6 +7,9 @@
     
 }
 
+html {
+    scroll-behavior: smooth;
+}
 .bdirectors{
     height: 80vh;
     @include media(xsmDevice){
@@ -99,9 +102,17 @@ body{
 }
 .downloadbutton{
     button{
+        transition: 0.4s all linear;
+        &:hover{
+            background-color: #000;
+            a{
+                color:#fff;
+            }
+        }
         a{
             img{
                 margin-left: 5px;
+                width: 19px;
             }
             display: flex;
             justify-content: center;
@@ -469,9 +480,10 @@ p{
     overflow-y: visible; /* Allow vertical content to overflow */
     white-space: nowrap; /* Ensure that content inside the container doesn't wrap (for the marquee effect) */
     position: relative;
-    padding:20px 0; /* Allows absolute positioning for children, if needed */
+    // padding:20px 0; /* Allows absolute positioning for children, if needed */
+    padding-top: 20px;
     &.quotemarquee{
-        padding:30px;
+        // padding:30px;
         background-color: #005DBA;
     }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable eqeqeq */
 
 import { motion } from "framer-motion";
@@ -6,6 +7,7 @@ import Slider from "react-slick";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
 import { partnerbrandsApi } from "../../../../utils/homepageApi";
+import { Link } from "react-scroll";
 const ConstructionQuote = (props) => {
   const slider = useRef(null);
   const [screenSize, getDimension] = useState({
@@ -63,6 +65,12 @@ const ConstructionQuote = (props) => {
     // alert("dsfaa")
     // navigate("/contact")
   }
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <>
       <div>
@@ -95,7 +103,7 @@ const ConstructionQuote = (props) => {
                     <motion.div initial={{ opacity:0  }}
                     whileInView={{
                       opacity:1,
-                      transition: { delay: key * 0.2, duration: 0.5 },
+                      transition: { delay: key * 0.1, duration: 0.5 },
                     }}
                     
                     viewport={{ once: false }} className="brandcard px-4">
@@ -144,7 +152,7 @@ const ConstructionQuote = (props) => {
                     }}
                     viewport={{ once: false }} onClick={handlenavigate} className="custom-button">
                 <span className="icon">➤</span>
-                <span ><a href="#reqaquote">Get Started</a></span>
+                <span ><Link to="reqaquote" smooth={true} duration={500} >Get Started</Link></span>
               </motion.button>
             </div>
           </div>

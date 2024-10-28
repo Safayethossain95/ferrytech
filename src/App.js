@@ -21,7 +21,11 @@ import ForkliftMountedCranePage from './pages/ForkliftMountedCranePage';
 import SelfErectingCranePage from './pages/SelfErectingCranePage';
 import ForkliftPage from './pages/ForkliftPage';
 import SpiderCranePage from './pages/SpiderCranePage';
+
+
 function App() {
+ 
+  
 
   
   return (
@@ -48,7 +52,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsnConditionsPage />} />
         </Routes>
       </BrowserRouter>
-      
+
     </>
   );
 }

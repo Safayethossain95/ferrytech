@@ -6,8 +6,52 @@
 *{
     padding:0;
     margin:0;
+    
 }
+.bannerbutton{
+    background-color:#fff!important;
+    transition: 0.4s all linear;
+    a{
+        color:#000!important;
+    }
+    &:hover{
+        background-color: #000!important;
+        a{
+            color:#fff!important;
+        }
+    }
+}
+.custom-arrow {
+    background-color: transparent;
+    border: none;
+    color: white; /* Arrow color */
+    font-size: 24px; /* Adjust size */
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above the slider */
+  }
+  
+  .prev-arrow {
+    position: absolute;
+    left: 0px; /* Adjust position */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background-color: #000;
+    width:35px;
+    padding:30px 0;
+  }
+  
+  .next-arrow {
+    position: absolute;
+    right: 0px; /* Adjust position */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background-color: #000;
+    width:35px;
+    padding:30px 0;
+  }
 .desktop{
+    
+      
     .activei{
         color:#005DBA!important;
     }
@@ -76,6 +120,9 @@
                 }
                 .downloadbutton{
                     button{
+                        img{
+                            width:20px;
+                        }
                         margin-left: 20px;
                         @include media(lgDevice)
                         {
@@ -163,12 +210,19 @@
     }
 
     .bannersection{
-        height: 90vh;
+        .slick-slider, .slick-list, .slick-track {
+            overflow: visible !important;
+           
+          }
+        
+          
+          height: 90vh;
+          overflow: visible !important;
         position:relative;
         .cimg{
             position:absolute;
             top: calc(100% + 7px);
-            left:50%;
+            left:40%;
             transform: translateX(-50%);
             img{
 
@@ -209,14 +263,46 @@
             background-color: #fff;
           }
         .div{
-            overflow: hidden;
+            overflow: visible;
             .inneritem{
+                // background-color: #016bd4;
+                background: url(../../../../public/assets/images/Banner/slider-home-1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
                 position:relative;
                 height: 90vh;
-               
+                padding-top: 100px;
+                overflow: visible !important;
+                .downloadbutton{
+                    img{
+                        width:15px;
+                    }
+                }
                 img{
-                    width:100%;
-                    height:100%;
+                    width: 100%;
+                    position: relative;
+                     /* Adjust this value to control overflow direction */
+                    z-index: 1; 
+                }
+                h3{
+                    @include myfont(16px,400,$main_font);
+                    color:#fff;
+                    position:relative;
+                    &::after{
+                        content:'';
+                        position: absolute;
+                        top:50%;
+                        left:-40px;
+                        transform: translateY(-50%);
+                        height: 1px;
+                        width:25px;
+                        background-color: #000;
+                    }
+                }
+                h2{
+                    @include myfont(50px,600,$main_font);
+                    color:#fff;
                 }
             }
            
@@ -394,7 +480,10 @@
         
     }
     .partnerbrandscomp{
-       
+        .marquee-container{
+
+            background-color: #005DBA;
+        }
         .headingofsubsectioncomp{
             padding-bottom: 90px;
         }
@@ -449,7 +538,7 @@
                      left:0px;
                      width:100%;
                      height:100%;
-                     background: rgb(255, 255, 255);
+                    //  background: rgb(255, 255, 255);
                      z-index: -1;
                      display: flex;
                      align-items: center;
@@ -462,7 +551,7 @@
                 align-items: center;
                 justify-content: center;
                 transition:0.4s ease-in-out;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                // box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
                 img{
                     transition:0.4s ease-in-out;

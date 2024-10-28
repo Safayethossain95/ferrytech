@@ -24,18 +24,26 @@ export const partnerbrandsApi = [
 const bannerApi={
     desktop:[
         {
-            imgurl:"./assets/images/Banner/img1.png"
+            smtext:"Welcome to Ferrytech",
+            bigtext:"Heavy Duty. No Compromise.",
+            imgurl:"./assets/images/Banner/bannerfloat1.webp"
         },
         {
-            imgurl:"./assets/images/Banner/img2.png"
+            smtext:"Your trusted place.",
+            bigtext:"Heavy Duty. No Compromise.",
+            imgurl:"./assets/images/Banner/bannerfloat2.png"
         }
     ],
     mobile:[
         {
-            imgurl:"./assets/images/Mobile/Banner/img1.png"
+            smtext:"Welcome to Ferrytech",
+            bigtext:"Heavy Duty. No Compromise.",
+            imgurl:"./assets/images/Banner/bannerfloat1.webp"
         },
         {
-            imgurl:"./assets/images/Mobile/Banner/img2.png"
+            smtext:"Your trusted place.",
+            bigtext:"Heavy Duty. No Compromise.",
+            imgurl:"./assets/images/Banner/bannerfloat2.png"
         }
     ]
 }

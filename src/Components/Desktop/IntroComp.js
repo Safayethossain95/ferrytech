@@ -42,21 +42,21 @@ const IntroComp = (props) => {
               : "myContainerMinimini" 
           }
         >
-          <div
-            data-aos-delay="300"
-            data-aos="fade-in"
-            data-aos-duration="1000"
+          <motion.div
+            initial={{ opacity: 0 }} // Initial state (invisible)
+            whileInView={{ opacity: 1 }} // whileInView to fully visible
+            transition={{ duration: 0.5 }}
             className="headingofsubsection"
           >
             <h3>
               We are one of the largest <br /> trading company in bangladesh
             </h3>
-          </div>
+          </motion.div>
 
-          <div
-            data-aos-delay="300"
-            data-aos="fade-in"
-            data-aos-duration="1000"
+          <motion.div
+           initial={{ opacity: 0 }} // Initial state (invisible)
+           whileInView={{ opacity: 1 }} // whileInView to fully visible
+           transition={{ duration: 0.5 }}
             className="paraofsubsection"
           >
             <p>
@@ -72,13 +72,13 @@ const IntroComp = (props) => {
               supply, installation, and maintenance, to ensure our clients'
               satisfaction.
             </p>
-          </div>
+          </motion.div>
           <div className="desktop">
-            <div
+            <motion.div
               className="introimgparts "
-              data-aos-delay="300"
-              data-aos="fade-in"
-              data-aos-duration="1000"
+              initial={{ opacity: 0 }} // Initial state (invisible)
+            whileInView={{ opacity: 1 }} // whileInView to fully visible
+            transition={{ duration: 0.5 }}
             >
               <div className="introimgsdiv">
                 <div className="overlay1">
@@ -86,7 +86,7 @@ const IntroComp = (props) => {
                   <motion.div
                     className="imgdiv"
                     initial={{ x: -10 }} // Initial position
-                    animate={{ x: 10 }} // Final position
+                    whileInView={{ x: 10 }} // Final position
                     transition={{
                       duration: 4,
                       repeat: Infinity, // Repeat infinitely
@@ -116,7 +116,7 @@ const IntroComp = (props) => {
                   <motion.div
                     className="imgdiv"
                     initial={{ rotate: 0 }} // Initial rotation angle
-                    animate={{ rotate: 360 }} // Final rotation angle for each loop
+                    whileInView={{ rotate: 360 }} // Final rotation angle for each loop
                     transition={{
                       repeat: Infinity, // Infinite repetition
                       duration: 6, // Duration of each rotation
@@ -144,7 +144,7 @@ const IntroComp = (props) => {
                   <motion.div
                     className="imgdiv"
                     initial={{ rotate: -10 }} // Initial position
-                    animate={{ rotate: 10 }} // Final position
+                    whileInView={{ rotate: 10 }} // Final position
                     transition={{
                       repeat: Infinity,
                       duration: 4,
@@ -164,14 +164,14 @@ const IntroComp = (props) => {
                 <div className="overlay3"></div>
                 <div className="overlay5"></div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div className="mobile">
-            <div
+            <motion.div
               className="introimgparts"
-              data-aos-delay="300"
-              data-aos="fade-in"
-              data-aos-duration="1000"
+              initial={{ opacity: 0 }} // Initial state (invisible)
+              whileInView={{ opacity: 1 }} // whileInView to fully visible
+              transition={{ duration: 0.5 }}
             >
               <div className="grid-cols-2">
 
@@ -182,7 +182,7 @@ const IntroComp = (props) => {
                 <motion.div
                     className="imgdiv"
                     initial={{ x: -10 }} // Initial position
-                    animate={{ x: 10 }} // Final position
+                    whileInView={{ x: 10 }} // Final position
                     transition={{
                       duration: 4,
                       repeat: Infinity, // Repeat infinitely
@@ -209,7 +209,7 @@ const IntroComp = (props) => {
                 <motion.div
                     className="imgdiv"
                     initial={{ rotate: 0 }} // Initial rotation angle
-                    animate={{ rotate: 360 }} // Final rotation angle for each loop
+                    whileInView={{ rotate: 360 }} // Final rotation angle for each loop
                     transition={{
                       repeat: Infinity, // Infinite repetition
                       duration: 6, // Duration of each rotation
@@ -238,7 +238,7 @@ const IntroComp = (props) => {
                 <motion.div
                     className="imgdiv"
                     initial={{ rotate: -10 }} // Initial position
-                    animate={{ rotate: 10 }} // Final position
+                    whileInView={{ rotate: 10 }} // Final position
                     transition={{
                       repeat: Infinity,
                       duration: 4,
@@ -260,7 +260,7 @@ const IntroComp = (props) => {
 
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import SubHeading from "./SubComponents/SubHeading";
 import AOS from 'aos';
+import {motion} from 'framer-motion';
 const ProductLineComp = () => {
   let slider1ref = useRef(null);
 
@@ -108,7 +109,7 @@ const ProductLineComp = () => {
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
     // fade:true,
-    animate: true,
+    whileInView: true,
     // cssEase: 'cubic-bezier(.68,-0.55,.27,1.55)',
     cssEase: "bezier",
   };
@@ -160,11 +161,11 @@ const ProductLineComp = () => {
         <Row>
           <Col
             lg={{ span: 6, offset: 6 }}
-            data-aos-delay="500"
-            data-aos="fade-in"
-            data-aos-duration="2000"
+           
           >
-            <div className="rightslide">
+            <motion.div initial={{ opacity: 0 }} // Initial state (invisible)
+            whileInView={{ opacity: 1 }} // whileInView to fully visible
+            transition={{ duration: 0.5, delay:0.6 }} className="rightslide">
               <Slider
                 className="slider1"
                 beforeChange={beforeChangehandler2}
@@ -183,7 +184,7 @@ const ProductLineComp = () => {
                   <img src="./assets/images/productLine/img1.png" alt="" />
                 </div>
               </Slider>
-            </div>
+            </motion.div>
           </Col>
         </Row>
         <div className="sectionoverlay">
@@ -200,11 +201,11 @@ const ProductLineComp = () => {
             <Row>
               <Col
                 lg={5}
-                data-aos-delay="500"
-                data-aos="fade-in"
-                data-aos-duration="2000"
+               
               >
-                <div className="leftslider">
+                <motion.div initial={{ opacity: 0 }} // Initial state (invisible)
+            whileInView={{ opacity: 1 }} // whileInView to fully visible
+            transition={{ duration: 0.5, delay:0.4 }} className="leftslider">
                   {/* <button className='prevbutton' style={state.activeSlide==0?{opacity:"0.3"}:{opacity:"1"}} onClick={() => slider?.current?.slickPrev()}>
                         <img src="./assets/images/productLine/arrowleft.png" alt="" />
                     </button>
@@ -259,7 +260,7 @@ const ProductLineComp = () => {
               </a>
             </button>
                   </div>
-                </div>
+                </motion.div>
               </Col>
             </Row>
           </div>

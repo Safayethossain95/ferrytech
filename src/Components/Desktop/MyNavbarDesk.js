@@ -129,7 +129,7 @@ const MyNavbarDesk = () => {
             <button>
               <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
               Download Brochures{" "}
-              <img src="./assets/images/icon/arrsm.png" alt="" />
+              <img style={{width:"15px"}} src="./assets/images/icon/arrsm.png" alt="" />
               </a>
             </button>
           </div>

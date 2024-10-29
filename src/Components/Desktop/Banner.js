@@ -38,6 +38,7 @@ const Banner = (props) => {
   };
 
   useEffect(() => {
+    console.log(window.innerHeight)
     window.addEventListener("resize", setDimension);
 
     return () => {
@@ -50,7 +51,7 @@ const Banner = (props) => {
     speed: 0,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: props.version!=="mobile" ? true : false,
     fade: false,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -63,14 +64,16 @@ const Banner = (props) => {
     customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
   };
   return (
-    <div className="bannersection mx-0">
+    <div className={window.innerHeight > 1080 ? "bannersection heightOverride mx-0" : "bannersection mx-0"}>
       {props.version == "mobile" && <div style={{ height: "60px" }}></div>}
+      <div className="sliderWrapper">
+
       <Slider {...settings}>
         {props.bannerapi.map((item, key) => {
           return (
             <div className="div" key={key}>
               <motion.div
-                className="inneritem"
+              className={window.innerHeight > 1080 ? "inneritem heightOverride" : "inneritem"}
                 initial={{ scale: 1 }} // Initial state
                 animate={{ scale: activeSlide === key ? 1 : 1 }} // Zoom only if it's the active slide
                 transition={{
@@ -170,6 +173,7 @@ const Banner = (props) => {
           );
         })}
       </Slider>
+      </div>
 
       {/* <div className="cimg">
         <img src="./assets/images/Banner/cicon.png" alt="" />

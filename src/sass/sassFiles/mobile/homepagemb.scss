@@ -329,7 +329,25 @@
 
   .bannersection {
     position: relative;
+    .sliderWrapper {
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      width: 100%; /* Ensure it takes full width */
+    }
     
+    .div, .inneritem, .myContainer {
+      max-width: 100%; /* Prevent elements from expanding beyond the screen width */
+      box-sizing: border-box; /* Prevent padding from adding extra width */
+    }
+    
+    @media (max-width: 992px) { /* Adjust if necessary */
+      .sliderWrapper,
+      .div,
+      .inneritem,
+      .myContainer {
+        padding: 0 ; /* Add padding to avoid overflow due to edge content */
+        overflow: hidden; /* Ensure no overflow in smaller screens */
+      }
+    }
     .slick-slider, .slick-list, .slick-track {
       overflow: visible !important;
      

@@ -102,7 +102,7 @@
                             text-transform: uppercase;
                             margin-bottom: 0px;
                             @include media(xsmDevice){
-                                @include myfont(40px, 700, $main_font);
+                                @include myfont(30px, 700, $main_font);
                             }
                            
                         }

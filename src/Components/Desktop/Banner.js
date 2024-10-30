@@ -82,6 +82,7 @@ const Banner = (props) => {
                 }}
               >
                 {/* <img src={item.imgurl} alt="" /> */}
+             
                 <div
                   className={
                     props.version == "mobile"
@@ -95,7 +96,7 @@ const Banner = (props) => {
                       : "myContainerMini"
                   }
                 >
-                  <Row className="align-items-center">
+                  <Row className={`align-items-center ${key%2==0?"flex-row-reverse":""}`}>
                     <Col lg={5}>
                       <motion.h3
                         initial={{ y: -20, opacity: 0 }} // Initial position and opacity
@@ -168,6 +169,7 @@ const Banner = (props) => {
                     </Col>
                   </Row>
                 </div>
+                
               </motion.div>
             </div>
           );

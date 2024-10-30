@@ -16,7 +16,7 @@
     }
 }
   .mynavbarmobi {
-    background-color: #005dba !important;
+    
     padding: 0 !important;
     height: 60px;
     display: flex;
@@ -31,7 +31,7 @@
       height: 100%;
       margin-left: 18px;
       img {
-        width: 143px;
+        height:50px;
       }
     }
     #basic-navbar-nav {
@@ -1047,6 +1047,11 @@
     .footerflexwrap {
       .logopart {
         .wrapper{
+          .ftlogowrap{
+            padding:10px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
           p{
               @include myfont(17px,400,$main_font);
               color:#fff;

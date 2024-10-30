@@ -30,7 +30,7 @@ const bannerApi={
         },
         {
             smtext:"Your trusted place.",
-            bigtext:"Heavy Duty. No Compromise.",
+            bigtext:"Built Tough. No Concessions.",
             imgurl:"./assets/images/Banner/bannerfloat2.png"
         }
     ],
@@ -42,7 +42,7 @@ const bannerApi={
         },
         {
             smtext:"Your trusted place.",
-            bigtext:"Heavy Duty. No Compromise.",
+            bigtext:"Built Tough. No Concessions.",
             imgurl:"./assets/images/Banner/bannerfloat2.png"
         }
     ]

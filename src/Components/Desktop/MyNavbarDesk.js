@@ -10,15 +10,15 @@ const MyNavbarDesk = () => {
     const navbar = document.getElementById("mynavbardesk");
 
     const handleScroll = () => {
-        console.log("Scroll position:", window.pageYOffset);
+      console.log("Scroll position:", window.pageYOffset);
 
-        if (window.pageYOffset > 100) {
-            navbar.classList.add("sticky");
-            navbar.classList.add("stickyit");
-        } else {
-            navbar.classList.remove("sticky");
-            navbar.classList.remove("stickyit");
-        }
+      if (window.pageYOffset > 100) {
+        navbar.classList.add("sticky");
+        navbar.classList.add("stickyit");
+      } else {
+        navbar.classList.remove("sticky");
+        navbar.classList.remove("stickyit");
+      }
     };
 
     // Add scroll event listener
@@ -26,18 +26,19 @@ const MyNavbarDesk = () => {
 
     // Clean up the event listener on component unmount
     return () => {
-        window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-}, []); // Empty dependency array ensures this runs only once on mount
-
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <>
       <Navbar id="mynavbardesk" className="mynavbardesk" bg="light" expand="lg">
         <Navbar.Brand href="#home">
+          <Link to="/">
           <div className="img">
-            <img src="./assets/images/Logo/logo.png" alt="" />
+            <img src="./assets/images/Logo/logo.jpg" alt="" />
           </div>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
@@ -48,7 +49,7 @@ const MyNavbarDesk = () => {
                 <Link
                   key={element.menuId}
                   className={
-                    window.location.pathname == element.url
+                    element.childNavbarVm.some(child => window.location.pathname === child.url)
                       ? "admissionclass activei"
                       : "admissionclass"
                   }
@@ -99,16 +100,21 @@ const MyNavbarDesk = () => {
         </Navbar.Collapse>
         <div className="contactpart">
           <div className="phone">
-            <a style={{cursor:"pointer"}} href="tel:+8802333312349">
+            <a style={{ cursor: "pointer" }} href="tel:+8802333312349">
               <img src="./assets/images/icon/phone.png" alt="" />
             </a>
             <div className="wrap">
-            <a style={{cursor:"pointer",textDecoration:"none",color:"unset"}} href="tel:+8802333312349">
-
-              <p>call us now</p>
-              <h4>+8802333312349</h4>
-            </a>
-            
+              <a
+                style={{
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "unset",
+                }}
+                href="tel:+8802333312349"
+              >
+                <p>call us now</p>
+                <h4>+8802333312349</h4>
+              </a>
             </div>
           </div>
           <div className="mail">
@@ -118,18 +124,25 @@ const MyNavbarDesk = () => {
 
             <div className="wrap">
               <p>talk to us</p>
-              <h4><p>
-                          <a href="mailto:info@ferrytech.net">
-                            info@ferrytech.net
-                          </a>
-                        </p></h4>
+              <h4>
+                <p>
+                  <a href="mailto:info@ferrytech.net">info@ferrytech.net</a>
+                </p>
+              </h4>
             </div>
           </div>
           <div className="downloadbutton">
             <button>
-              <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
-              Download Brochures{" "}
-              <img style={{width:"15px"}} src="./assets/images/icon/arrsm.png" alt="" />
+              <a
+                href="./assets/brochure/ferrytech_brochures_compressed.pdf"
+                target="_blank"
+              >
+                Download Brochures{" "}
+                <img
+                  style={{ width: "15px" }}
+                  src="./assets/images/icon/arrsm.png"
+                  alt=""
+                />
               </a>
             </button>
           </div>
@@ -141,7 +154,7 @@ const MyNavbarDesk = () => {
           <div className="headerwrapper">
             <Navbar.Brand href="#" className="smallbrandv">
             <div className="img">
-                    <img src="./assets/images/Logo/logo.png" alt="" />
+                    <img src="./assets/images/Logo/logo.jpg" alt="" />
                 </div>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

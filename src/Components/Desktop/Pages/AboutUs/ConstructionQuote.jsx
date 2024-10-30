@@ -65,12 +65,7 @@ const ConstructionQuote = (props) => {
     // alert("dsfaa")
     // navigate("/contact")
   }
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  
   return (
     <>
       <div>
@@ -103,7 +98,7 @@ const ConstructionQuote = (props) => {
                     <motion.div initial={{ opacity:0  }}
                     whileInView={{
                       opacity:1,
-                      transition: { delay: key * 0.1, duration: 0.5 },
+                      transition: { delay: key * 0.1, duration: 0.3 },
                     }}
                     
                     viewport={{ once: false }} className="brandcard px-4">

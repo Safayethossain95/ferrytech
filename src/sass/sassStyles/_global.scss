@@ -103,13 +103,43 @@ body{
 .downloadbutton{
     button{
         transition: 0.4s all linear;
+        position: relative;
+        overflow: hidden;
+       
+        &::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -300px;
+            width: 600px;
+            height: 400px;
+            border-radius: 50%;
+            background-color: #005DBA; /* Final color */
+            transform: scale(0); /* Start with no fill */
+            transition: transform 0.8s ease;
+            z-index: 1; /* Controls the fill animation */
+          }
+          &:hover::before {
+            transform: scale(1); /* Fully fills the circle on hover */
+          }
         &:hover{
-            background-color: #000;
+            // background-color: #000;
             a{
                 color:#fff;
+                animation: zoomAnimation 0.4s ease-in-out forwards;
             }
         }
+        @keyframes zoomAnimation {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+          }
         a{
+            transition: 0.5s all linear;;
+            z-index: 2;
             img{
                 margin-left: 5px;
                 width: 19px;
@@ -127,7 +157,7 @@ body{
         justify-content: center;
         width: 231px;   
         height: 49px;
-        background-color: #ED1C24;
+        background-color: #F27822;
         
         color:#fff;
         border-radius: 5px;
@@ -449,7 +479,7 @@ p{
 }
 @keyframes ani{
     0%{
-        top:-60px;
+        top:-65px;
     }
     100%{
         top:0px;

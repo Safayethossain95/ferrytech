@@ -4,7 +4,7 @@ import MyNavbarDesk from '../Components/Desktop/MyNavbarDesk'
 import FooterComp from '../Components/Desktop/FooterComp'
 import CommonBannerComp from '../Components/subComponents/CommonBannerComp'
 import ProductCardsComp from '../Components/Desktop/Pages/Product/ProductCardsComp'
-import { productApi } from '../utils/productsApi'
+
 
 const SelfErectingCranePage = () => {
   return (
@@ -12,13 +12,13 @@ const SelfErectingCranePage = () => {
         <div className="mobile">
         <MyNavbarMb/>
         <CommonBannerComp img="./assets/images/ProductPage/categories/self-erecting-crane.webp" title="Self Erecting Crane" version="desktop"/>
-        <ProductCardsComp version="mobile" data={productApi.selfEretingCrane}/>
+        <ProductCardsComp version="mobile" data="selfErectingCrane"/>
         <FooterComp version="mobile"/>
     </div>
     <div className="desktop">
         <MyNavbarDesk/>
         <CommonBannerComp img="./assets/images/ProductPage/categories/self-erecting-crane.webp" title="Self Erecting Crane" version="desktop"/>
-        <ProductCardsComp data={productApi.selfEretingCrane}/>
+        <ProductCardsComp data="selfErectingCrane"/>
         <FooterComp/>
     </div>
     </>

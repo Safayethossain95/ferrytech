@@ -10,7 +10,6 @@ const MyNavbarDesk = () => {
     const navbar = document.getElementById("mynavbardesk");
 
     const handleScroll = () => {
-      console.log("Scroll position:", window.pageYOffset);
 
       if (window.pageYOffset > 100) {
         navbar.classList.add("sticky");
@@ -133,17 +132,11 @@ const MyNavbarDesk = () => {
           </div>
           <div className="downloadbutton">
             <button>
-              <a
-                href="./assets/brochure/ferrytech_brochures_compressed.pdf"
-                target="_blank"
+              <Link
+                to="/login"
               >
-                Download Brochures{" "}
-                <img
-                  style={{ width: "15px" }}
-                  src="./assets/images/icon/arrsm.png"
-                  alt=""
-                />
-              </a>
+                Login
+              </Link>
             </button>
           </div>
         </div>

@@ -37,7 +37,7 @@ const Homepage = () => {
     <div className="mobile">
 
         <MyNavbarMb/>
-        <Banner version="mobile" bannerapi={bannerApi.mobile} />
+        <Banner version="mobile" bannerapi={bannerApi} />
         <IntroComp imgurl={imgurlmb} version="mobile"/>
         <IndustriesComp version="mobile"/>
         <ProdLineMbComMp/>
@@ -56,7 +56,7 @@ const Homepage = () => {
     
     <div className="desktop">
         <MyNavbarDesk/>
-        <Banner version="desktop" bannerapi={bannerApi.desktop}/>
+        <Banner version="desktop" bannerapi={bannerApi}/>
         <IntroComp imgurl={imgurldesk}/>
         <IndustriesComp/>
         <ProductLineComp/>

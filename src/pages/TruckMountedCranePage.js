@@ -4,7 +4,7 @@ import MyNavbarDesk from '../Components/Desktop/MyNavbarDesk'
 import FooterComp from '../Components/Desktop/FooterComp'
 import CommonBannerComp from '../Components/subComponents/CommonBannerComp'
 import ProductCardsComp from '../Components/Desktop/Pages/Product/ProductCardsComp'
-import { productApi } from '../utils/productsApi'
+
 
 const TruckMountedCranePage = () => {
   return (
@@ -12,13 +12,13 @@ const TruckMountedCranePage = () => {
         <div className="mobile">
         <MyNavbarMb/>
         <CommonBannerComp img="./assets/images/ProductPage/categories/truck-mounted-crane.webp" title="Truck Mounted Crane" version="desktop"/>
-        <ProductCardsComp version="mobile" data={productApi.truckMountedCrane}/>
+        <ProductCardsComp version="mobile" data="truckMountedCrane"/>
         <FooterComp version="mobile"/>
     </div>
     <div className="desktop">
         <MyNavbarDesk/>
         <CommonBannerComp img="./assets/images/ProductPage/categories/truck-mounted-crane.webp" title="Truck Mounted Crane" version="desktop"/>
-        <ProductCardsComp data={productApi.truckMountedCrane}/>
+        <ProductCardsComp data="truckMountedCrane"/>
         <FooterComp/>
     </div>
     </>

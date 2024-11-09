@@ -38,7 +38,6 @@ const Banner = (props) => {
   };
 
   useEffect(() => {
-    console.log(window.innerHeight)
     window.addEventListener("resize", setDimension);
 
     return () => {
@@ -125,7 +124,7 @@ const Banner = (props) => {
                         ))}
                       </h2>
 
-                      <div className="downloadbutton d-flex">
+                      <div className="downloadbutton big d-flex">
                         <motion.button
                           initial={{ opacity: 0 }} // Initial position and opacity
                           animate={{ opacity: activeSlide === key ? 1 : 0 }} // Slide up effect

@@ -16,7 +16,7 @@
     }
 }
   .mynavbarmobi {
-    
+    background-color: #fff;;
     padding: 0 !important;
     height: 60px;
     display: flex;
@@ -1008,6 +1008,9 @@
         border-radius: 5px;
         .item {
           margin-bottom: 30px;
+          .contentdown{
+            margin-bottom: 10px;
+          }
           h4 {
             @include myfont(18px, 500, $main_font);
             color: #fff;

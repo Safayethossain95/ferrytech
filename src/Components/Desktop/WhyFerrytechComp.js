@@ -82,7 +82,7 @@ const WhyFerrytechComp = (props) => {
             >
               <SubHeading version="desktop" subheading="Why FerryTech?" />
               <Row>
-                {whyferrytechApi.map((item, key) => {
+                {props.data.map((item, key) => {
                   return props.version == "mobile" ? (
                     <Col
                       xs={6}

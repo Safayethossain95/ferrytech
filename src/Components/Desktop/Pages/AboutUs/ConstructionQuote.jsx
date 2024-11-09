@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
-import { partnerbrandsApi } from "../../../../utils/homepageApi";
 import { Link } from "react-scroll";
 const ConstructionQuote = (props) => {
   const slider = useRef(null);
@@ -90,9 +89,9 @@ const ConstructionQuote = (props) => {
               {/* Render the items multiple times for seamless scrolling */}
               <Slider className="slidertesimoniald" ref={slider} {...settings4}>
                 {[
-                  ...partnerbrandsApi,
-                  ...partnerbrandsApi,
-                  ...partnerbrandsApi,
+                  ...props.partnerbrandsdata,
+                  ...props.partnerbrandsdata,
+                  ...props.partnerbrandsdata,
                 ].map((item, key) => (
                   <div className="cardwrap" key={key}>
                     <motion.div initial={{ opacity:0  }}

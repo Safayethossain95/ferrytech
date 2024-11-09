@@ -5,10 +5,12 @@
 
 .mobile{
     .contactbanner{
-        padding-top: 60px;
+        // padding-top: 140px;
         .bg{
             opacity:0.1;
             height: 597px;
+            padding-top: 60px;
+            margin-top: 60px;
         }
         width: 100%;
         position:relative;
@@ -22,7 +24,9 @@
             .contactbarcard{
                 width: 100%;
                 text-align: center;
-                height: 150px;
+                min-height: 150px;
+                padding:20px 0;
+                
                 margin-bottom: 15px;
                 background-color: #fff;
                 box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
@@ -49,6 +53,10 @@
                 }
                 .lowerpart{
                     .contentdown{
+                        
+                        h4{
+                            @include myfont(18px,700,$main_font);
+                        }
                         padding:0 20px;
                         p{
                             a{
@@ -80,7 +88,8 @@
             .contactbarcard{
                 width: 100%;
                 text-align: center;
-                height: 182px;
+                padding:30px 0;
+                min-height: 182px;
                 background-color: #fff;
                 box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
                 display: flex;
@@ -96,6 +105,10 @@
                 }
                 .lowerpart{
                     .contentdown{
+                        margin-bottom: 15px;
+                        h4{
+                            @include myfont(25px,700,$main_font);
+                        }
                         padding:0 20px;
                         p{
                             a{

@@ -825,7 +825,7 @@
         .Form{
             margin-top: 90px;
             .basicinput{
-                margin-bottom: 30px;
+                margin-bottom: 40px;
                 textarea{
                     height: 150px;
                    
@@ -840,9 +840,12 @@
                 background-color: #005DBA;
                 padding:43px;
                 .item{
-                    margin-bottom: 45px;
+                    .contentdown{
+                        margin-bottom: 10px;
+                    }
+                    margin-bottom: 13px;
                     h4{
-                        @include myfont(25px,500,$main_font);
+                        @include myfont(21px,500,$main_font);
                         color:#fff;
                     }
                     a{
@@ -1123,7 +1126,7 @@
                         @include myfont(16px,500,$main_font);
                         color:#fff;
                         text-decoration: none;
-                        margin: 7px 0;
+                        margin: 4px 0;
                     }
                     ul{
                         padding-left: 0;

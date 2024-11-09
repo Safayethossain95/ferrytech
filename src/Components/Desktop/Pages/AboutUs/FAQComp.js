@@ -25,10 +25,20 @@ const FAQComp = (props) => {
       }, [screenSize])
   return (
     <>
-        <div className="faqcomp">
+        <div className="faqcomp" style={props.hm=="true"?{paddingTop:"0"}:{}}>
         <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Frequently Asked questions"/>
          
-        <div className={props.version=="mobile"?"mbContainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
+        <div  className={
+              props.version == "mobile"
+                ? "mbContainer"
+                : screenSize.dynamicWidth >= 992 &&
+                  screenSize.dynamicWidth <= 1199
+                ? "myContainer896"
+                : screenSize.dynamicWidth >= 1200 &&
+                  screenSize.dynamicWidth <= 1399
+                ? "myContainerMinimini"
+                : "myContainerMini"
+            }>
             {
                 faqApi.map((item,key)=>{
                     return(

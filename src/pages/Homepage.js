@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import Banner from '../Components/Desktop/Banner'
 import '../sass/sassFiles/desktop/homepage.scss'
 import '../sass/sassFiles/mobile/homepagemb.scss'
@@ -15,16 +15,52 @@ import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp';
 import FooterComp from '../Components/Desktop/FooterComp';
 import MyNavbarMb from '../Components/Mobile/MyNavbarMb';
 import ProdLineMbComMp from '../Components/Mobile/ProdLineMbComMp';
-import { bannerApi } from '../utils/homepageApi';
+import { bannerApi, indcardApifr, partnerbrandsApi, whyferrytechApi } from '../utils/homepageApi';
 import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQuote';
 import SubHeading from '../Components/Desktop/SubComponents/SubHeading';
+import { API_URL, Only_Frontend } from '../config';
+import axios from 'axios';
 
 const Homepage = () => {
   useEffect(() => {
     AOS.init({});
     
   }, [])
+  const [bannerApidata,setBannerApi] = useState([])
+  const [indcardApi,setindcardApi] = useState([])
+  const [partnerbrandsApifinal,setpartnerbrandsApi] = useState([])
+  const [whyferrytechApifinal,setwhyferrytechApi] = useState([])
+ useEffect(()=>{
+  const fetchProducts = async () => {
+      
+    try {
+      if(Only_Frontend){
 
+        setBannerApi(bannerApi)
+        setindcardApi(indcardApifr)
+        setpartnerbrandsApi(partnerbrandsApi)
+        setwhyferrytechApi(whyferrytechApi)
+        console.log("frontend")
+      }else{
+        const response = await axios.get(`${API_URL}/bannerget`);
+        const insudtrycarddata = await axios.get(`${API_URL}/industryget`);
+        const partnerbrandsdata = await axios.get(`${API_URL}/partnerbrandsget`);
+        const whyferrytechdata = await axios.get(`${API_URL}/whyferrytechget`);
+        setwhyferrytechApi(whyferrytechdata.data)
+        console.log("bk why",whyferrytechdata.data)
+        setpartnerbrandsApi(partnerbrandsdata.data)
+        console.log("bk",partnerbrandsdata.data)
+        setBannerApi(response.data.data);
+        setindcardApi(insudtrycarddata.data.data)
+        console.log("backend")
+      }
+    } catch (error) {
+      console.log(error.message || 'Something went wrong');
+    } 
+  };
+ 
+  fetchProducts();
+ },[])
 
  
  
@@ -37,17 +73,17 @@ const Homepage = () => {
     <div className="mobile">
 
         <MyNavbarMb/>
-        <Banner version="mobile" bannerapi={bannerApi.mobile} />
+        <Banner version="mobile" bannerapi={bannerApidata} />
         <IntroComp imgurl={imgurlmb} version="mobile"/>
-        <IndustriesComp version="mobile"/>
+        <IndustriesComp version="mobile" data={indcardApi}/>
         <ProdLineMbComMp/>
         <SubHeading
             version="mobile"
             subheading="Partner Brands"
             mb="120px"
           />
-        <ConstructionQuote version="mobile"/>
-        <WhyFerrytechComp version="mobile"/>
+        <ConstructionQuote version="mobile" partnerbrandsdata={partnerbrandsApifinal}/>
+        <WhyFerrytechComp version="mobile" data={whyferrytechApifinal}/>
         <Testimonial version="mobile"/>
         <ReqAquoteComp version="mobile"/>        
         <FooterComp version="mobile"/>
@@ -56,17 +92,17 @@ const Homepage = () => {
     
     <div className="desktop">
         <MyNavbarDesk/>
-        <Banner version="desktop" bannerapi={bannerApi.desktop}/>
+        <Banner version="desktop" bannerapi={bannerApidata}/>
         <IntroComp imgurl={imgurldesk}/>
-        <IndustriesComp/>
+        <IndustriesComp data={indcardApi}/>
         <ProductLineComp/>
         <SubHeading
             version="desktop"
             subheading="Partner Brands"
             mb="140px"
           />
-        <ConstructionQuote/>
-        <WhyFerrytechComp/>
+        <ConstructionQuote partnerbrandsdata={partnerbrandsApifinal}/>
+        <WhyFerrytechComp data={whyferrytechApifinal}/>
         <Testimonial/>
         <ReqAquoteComp/>  
         <FooterComp/>

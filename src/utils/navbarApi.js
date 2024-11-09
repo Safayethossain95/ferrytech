@@ -8,8 +8,6 @@ const navbarApidata = [
       "parentMenuId": 0,
       "status": false,
       "isActive": "",
-      "effectiveFrom": null,
-      "effectiveTo": null,
       "childNavbarVm": []
     },
     {
@@ -20,8 +18,6 @@ const navbarApidata = [
       "parentMenuId": "about",
       "status": false,
       "isActive": "",
-      "effectiveFrom": null,
-      "effectiveTo": null,
       "childNavbarVm": [
         {
             "menuId": 13,
@@ -31,8 +27,6 @@ const navbarApidata = [
             "parentMenuId": "about",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
           {
@@ -43,8 +37,6 @@ const navbarApidata = [
             "parentMenuId": "about",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           }
       ]
@@ -57,8 +49,6 @@ const navbarApidata = [
       "parentMenuId":"product",
       "status": false,
       "isActive": "",
-      "effectiveFrom": null,
-      "effectiveTo": null,
       "childNavbarVm": [
         {
             "menuId":15,
@@ -68,8 +58,6 @@ const navbarApidata = [
             "parentMenuId": "product",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
           {
@@ -80,8 +68,6 @@ const navbarApidata = [
             "parentMenuId": "product",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
           {
@@ -92,8 +78,6 @@ const navbarApidata = [
             "parentMenuId": "product",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
           {
@@ -104,8 +88,6 @@ const navbarApidata = [
             "parentMenuId": "product",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
           {
@@ -116,11 +98,8 @@ const navbarApidata = [
             "parentMenuId": "product",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
-         
           {
             "menuId": 20,
             "menuName": "Forklift",
@@ -129,8 +108,6 @@ const navbarApidata = [
             "parentMenuId": "product",
             "status": false,
             "isActive": "",
-            "effectiveFrom": null,
-            "effectiveTo": null,
             "childNavbarVm": []
           },
       ]
@@ -143,8 +120,6 @@ const navbarApidata = [
       "parentMenuId": 0,
       "status": false,
       "isActive": "",
-      "effectiveFrom": null,
-      "effectiveTo": null,
       "childNavbarVm": [
         // {
         //     "menuId": 13,
@@ -180,19 +155,14 @@ const navbarApidata = [
       "parentMenuId": 0,
       "status": false,
       "isActive": "",
-      "effectiveFrom": null,
-      "effectiveTo": null,
       "childNavbarVm": []
     },
- 
   ]
 const navbarApi = () => {
   return (
     <>
-    
     </>
   )
 }
 export {navbarApidata}
-
 export default navbarApi

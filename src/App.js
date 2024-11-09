@@ -21,6 +21,8 @@ import ForkliftMountedCranePage from './pages/ForkliftMountedCranePage';
 import SelfErectingCranePage from './pages/SelfErectingCranePage';
 import ForkliftPage from './pages/ForkliftPage';
 import SpiderCranePage from './pages/SpiderCranePage';
+import LoginPage from './pages/LoginPage';
+import DashboardPage from "./pages/DashboardPage";
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
           <ScrollTop/>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/boardofdirectors" element={<BoardOfDirectorsPage />} />
           <Route path="/services" element={<ServicesPage />} />

@@ -101,6 +101,11 @@ body{
     overflow-x: hidden;
 }
 .downloadbutton{
+    &.big{
+        button{
+            width:200px;
+        }
+    }
     button{
         transition: 0.4s all linear;
         position: relative;
@@ -155,7 +160,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 231px;   
+        width:125px;   
         height: 49px;
         background-color: #F27822;
         
@@ -407,7 +412,7 @@ body{
     margin:0 auto;
 }
 .mbaboutcontainer{
-   max-width: 588px;
+   max-width: 93%;
     margin:0 auto;
     padding:0 25px;
 }

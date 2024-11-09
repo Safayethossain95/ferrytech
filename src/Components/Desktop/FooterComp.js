@@ -60,31 +60,7 @@ const FooterComp = (props) => {
                   </p>
                 </div>
               </div>
-              <div className="item contacts">
-                <div className="wrap">
-                  <h5>Contact</h5>
-                  <ul>
-                    <li>
-                      {" "}
-                      <a href="tel:+8802333312349">+8802333312349</a>
-                    </li>
-                    <li>
-                      <a href="mailto:info@ferrytech.net">info@ferrytech.net</a>
-                    </li>
-                    <li>
-                      {" "}
-                      <a
-                        target="_blank"
-                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
-                        rel="noreferrer"
-                      >
-                        House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
-                        Bangladesh.
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+             
               <div className="item support">
                 <div className="wrap">
                   <h5>Legal</h5>
@@ -113,22 +89,46 @@ const FooterComp = (props) => {
                   </ul>
                 </div>
                 <div className="wrap">
-                  <h5>Socials</h5>
+                  <h5>Contact</h5>
                   <ul>
                     <div className="icons">
-                      <a href="#">
-                        <BsFacebook />
-                      </a>
-                      <a href="#">
-                        <BsTwitter />
-                      </a>
-                      <a href="#">
-                        <BsYoutube />
-                      </a>
-                      <a href="#">
-                        <HiMail />
-                      </a>
+                    <li>
+                      {" "}
+                      <a href="tel:+8802333312349">+8802333312349</a>
+                    </li>
+                    <li>
+                      <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
+                    </li>
                     </div>
+                  </ul>
+                </div>
+              </div>
+              <div className="item contacts">
+                <div className="wrap">
+                  <h5>Location</h5>
+                  <ul>
+                    
+                    <li>
+                      {" "}
+                      <a
+                        target="_blank"
+                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
+                        rel="noreferrer"
+                      >
+                        Corporate Office: House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
+                        Bangladesh. Fax: +88 02 9142822
+                      </a>
+                    </li>
+                    <li>
+                      {" "}
+                      <a
+                        target="_blank"
+                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
+                        rel="noreferrer"
+                      >
+                       Chittagong Office: Lokman Tower (4th Floor),1646 Sheikh Mujib Road Chowmuhani, Chittagong, Bangladesh.
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -163,33 +163,35 @@ const FooterComp = (props) => {
               </div>
               <Row>
                 <Col xs={12}>
-                  <div className="item contacts">
-                    <div className="wrap">
-                      <h5>Contact</h5>
-                      <ul>
-                        <li>
-                          {" "}
-                          <a href="tel:+8802333312349">+8802333312349</a>
-                        </li>
-                        <li>
-                          <a href="mailto:info@ferrytech.net">
-                            info@ferrytech.net
-                          </a>
-                        </li>
-                        <li>
-                          {" "}
-                          <a
-                            target="_blank"
-                            href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
-                            rel="noreferrer"
-                          >
-                            House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
-                            Bangladesh.
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <div className="item contacts">
+                <div className="wrap">
+                  <h5>Location</h5>
+                  <ul>
+                   
+                    <li>
+                      {" "}
+                      <a
+                        target="_blank"
+                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
+                        rel="noreferrer"
+                      >
+                        Corporate Office: House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
+                        Bangladesh.  Fax: +88 02 9142822
+                      </a>
+                    </li>
+                    <li>
+                      {" "}
+                      <a
+                        target="_blank"
+                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
+                        rel="noreferrer"
+                      >
+                       Chittagong Office: Lokman Tower (4th Floor),1646 Sheikh Mujib Road Chowmuhani, Chittagong, Bangladesh.
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
                 </Col>
                 <Col xs={6}>
                   <div className="item ">
@@ -207,23 +209,16 @@ const FooterComp = (props) => {
                       </ul>
                     </div>
                     <div className="wrap">
-                      <h5>Socials</h5>
+                      <h5>Contact</h5>
 
                       <ul>
-                        <div className="icons">
-                          <a href="#">
-                            <BsFacebook />
-                          </a>
-                          <a href="#">
-                            <BsTwitter />
-                          </a>
-                          <a href="#">
-                            <BsYoutube />
-                          </a>
-                          <a href="#">
-                            <HiMail />
-                          </a>
-                        </div>
+                      <li>
+                      {" "}
+                      <a href="tel:+8802333312349">+8802333312349</a>
+                    </li>
+                    <li>
+                      <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
+                    </li>
                       </ul>
                     </div>
                   </div>

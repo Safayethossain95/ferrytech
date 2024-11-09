@@ -25,6 +25,18 @@ const ServiceMainComp = (props) => {
   return (
     <>
          <div className="servicemaincomp">
+         <div className="servicesbanner">
+         <div className={props.version=="mobile"?"mbaboutcontainer":screenSize.dynamicWidth>=1200 &&screenSize.dynamicWidth <=1399?"myContainerMinimini":screenSize.dynamicWidth>=992 &&screenSize.dynamicWidth<=1199?"myContainer896":"myContainerMini"}>
+         <h4>
+                    Services
+                </h4>
+                <p>
+                Ensuring optimum uptime for your equipments is your top most priority at site. Ferrytech works to help you achieve it through its integrated service capability. Our in-depth understanding of technology & equipments, expert technicians & engineers, infrastructure readiness, and quick turnaround time keep your equipments up & live. Ferrytech is a young and energetic organization providing end-to-end services for equipments. Our aim is not to reduce your downtime only but to improve your efficiency, life of the equipment and maintain your operative costs. Ferrytech understanding of engineering equipments and experience of completing variety of critical problems on site is available to you. Ferrytech is an access to end-to-end service portfolio for your valued customers. Ferrytech believes that the days of 24 x 7 Service are passed. You as a customer deserve much more to keep your business up and running. Therefore, we promise 24 x 7 Uptime through our Rapid Service Force.
+                </p>
+        
+         </div>
+               
+            </div>
          <div className="">
 
             {

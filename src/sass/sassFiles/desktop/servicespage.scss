@@ -6,6 +6,18 @@
 
 .desktop{
     .servicemaincomp{
+
+        .servicesbanner{
+            padding:50px 0;
+            h4{
+                @include myfont(40px,700,$main_font);
+                color:#005DBA;
+            }
+            p{
+                @include myfont(20px,500,$main_font);
+                color:#231F20;
+            }
+        }
         padding-top: 60px;
         h5{
             @include myfont(40px,700,$main_font);

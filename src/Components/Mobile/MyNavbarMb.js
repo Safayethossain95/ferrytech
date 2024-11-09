@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { Accordion, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
@@ -127,14 +127,17 @@ const MyNavbarMb = () => {
                 }
               })}
             </div>
-            <motion.div className="contactpart" initial={{ opacity:0  }}
-                    whileInView={{
-                      opacity:1,
-                      transition: { delay:  0.4, duration: 0.3 },
-                    }}>
+            <motion.div
+              className="contactpart"
+              initial={{ opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+                transition: { delay: 0.4, duration: 0.3 },
+              }}
+            >
               <div className="mbContainer">
                 <div className="mail">
-                  <a href="mailto:info@ferrytech.net">
+                  <a href="mailto:hq@ferrytech.net">
                     <img src="./assets/images/icon/talk.png" alt="" />
                   </a>
 
@@ -142,9 +145,7 @@ const MyNavbarMb = () => {
                     <p>talk to us</p>
                     <h4>
                       <p>
-                        <a href="mailto:info@ferrytech.net">
-                          info@ferrytech.net
-                        </a>
+                        <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
                       </p>
                     </h4>
                   </div>
@@ -169,13 +170,7 @@ const MyNavbarMb = () => {
                 </div>
                 <div className="downloadbutton">
                   <button>
-                    <a
-                      href="./assets/brochure/ferrytech_brochures_compressed.pdf"
-                      target="_blank"
-                    >
-                      Download Brochures{" "}
-                      <img src="./assets/images/icon/arrsm.png" alt="" />
-                    </a>
+                    <Link to="/login">Login</Link>
                   </button>
                 </div>
               </div>

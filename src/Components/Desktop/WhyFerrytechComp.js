@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { whyferrytechApi } from "../../utils/homepageApi";
+// import { whyferrytechApi } from "../../utils/homepageApi";
 import SubHeading from "./SubComponents/SubHeading";
 const WhyFerrytechComp = (props) => {
   const [screenSize, getDimension] = useState({

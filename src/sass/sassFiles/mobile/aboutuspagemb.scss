@@ -231,7 +231,7 @@
             .myacchead{
                 h4{
                     @include myfont(14px,400,$main_font);
-                    color:#231F20;
+                    color:#000;
                     margin-bottom: 0;
                 }
             }
@@ -258,7 +258,10 @@
         }
         .accordion-button:not(.collapsed) {
             background-color: #2a76c2;
-            color: #231f20;
+            color: #fff;
+          h4{
+            color:#fff;
+          }
           }
         .accordion{
             --bs-accordion-btn-icon: url(../../../../public/assets/images/AboutPage/accordionicon.png)!important;

@@ -2,8 +2,6 @@
 /* eslint-disable eqeqeq */
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
-import { HiMail } from "react-icons/hi";
 import { Link } from "react-router-dom";
 const FooterComp = (props) => {
   const [screenSize, getDimension] = useState({

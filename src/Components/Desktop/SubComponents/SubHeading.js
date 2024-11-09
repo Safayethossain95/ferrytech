@@ -11,7 +11,7 @@ const SubHeading = (props) => {
         delay: 0.2,
         ease: 'linear'         
     }} className={props.version=="mobile"?"headingofsubsectioncomp mobile":"headingofsubsectioncomp desktop"}>
-            <h3>{props.subheading}</h3>
+            <h3 style={props.hm=="true"?{marginTop:"10px"}:{}}>{props.subheading}</h3>
     </motion.div>
   )
 }

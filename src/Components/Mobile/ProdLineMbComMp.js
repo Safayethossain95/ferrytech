@@ -209,7 +209,7 @@ const ProdLineMbComMp = () => {
                       this machine makes material handling ever more productive.
                     </p>
                     <div className="downloadbutton">
-                      <button>
+                      <button style={{width:"200px"}}>
                         <a
                           href="./assets/brochure/ferrytech_brochures_compressed.pdf"
                           target="_blank"

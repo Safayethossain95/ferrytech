@@ -253,7 +253,7 @@ const ProductLineComp = () => {
                     </div>
                   </Slider>
                   <div className="downloadbutton">
-                  <button>
+                  <button style={{width:"200px"}}>
               <a href="./assets/brochure/ferrytech_brochures_compressed.pdf" target="_blank">
               Download Brochures{" "}
               <img src="./assets/images/icon/arrsm.png" alt="" />

@@ -134,7 +134,9 @@ const AboutBannerComp = (props) => {
                      <motion.div className="div text-center" initial={{ opacity: 0, y:-10 }} animate={{opacity:1,y:0,transition: { delay: 1 * 0.2, duration: 0.5 }}} >
                         <h3>About Ferrytech</h3>
                         <p>
-                        Ferrytech is a leading construction machinery supplier company dedicated to providing high-quality equipment and solutions for the construction industry. With a diverse range of products, including excavators, loaders, and cranes, Ferrytech caters to the needs of both large-scale projects and smaller construction tasks. Their user-friendly website features detailed product descriptions, specifications, and an easy-to-navigate interface, making it simple for customers to find the right machinery for their projects.
+                        It is the forerunner in Bangladesh for heavy-duty materials handling equipment and related services. Ferrytech goal is to act as an efficient liaison between its foreign principals who are multi-billion dollar entities and market leaders in their own rites and its clients who represent both the government and private sectors of Bangladesh. Given our long-standing reputation, experience, management team, expertise and performance. We continue to serve our clients with the same fervor, excellence and professionalism.
+
+Having faithfully served the Nation for many years through various economics ups and downs, and optimizing its strategic advantage Ferrytech is now planning to expand its business ventures in newer markets.
                         </p>
                      </motion.div>
                 </div>

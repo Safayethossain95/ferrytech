@@ -10,7 +10,6 @@ const MyNavbarDesk = () => {
     const navbar = document.getElementById("mynavbardesk");
 
     const handleScroll = () => {
-
       if (window.pageYOffset > 100) {
         navbar.classList.add("sticky");
         navbar.classList.add("stickyit");
@@ -34,9 +33,9 @@ const MyNavbarDesk = () => {
       <Navbar id="mynavbardesk" className="mynavbardesk" bg="light" expand="lg">
         <Navbar.Brand href="#home">
           <Link to="/">
-          <div className="img">
-            <img src="./assets/images/Logo/logo.jpg" alt="" />
-          </div>
+            <div className="img">
+              <img src="./assets/images/Logo/logo.jpg" alt="" />
+            </div>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -48,7 +47,9 @@ const MyNavbarDesk = () => {
                 <Link
                   key={element.menuId}
                   className={
-                    element.childNavbarVm.some(child => window.location.pathname === child.url)
+                    element.childNavbarVm.some(
+                      (child) => window.location.pathname === child.url
+                    )
                       ? "admissionclass activei"
                       : "admissionclass"
                   }
@@ -117,7 +118,7 @@ const MyNavbarDesk = () => {
             </div>
           </div>
           <div className="mail">
-            <a href="mailto:info@ferrytech.net">
+            <a href="mailto:hq@ferrytech.net">
               <img src="./assets/images/icon/talk.png" alt="" />
             </a>
 
@@ -125,18 +126,14 @@ const MyNavbarDesk = () => {
               <p>talk to us</p>
               <h4>
                 <p>
-                  <a href="mailto:info@ferrytech.net">info@ferrytech.net</a>
+                  <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
                 </p>
               </h4>
             </div>
           </div>
           <div className="downloadbutton">
             <button>
-              <Link
-                to="/login"
-              >
-                Login
-              </Link>
+              <Link to="/dashboard">Dashboard</Link>
             </button>
           </div>
         </div>

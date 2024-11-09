@@ -138,7 +138,7 @@ const whyferrytechApi = [
   },
 ];
 
-const indcardApi = [
+const indcardApifr = [
   {
     id: 1,
     heading: "Ports & Terminals",
@@ -179,6 +179,6 @@ const indcardApi = [
 const homepageApi = () => {
   return <></>;
 };
-export { bannerApi, indcardApi, navbarApi, whyferrytechApi };
+export { bannerApi, indcardApifr, navbarApi, whyferrytechApi };
 
 export default homepageApi;

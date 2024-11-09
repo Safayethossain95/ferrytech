@@ -16,17 +16,18 @@ const ProductCardsComp = (props) => {
     const fetchProducts = async () => {
       
       try {
-        if(!Only_Frontend){
+        if(Only_Frontend){
 
+          setProducts(productApi)
+          let mydata = productApi.find(item => item.catname === props.data)
+          setMyData(mydata)
+          console.log("frontend")
+        }else{
           const response = await axios.get(`${API_URL}/productget`);
           setProducts(response.data.data);
           let mydata = response.data.data.find(item => item.catname === props.data)
           setMyData(mydata)
           console.log("backend")
-        }else{
-          setProducts(productApi)
-          let mydata = productApi.find(item => item.catname === props.data)
-          setMyData(mydata)
         }
         console.log(mydata)
       } catch (error) {

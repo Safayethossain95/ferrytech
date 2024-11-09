@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { indcardApi } from "../../utils/homepageApi";
 import SubHeading from "./SubComponents/SubHeading";
 const IndustriesComp = (props) => {
   const [screenSize, getDimension] = useState({
@@ -45,7 +44,7 @@ const IndustriesComp = (props) => {
           />
 
           <Row className="indcardwrap">
-            {indcardApi.map((item, key) => {
+            {props.data.map((item, key) => {
               return (
                 <Col xs={6} lg={6} key={key}>
                   <motion.div

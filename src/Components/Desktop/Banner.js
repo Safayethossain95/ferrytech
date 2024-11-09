@@ -38,7 +38,6 @@ const Banner = (props) => {
   };
 
   useEffect(() => {
-    console.log(window.innerHeight)
     window.addEventListener("resize", setDimension);
 
     return () => {

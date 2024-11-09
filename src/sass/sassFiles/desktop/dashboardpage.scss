@@ -1,0 +1,131 @@
+.leftsidebardash{
+
+  .sidebar_ad {
+    background-color: #000f29;
+    position: fixed;
+    left: 0;
+    top: 80px;
+    height: calc(100vh - 80px);
+    .sub-list {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transform: translateY(0px);
+    }
+    .drp.open .sub-list {
+      max-height:300px;
+      transform: translateY(15px);
+
+      /* Set an appropriate value */
+    }
+    .sidebarcomp {
+      position: fixed;
+      width: 250px;
+      height: calc(100vh - 80px);
+      background-color: #000f29;
+      padding: 35px 25px;
+      overflow-y: scroll;
+      ul {
+        padding-left: 0;
+        margin-bottom: 20px;
+        li {
+          a {
+            text-decoration: none;
+            &.active {
+              background: var(
+                              --Color,
+                              linear-gradient(91deg, #1b70ff 7.66%, #00add2 99.62%)
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+
+            }
+            color: #fff;
+
+          }
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .front {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          ul {
+            margin-left: 10px;
+            position: relative;
+            padding-left: 15px;
+            &::after {
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 90%;
+              width: 1px;
+              background-color: #fff;
+              content: "";
+            }
+            li {
+              margin: 0;
+
+              a {
+                &.active {
+                  background: var(
+                                  --Color,
+                                  linear-gradient(91deg, #1b70ff 7.66%, #00add2 99.62%)
+                  );
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+
+                }
+                color: #fff;
+
+              }
+            }
+          }
+          &.drp {
+            cursor: pointer;
+          }
+          img {
+            width: 18px;
+            height: 18px;
+            transition: 0.3s ease-in-out;
+          }
+          a {
+            color: #fff;
+
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+
+  //position: fixed;
+  //left:0;
+  //top:0;
+  //width:300px;
+  //height:100vh;
+  //background: #608ac1;
+  //ul{
+  //  margin-top: 100px;
+  //  margin-right: 30px;
+  //  list-style: none;
+  //  li{
+  //    a{
+  //      padding-left: 20px;
+  //      display: block;
+  //      border-radius: 5px;
+  //      &.active{
+  //        //background: #;
+  //      }
+  //      line-height: 35px;
+  //      color:#000;
+  //      text-decoration: none;
+  //    }
+  //  }
+  //}
+}

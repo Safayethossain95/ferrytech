@@ -26,7 +26,7 @@ const FAQComp = (props) => {
   return (
     <>
         <div className="faqcomp" style={props.hm=="true"?{paddingTop:"0"}:{}}>
-        <SubHeading version={props.version=="mobile"?"mobile":""} subheading="Frequently Asked questions"/>
+        <SubHeading hm={props.hm} version={props.version=="mobile"?"mobile":""} subheading="Frequently Asked questions"/>
          
         <div  className={
               props.version == "mobile"

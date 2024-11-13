@@ -34,7 +34,7 @@ const MyNavbarDesk = () => {
         <Navbar.Brand href="#home">
           <Link to="/">
             <div className="img">
-              <img src="./assets/images/Logo/logo.jpg" alt="" />
+              <img src="/assets/images/Logo/logo.jpg" alt="" />
             </div>
           </Link>
         </Navbar.Brand>
@@ -101,7 +101,7 @@ const MyNavbarDesk = () => {
         <div className="contactpart">
           <div className="phone">
             <a style={{ cursor: "pointer" }} href="tel:+8802333312349">
-              <img src="./assets/images/icon/phone.png" alt="" />
+              <img src="/assets/images/icon/phone.png" alt="" />
             </a>
             <div className="wrap">
               <a
@@ -119,7 +119,7 @@ const MyNavbarDesk = () => {
           </div>
           <div className="mail">
             <a href="mailto:hq@ferrytech.net">
-              <img src="./assets/images/icon/talk.png" alt="" />
+              <img src="/assets/images/icon/talk.png" alt="" />
             </a>
 
             <div className="wrap">
@@ -144,7 +144,7 @@ const MyNavbarDesk = () => {
           <div className="headerwrapper">
             <Navbar.Brand href="#" className="smallbrandv">
             <div className="img">
-                    <img src="./assets/images/Logo/logo.jpg" alt="" />
+                    <img src="/assets/images/Logo/logo.jpg" alt="" />
                 </div>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -191,7 +191,7 @@ const MyNavbarDesk = () => {
             </Navbar.Collapse>
             <Link to ="/applyonline" className="appplybutton">
               Apply Online{" "}
-              <img src="./assets/images/icons/arrowright.png" alt="" />{" "}
+              <img src="/assets/images/icons/arrowright.png" alt="" />{" "}
             </Link>
           </div>
         </div>

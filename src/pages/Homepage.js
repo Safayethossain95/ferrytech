@@ -30,6 +30,7 @@ const Homepage = () => {
   const [indcardApi,setindcardApi] = useState([])
   const [partnerbrandsApifinal,setpartnerbrandsApi] = useState([])
   const [whyferrytechApifinal,setwhyferrytechApi] = useState([])
+  const [introCompApifinal,introCompApiFinal] = useState([])
  useEffect(()=>{
   const fetchProducts = async () => {
       
@@ -46,6 +47,9 @@ const Homepage = () => {
         const insudtrycarddata = await axios.get(`${API_URL}/industryget`);
         const partnerbrandsdata = await axios.get(`${API_URL}/partnerbrandsget`);
         const whyferrytechdata = await axios.get(`${API_URL}/whyferrytechget`);
+        const introcompdata = await axios.get(`${API_URL}/introgetall`);
+        introCompApiFinal(introcompdata.data.data)
+        console.log("intocomp", introcompdata.data.data)
         setwhyferrytechApi(whyferrytechdata.data)
         console.log("bk why",whyferrytechdata.data)
         setpartnerbrandsApi(partnerbrandsdata.data)
@@ -93,7 +97,7 @@ const Homepage = () => {
     <div className="desktop">
         <MyNavbarDesk/>
         <Banner version="desktop" bannerapi={bannerApidata}/>
-        <IntroComp imgurl={imgurldesk}/>
+        <IntroComp data={introCompApifinal} imgurl={imgurldesk}/>
         <IndustriesComp data={indcardApi}/>
         <ProductLineComp/>
         <SubHeading

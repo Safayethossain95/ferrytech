@@ -85,6 +85,7 @@ const WhyFerrytechComp = (props) => {
                 {props.data.map((item, key) => {
                   return props.version == "mobile" ? (
                     <Col
+                    key={key}
                       xs={6}
                       className="cardd"
                       data-aos-delay="500"

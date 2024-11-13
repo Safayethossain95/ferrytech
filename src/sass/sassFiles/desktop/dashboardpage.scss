@@ -1,5 +1,4 @@
-.leftsidebardash{
-
+.leftsidebardash {
   .sidebar_ad {
     background-color: #000f29;
     position: fixed;
@@ -13,7 +12,7 @@
       transform: translateY(0px);
     }
     .drp.open .sub-list {
-      max-height:300px;
+      max-height: 300px;
       transform: translateY(15px);
 
       /* Set an appropriate value */
@@ -33,16 +32,14 @@
             text-decoration: none;
             &.active {
               background: var(
-                              --Color,
-                              linear-gradient(91deg, #1b70ff 7.66%, #00add2 99.62%)
+                --Color,
+                linear-gradient(91deg, #1b70ff 7.66%, #00add2 99.62%)
               );
               background-clip: text;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
-
             }
             color: #fff;
-
           }
           margin-bottom: 10px;
           &:last-child {
@@ -72,16 +69,14 @@
               a {
                 &.active {
                   background: var(
-                                  --Color,
-                                  linear-gradient(91deg, #1b70ff 7.66%, #00add2 99.62%)
+                    --Color,
+                    linear-gradient(91deg, #1b70ff 7.66%, #00add2 99.62%)
                   );
                   background-clip: text;
                   -webkit-background-clip: text;
                   -webkit-text-fill-color: transparent;
-
                 }
                 color: #fff;
-
               }
             }
           }
@@ -102,7 +97,6 @@
       }
     }
   }
-
 
   //position: fixed;
   //left:0;
@@ -128,4 +122,56 @@
   //    }
   //  }
   //}
+}
+
+.content_ad {
+  top: 80px;
+  left:0;
+  position: relative;
+  height: calc(100vh);
+  background-color: #f9f9f9;
+  overflow-y: scroll;
+  margin-left: 250px;
+  padding: 40px;
+  padding-bottom: 0;
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    input[type="text"] {
+      margin-bottom: 1rem;
+      padding: 0.3rem 0.4rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+      }
+    }
+  
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      color: #333;
+  
+      input[type="checkbox"] {
+        margin-left: 0.5rem;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+  
 }

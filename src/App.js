@@ -23,6 +23,9 @@ import ForkliftPage from './pages/ForkliftPage';
 import SpiderCranePage from './pages/SpiderCranePage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from "./pages/DashboardPage";
+import PartnerBrandsPage from './pages/Dashboard/PartnerBrandsPage';
+import IndustryCardPage from './pages/Dashboard/IndustryCardPage';
+import IntroCompDashPage from './pages/Dashboard/IntroCompDashPage';
 
 
 function App() {
@@ -40,6 +43,9 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard/partner-brands" element={<PartnerBrandsPage />} />
+          <Route path="/dashboard/industrycards" element={<IndustryCardPage />} />
+          <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/boardofdirectors" element={<BoardOfDirectorsPage />} />
           <Route path="/services" element={<ServicesPage />} />

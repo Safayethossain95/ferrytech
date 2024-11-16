@@ -85,6 +85,16 @@ const AdminSidebar = () => {
                                 </li>
                                 <li>
                                     <Link
+                                        to={`/dashboard/product-line`}
+                                        className={
+                                            location.pathname == `/dashboard/product-line` ? "active" : ""
+                                        }
+                                    >
+                                        Product Line
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
                                         to={`/dashboard/partner-brands`}
                                         className={
                                             location.pathname == `/dashboard/partner-brands` ? "active" : ""

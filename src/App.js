@@ -27,6 +27,8 @@ import PartnerBrandsPage from './pages/Dashboard/PartnerBrandsPage';
 import IndustryCardPage from './pages/Dashboard/IndustryCardPage';
 import IntroCompDashPage from './pages/Dashboard/IntroCompDashPage';
 
+import ProductLinePage from './pages/Dashboard/ProductLinePage';
+
 
 function App() {
  
@@ -44,6 +46,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/dashboard/partner-brands" element={<PartnerBrandsPage />} />
+          <Route path="/dashboard/product-line" element={<ProductLinePage />} />
           <Route path="/dashboard/industrycards" element={<IndustryCardPage />} />
           <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />

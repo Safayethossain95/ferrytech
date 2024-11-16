@@ -15,7 +15,7 @@ import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp';
 import FooterComp from '../Components/Desktop/FooterComp';
 import MyNavbarMb from '../Components/Mobile/MyNavbarMb';
 import ProdLineMbComMp from '../Components/Mobile/ProdLineMbComMp';
-import { bannerApi, indcardApifr, partnerbrandsApi, whyferrytechApi } from '../utils/homepageApi';
+import { bannerApi, indcardApifr, partnerbrandsApi, productlineApiFr, whyferrytechApi } from '../utils/homepageApi';
 import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQuote';
 import SubHeading from '../Components/Desktop/SubComponents/SubHeading';
 import { API_URL, Only_Frontend } from '../config';
@@ -31,6 +31,7 @@ const Homepage = () => {
   const [partnerbrandsApifinal,setpartnerbrandsApi] = useState([])
   const [whyferrytechApifinal,setwhyferrytechApi] = useState([])
   const [introCompApifinal,introCompApiFinal] = useState([])
+  const [productlineApifinal,setproductlineApiFinal] = useState(productlineApiFr)
  useEffect(()=>{
   const fetchProducts = async () => {
       
@@ -41,6 +42,7 @@ const Homepage = () => {
         setindcardApi(indcardApifr)
         setpartnerbrandsApi(partnerbrandsApi)
         setwhyferrytechApi(whyferrytechApi)
+        setproductlineApiFinal(productlineApiFr)
         console.log("frontend")
       }else{
         const response = await axios.get(`${API_URL}/bannerget`);
@@ -48,8 +50,10 @@ const Homepage = () => {
         const partnerbrandsdata = await axios.get(`${API_URL}/partnerbrandsget`);
         const whyferrytechdata = await axios.get(`${API_URL}/whyferrytechget`);
         const introcompdata = await axios.get(`${API_URL}/introgetall`);
+        const productlinedata = await axios.get(`${API_URL}/productlinegetall`)
+        setproductlineApiFinal(productlinedata.data.data)
         introCompApiFinal(introcompdata.data.data)
-        console.log("intocomp", introcompdata.data.data)
+        console.log("productline bk",productlinedata.data.data)
         setwhyferrytechApi(whyferrytechdata.data)
         console.log("bk why",whyferrytechdata.data)
         setpartnerbrandsApi(partnerbrandsdata.data)
@@ -99,7 +103,7 @@ const Homepage = () => {
         <Banner version="desktop" bannerapi={bannerApidata}/>
         <IntroComp data={introCompApifinal} imgurl={imgurldesk}/>
         <IndustriesComp data={indcardApi}/>
-        <ProductLineComp/>
+        <ProductLineComp data={productlineApifinal}/>
         <SubHeading
             version="desktop"
             subheading="Partner Brands"

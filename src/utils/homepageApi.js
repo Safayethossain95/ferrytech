@@ -176,9 +176,41 @@ const indcardApifr = [
   },
 ];
 
+const productlineApiFr = [
+  {
+    "_id": {
+      "$oid": "673840edf97cbcbcd55e23a4"
+    },
+    "isActive": true,
+    "productname": "MANTSINEN 140",
+    "details": "Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
+    "img": "./assets/images/productLine/img1.png",
+    "__v": 0
+  },
+{
+  "_id": {
+    "$oid": "67384063f97cbcbcd55e239d"
+  },
+  "isActive": true,
+  "productname": "MANTSINEN 540",
+  "details": "Mantsinen 540 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
+  "img": "./assets/images/productLine/img2.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673840edf97cbcbcd55e23a4"
+  },
+  "isActive": true,
+  "productname": "MANTSINEN 140",
+  "details": "Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
+  "img": "./assets/images/productLine/img1.png",
+  "__v": 0
+}]
+
 const homepageApi = () => {
   return <></>;
 };
-export { bannerApi, indcardApifr, navbarApi, whyferrytechApi };
+export { bannerApi, indcardApifr, navbarApi, whyferrytechApi ,productlineApiFr};
 
 export default homepageApi;

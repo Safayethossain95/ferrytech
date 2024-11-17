@@ -103,6 +103,17 @@ const AdminSidebar = () => {
                                         Partner Brands
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link
+                                        to={`/dashboard/whyferrytech`}
+                                        className={
+                                            location.pathname == `/dashboard/whyferrytech` ? "active" : ""
+                                        }
+                                    >
+                                        
+                                        Why Ferrytech
+                                    </Link>
+                                </li>
                                 
                             </ul>
 

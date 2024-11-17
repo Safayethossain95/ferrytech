@@ -28,6 +28,7 @@ import IndustryCardPage from './pages/Dashboard/IndustryCardPage';
 import IntroCompDashPage from './pages/Dashboard/IntroCompDashPage';
 
 import ProductLinePage from './pages/Dashboard/ProductLinePage';
+import WhyFerrytechCompDashPage from './pages/Dashboard/WhyFerrytechCompDashPage';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/dashboard/partner-brands" element={<PartnerBrandsPage />} />
           <Route path="/dashboard/product-line" element={<ProductLinePage />} />
           <Route path="/dashboard/industrycards" element={<IndustryCardPage />} />
+          <Route path="/dashboard/whyferrytech" element={<WhyFerrytechCompDashPage />} />
           <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/boardofdirectors" element={<BoardOfDirectorsPage />} />

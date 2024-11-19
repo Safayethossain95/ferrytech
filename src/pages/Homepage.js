@@ -20,6 +20,7 @@ import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQ
 import SubHeading from '../Components/Desktop/SubComponents/SubHeading';
 import { API_URL, Only_Frontend } from '../config';
 import axios from 'axios';
+import { contactsApi } from './../utils/contactsApi';
 
 const Homepage = () => {
   useEffect(() => {
@@ -32,6 +33,9 @@ const Homepage = () => {
   const [whyferrytechApifinal,setwhyferrytechApi] = useState([])
   const [introCompApifinal,introCompApiFinal] = useState([])
   const [productlineApifinal,setproductlineApiFinal] = useState(productlineApiFr)
+
+  
+ 
  useEffect(()=>{
   const fetchProducts = async () => {
       
@@ -51,6 +55,7 @@ const Homepage = () => {
         const whyferrytechdata = await axios.get(`${API_URL}/whyferrytechget`);
         const introcompdata = await axios.get(`${API_URL}/introgetall`);
         const productlinedata = await axios.get(`${API_URL}/productlinegetall`)
+        
         setproductlineApiFinal(productlinedata.data.data)
         introCompApiFinal(introcompdata.data.data)
         console.log("productline bk",productlinedata.data.data)
@@ -94,7 +99,7 @@ const Homepage = () => {
         <WhyFerrytechComp version="mobile" data={whyferrytechApifinal}/>
         <Testimonial version="mobile"/>
         <ReqAquoteComp version="mobile"/>        
-        <FooterComp version="mobile"/>
+        <FooterComp version="mobile" />
         
     </div>
     
@@ -113,7 +118,7 @@ const Homepage = () => {
         <WhyFerrytechComp data={whyferrytechApifinal}/>
         <Testimonial/>
         <ReqAquoteComp/>  
-        <FooterComp/>
+        <FooterComp />
     </div>
 
     </>

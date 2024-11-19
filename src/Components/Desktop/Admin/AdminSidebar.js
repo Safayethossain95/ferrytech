@@ -9,7 +9,11 @@ const AdminSidebar = () => {
     const [isJobEntryOpen, setJobEntryOpen] = useState(true);
     const [isstudentdrpOpen, setisstudentdrpOpen] = useState(false);
     const [isHomepagedrpOpen, setisHomepagedrpOpen] = useState(false);
+    const [isAboutpagedrpOpen, setisAboutpagedrpOpen] = useState(false);
 
+    const toggleAboutEntry = () => {
+        setisAboutpagedrpOpen((prevOpen) => !prevOpen);
+    };
     const toggleJobEntry = () => {
         setJobEntryOpen((prevOpen) => !prevOpen);
     };
@@ -118,6 +122,45 @@ const AdminSidebar = () => {
                             </ul>
 
                         </li>
+                        <li className={`drp ${isAboutpagedrpOpen ? "open" : ""}`}>
+                            <div className="front" onClick={toggleAboutEntry}>
+                                <Link>About Page</Link>
+                                <img
+                                    style={
+                                        isAboutpagedrpOpen ? { transform: "rotate(180deg)" } : {}
+                                    }
+                                    src="/assets/images/dashboard/admin/arrowdown.png"
+                                    alt=""
+                                />
+                            </div>
+
+                            <ul className="sub-list">
+                               
+                               
+                                <li>
+                                    <Link
+                                        to={`/dashboard/contact`}
+                                        className={
+                                            location.pathname == `/dashboard/contact` ? "active" : ""
+                                        }
+                                    >
+                                        Contact Info
+                                    </Link>
+                                </li>
+
+                                <li>
+                                    <Link
+                                        to={`/dashboard/faqedit`}
+                                        className={
+                                            location.pathname == `/dashboard/faqedit` ? "active" : ""
+                                        }
+                                    >
+                                        FAQ Edit
+                                    </Link>
+                                </li>
+                            </ul>
+
+                        </li>
                         <li className={`drp ${isHomepagedrpOpen ? "open" : ""}`}>
                             <div className="front" onClick={toggleHomeEntry}>
                                 <Link>Common Components</Link>
@@ -131,32 +174,24 @@ const AdminSidebar = () => {
                             </div>
 
                             <ul className="sub-list">
+                               
+                               
                                 <li>
                                     <Link
-                                        to="/banneredit"
+                                        to={`/dashboard/contact`}
                                         className={
-                                            location.pathname == "/banneredit" ? "active" : ""
+                                            location.pathname == `/dashboard/contact` ? "active" : ""
                                         }
                                     >
-                                        Brand slider Images
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        to="/featuresedit"
-                                        className={
-                                            location.pathname == "/featuresedit" ? "active" : ""
-                                        }
-                                    >
-                                        Request a Quote
+                                        Contact Info
                                     </Link>
                                 </li>
 
                                 <li>
                                     <Link
-                                        to={`/faqedit`}
+                                        to={`/dashboard/faqedit`}
                                         className={
-                                            location.pathname == `/faqedit` ? "active" : ""
+                                            location.pathname == `/dashboard/faqedit` ? "active" : ""
                                         }
                                     >
                                         FAQ Edit

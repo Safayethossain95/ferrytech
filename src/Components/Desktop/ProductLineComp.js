@@ -26,8 +26,6 @@ const ProductLineComp = (props) => {
   useEffect(() => {
     window.addEventListener("resize", setDimension);
 
-    console.log(props.data)
-
     return () => {
       window.removeEventListener("resize", setDimension);
     };

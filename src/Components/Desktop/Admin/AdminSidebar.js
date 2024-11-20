@@ -139,12 +139,12 @@ const AdminSidebar = () => {
                                
                                 <li>
                                     <Link
-                                        to={`/dashboard/contact`}
+                                        to={`/dashboard/aboutpage`}
                                         className={
-                                            location.pathname == `/dashboard/contact` ? "active" : ""
+                                            location.pathname == `/dashboard/aboutpage` ? "active" : ""
                                         }
                                     >
-                                        Contact Info
+                                        AboutPage Edit
                                     </Link>
                                 </li>
 

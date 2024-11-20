@@ -31,6 +31,7 @@ import ProductLinePage from './pages/Dashboard/ProductLinePage';
 import WhyFerrytechCompDashPage from './pages/Dashboard/WhyFerrytechCompDashPage';
 import FAQEditPage from './pages/Dashboard/FAQEditPage';
 import ContactInfoPage from './pages/Dashboard/ContactInfoPage';
+import AboutDashPage from './pages/Dashboard/AboutUsDashPage';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/dashboard/industrycards" element={<IndustryCardPage />} />
           <Route path="/dashboard/faqedit" element={<FAQEditPage />} />
           <Route path="/dashboard/contact" element={<ContactInfoPage />} />
+          <Route path="/dashboard/aboutpage" element={<AboutDashPage />} />
           <Route path="/dashboard/whyferrytech" element={<WhyFerrytechCompDashPage />} />
           <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />

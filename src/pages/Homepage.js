@@ -20,7 +20,6 @@ import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQ
 import SubHeading from '../Components/Desktop/SubComponents/SubHeading';
 import { API_URL, Only_Frontend } from '../config';
 import axios from 'axios';
-import { contactsApi } from './../utils/contactsApi';
 
 const Homepage = () => {
   useEffect(() => {

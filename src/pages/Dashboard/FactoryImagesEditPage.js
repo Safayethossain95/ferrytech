@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import AdminSidebar from "../../Components/Desktop/Admin/AdminSidebar";
-import MyNavbarDesk from "../../Components/Desktop/MyNavbarDesk";
-import { API_URL } from "../../config";
-
-const PartnerBrandsPage = () => {
+import { API_URL, Only_Frontend } from "../../config";
+import { factoryImagesApi } from './../../utils/aboutUsPageApi';
+const FactoryImagesEditPage = () => {
   const [changeCount, setchangeCount] = useState(0);
   const [editmode, seteditmode] = useState(false);
   const [bnid, setbnid] = useState("");
@@ -15,14 +13,30 @@ const PartnerBrandsPage = () => {
     img: "",
   });
 
-  const industryedittoggle = async (myid) => {
+  const [factoryfinaldata,setfactoryfinaldata]=useState(factoryImagesApi)
+
+  useEffect(()=>{
+    const fetchfooter = async()=>{
+      try{
+        if(!Only_Frontend){
+          const res = await axios.get(`${API_URL}/factoryimagesget`)
+          setfactoryfinaldata(res.data)
+          console.log(res.data)
+        }
+        else{
+          console.log("frontend factory")
+        }
+      } catch (error) {
+        console.log(error.message || 'Something went wrong');
+      } 
+    }
+    fetchfooter()
+  },[])
+
+  const industryedittoggle = async (myitem) => {
     try {
-      const response = await axios.get(
-        `${API_URL}/partnerbrandsgetById/${myid}`
-      );
-      console.log("Responsedat:", response.data);
-      setbnid(response.data._id);
-      setFormData(response.data);
+      setbnid(myitem._id)
+      setFormData(myitem);
       seteditmode(true);
       //   setData(response.data);
     } catch (error) {
@@ -34,7 +48,7 @@ const PartnerBrandsPage = () => {
     async function callapi() {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_URL}/partnerbrandsget`);
+        const response = await axios.get(`${API_URL}/factoryimagesget`);
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -52,7 +66,7 @@ const PartnerBrandsPage = () => {
   const industrydelete = async (myid) => {
     try {
       const response = await axios.delete(
-        `${API_URL}/partnerbrandsdelete/${myid}`
+        `${API_URL}/factoryimagesdelete/${myid}`
       );
       console.log("Response:", response.data.data);
       setchangeCount((p) => p + 1); // Handle the response
@@ -65,11 +79,11 @@ const PartnerBrandsPage = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        `${API_URL}/partnerbrandspost`,
+        `${API_URL}/factoryimagespost`,
         formData
       );
       console.log("Response:", response.data.data);
-      setFormData({ isActive: false,  img: "" });
+      setFormData({ isActive: false, img: "" });
       setchangeCount((p) => p + 1); // Handle the response
     } catch (error) {
       console.error("Error posting data:", error); // Handle any errors
@@ -78,7 +92,7 @@ const PartnerBrandsPage = () => {
   const industryeditsubmit = async () => {
     try {
       const response = await axios.post(
-        `${API_URL}/partnerbrandsedit/${bnid}`,
+        `${API_URL}/factoryimagesedit/${bnid}`,
         formData
       );
       console.log("Responsedat:", response.data.data);
@@ -106,12 +120,8 @@ const PartnerBrandsPage = () => {
   return (
     <div>
       <div className="desktop">
-        <div className="leftsidebardash">
-          <MyNavbarDesk />
-          <AdminSidebar />
-        </div>
-        <div className="content_ad">
-          <h4 className="text-center mb-4">Partner brands</h4>
+       
+        <h4 className="text-center mb-4">Factory Images Edit</h4>
           <table className="table-auto m-auto w-full border-collapse">
             <thead>
               <tr>
@@ -137,7 +147,7 @@ const PartnerBrandsPage = () => {
                   </td>
                 </tr>
               ) : (
-                data?.map((item, index) => (
+                factoryfinaldata?.map((item, index) => (
                   <tr key={index}>
                     <td className="border px-4 py-2">
                       {item.isActive ? "Yes" : "No"}
@@ -148,7 +158,7 @@ const PartnerBrandsPage = () => {
                     <td className="border px-4 py-2 d-flex gap-2">
                       <button
                         className="btn btn-primary"
-                        onClick={() => industryedittoggle(item._id)}
+                        onClick={() => industryedittoggle(item)}
                       >
                         Edit
                       </button>
@@ -198,10 +208,10 @@ const PartnerBrandsPage = () => {
               </div>
             </form>
           </div>
-        </div>
+    
       </div>
     </div>
   );
 };
 
-export default PartnerBrandsPage;
+export default FactoryImagesEditPage;

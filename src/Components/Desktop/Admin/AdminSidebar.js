@@ -148,16 +148,7 @@ const AdminSidebar = () => {
                                     </Link>
                                 </li>
 
-                                <li>
-                                    <Link
-                                        to={`/dashboard/faqedit`}
-                                        className={
-                                            location.pathname == `/dashboard/faqedit` ? "active" : ""
-                                        }
-                                    >
-                                        FAQ Edit
-                                    </Link>
-                                </li>
+                                
                             </ul>
 
                         </li>

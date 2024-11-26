@@ -22,3 +22,13 @@ export const factoryImagesApi = [{
     "isActive": true,
     "__v": 0
   }]
+
+  export const certificateImagesApi = [{
+    "_id": {
+      "$oid": "674561f75cf800b7bd024e9a"
+    },
+    "img": "./assets/images/AboutPage/certificate1.png",
+    "isActive": true,
+    "__v": 0
+  },
+]

@@ -10,7 +10,11 @@ const AdminSidebar = () => {
     const [isstudentdrpOpen, setisstudentdrpOpen] = useState(false);
     const [isHomepagedrpOpen, setisHomepagedrpOpen] = useState(false);
     const [isAboutpagedrpOpen, setisAboutpagedrpOpen] = useState(false);
+    const [isProductpagedrpOpen, setisProductpagedrpOpen] = useState(false);
 
+    const toggleProductEntry = () => {
+        setisProductpagedrpOpen((prevOpen) => !prevOpen);
+    };
     const toggleAboutEntry = () => {
         setisAboutpagedrpOpen((prevOpen) => !prevOpen);
     };
@@ -145,6 +149,36 @@ const AdminSidebar = () => {
                                         }
                                     >
                                         AboutPage Edit
+                                    </Link>
+                                </li>
+
+                                
+                            </ul>
+
+                        </li>
+                        <li className={`drp ${isProductpagedrpOpen ? "open" : ""}`}>
+                            <div className="front" onClick={toggleProductEntry}>
+                                <Link>Product Page</Link>
+                                <img
+                                    style={
+                                        isAboutpagedrpOpen ? { transform: "rotate(180deg)" } : {}
+                                    }
+                                    src="/assets/images/dashboard/admin/arrowdown.png"
+                                    alt=""
+                                />
+                            </div>
+
+                            <ul className="sub-list">
+                               
+                               
+                                <li>
+                                    <Link
+                                        to={`/dashboard/productpage`}
+                                        className={
+                                            location.pathname == `/dashboard/productpage` ? "active" : ""
+                                        }
+                                    >
+                                        Product Page Edit
                                     </Link>
                                 </li>
 

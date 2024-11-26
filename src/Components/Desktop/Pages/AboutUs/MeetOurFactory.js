@@ -5,6 +5,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
+import { factoryImagesApi } from "../../../../utils/aboutUsPageApi";
+import { API_URL, Only_Frontend } from "../../../../config";
+import axios from "axios";
 const MeetOurFactory = (props) => {
   const slider = useRef(null);
   const [screenSize, getDimension] = useState({
@@ -61,6 +64,24 @@ const MeetOurFactory = (props) => {
     ],
   };
 
+  const [factoryfinaldata,setfactoryfinaldata]=useState(factoryImagesApi)
+
+  useEffect(()=>{
+    const fetchfooter = async()=>{
+      try{
+        if(!Only_Frontend){
+          const res = await axios.get(`${API_URL}/factoryimagesget`)
+          setfactoryfinaldata(res.data)
+        }
+        else{
+          console.log("frontend factory")
+        }
+      } catch (error) {
+        console.log(error.message || 'Something went wrong');
+      } 
+    }
+    fetchfooter()
+  },[])
   
 
   return (
@@ -100,27 +121,21 @@ const MeetOurFactory = (props) => {
         }
       >
         <Slider className="slidermeetourfactory" ref={slider} {...settings4}>
-          <div>
+          {
+            factoryfinaldata.map((item,key)=>{
+              return (
+          <div key={key}>
             <img
               className="w-100"
-              src="./assets/images/AboutPage/meetourfactory1.png"
+              src={item.img}
               alt=""
             />
           </div>
-          <div>
-            <img
-              className="w-100"
-              src="./assets/images/AboutPage/meetourfactory2.png"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="w-100"
-              src="./assets/images/AboutPage/meetourfactory3.png"
-              alt=""
-            />
-          </div>
+                
+              )
+            })
+          }
+         
         </Slider>
       </div>
     </div>

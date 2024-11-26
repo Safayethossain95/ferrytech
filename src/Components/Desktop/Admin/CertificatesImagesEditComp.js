@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { API_URL, Only_Frontend } from "../../config";
-import { factoryImagesApi } from './../../utils/aboutUsPageApi';
-const FactoryImagesEditPage = () => {
+import { API_URL, Only_Frontend } from "../../../config";
+import { certificateImagesApi } from "../../../utils/aboutUsPageApi";
+const CertificatesImagesEditComp = () => {
   const [changeCount, setchangeCount] = useState(0);
   const [editmode, seteditmode] = useState(false);
   const [bnid, setbnid] = useState("");
@@ -12,7 +12,7 @@ const FactoryImagesEditPage = () => {
     img: "",
   });
 
-  const [factoryfinaldata,setfactoryfinaldata]=useState(factoryImagesApi)
+  const [certificatefinaldata,setcertificatefinaldata]=useState(certificateImagesApi)
 
  
 
@@ -31,9 +31,14 @@ const FactoryImagesEditPage = () => {
     async function callapi() {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_URL}/factoryimagesget`);
-        setfactoryfinaldata(response.data);
-        console.log(response.data);
+        if(!Only_Frontend){
+
+          const response = await axios.get(`${API_URL}/certificateimagesget`);
+          setcertificatefinaldata(response.data);
+          console.log(response.data);
+        } else{
+          console.log("frontend cirtificate")
+        }
       } catch (error) {
         console.log(error);
       } finally {
@@ -48,16 +53,11 @@ const FactoryImagesEditPage = () => {
 
   const industrydelete = async (myid) => {
     try {
-      if(!Only_Frontend){
-
-        const response = await axios.delete(
-          `${API_URL}/factoryimagesdelete/${myid}`
-        );
-        console.log("Response:", response.data.data);
-        setchangeCount((p) => p + 1); // Handle the response
-      }else{
-        console.log("only frontend factory")
-      }
+      const response = await axios.delete(
+        `${API_URL}/certificateimagesdelete/${myid}`
+      );
+      console.log("Response:", response.data.data);
+      setchangeCount((p) => p + 1); // Handle the response
     } catch (error) {
       console.error("Error deleting data:", error); // Handle any errors
     }
@@ -67,7 +67,7 @@ const FactoryImagesEditPage = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        `${API_URL}/factoryimagespost`,
+        `${API_URL}/certificateimagespost`,
         formData
       );
       console.log("Response:", response.data.data);
@@ -80,7 +80,7 @@ const FactoryImagesEditPage = () => {
   const industryeditsubmit = async () => {
     try {
       const response = await axios.post(
-        `${API_URL}/factoryimagesedit/${bnid}`,
+        `${API_URL}/certificateimagesedit/${bnid}`,
         formData
       );
       console.log("Responsedat:", response.data.data);
@@ -109,7 +109,7 @@ const FactoryImagesEditPage = () => {
     <div>
       <div className="desktop">
        
-        <h4 className="text-center mb-4">Factory Images Edit</h4>
+        <h4 className="text-center mb-4">Certificate Images Edit</h4>
           <table className="table-auto m-auto w-full border-collapse">
             <thead>
               <tr>
@@ -135,7 +135,7 @@ const FactoryImagesEditPage = () => {
                   </td>
                 </tr>
               ) : (
-                factoryfinaldata?.map((item, index) => (
+                certificatefinaldata?.map((item, index) => (
                   <tr key={index}>
                     <td className="border px-4 py-2">
                       {item.isActive ? "Yes" : "No"}
@@ -202,4 +202,4 @@ const FactoryImagesEditPage = () => {
   );
 };
 
-export default FactoryImagesEditPage;
+export default CertificatesImagesEditComp;

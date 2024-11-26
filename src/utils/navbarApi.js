@@ -53,7 +53,7 @@ const navbarApidata = [
         {
             "menuId":15,
             "menuName": "Truck Crane",
-            "url": "/truck-crane",
+            "url": "/product-single/truckCrane",
             "sequence": 0,
             "parentMenuId": "product",
             "status": false,
@@ -63,7 +63,7 @@ const navbarApidata = [
           {
             "menuId": 16,
             "menuName": "Truck Mounted Crane",
-            "url": "/truck-mounted-crane",
+            "url": "/product-single/truckMountedCrane",
             "sequence": 0,
             "parentMenuId": "product",
             "status": false,
@@ -73,7 +73,7 @@ const navbarApidata = [
           {
             "menuId": 17,
             "menuName": "Forklift Mounted Crane",
-            "url": "/forklift-mounted-crane",
+            "url": "/product-single/forkliftMountedCrane",
             "sequence": 0,
             "parentMenuId": "product",
             "status": false,
@@ -83,7 +83,7 @@ const navbarApidata = [
           {
             "menuId": 19,
             "menuName": "Self-Erecting Crane",
-            "url": "/self-erecting-crane",
+            "url": "/product-single/selfErectingCrane",
             "sequence": 0,
             "parentMenuId": "product",
             "status": false,
@@ -93,7 +93,7 @@ const navbarApidata = [
           {
             "menuId": 18,
             "menuName": "Spider Crane",
-            "url": "/spider-crane",
+            "url": "/product-single/spiderCrane",
             "sequence": 0,
             "parentMenuId": "product",
             "status": false,
@@ -103,7 +103,7 @@ const navbarApidata = [
           {
             "menuId": 20,
             "menuName": "Forklift",
-            "url": "/fork-lift",
+            "url": "/product-single/forklift",
             "sequence": 0,
             "parentMenuId": "product",
             "status": false,

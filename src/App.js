@@ -32,6 +32,8 @@ import WhyFerrytechCompDashPage from './pages/Dashboard/WhyFerrytechCompDashPage
 import FAQEditPage from './pages/Dashboard/FAQEditPage';
 import ContactInfoPage from './pages/Dashboard/ContactInfoPage';
 import AboutDashPage from './pages/Dashboard/AboutUsDashPage';
+import ProductSingleCommonPage from './pages/ProductSingleCommonPage';
+import ProductDashPage from './pages/Dashboard/ProductDashPage';
 
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
           <Route path="/dashboard/faqedit" element={<FAQEditPage />} />
           <Route path="/dashboard/contact" element={<ContactInfoPage />} />
           <Route path="/dashboard/aboutpage" element={<AboutDashPage />} />
+          <Route path="/dashboard/productpage" element={<ProductDashPage />} />
           <Route path="/dashboard/whyferrytech" element={<WhyFerrytechCompDashPage />} />
           <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
@@ -62,6 +65,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product" element={<ProductPage />} />
+          <Route path="/product-single/:prodname" element={<ProductSingleCommonPage />} />
           <Route path="/truck-crane" element={<TruckCraneProductsPage />} />
           <Route path="/truck-mounted-crane" element={<TruckMountedCranePage />} />
           <Route path="/forklift-mounted-crane" element={<ForkliftMountedCranePage />} />

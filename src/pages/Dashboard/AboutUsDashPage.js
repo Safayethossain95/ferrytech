@@ -5,6 +5,7 @@ import AdminSidebar from "../../Components/Desktop/Admin/AdminSidebar";
 import MyNavbarDesk from "../../Components/Desktop/MyNavbarDesk";
 import { API_URL } from "../../config";
 import FactoryImagesEditPage from "./FactoryImagesEditPage";
+import CertificatesImagesEditComp from "../../Components/Desktop/Admin/CertificatesImagesEditComp";
 
 const AboutUsDashPage = () => {
   const [changeCount, setchangeCount] = useState(0);
@@ -554,7 +555,7 @@ const AboutUsDashPage = () => {
           </form>
 
           <FactoryImagesEditPage/>
-          
+          <CertificatesImagesEditComp/>
           <div></div>
         </div>
       </div>

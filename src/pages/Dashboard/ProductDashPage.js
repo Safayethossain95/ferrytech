@@ -4,37 +4,62 @@ import React, { useEffect, useState } from "react";
 import AdminSidebar from "../../Components/Desktop/Admin/AdminSidebar";
 import MyNavbarDesk from "../../Components/Desktop/MyNavbarDesk";
 import { API_URL } from "../../config";
-import FactoryImagesEditPage from "./FactoryImagesEditPage";
-import CertificatesImagesEditComp from "../../Components/Desktop/Admin/CertificatesImagesEditComp";
 
 const ProductDashPage = () => {
   const [changeCount, setchangeCount] = useState(0);
   const [data, setData] = useState([]);
   const [formData, setFormData] = useState({
-    stats: [
+    catname: "",
+    bannerheading: "",
+    bannerbg: "",
+    heading: "",
+    para: "",
+    card: [
       {
-        number: null,
-        unit: "",
-        power: null,
-        text: "",
+        imgurl: "",
+        name: "",
+        detail: "",
+        isActive: true,
       },
     ],
-    bg: "",
-    title: "",
-    description: "",
   });
- 
- 
-
- 
-
   const [dataAboutUsDetails, setdataAboutUsDetails] = useState([]);
-
-
+  const [bnid, setbnid] = useState("");
   const industryedittoggle = async (item) => {
     try {
       setFormData(item);
+      seteditmode(true);
+      setbnid(item._id);
       //   setData(response.data);
+    } catch (error) {
+      console.error("Error deleting data:", error); // Handle any errors
+    }
+    document.getElementById('editform').scrollIntoView({ behavior: 'smooth' });
+  };
+  const industryeditsubmit = async () => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/producteditById/${bnid}`,
+        formData
+      );
+      console.log("Responsedat:", response.data.data);
+      setchangeCount((p) => p + 1);
+      setFormData({
+        catname: "",
+        bannerheading: "",
+        bannerbg: "",
+        heading: "",
+        para: "",
+        card: [
+          {
+            imgurl: "",
+            name: "",
+            detail: "",
+            isActive: true,
+          },
+        ],
+      });
+      seteditmode(false);
     } catch (error) {
       console.error("Error deleting data:", error); // Handle any errors
     }
@@ -62,7 +87,7 @@ const ProductDashPage = () => {
 
   const industrydelete = async (myid) => {
     try {
-      const response = await axios.delete(`${API_URL}/contactdelete/${myid}`);
+      const response = await axios.delete(`${API_URL}/productdelete/${myid}`);
       console.log("Response:", response.data.data);
       setchangeCount((p) => p + 1); // Handle the response
     } catch (error) {
@@ -70,60 +95,62 @@ const ProductDashPage = () => {
     }
   };
 
-  const handleInputChange = (e) => {
+ 
+
+  // Handle change for general fields
+  const handleGeneralChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  // Handle change for new card input
+
+  // Add new card to the form data
+  const addCard = () => {
+    setFormData({
+      ...formData,
+      card: [
+        ...formData.card,
+        { imgurl: "", name: "", detail: "", isActive: true },
+      ],
+    });
+  };
+  const handleCardChange = (index, field, value) => {
+    const updatedCards = formData.card.map((item, i) =>
+      i === index ? { ...item, [field]: value } : item
+    );
+    setFormData({ ...formData, card: updatedCards });
+  };
+  const [editmode, seteditmode] = useState(false);
+  const handlesubmit = async (e) => {
     e.preventDefault();
-    async function aboutbannerpost() {
-      console.log({ aboutBanner: formData });
-      try {
-        const response = await axios.post(`${API_URL}/aboutuspagepost`, {
-          aboutBanner: formData,
-        });
-        setFormData({
-          stats: [
-            {
-              number: "",
-              unit: "",
-              power: "",
-              text: "",
-            },
-          ],
-          bg: "",
-          title: "",
-          description: "",
-        });
-        setchangeCount((p) => p + 1);
-        // Handle the response if needed
-        console.log(response.data);
-      } catch (error) {
-        // Handle any errors
-        console.error("Error submitting form:", error);
-      }
+    console.log(formData);
+    try {
+      const response = await axios.post(`${API_URL}/productpost`, formData);
+      console.log("Response:", response.data.data);
+      setFormData({
+        catname: "",
+        bannerheading: "",
+        bannerbg: "",
+        heading: "",
+        para: "",
+        card: [
+          {
+            imgurl: "",
+            name: "",
+            detail: "",
+            isActive: false,
+          },
+        ],
+      });
+      setchangeCount((p) => p + 1); // Handle the response
+    } catch (error) {
+      console.error("Error posting data:", error); // Handle any errors
     }
-    aboutbannerpost();
   };
-  const handleStatsChange = (index, e) => {
-    const { name, value } = e.target;
-    const updatedStats = [...formData.stats];
-    updatedStats[index][name] = value;
-    setFormData({ ...formData, stats: updatedStats });
-  };
-  const addStat = () => {
-    const newStat = { number: null, unit: "", power: null, text: "" };
-    setFormData({ ...formData, stats: [...formData.stats, newStat] });
-  };
-  const removeStat = (index) => {
-    const updatedStats = formData.stats.filter((_, i) => i !== index);
-    setFormData({ ...formData, stats: updatedStats });
-  };
-
+  const handlenewproductinsert=()=>{
+    document.getElementById('editform').scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <div>
       <div className="desktop">
@@ -132,194 +159,248 @@ const ProductDashPage = () => {
           <AdminSidebar />
         </div>
         <div className="content_ad">
-          <h4 className="text-center mb-4">Product Page Edit</h4>
-          <table className="table-auto border-collapse border border-gray-400 w-full">
-      <thead>
-        <tr className="bg-gray-200">
-          <th className="border border-gray-400 px-4 py-2">Field</th>
-          <th className="border border-gray-400 px-4 py-2">Value</th>
-          <th className="border border-gray-400 px-4 py-2">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {/* Displaying the general fields */}
-        {
-          data?.map((olditem,key)=>{
-            return(
-              <>
-        <tr>
-          <td className="border border-gray-400 px-4 py-2">Category Name</td>
-          <td className="border border-gray-400 px-4 py-2">{olditem.catname}</td>
-        </tr>
-        <tr>
-          <td className="border border-gray-400 px-4 py-2">Banner Heading</td>
-          <td className="border border-gray-400 px-4 py-2">{olditem.bannerheading}</td>
-        </tr>
-        <tr>
-          <td className="border border-gray-400 px-4 py-2">Heading</td>
-          <td className="border border-gray-400 px-4 py-2">{olditem.heading}</td>
-        </tr>
-        <tr>
-          <td className="border border-gray-400 px-4 py-2">Description</td>
-          <td className="border border-gray-400 px-4 py-2">{olditem.para}</td>
-        </tr>
-        <tr>
-          <td className="border border-gray-400 px-4 py-2">Banner Image</td>
-          <td className="border border-gray-400 px-4 py-2">
-          {olditem.bannerbg}
-          </td>
-        <td> <div className="d-flex gap-2">
-                      <button
-                        className="btn btn-primary"
-                        onClick={() => industryedittoggle(olditem._id)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => industrydelete(olditem._id)}
-                      >
-                        Delete
-                      </button>
-                      </div></td>
-        </tr>
-        <h5 className="border border-gray-400 px-4 py-2">Products</h5>
-       
-        {olditem.card.map((item) => (
-              <tr >
-          <td key={item._id} className="border border-gray-400 px-4 py-2" colSpan="2">
-              <div className="flex items-center">
-                <p>{item.imgurl}</p>
-                <div>
-                  <p className="font-semibold">{item.name}</p>
-                  <p>{item.detail}</p>
-                  <p>Status: {item.isActive ? 'Active' : 'Inactive'}</p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        ))}
-           
-              </>
-            )
-          })
-        }
-
-        {/* Divider Row */}
-      
-
-        {/* Displaying the card items */}
-      </tbody>
-    </table>
-          <form onSubmit={handleSubmit}>
-            {/* Stats Section */}
-            {formData?.stats.map((stat, index) => (
-              <div key={index} className="mb-4">
-                <h4>Stats {index + 1}</h4>
-                <div>
-                  <label>Stats - Number</label>
-                  <input
-                    type="number"
-                    name="number"
-                    value={stat.number}
-                    onChange={(e) => handleStatsChange(index, e)}
-                  />
-                </div>
-
-                <div>
-                  <label>Stats - Unit</label>
-                  <input
-                    type="text"
-                    name="unit"
-                    value={stat.unit}
-                    onChange={(e) => handleStatsChange(index, e)}
-                  />
-                </div>
-
-                <div>
-                  <label>Stats - Power</label>
-                  <input
-                    type="number"
-                    name="power"
-                    value={stat.power}
-                    onChange={(e) => handleStatsChange(index, e)}
-                  />
-                </div>
-
-                <div>
-                  <label>Stats - Text</label>
-                  <input
-                    type="text"
-                    name="text"
-                    value={stat.text}
-                    onChange={(e) => handleStatsChange(index, e)}
-                  />
-                </div>
-
-                {formData.stats.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => removeStat(index)}
-                    className="btn btn-danger mt-2"
-                  >
-                    Remove Stat
-                  </button>
-                )}
-              </div>
-            ))}
-
-            <button
-              type="button"
-              onClick={addStat}
-              className="btn btn-primary mt-2"
-            >
-              Add Stat
-            </button>
-
-            {/* Background Image Section */}
-            <div>
-              <label>Background Image URL</label>
-              <input
-                type="text"
-                name="bg"
-                value={formData.bg}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            {/* Title Section */}
-            <div>
-              <label>Title</label>
-              <input
-                type="text"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            {/* Description Section */}
-            <div>
-              <label>Description</label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div>
+          <div className="m-auto" style={{width:"100%"}}>
+            <div className="text-end">
               <div className="downloadbutton">
-                <button type="submit">
-                  <a>Submit</a>
+                <button className="ms-auto my-4" style={{width:"220px"}} onClick={handlenewproductinsert}>
+                  <a>Insert New Product Line</a>
                 </button>
               </div>
             </div>
-          </form>
+          </div>
+          <h4 className="text-center mb-4">Product Page Edit</h4>
+          <table className="table-auto border-collapse border border-gray-400 w-full m-auto">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border border-gray-400 px-4 py-2">Field</th>
+                <th className="border border-gray-400 px-4 py-2">Value</th>
+                <th className="border border-gray-400 px-4 py-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* Displaying the general fields */}
+              {loading ? (
+                <tr>
+                  <td colSpan="3">
+                    <div
+                      style={{
+                        width: "600px",
+                        height:"600px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <img src="/assets/loading/loading.svg" alt="Loading..." />
+                    </div>
+                  </td>
+                </tr>
+              ) :data?.map((olditem, key) => {
+                return (
+                  <>
+                    <tr>
+                      <td className="border border-gray-400 px-4 py-2">
+                        Category Name
+                      </td>
+                      <td className="border border-gray-400 px-4 py-2">
+                        {olditem.catname}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-400 px-4 py-2">
+                        Banner Heading
+                      </td>
+                      <td className="border border-gray-400 px-4 py-2">
+                        {olditem.bannerheading}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-400 px-4 py-2">
+                        Heading
+                      </td>
+                      <td className="border border-gray-400 px-4 py-2">
+                        {olditem.heading}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-400 px-4 py-2">
+                        Description
+                      </td>
+                      <td className="border border-gray-400 px-4 py-2">
+                        {olditem.para}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-400 px-4 py-2">
+                        Banner Image
+                      </td>
+                      <td className="border border-gray-400 px-4 py-2">
+                        {olditem.bannerbg}
+                      </td>
+                      <td style={{ padding: "20px" }}>
+                        {" "}
+                        <div className="d-flex gap-2">
+                          <button
+                            className="btn btn-primary"
+                            onClick={() => industryedittoggle(olditem)}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="btn btn-danger"
+                            onClick={() => industrydelete(olditem._id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <td colSpan={2}>
+                      <h5 className="border border-gray-400 px-4 py-2">
+                        Products
+                      </h5>
+                    </td>
 
-        
-          <div></div>
+                    {olditem.card.map((item,key) => (
+                      <tr>
+                        <td
+                          key={item._id}
+                          className="border border-gray-400 px-4 py-2"
+                          colSpan="2"
+                        >
+                          <div className="flex items-center">
+                            <b>Product No. {key+1}</b>
+                            <p>
+                              <b>Image: </b> {item.imgurl}
+                            </p>
+                            <div>
+                              <p className="font-semibold">
+                                <b>Name: </b> {item.name}
+                              </p>
+                              <p>
+                                <b>Detail: </b>
+                                {item.detail}
+                              </p>
+                              <p>
+                                <b>Status:</b>{" "}
+                                {item.isActive ? "Active" : "Inactive"}
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </>
+                );
+              })}
+
+              {/* Divider Row */}
+
+              {/* Displaying the card items */}
+            </tbody>
+          </table>
+
+          <div>
+            <div className="form mt-4" id="editform">
+              <div className="p-6 max-w-4xl m-auto">
+                <h2 className="text-2xl font-bold mb-4">Truck Crane Form</h2>
+                {/* General fields */}
+                <div className="space-y-4">
+                  <input
+                    name="catname"
+                    value={formData?.catname}
+                    onChange={handleGeneralChange}
+                    className="border p-2 w-full"
+                    placeholder="Category Name"
+                  />
+                  <input
+                    name="bannerheading"
+                    value={formData?.bannerheading}
+                    onChange={handleGeneralChange}
+                    className="border p-2 w-full"
+                    placeholder="Banner Heading"
+                  />
+                  <input
+                    name="bannerbg"
+                    value={formData?.bannerbg}
+                    onChange={handleGeneralChange}
+                    className="border p-2 w-full"
+                    placeholder="Banner Background URL"
+                  />
+                  <input
+                    name="heading"
+                    value={formData?.heading}
+                    onChange={handleGeneralChange}
+                    className="border p-2 w-full"
+                    placeholder="Heading"
+                  />
+                  <textarea
+                    name="para"
+                    value={formData?.para}
+                    onChange={handleGeneralChange}
+                    className="border p-2 w-full"
+                    placeholder="Description"
+                  />
+                </div>
+
+                {/* Existing cards */}
+                <h3 className="text-xl font-bold mt-6 mb-2">Existing Cards</h3>
+                {formData?.card?.map((cardItem, index) => (
+                  <div key={index} className="card-form">
+                    <input
+                      type="text"
+                      placeholder="Image URL"
+                      value={cardItem.imgurl}
+                      onChange={(e) =>
+                        handleCardChange(index, "imgurl", e.target.value)
+                      }
+                    />
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      value={cardItem.name}
+                      onChange={(e) =>
+                        handleCardChange(index, "name", e.target.value)
+                      }
+                    />
+                    <input
+                      type="text"
+                      placeholder="Detail"
+                      value={cardItem.detail}
+                      onChange={(e) =>
+                        handleCardChange(index, "detail", e.target.value)
+                      }
+                    />
+                    <label>
+                      Active:
+                      <input
+                        type="checkbox"
+                        checked={cardItem.isActive}
+                        onChange={(e) =>
+                          handleCardChange(index, "isActive", e.target.checked)
+                        }
+                      />
+                    </label>
+                    <hr />
+                  </div>
+                ))}
+                {/* Button to add a new card */}
+                <button onClick={addCard}>Add New Card</button>
+
+                <div className="downloadbutton mt-3">
+                  {editmode ? (
+                    <button type="button" onClick={industryeditsubmit}>
+                      <a>Edit</a>
+                    </button>
+                  ) : (
+                    <button onClick={handlesubmit} className="w-100">
+                      <a href="">Submit</a>
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

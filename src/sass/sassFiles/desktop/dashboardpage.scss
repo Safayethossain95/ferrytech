@@ -137,6 +137,77 @@
   margin-left: 250px;
   padding: 40px;
   padding-bottom: 0;
+  .form {
+    width: 400px; /* Set form width */
+    padding: 20px;
+    margin:0 auto;
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Input fields and textarea */
+  .form input,
+  .form textarea {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 15px; /* Spacing between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded input corners */
+    font-size: 14px;
+  }
+  
+  /* Button styling */
+  .form button {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: #f1f1f1; /* Light grey background */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 400px; /* Match form width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center card content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+  
+  /* Card image */
+  .card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Card text */
+  .card h4 {
+    margin: 5px 0;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .card p {
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+  }
   h4{
     @include myfont(24px,600,$main_font);
   }

@@ -23,7 +23,7 @@ const ProductDashPage = () => {
       },
     ],
   });
-  const [dataAboutUsDetails, setdataAboutUsDetails] = useState([]);
+  // const [dataAboutUsDetails, setdataAboutUsDetails] = useState([]);
   const [bnid, setbnid] = useState("");
   const industryedittoggle = async (item) => {
     try {

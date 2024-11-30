@@ -34,6 +34,7 @@ import ContactInfoPage from './pages/Dashboard/ContactInfoPage';
 import AboutDashPage from './pages/Dashboard/AboutUsDashPage';
 import ProductSingleCommonPage from './pages/ProductSingleCommonPage';
 import ProductDashPage from './pages/Dashboard/ProductDashPage';
+import ServiceDashPage from './pages/Dashboard/ServiceDashPage';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path="/dashboard/contact" element={<ContactInfoPage />} />
           <Route path="/dashboard/aboutpage" element={<AboutDashPage />} />
           <Route path="/dashboard/productpage" element={<ProductDashPage />} />
+          <Route path="/dashboard/servicepage" element={<ServiceDashPage />} />
           <Route path="/dashboard/whyferrytech" element={<WhyFerrytechCompDashPage />} />
           <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />

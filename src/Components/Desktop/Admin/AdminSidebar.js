@@ -11,7 +11,11 @@ const AdminSidebar = () => {
     const [isHomepagedrpOpen, setisHomepagedrpOpen] = useState(false);
     const [isAboutpagedrpOpen, setisAboutpagedrpOpen] = useState(false);
     const [isProductpagedrpOpen, setisProductpagedrpOpen] = useState(false);
+    const [isServicepagedrpOpen, setisServicepagedrpOpen] = useState(false);
 
+    const toggleServiceEntry = () => {
+        setisServicepagedrpOpen((prevOpen) => !prevOpen);
+    };
     const toggleProductEntry = () => {
         setisProductpagedrpOpen((prevOpen) => !prevOpen);
     };
@@ -179,6 +183,36 @@ const AdminSidebar = () => {
                                         }
                                     >
                                         Product Page Edit
+                                    </Link>
+                                </li>
+
+                                
+                            </ul>
+
+                        </li>
+                        <li className={`drp ${isServicepagedrpOpen ? "open" : ""}`}>
+                            <div className="front" onClick={toggleServiceEntry}>
+                                <Link>Service Page</Link>
+                                <img
+                                    style={
+                                        isAboutpagedrpOpen ? { transform: "rotate(180deg)" } : {}
+                                    }
+                                    src="/assets/images/dashboard/admin/arrowdown.png"
+                                    alt=""
+                                />
+                            </div>
+
+                            <ul className="sub-list">
+                               
+                               
+                                <li>
+                                    <Link
+                                        to={`/dashboard/servicepage`}
+                                        className={
+                                            location.pathname == `/dashboard/servicepage` ? "active" : ""
+                                        }
+                                    >
+                                        Service Page Edit
                                     </Link>
                                 </li>
 

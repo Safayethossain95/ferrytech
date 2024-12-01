@@ -72,7 +72,7 @@ const ProductCardsComp = (props) => {
 
   return (
     <>
-    <CommonBannerComp img={mydata?.bannerbg} title={mydata?.bannerheading} version={props.version=="mobile"?"mobile":"desktop"}/>
+   
     <div className="productcardscomp">
       <div
         className={

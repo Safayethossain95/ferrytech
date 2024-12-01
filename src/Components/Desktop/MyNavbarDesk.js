@@ -1,11 +1,29 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { BsChevronDown } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
+import { API_URL, Only_Frontend } from "../../config";
+import axios from "axios";
 const MyNavbarDesk = () => {
+  const [navdata,setnavdata] = useState([])
+
+  useEffect(()=>{
+    async function callnav(){
+      const res = await axios.get(`${API_URL}/navbarget`)
+      if(res && !Only_Frontend){
+        setnavdata(res.data.data)
+
+      }else{
+        setnavdata(navbarApidata)
+      }
+      console.log(res.data)
+    }
+    callnav()
+  },[])
+
   useEffect(() => {
     const navbar = document.getElementById("mynavbardesk");
 
@@ -41,37 +59,37 @@ const MyNavbarDesk = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="me-auto">
-            {navbarApidata.map((element, index) => {
+            {navdata?.map((element, index) => {
               const isChildValue = element.childNavbarVm;
               return (
                 <Link
-                  key={element.menuId}
+                  key={element?.menuId}
                   className={
                     element.childNavbarVm.some(
-                      (child) => window.location.pathname === child.url
+                      (child) => window.location?.pathname === child?.url
                     )
                       ? "admissionclass activei"
                       : "admissionclass"
                   }
-                  to={element.url}
+                  to={element?.url}
                 >
                   {element.childNavbarVm.length != 0 ? (
                     <>
-                      {element.menuName} <BsChevronDown />
+                      {element?.menuName} <BsChevronDown />
                       <div className="admissionmenu">
                         <ul>
-                          {element.childNavbarVm.map((item, key) => {
+                          {element?.childNavbarVm.map((item, key) => {
                             return (
-                              <li key={item.menuId}>
+                              <li key={item?.menuId}>
                                 <Link
                                   className={
-                                    window.location.pathname == item.url
+                                    window.location.pathname == item?.url
                                       ? `activei`
                                       : ``
                                   }
-                                  to={item.url}
+                                  to={item?.url}
                                 >
-                                  {item.menuName}
+                                  {item?.menuName}
                                 </Link>
                               </li>
                             );
@@ -89,7 +107,7 @@ const MyNavbarDesk = () => {
                             : ``
                         }
                       >
-                        {element.menuName}
+                        {element?.menuName}
                       </p>{" "}
                     </>
                   )}

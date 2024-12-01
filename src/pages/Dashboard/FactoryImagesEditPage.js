@@ -51,7 +51,7 @@ const FactoryImagesEditPage = () => {
       if(!Only_Frontend){
 
         const response = await axios.delete(
-          `${API_URL}/factoryimagesdelete/${myid}`
+          `${API_URL}/serviceitemsdelete/${myid}`
         );
         console.log("Response:", response.data.data);
         setchangeCount((p) => p + 1); // Handle the response

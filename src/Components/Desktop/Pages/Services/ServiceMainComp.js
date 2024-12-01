@@ -2,6 +2,8 @@
 import React,{useState,useEffect} from 'react'
 import {Row,Col} from 'react-bootstrap'
 import {motion} from 'framer-motion'
+import { API_URL, Only_Frontend } from '../../../../config';
+import axios from 'axios';
 const ServiceMainComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -22,6 +24,21 @@ const ServiceMainComp = (props) => {
             
         })
       }, [screenSize])
+
+      const fronendmaintext = "Ensuring optimum uptime for your equipments is your top most priority at site. Ferrytech works to help you achieve it through its integrated service capability. Our in-depth understanding of technology & equipments, expert technicians & engineers, infrastructure readiness, and quick turnaround time keep your equipments up & live. Ferrytech is a young and energetic organization providing end-to-end services for equipments. Our aim is not to reduce your downtime only but to improve your efficiency, life of the equipment and maintain your operative costs. Ferrytech understanding of engineering equipments and experience of completing variety of critical problems on site is available to you. Ferrytech is an access to end-to-end service portfolio for your valued customers. Ferrytech believes that the days of 24 x 7 Service are passed. You as a customer deserve much more to keep your business up and running. Therefore, we promise 24 x 7 Uptime through our Rapid Service Force. frontend."
+      const [maintext, setmaintext] = useState("")
+      useEffect(()=>{
+        async function callme(){
+            const res = await axios.get(`${API_URL}/serviceMaintextget`)
+            if(res && !Only_Frontend){
+
+                setmaintext(res.data.data[0]?.mainText)
+            }else{
+                setmaintext(fronendmaintext)
+            }
+        }
+        callme()
+      })
   return (
     <>
          <div className="servicemaincomp">
@@ -31,7 +48,7 @@ const ServiceMainComp = (props) => {
                     Services
                 </h4>
                 <p>
-                Ensuring optimum uptime for your equipments is your top most priority at site. Ferrytech works to help you achieve it through its integrated service capability. Our in-depth understanding of technology & equipments, expert technicians & engineers, infrastructure readiness, and quick turnaround time keep your equipments up & live. Ferrytech is a young and energetic organization providing end-to-end services for equipments. Our aim is not to reduce your downtime only but to improve your efficiency, life of the equipment and maintain your operative costs. Ferrytech understanding of engineering equipments and experience of completing variety of critical problems on site is available to you. Ferrytech is an access to end-to-end service portfolio for your valued customers. Ferrytech believes that the days of 24 x 7 Service are passed. You as a customer deserve much more to keep your business up and running. Therefore, we promise 24 x 7 Uptime through our Rapid Service Force.
+                {maintext}
                 </p>
         
          </div>

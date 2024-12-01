@@ -7,11 +7,11 @@ import { useLocation,Link } from 'react-router-dom'
 const AdminSidebar = () => {
     const location = useLocation();
     const [isJobEntryOpen, setJobEntryOpen] = useState(true);
-    const [isstudentdrpOpen, setisstudentdrpOpen] = useState(false);
-    const [isHomepagedrpOpen, setisHomepagedrpOpen] = useState(false);
-    const [isAboutpagedrpOpen, setisAboutpagedrpOpen] = useState(false);
-    const [isProductpagedrpOpen, setisProductpagedrpOpen] = useState(false);
-    const [isServicepagedrpOpen, setisServicepagedrpOpen] = useState(false);
+    const [isstudentdrpOpen, setisstudentdrpOpen] = useState(true);
+    const [isHomepagedrpOpen, setisHomepagedrpOpen] = useState(true);
+    const [isAboutpagedrpOpen, setisAboutpagedrpOpen] = useState(true);
+    const [isProductpagedrpOpen, setisProductpagedrpOpen] = useState(true);
+    const [isServicepagedrpOpen, setisServicepagedrpOpen] = useState(true);
 
     const toggleServiceEntry = () => {
         setisServicepagedrpOpen((prevOpen) => !prevOpen);
@@ -155,6 +155,16 @@ const AdminSidebar = () => {
                                         AboutPage Edit
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link
+                                        to={`/dashboard/bod`}
+                                        className={
+                                            location.pathname == `/dashboard/bod` ? "active" : ""
+                                        }
+                                    >
+                                        Board of Directors
+                                    </Link>
+                                </li>
 
                                 
                             </ul>
@@ -207,6 +217,16 @@ const AdminSidebar = () => {
                                
                                 <li>
                                     <Link
+                                        to={`/dashboard/servicemaintext`}
+                                        className={
+                                            location.pathname == `/dashboard/servicemaintext` ? "active" : ""
+                                        }
+                                    >
+                                        Service Main Text
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
                                         to={`/dashboard/servicepage`}
                                         className={
                                             location.pathname == `/dashboard/servicepage` ? "active" : ""
@@ -237,6 +257,16 @@ const AdminSidebar = () => {
                                
                                 <li>
                                     <Link
+                                        to={`/dashboard/navbar`}
+                                        className={
+                                            location.pathname == `/dashboard/navbar` ? "active" : ""
+                                        }
+                                    >
+                                        Navbar Edit
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
                                         to={`/dashboard/contact`}
                                         className={
                                             location.pathname == `/dashboard/contact` ? "active" : ""
@@ -259,63 +289,7 @@ const AdminSidebar = () => {
                             </ul>
 
                         </li>
-                        <li className={`drp ${isstudentdrpOpen ? "open" : ""}`}>
-                            <div className="front" onClick={toggleStudentEntry}>
-                                <Link>Student Management</Link>
-                                <img
-                                    style={
-                                        isstudentdrpOpen ? { transform: "rotate(180deg)" } : {}
-                                    }
-                                    src="/assets/images/dashboard/admin/arrowdown.png"
-                                    alt=""
-                                />
-                            </div>
-
-                            <ul className="sub-list">
-                                <li>
-                                    <Link
-                                        to="/quizmarks"
-                                        className={
-                                            location.pathname == "/quizmarks" ? "active" : ""
-                                        }
-                                    >
-                                        Students Info
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        to="/newstudententry"
-                                        className={
-                                            location.pathname == "/newstudententry" ? "active" : ""
-                                        }
-                                    >
-                                        Student Entry
-                                    </Link>
-                                </li>
-                                {/* <li>
-                      <Link
-                        to="/featuresedit"
-                        className={
-                          location.pathname == "/featuresedit" ? "active" : ""
-                        }
-                      >
-                        Features Edit
-                      </Link>
-                    </li>
-
-                    <li>
-                  <Link
-                    to={`/faqedit`}
-                    className={
-                      location.pathname == `/faqedit` ? "active" : ""
-                    }
-                  >
-                    FAQ Edit
-                  </Link>
-                </li> */}
-                            </ul>
-
-                        </li>
+                   
                     </ul>
                 </div>
             </div>

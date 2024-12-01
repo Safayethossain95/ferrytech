@@ -11,7 +11,7 @@ const SelfErectingCranePage = () => {
     <>
         <div className="mobile">
         <MyNavbarMb/>
-        <CommonBannerComp img="./assets/images/ProductPage/categories/self-erecting-crane.webp" title="Self Erecting Crane" version="desktop"/>
+        <CommonBannerComp img="./assets/images/ProductPage/categories/self-erecting-crane.webp" title="Self Erecting Crane" version="mobile"/>
         <ProductCardsComp version="mobile" data="selfErectingCrane"/>
         <FooterComp version="mobile"/>
     </div>

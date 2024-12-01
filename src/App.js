@@ -35,6 +35,9 @@ import AboutDashPage from './pages/Dashboard/AboutUsDashPage';
 import ProductSingleCommonPage from './pages/ProductSingleCommonPage';
 import ProductDashPage from './pages/Dashboard/ProductDashPage';
 import ServiceDashPage from './pages/Dashboard/ServiceDashPage';
+import ServiceMainTextDash from './pages/Dashboard/ServiceMainTextDash';
+import NavbarDashPage from './pages/Dashboard/NavbarDashPage';
+import BoardOfDirectorsdashPage from './pages/Dashboard/BoardOfDirectorsdashPage';
 
 
 function App() {
@@ -60,6 +63,9 @@ function App() {
           <Route path="/dashboard/aboutpage" element={<AboutDashPage />} />
           <Route path="/dashboard/productpage" element={<ProductDashPage />} />
           <Route path="/dashboard/servicepage" element={<ServiceDashPage />} />
+          <Route path="/dashboard/servicemaintext" element={<ServiceMainTextDash />} />
+          <Route path="/dashboard/navbar" element={<NavbarDashPage />} />
+          <Route path="/dashboard/bod" element={<BoardOfDirectorsdashPage />} />
           <Route path="/dashboard/whyferrytech" element={<WhyFerrytechCompDashPage />} />
           <Route path="/dashboard/introcomp" element={<IntroCompDashPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />

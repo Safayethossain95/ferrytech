@@ -26,12 +26,12 @@ const FAQComp = (props) => {
         })
       }, [screenSize])
 
-      const [dataFinal,setDataFinal] = useState([])
+      const [dataFinal,setDataFinal] = useState(faqApi)
       useEffect(() => {
         const fetchData = async () =>{
           try{
             if(Only_Frontend){
-              setDataFinal(faqApi)
+           
             }else{
               const response = await axios.get(`${API_URL}/faqgetall`);
               console.log("faq backend",response.data.data)

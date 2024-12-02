@@ -65,7 +65,7 @@ const FooterComp = (props) => {
                   <div className="ftlogowrap">
                     <img
                       style={{ width: "200px" }}
-                      src="./assets/images/Logo/footer-logo.jpg"
+                      src="/assets/images/Logo/footer-logo.jpg"
                       alt=""
                     />
                   </div>

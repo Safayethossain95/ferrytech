@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Accordion, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
+import { API_URL, Only_Frontend } from "../../config";
+import axios from "axios";
 const MyNavbarMb = () => {
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -33,6 +35,10 @@ const MyNavbarMb = () => {
   };
   const handleLi = (mylink) => {
     navigate(mylink);
+    var togglercollapse = document.getElementById("basic-navbar-nav");
+    togglercollapse.classList.toggle("opened");
+    var navtoggler = document.getElementById("nav-icon4");
+    navtoggler.classList.toggle("open");
   };
 
   useEffect(() => {
@@ -54,6 +60,21 @@ const MyNavbarMb = () => {
     };
     // window.onscroll = function() {myFunction()};
   }, []);
+  const [navdata,setnavdata] = useState([])
+
+  useEffect(()=>{
+    async function callnav(){
+      const res = await axios.get(`${API_URL}/navbarget`)
+      if(res && !Only_Frontend){
+        setnavdata(res.data.data)
+
+      }else{
+        setnavdata(navbarApidata)
+      }
+      console.log(res.data)
+    }
+    callnav()
+  },[])
 
   return (
     <>
@@ -61,7 +82,7 @@ const MyNavbarMb = () => {
         <Navbar.Brand href="#home">
           <div className="img">
             <Link to="/">
-              <img src="./assets/images/icon/favicon.jpg" alt="" />
+              <img src="/assets/images/icon/favicon.jpg" alt="" />
             </Link>
           </div>
         </Navbar.Brand>
@@ -79,7 +100,7 @@ const MyNavbarMb = () => {
         <div id="basic-navbar-nav" className="opened">
           <Nav className="mainmenu mbContainer">
             <div className="wrapperlimit">
-              {navbarApidata.map((item, key) => {
+              {navdata.map((item, key) => {
                 if (item.childNavbarVm.length !== 0) {
                   return (
                     <Accordion className="admissionclass nav-item">

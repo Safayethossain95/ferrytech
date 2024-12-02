@@ -20,17 +20,18 @@ import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQ
 import SubHeading from '../Components/Desktop/SubComponents/SubHeading';
 import { API_URL, Only_Frontend } from '../config';
 import axios from 'axios';
+import { introApi } from '../utils/introApi';
 
 const Homepage = () => {
   useEffect(() => {
     AOS.init({});
     
   }, [])
-  const [bannerApidata,setBannerApi] = useState([])
-  const [indcardApi,setindcardApi] = useState([])
-  const [partnerbrandsApifinal,setpartnerbrandsApi] = useState([])
-  const [whyferrytechApifinal,setwhyferrytechApi] = useState([])
-  const [introCompApifinal,introCompApiFinal] = useState([])
+  const [bannerApidata,setBannerApi] = useState(bannerApi)
+  const [indcardApi,setindcardApi] = useState(indcardApifr)
+  const [partnerbrandsApifinal,setpartnerbrandsApi] = useState(partnerbrandsApi)
+  const [whyferrytechApifinal,setwhyferrytechApi] = useState(whyferrytechApi)
+  const [introCompApifinal,introCompApiFinal] = useState(introApi)
   const [productlineApifinal,setproductlineApiFinal] = useState(productlineApiFr)
 
   
@@ -41,11 +42,6 @@ const Homepage = () => {
     try {
       if(Only_Frontend){
 
-        setBannerApi(bannerApi)
-        setindcardApi(indcardApifr)
-        setpartnerbrandsApi(partnerbrandsApi)
-        setwhyferrytechApi(whyferrytechApi)
-        setproductlineApiFinal(productlineApiFr)
         console.log("frontend")
       }else{
         const response = await axios.get(`${API_URL}/bannerget`);

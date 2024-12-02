@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { Element } from "react-scroll";
 import SubHeading from "./SubComponents/SubHeading";
-import { API_URL } from "../../config";
+import { API_URL, Only_Frontend } from "../../config";
 import axios from "axios";
+import { contactsApi } from "../../utils/contactsApi";
 
 const ReqAquoteComp = (props) => {
   const [screenSize, getDimension] = useState({
@@ -18,11 +19,14 @@ const ReqAquoteComp = (props) => {
       dynamicHeight: window.innerHeight,
     });
   };
-  const [contactData,setcontactData]= useState([])
+  const [contactData,setcontactData]= useState(contactsApi.data)
   useEffect(()=>{
     async function getcontacts(){
       const res = await axios.get(`${API_URL}/contactgetall`)
-      setcontactData(res.data.data)
+      if(res && !Only_Frontend){
+
+        setcontactData(res.data.data)
+      }
     }
     getcontacts()
   },[])

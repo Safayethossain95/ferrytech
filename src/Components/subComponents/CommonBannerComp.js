@@ -8,8 +8,16 @@ const CommonBannerComp = ({version,title,img}) => {
     <>
     
     <div className="bdirectors">
-         
-            <img src={img} alt="" />
+    <div
+              className={
+                version == "mobile"
+                  ? "w-100":"w-100"
+              }
+              style={{height:"100%"}}
+            >
+
+    <img src={img} alt="" />
+            </div>
         
           <motion.div
             className="overlay"
@@ -34,6 +42,7 @@ const CommonBannerComp = ({version,title,img}) => {
                   : "myContainerMini"
               }
             >
+                
               <h3>{title}</h3>
             </div>
           </motion.div>

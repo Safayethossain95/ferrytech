@@ -23,7 +23,7 @@ const ReqAquoteComp = (props) => {
   useEffect(()=>{
     async function getcontacts(){
       const res = await axios.get(`${API_URL}/contactgetall`)
-      if(res && !Only_Frontend){
+      if(!Only_Frontend){
 
         setcontactData(res.data.data)
       }

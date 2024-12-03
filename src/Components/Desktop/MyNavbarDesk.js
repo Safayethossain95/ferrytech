@@ -8,18 +8,18 @@ import { navbarApidata } from "../../utils/navbarApi";
 import { API_URL, Only_Frontend } from "../../config";
 import axios from "axios";
 const MyNavbarDesk = () => {
-  const [navdata,setnavdata] = useState([])
+  const [navdata,setnavdata] = useState(navbarApidata)
 
   useEffect(()=>{
     async function callnav(){
       const res = await axios.get(`${API_URL}/navbarget`)
-      if(res && !Only_Frontend){
+      if(!Only_Frontend){
         setnavdata(res.data.data)
 
+        console.log(res.data)
       }else{
         setnavdata(navbarApidata)
       }
-      console.log(res.data)
     }
     callnav()
   },[])

@@ -23,7 +23,7 @@ const FooterComp = (props) => {
   useEffect(()=>{
     const fetchfooter = async()=>{
       try{
-        if(Only_Frontend){
+        if(!Only_Frontend){
           const res = await axios.get(`${API_URL}/contactgetall`)
           setcontactData(res.data.data)
         }

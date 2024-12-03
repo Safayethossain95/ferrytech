@@ -98,6 +98,11 @@ const NavbarDashPage = () => {
     }
     document.getElementById("editform").scrollIntoView({ behavior: "smooth" });
   };
+   // Function to remove a child item based on index
+   const handleRemoveChild = (index) => {
+    const newChildNavbarVm = formData.childNavbarVm.filter((_, i) => i !== index);
+    setFormData({ ...formData, childNavbarVm: newChildNavbarVm });
+  };
   const editsubmit = async () => {
     try {
       const response = await axios.post(
@@ -310,7 +315,7 @@ const NavbarDashPage = () => {
           </table>
 
           <div style={{ marginTop: "70px" }}>
-          <form
+    <form
       id="editform"
       onSubmit={handleSubmit}
       className="p-6 max-w-4xl m-auto"
@@ -466,6 +471,14 @@ const NavbarDashPage = () => {
         className="ml-2"
       />
     </label>
+    {/* Remove Button */}
+    <button
+              type="button"
+              onClick={() => handleRemoveChild(index)} // Remove child on click
+              className="bg-red-500 text-black py-2 px-4 rounded absolute top-0 right-0"
+            >
+              Remove
+            </button>
   </div>
 ))}
 
@@ -477,6 +490,7 @@ const NavbarDashPage = () => {
         >
           Add Child Navbar
         </button>
+         
       </div>
 
       <div className="downloadbutton mt-3">
@@ -486,7 +500,7 @@ const NavbarDashPage = () => {
             onClick={editsubmit}
             className="btn btn-primary"
           >
-            Edit
+            <a>Edit</a>
           </button>
         ) : (
           <button
@@ -494,7 +508,7 @@ const NavbarDashPage = () => {
             onClick={handlesubmit}
             className="btn btn-success"
           >
-            Submit
+            <a>Submit</a>
           </button>
         )}
       </div>

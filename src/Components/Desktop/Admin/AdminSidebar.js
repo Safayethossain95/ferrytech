@@ -50,7 +50,9 @@ const AdminSidebar = () => {
             <div className="sidebar_ad">
                 <div className="sidebarcomp">
                     <ul>
-                     
+                        <li>
+                            <Link to="/dashboard/signup">Add New User</Link>
+                        </li>
                         <li className={`drp ${isJobEntryOpen ? "open" : ""}`}>
                             <div className="front" onClick={toggleJobEntry}>
                                 <Link>Home page</Link>

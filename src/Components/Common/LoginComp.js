@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import '../../sass/sassFiles/common/logincomp.scss'
+import axios from 'axios';
+import { API_URL } from '../../config';
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const LoginComp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
+  const { login } = useAuth();
+  const navigate = useNavigate()
+  const handleSubmit = async(e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log('Submitted:', { email, password });
+    const res = await axios.post(`${API_URL}/login`, { email, password }, { withCredentials: true });
+    if(res.data.token){
+      login()
+      navigate("/dashboard")
+      toast.success('Login Successful!');
+      console.log("logged in")
+    }
   };
+  
 
   return (
     <div className="login-container">

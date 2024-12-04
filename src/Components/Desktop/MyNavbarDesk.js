@@ -3,13 +3,15 @@
 import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { BsChevronDown } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
 import { API_URL, Only_Frontend } from "../../config";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 const MyNavbarDesk = () => {
+  const navigate = useNavigate()
   const [navdata,setnavdata] = useState(navbarApidata)
-
+  const {isLogin,logout} = useAuth()
   useEffect(()=>{
     async function callnav(){
       const res = await axios.get(`${API_URL}/navbarget`)
@@ -23,6 +25,15 @@ const MyNavbarDesk = () => {
     }
     callnav()
   },[])
+  const handleLogout =async () => {
+    const res = await axios.post(`${API_URL}/logout`);
+    if (res.data.success) {
+      
+      document.cookie = "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
+      navigate("/login")
+    }
+    logout()
+  }
 
   useEffect(() => {
     const navbar = document.getElementById("mynavbardesk");
@@ -150,9 +161,16 @@ const MyNavbarDesk = () => {
             </div>
           </div>
           <div className="downloadbutton">
+            {
+              !isLogin ?
             <button>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/login">Login</Link>
             </button>
+              :
+              <button>
+              <Link onClick={handleLogout}>Logout</Link>
+            </button>
+            }
           </div>
         </div>
       </Navbar>

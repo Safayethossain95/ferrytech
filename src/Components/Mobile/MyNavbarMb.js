@@ -6,6 +6,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
 import { API_URL, Only_Frontend } from "../../config";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 const MyNavbarMb = () => {
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -75,6 +76,16 @@ const MyNavbarMb = () => {
     }
     callnav()
   },[])
+  const {isLogin,logout} = useAuth()
+  const handleLogout =async () => {
+    const res = await axios.post(`${API_URL}/logout`);
+    if (res.data.success) {
+      
+      document.cookie = "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
+      navigate("/login")
+    }
+    logout()
+  }
 
   return (
     <>
@@ -190,10 +201,28 @@ const MyNavbarMb = () => {
                   </div>
                 </div>
                 <div className="downloadbutton">
-                  <button>
-                    <Link to="/login">Login</Link>
-                  </button>
-                </div>
+            {
+              !isLogin ?
+            <button>
+              <Link to="/login">Login</Link>
+            </button>
+              :
+              <button>
+              <Link onClick={handleLogout}>Logout</Link>
+            </button>
+            }
+          </div> <div className="downloadbutton">
+            {
+              !isLogin ?
+            <button>
+              <Link to="/login">Login</Link>
+            </button>
+              :
+              <button>
+              <Link onClick={handleLogout}>Logout</Link>
+            </button>
+            }
+          </div>
               </div>
             </motion.div>
           </Nav>

@@ -33,7 +33,7 @@ const ProtectedRoute = ({ element, ...rest }) => {
     }
     else{
 
-      return <div>Protected Content Here</div>;
+      return React.cloneElement(element);
     }
 };
 

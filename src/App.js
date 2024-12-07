@@ -50,125 +50,64 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route
             path="/dashboard"
-            element={
-              <ProtectedRoute
-                element={<DashboardPage />} 
-              />
-            }
+            element={<ProtectedRoute element={<DashboardPage />} />}
           />
           <Route
             path="/dashboard/signup"
-            element={
-              <ProtectedRoute 
-                element={<SignUpDashPage />} 
-              />
-            }
+            element={<ProtectedRoute element={<SignUpDashPage />} />}
           />
           <Route
-  path="/dashboard/partner-brands"
-  element={
-    <ProtectedRoute 
-      element={<PartnerBrandsPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/product-line"
-  element={
-    <ProtectedRoute 
-      element={<ProductLinePage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/industrycards"
-  element={
-    <ProtectedRoute 
-      element={<IndustryCardPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/faqedit"
-  element={
-    <ProtectedRoute 
-      element={<FAQEditPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/contact"
-  element={
-    <ProtectedRoute 
-      element={<ContactInfoPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/aboutpage"
-  element={
-    <ProtectedRoute 
-      element={<AboutDashPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/productpage"
-  element={
-    <ProtectedRoute 
-      element={<ProductDashPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/servicepage"
-  element={
-    <ProtectedRoute 
-      element={<ServiceDashPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/servicemaintext"
-  element={
-    <ProtectedRoute 
-      element={<ServiceMainTextDash />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/navbar"
-  element={
-    <ProtectedRoute 
-      element={<NavbarDashPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/bod"
-  element={
-    <ProtectedRoute 
-      element={<BoardOfDirectorsdashPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/whyferrytech"
-  element={
-    <ProtectedRoute 
-      element={<WhyFerrytechCompDashPage />} 
-    />
-  }
-/>
-<Route
-  path="/dashboard/introcomp"
-  element={
-    <ProtectedRoute 
-      element={<IntroCompDashPage />} 
-    />
-  }
-/>
-
+            path="/dashboard/partner-brands"
+            element={<ProtectedRoute element={<PartnerBrandsPage />} />}
+          />
+          <Route
+            path="/dashboard/product-line"
+            element={<ProtectedRoute element={<ProductLinePage />} />}
+          />
+          <Route
+            path="/dashboard/industrycards"
+            element={<ProtectedRoute element={<IndustryCardPage />} />}
+          />
+          <Route
+            path="/dashboard/faqedit"
+            element={<ProtectedRoute element={<FAQEditPage />} />}
+          />
+          <Route
+            path="/dashboard/contact"
+            element={<ProtectedRoute element={<ContactInfoPage />} />}
+          />
+          <Route
+            path="/dashboard/aboutpage"
+            element={<ProtectedRoute element={<AboutDashPage />} />}
+          />
+          <Route
+            path="/dashboard/productpage"
+            element={<ProtectedRoute element={<ProductDashPage />} />}
+          />
+          <Route
+            path="/dashboard/servicepage"
+            element={<ProtectedRoute element={<ServiceDashPage />} />}
+          />
+          <Route
+            path="/dashboard/servicemaintext"
+            element={<ProtectedRoute element={<ServiceMainTextDash />} />}
+          />
+          <Route
+            path="/dashboard/navbar"
+            element={<ProtectedRoute element={<NavbarDashPage />} />}
+          />
+          <Route
+            path="/dashboard/bod"
+            element={<ProtectedRoute element={<BoardOfDirectorsdashPage />} />}
+          />
+          <Route
+            path="/dashboard/whyferrytech"
+            element={<ProtectedRoute element={<WhyFerrytechCompDashPage />} />}
+          />
+          <Route
+            path="/dashboard/introcomp"
+            element={<ProtectedRoute element={<IntroCompDashPage />} />}
+          />
 
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/boardofdirectors" element={<BoardOfDirectorsPage />} />

@@ -4,6 +4,7 @@
 
 import React, {  useState } from 'react'
 import { useLocation,Link } from 'react-router-dom'
+import '../../../sass/sassFiles/desktop/dashboardpage.scss'
 const AdminSidebar = () => {
     const location = useLocation();
     const [isJobEntryOpen, setJobEntryOpen] = useState(true);

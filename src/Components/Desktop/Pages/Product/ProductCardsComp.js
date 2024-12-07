@@ -7,9 +7,9 @@ import { Col, Row } from "react-bootstrap";
 import { productApi } from "../../../../utils/productsApi";
 import axios from "axios";
 import { API_URL, Only_Frontend } from "../../../../config";
+import CommonBannerComp from "../../../subComponents/CommonBannerComp";
 
 const ProductCardsComp = (props) => {
-  const [products,setProducts] = useState([])
   const [mydata, setMyData] = useState(null);
   
   useEffect(() => {
@@ -18,18 +18,16 @@ const ProductCardsComp = (props) => {
       try {
         if(Only_Frontend){
 
-          setProducts(productApi)
           let mydata = productApi.find(item => item.catname === props.data)
+          console.log(mydata)
           setMyData(mydata)
-          console.log("frontend")
         }else{
           const response = await axios.get(`${API_URL}/productget`);
-          setProducts(response.data.data);
-          let mydata = response.data.data.find(item => item.catname === props.data)
+          let mydata = response.data.data.find(item => item.catname.toLowerCase() == props.data.toLowerCase())
+          console.log(mydata)
+          console.log(props.data)
           setMyData(mydata)
-          console.log("backend")
         }
-        console.log(mydata)
       } catch (error) {
         console.log(error.message || 'Something went wrong');
       } 
@@ -73,6 +71,8 @@ const ProductCardsComp = (props) => {
   }
 
   return (
+    <>
+   
     <div className="productcardscomp">
       <div
         className={
@@ -123,7 +123,7 @@ const ProductCardsComp = (props) => {
                         view details{" "}
                         <span>
                           <img
-                            src="./assets/images/ProductPage/cards/arr.png"
+                            src="/assets/images/ProductPage/cards/arr.png"
                             alt="arrow"
                           />
                         </span>
@@ -137,6 +137,7 @@ const ProductCardsComp = (props) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -3,6 +3,8 @@ import React,{useEffect,useState} from 'react'
 import { faqApi } from '../../../../utils/aboutUsApi'
 import SubHeading from '../../SubComponents/SubHeading'
 import { Accordion } from 'react-bootstrap'
+import { API_URL, Only_Frontend } from '../../../../config'
+import axios from 'axios'
 const FAQComp = (props) => {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
@@ -23,6 +25,25 @@ const FAQComp = (props) => {
             
         })
       }, [screenSize])
+
+      const [dataFinal,setDataFinal] = useState(faqApi)
+      useEffect(() => {
+        const fetchData = async () =>{
+          try{
+            if(Only_Frontend){
+           
+            }else{
+              const response = await axios.get(`${API_URL}/faqgetall`);
+              console.log("faq backend",response.data.data)
+              setDataFinal(response.data.data)
+            }
+          }catch (error) {
+            console.log(error.message || 'Something went wrong');
+          } 
+        }
+        fetchData()
+      },[])
+
   return (
     <>
         <div className="faqcomp" style={props.hm=="true"?{paddingTop:"0"}:{}}>
@@ -40,10 +61,10 @@ const FAQComp = (props) => {
                 : "myContainerMini"
             }>
             {
-                faqApi.map((item,key)=>{
+                dataFinal.map((item,key)=>{
                     return(
-                        <Accordion data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000" className='myaccordion' defaultActiveKey="1" key={key}>
-                        <Accordion.Item eventKey={item.id}>
+                        <Accordion data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000" className='myaccordion'  defaultActiveKey={key === 0 ? "0" : null} key={key}>
+                        <Accordion.Item eventKey={key.toString()}>
                             <Accordion.Header>
                                 <div className="myacchead">
                                     <h4>{item.heading}</h4>

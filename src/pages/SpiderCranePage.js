@@ -11,7 +11,7 @@ const SpiderCranePage = () => {
     <>
         <div className="mobile">
         <MyNavbarMb/>
-        <CommonBannerComp img="./assets/images/ProductPage/categories/spider-crane.webp" title="Spider Crane" version="desktop"/>
+        <CommonBannerComp img="./assets/images/ProductPage/categories/spider-crane.webp" title="Spider Crane" version="mobile"/>
         <ProductCardsComp version="mobile" data="spiderCrane"/>
         <FooterComp version="mobile"/>
     </div>

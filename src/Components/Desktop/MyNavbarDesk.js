@@ -1,11 +1,40 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { BsChevronDown } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
+import { API_URL, Only_Frontend } from "../../config";
+import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 const MyNavbarDesk = () => {
+  const navigate = useNavigate()
+  const [navdata,setnavdata] = useState(navbarApidata)
+  const {isLogin,logout} = useAuth()
+  useEffect(()=>{
+    async function callnav(){
+      const res = await axios.get(`${API_URL}/navbarget`)
+      if(!Only_Frontend){
+        setnavdata(res.data.data)
+
+        console.log(res.data)
+      }else{
+        setnavdata(navbarApidata)
+      }
+    }
+    callnav()
+  },[])
+  const handleLogout =async () => {
+    const res = await axios.post(`${API_URL}/logout`);
+    if (res.data.success) {
+      
+      document.cookie = "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
+      navigate("/login")
+    }
+    logout()
+  }
+
   useEffect(() => {
     const navbar = document.getElementById("mynavbardesk");
 
@@ -34,44 +63,44 @@ const MyNavbarDesk = () => {
         <Navbar.Brand href="#home">
           <Link to="/">
             <div className="img">
-              <img src="./assets/images/Logo/logo.jpg" alt="" />
+              <img src="/assets/images/Logo/logo.jpg" alt="" />
             </div>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="me-auto">
-            {navbarApidata.map((element, index) => {
+            {navdata?.map((element, index) => {
               const isChildValue = element.childNavbarVm;
               return (
                 <Link
-                  key={element.menuId}
+                  key={element?.menuId}
                   className={
                     element.childNavbarVm.some(
-                      (child) => window.location.pathname === child.url
+                      (child) => window.location?.pathname === child?.url
                     )
                       ? "admissionclass activei"
                       : "admissionclass"
                   }
-                  to={element.url}
+                  to={element?.url}
                 >
                   {element.childNavbarVm.length != 0 ? (
                     <>
-                      {element.menuName} <BsChevronDown />
+                      {element?.menuName} <BsChevronDown />
                       <div className="admissionmenu">
                         <ul>
-                          {element.childNavbarVm.map((item, key) => {
+                          {element?.childNavbarVm.map((item, key) => {
                             return (
-                              <li key={item.menuId}>
+                              <li key={item?.menuId}>
                                 <Link
                                   className={
-                                    window.location.pathname == item.url
+                                    window.location.pathname == item?.url
                                       ? `activei`
                                       : ``
                                   }
-                                  to={item.url}
+                                  to={item?.url}
                                 >
-                                  {item.menuName}
+                                  {item?.menuName}
                                 </Link>
                               </li>
                             );
@@ -89,7 +118,7 @@ const MyNavbarDesk = () => {
                             : ``
                         }
                       >
-                        {element.menuName}
+                        {element?.menuName}
                       </p>{" "}
                     </>
                   )}
@@ -101,7 +130,7 @@ const MyNavbarDesk = () => {
         <div className="contactpart">
           <div className="phone">
             <a style={{ cursor: "pointer" }} href="tel:+8802333312349">
-              <img src="./assets/images/icon/phone.png" alt="" />
+              <img src="/assets/images/icon/phone.png" alt="" />
             </a>
             <div className="wrap">
               <a
@@ -119,7 +148,7 @@ const MyNavbarDesk = () => {
           </div>
           <div className="mail">
             <a href="mailto:hq@ferrytech.net">
-              <img src="./assets/images/icon/talk.png" alt="" />
+              <img src="/assets/images/icon/talk.png" alt="" />
             </a>
 
             <div className="wrap">
@@ -132,9 +161,16 @@ const MyNavbarDesk = () => {
             </div>
           </div>
           <div className="downloadbutton">
+            {
+              !isLogin ?
             <button>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/login">Login</Link>
             </button>
+              :
+              <button>
+              <Link onClick={handleLogout}>Logout</Link>
+            </button>
+            }
           </div>
         </div>
       </Navbar>
@@ -144,7 +180,7 @@ const MyNavbarDesk = () => {
           <div className="headerwrapper">
             <Navbar.Brand href="#" className="smallbrandv">
             <div className="img">
-                    <img src="./assets/images/Logo/logo.jpg" alt="" />
+                    <img src="/assets/images/Logo/logo.jpg" alt="" />
                 </div>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -191,7 +227,7 @@ const MyNavbarDesk = () => {
             </Navbar.Collapse>
             <Link to ="/applyonline" className="appplybutton">
               Apply Online{" "}
-              <img src="./assets/images/icons/arrowright.png" alt="" />{" "}
+              <img src="/assets/images/icons/arrowright.png" alt="" />{" "}
             </Link>
           </div>
         </div>

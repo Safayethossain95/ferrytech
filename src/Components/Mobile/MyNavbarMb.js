@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Accordion, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navbarApidata } from "../../utils/navbarApi";
+import { API_URL, Only_Frontend } from "../../config";
+import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 const MyNavbarMb = () => {
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -33,6 +36,10 @@ const MyNavbarMb = () => {
   };
   const handleLi = (mylink) => {
     navigate(mylink);
+    var togglercollapse = document.getElementById("basic-navbar-nav");
+    togglercollapse.classList.toggle("opened");
+    var navtoggler = document.getElementById("nav-icon4");
+    navtoggler.classList.toggle("open");
   };
 
   useEffect(() => {
@@ -54,6 +61,31 @@ const MyNavbarMb = () => {
     };
     // window.onscroll = function() {myFunction()};
   }, []);
+  const [navdata,setnavdata] = useState(navbarApidata)
+
+  useEffect(()=>{
+    async function callnav(){
+      const res = await axios.get(`${API_URL}/navbarget`)
+      if(!Only_Frontend){
+        setnavdata(res.data.data)
+
+        console.log(res.data)
+      }else{
+        setnavdata(navbarApidata)
+      }
+    }
+    callnav()
+  },[])
+  const {isLogin,logout} = useAuth()
+  const handleLogout =async () => {
+    const res = await axios.post(`${API_URL}/logout`);
+    if (res.data.success) {
+      
+      document.cookie = "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
+      navigate("/login")
+    }
+    logout()
+  }
 
   return (
     <>
@@ -61,7 +93,7 @@ const MyNavbarMb = () => {
         <Navbar.Brand href="#home">
           <div className="img">
             <Link to="/">
-              <img src="./assets/images/icon/favicon.jpg" alt="" />
+              <img src="/assets/images/icon/favicon.jpg" alt="" />
             </Link>
           </div>
         </Navbar.Brand>
@@ -79,7 +111,7 @@ const MyNavbarMb = () => {
         <div id="basic-navbar-nav" className="opened">
           <Nav className="mainmenu mbContainer">
             <div className="wrapperlimit">
-              {navbarApidata.map((item, key) => {
+              {navdata.map((item, key) => {
                 if (item.childNavbarVm.length !== 0) {
                   return (
                     <Accordion className="admissionclass nav-item">
@@ -169,10 +201,17 @@ const MyNavbarMb = () => {
                   </div>
                 </div>
                 <div className="downloadbutton">
-                  <button>
-                    <Link to="/login">Login</Link>
-                  </button>
-                </div>
+            {
+              !isLogin ?
+            <button>
+              <Link to="/login">Login</Link>
+            </button>
+              :
+              <button>
+              <Link onClick={handleLogout}>Logout</Link>
+            </button>
+            }
+          </div> 
               </div>
             </motion.div>
           </Nav>

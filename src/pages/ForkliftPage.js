@@ -11,7 +11,7 @@ const ForkliftPage = () => {
     <>
         <div className="mobile">
         <MyNavbarMb/>
-        <CommonBannerComp img="./assets/images/ProductPage/categories/forklift.webp" title="Forklifts" version="desktop"/>
+        <CommonBannerComp img="./assets/images/ProductPage/categories/forklift.webp" title="Forklifts" version="mobile"/>
         <ProductCardsComp version="mobile" data="forklift"/>
         <FooterComp version="mobile"/>
     </div>

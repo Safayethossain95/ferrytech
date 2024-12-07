@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable eqeqeq */
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { API_URL, Only_Frontend } from "../../config";
+import { contactsApi } from "../../utils/contactsApi";
 const FooterComp = (props) => {
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -15,6 +18,22 @@ const FooterComp = (props) => {
     });
   };
 
+  const [contactData,setcontactData]= useState(contactsApi.data)
+
+  useEffect(()=>{
+    const fetchfooter = async()=>{
+      try{
+        if(!Only_Frontend){
+          const res = await axios.get(`${API_URL}/contactgetall`)
+          setcontactData(res.data.data)
+        }
+      } catch (error) {
+        console.log(error.message || 'Something went wrong');
+      } 
+    }
+    fetchfooter()
+  })
+
   useEffect(() => {
     window.addEventListener("resize", setDimension);
 
@@ -22,7 +41,7 @@ const FooterComp = (props) => {
       window.removeEventListener("resize", setDimension);
     };
   }, [screenSize]);
-
+ 
   return (
     <>
       <div className="footer">
@@ -46,7 +65,7 @@ const FooterComp = (props) => {
                   <div className="ftlogowrap">
                     <img
                       style={{ width: "200px" }}
-                      src="./assets/images/Logo/footer-logo.jpg"
+                      src="/assets/images/Logo/footer-logo.jpg"
                       alt=""
                     />
                   </div>
@@ -88,46 +107,54 @@ const FooterComp = (props) => {
                 </div>
                 <div className="wrap">
                   <h5>Contact</h5>
+                  {
+                    contactData?.map((item,key)=>{
+                      return(
+                        <>
                   <ul>
                     <div className="icons">
                     <li>
                       {" "}
-                      <a href="tel:+8802333312349">+8802333312349</a>
+                      <a href={`tel:${item.contactnumber}`}>{item.contactnumber}</a>
                     </li>
                     <li>
-                      <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>
+                      <a href={`mailto:${item.email}`}>{item.email}</a>
                     </li>
                     </div>
                   </ul>
+                        
+                        </>
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div className="item contacts">
                 <div className="wrap">
                   <h5>Location</h5>
                   <ul>
+                  {
+                    contactData[0]?.location?.map((item,key)=>{
+                      return (
+                        <>
                     
                     <li>
                       {" "}
                       <a
                         target="_blank"
-                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
+                        href={`${item.mapLink}`}
                         rel="noreferrer"
                       >
-                        Corporate Office: House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
-                        Bangladesh. Fax: +88 02 9142822
+                        {item.lname}: {item.address}
                       </a>
                     </li>
-                    <li>
-                      {" "}
-                      <a
-                        target="_blank"
-                        href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
-                        rel="noreferrer"
-                      >
-                       Chittagong Office: Lokman Tower (4th Floor),1646 Sheikh Mujib Road Chowmuhani, Chittagong, Bangladesh.
-                      </a>
-                    </li>
+                   
+                        </>
+                      )
+                    })
+                  }
                   </ul>
+                 
                 </div>
               </div>
               {/* <div className="item ">

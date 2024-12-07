@@ -49,7 +49,12 @@ const IntroComp = (props) => {
             className="headingofsubsection"
           >
             <h3>
-              We are one of the largest <br /> trading company in bangladesh
+              {props.data?.map((item,key)=>{
+                 const textParts = item.heading.split("<br />");
+                return(
+                  <h3>{textParts[0]} <br/>{textParts[1] }</h3>
+                )
+              })}
             </h3>
           </motion.div>
 
@@ -59,22 +64,24 @@ const IntroComp = (props) => {
            transition={{ duration: 0.5 }}
             className="paraofsubsection"
           >
-            <p>
-              Ferrytech is the leading machinery trading company in Bangladesh.
-              We provide a wide range of machinery trading services including
-              hydraulic material handlers, variable reach trucks, heavy lifting
-              machines, pumps, monitors and turrets, hose reels, hand nozzles,
-              CAFS, air ambulances, airport vehicles, aerials, and industrial
-              vehicles. <br />
+            {
+              props.data?.map((item,key)=>{
+                return(
+                  <>
+                   <p>
+              {item.para1} <br />
               <br />
-              Our goal is to provide reliable and efficient services to meet all
-              your trading needs. We offer a wide range of services including
-              supply, installation, and maintenance, to ensure our clients'
-              satisfaction.
+              {item.para2}
             </p>
+                  </>
+                )
+              })
+            }
+           
           </motion.div>
           <div className="desktop">
-            <motion.div
+           
+                   <motion.div
               className="introimgparts "
               initial={{ opacity: 0 }} // Initial state (invisible)
             whileInView={{ opacity: 1 }} // whileInView to fully visible
@@ -165,6 +172,8 @@ const IntroComp = (props) => {
                 <div className="overlay5"></div>
               </div>
             </motion.div>
+                 
+           
           </div>
           <div className="mobile">
             <motion.div

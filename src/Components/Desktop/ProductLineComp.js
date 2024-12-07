@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
 import { Power2, TweenMax } from "gsap";
@@ -9,8 +10,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import SubHeading from "./SubComponents/SubHeading";
 import AOS from 'aos';
 import {motion} from 'framer-motion';
-const ProductLineComp = () => {
-  let slider1ref = useRef(null);
+const ProductLineComp = (props) => {
 
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -94,7 +94,7 @@ const ProductLineComp = () => {
     loop: true,
     centerMode: true,
 
-    aminate: false,
+    animate: false,
     fade: false,
   };
   const settings = {
@@ -154,6 +154,7 @@ const ProductLineComp = () => {
     AOS.init({once:false});
     
   }, [])
+ 
   return (
     <>
       <div className="productlineup">
@@ -174,15 +175,19 @@ const ProductLineComp = () => {
                 ref={(slider1) => setNav1(slider1)}
                 {...settings2}
               >
-                <div className="div">
-                  <img src="./assets/images/productLine/img1.png" alt="" />
-                </div>
-                <div className="div">
-                  <img src="./assets/images/productLine/img2.png" alt="" />
-                </div>
-                <div className="div">
-                  <img src="./assets/images/productLine/img1.png" alt="" />
-                </div>
+                {
+                  props?.data?.map((item,key)=>{
+                    return(
+                   
+                       <div className="div" key={item._id}>
+                        <img src={item.img} alt="" />
+                      </div>
+                    
+                    )
+                  })
+                }
+               
+                
               </Slider>
             </motion.div>
           </Col>
@@ -220,37 +225,21 @@ const ProductLineComp = () => {
                     ref={(slider2) => setNav2(slider2)}
                     {...settings}
                   >
-                    <div className="div custom-slide">
-                      <h3>MANTSINEN 140</h3>
-                      <p>
-                        Mantsinen 140 is characterized by its energy efficiency
-                        and agility. With its economical and intelligent
-                        features, this machine makes material handling ever more
-                        productive.
-                      </p>
-                    </div>
-                    {/* <div className="div"> */}
-
-                    <div className="div custom-slide">
-                      <h3>MANTSINEN 540</h3>
-                      <p>
-                        Mantsinen 140 is characterized by its energy efficiency
-                        and agility. With its economical and intelligent
-                        features, this machine makes material handling ever more
-                        productive.
-                      </p>
-                    </div>
-
-                    {/* </div> */}
-                    <div className="div custom-slide">
-                      <h3>MANTSINEN 140</h3>
-                      <p>
-                        Mantsinen 140 is characterized by its energy efficiency
-                        and agility. With its economical and intelligent
-                        features, this machine makes material handling ever more
-                        productive.
-                      </p>
-                    </div>
+                    {
+                      props?.data?.map((item,key)=>{
+                        return(
+                          <div className="div custom-slide">
+                          <h3>{item.productname}</h3>
+                          <p>
+                           {item.details}
+                          </p>
+                        </div>
+                        )
+                      })
+                    }
+                  
+                   
+                   
                   </Slider>
                   <div className="downloadbutton">
                   <button style={{width:"200px"}}>

@@ -15,37 +15,46 @@ import ReqAquoteComp from '../Components/Desktop/ReqAquoteComp';
 import FooterComp from '../Components/Desktop/FooterComp';
 import MyNavbarMb from '../Components/Mobile/MyNavbarMb';
 import ProdLineMbComMp from '../Components/Mobile/ProdLineMbComMp';
-import { bannerApi, indcardApifr, partnerbrandsApi, whyferrytechApi } from '../utils/homepageApi';
+import { bannerApi, indcardApifr, partnerbrandsApi, productlineApiFr, whyferrytechApi } from '../utils/homepageApi';
 import ConstructionQuote from '../Components/Desktop/Pages/AboutUs/ConstructionQuote';
 import SubHeading from '../Components/Desktop/SubComponents/SubHeading';
 import { API_URL, Only_Frontend } from '../config';
 import axios from 'axios';
+import { introApi } from '../utils/introApi';
 
 const Homepage = () => {
   useEffect(() => {
     AOS.init({});
     
   }, [])
-  const [bannerApidata,setBannerApi] = useState([])
-  const [indcardApi,setindcardApi] = useState([])
-  const [partnerbrandsApifinal,setpartnerbrandsApi] = useState([])
-  const [whyferrytechApifinal,setwhyferrytechApi] = useState([])
+  const [bannerApidata,setBannerApi] = useState(bannerApi)
+  const [indcardApi,setindcardApi] = useState(indcardApifr)
+  const [partnerbrandsApifinal,setpartnerbrandsApi] = useState(partnerbrandsApi)
+  const [whyferrytechApifinal,setwhyferrytechApi] = useState(whyferrytechApi)
+  const [introCompApifinal,introCompApiFinal] = useState(introApi)
+  const [productlineApifinal,setproductlineApiFinal] = useState(productlineApiFr)
+
+  
+ 
  useEffect(()=>{
   const fetchProducts = async () => {
       
     try {
       if(Only_Frontend){
 
-        setBannerApi(bannerApi)
-        setindcardApi(indcardApifr)
-        setpartnerbrandsApi(partnerbrandsApi)
-        setwhyferrytechApi(whyferrytechApi)
         console.log("frontend")
       }else{
         const response = await axios.get(`${API_URL}/bannerget`);
         const insudtrycarddata = await axios.get(`${API_URL}/industryget`);
         const partnerbrandsdata = await axios.get(`${API_URL}/partnerbrandsget`);
         const whyferrytechdata = await axios.get(`${API_URL}/whyferrytechget`);
+        const introcompdata = await axios.get(`${API_URL}/introgetall`);
+        const productlinedata = await axios.get(`${API_URL}/productlinegetall`)
+        
+        setproductlineApiFinal(productlinedata.data.data)
+        introCompApiFinal(introcompdata.data.data)
+        console.log(introcompdata.data.data,"introcomp")
+        console.log("productline bk",productlinedata.data.data)
         setwhyferrytechApi(whyferrytechdata.data)
         console.log("bk why",whyferrytechdata.data)
         setpartnerbrandsApi(partnerbrandsdata.data)
@@ -74,7 +83,7 @@ const Homepage = () => {
 
         <MyNavbarMb/>
         <Banner version="mobile" bannerapi={bannerApidata} />
-        <IntroComp imgurl={imgurlmb} version="mobile"/>
+        <IntroComp imgurl={imgurlmb}  data={introCompApifinal} version="mobile"/>
         <IndustriesComp version="mobile" data={indcardApi}/>
         <ProdLineMbComMp/>
         <SubHeading
@@ -86,16 +95,16 @@ const Homepage = () => {
         <WhyFerrytechComp version="mobile" data={whyferrytechApifinal}/>
         <Testimonial version="mobile"/>
         <ReqAquoteComp version="mobile"/>        
-        <FooterComp version="mobile"/>
+        <FooterComp version="mobile" />
         
     </div>
     
     <div className="desktop">
         <MyNavbarDesk/>
         <Banner version="desktop" bannerapi={bannerApidata}/>
-        <IntroComp imgurl={imgurldesk}/>
+        <IntroComp data={introCompApifinal} imgurl={imgurldesk}/>
         <IndustriesComp data={indcardApi}/>
-        <ProductLineComp/>
+        <ProductLineComp data={productlineApifinal}/>
         <SubHeading
             version="desktop"
             subheading="Partner Brands"
@@ -105,7 +114,7 @@ const Homepage = () => {
         <WhyFerrytechComp data={whyferrytechApifinal}/>
         <Testimonial/>
         <ReqAquoteComp/>  
-        <FooterComp/>
+        <FooterComp />
     </div>
 
     </>

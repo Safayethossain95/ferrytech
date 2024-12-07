@@ -1,4 +1,7 @@
-.login-container {
+
+@import "../../sassStyles/variables";
+@import "../../sassStyles/typography";
+@import "../../sassStyles/mixins";.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +17,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
     .form-title {
+      @include myfont(25px,500,$main_font);
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
@@ -48,6 +52,7 @@
     }
   
     .submit-button {
+      @include myfont(20px,400,$main_font);
       width: 100%;
       padding: 0.75rem;
       font-size: 1rem;

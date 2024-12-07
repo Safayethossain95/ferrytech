@@ -10,6 +10,15 @@
 html {
     scroll-behavior: smooth;
 }
+
+
+.btn-primary{
+    background-color: #1c47c5!important;
+}
+.btn-danger{
+    background-color: #F27822!important;;
+}
+
 .bdirectors{
     height: 80vh;
     @include media(xsmDevice){

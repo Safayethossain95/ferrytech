@@ -33,7 +33,7 @@ const ProtectedRoute = ({ element, ...rest }) => {
     }
     else{
 
-      return element; 
+      return <div>Protected Content Here</div>;
     }
 };
 

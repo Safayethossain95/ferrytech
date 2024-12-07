@@ -211,18 +211,7 @@ const MyNavbarMb = () => {
               <Link onClick={handleLogout}>Logout</Link>
             </button>
             }
-          </div> <div className="downloadbutton">
-            {
-              !isLogin ?
-            <button>
-              <Link to="/login">Login</Link>
-            </button>
-              :
-              <button>
-              <Link onClick={handleLogout}>Logout</Link>
-            </button>
-            }
-          </div>
+          </div> 
               </div>
             </motion.div>
           </Nav>

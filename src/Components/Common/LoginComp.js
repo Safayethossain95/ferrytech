@@ -14,13 +14,18 @@ const LoginComp = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     // Handle form submission logic here
-    const res = await axios.post(`${API_URL}/login`, { email, password }, { withCredentials: true });
-    if(res.data.token){
-      login()
-      navigate("/dashboard")
-      toast.success('Login Successful!');
-      console.log("logged in")
+    try{
+      const res = await axios.post(`${API_URL}/login`, { email, password }, { withCredentials: true });
+      if(res.data.token){
+        login()
+        navigate("/dashboard")
+        toast.success(res.data.message);
+        console.log("logged in")
+      }
+    }catch(err){
+      toast.error("Server not found.")
     }
+   
   };
   
 

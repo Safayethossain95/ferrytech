@@ -303,7 +303,7 @@ const ProductDashPage = () => {
           <div>
             <div className="form mt-4" id="editform">
               <div className="p-6 max-w-4xl m-auto">
-                <h2 className="text-2xl font-bold mb-4">Truck Crane Form</h2>
+                <h2 className="text-2xl font-bold mb-4">Product Category Form</h2>
                 {/* General fields */}
                 <div className="space-y-4">
                   <input

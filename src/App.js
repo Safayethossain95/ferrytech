@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Toaster position="bottom-right" />
+        <Toaster position="top-center" />
         <ScrollToTop />
         <ScrollTop />
         <Routes>

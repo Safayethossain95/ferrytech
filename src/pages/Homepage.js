@@ -53,6 +53,7 @@ const Homepage = () => {
         
         setproductlineApiFinal(productlinedata.data.data)
         introCompApiFinal(introcompdata.data.data)
+        console.log(introcompdata.data.data,"introcomp")
         console.log("productline bk",productlinedata.data.data)
         setwhyferrytechApi(whyferrytechdata.data)
         console.log("bk why",whyferrytechdata.data)
@@ -82,7 +83,7 @@ const Homepage = () => {
 
         <MyNavbarMb/>
         <Banner version="mobile" bannerapi={bannerApidata} />
-        <IntroComp imgurl={imgurlmb} version="mobile"/>
+        <IntroComp imgurl={imgurlmb}  data={introCompApifinal} version="mobile"/>
         <IndustriesComp version="mobile" data={indcardApi}/>
         <ProdLineMbComMp/>
         <SubHeading

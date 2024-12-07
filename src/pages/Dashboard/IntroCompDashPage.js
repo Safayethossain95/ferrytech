@@ -144,7 +144,8 @@ const IntroCompDashPage = () => {
                     <td className="border px-4 py-2">{item.para1}</td>
                     <td className="border px-4 py-2">{item.para2}</td>
 
-                    <td className="border px-4 py-2 d-flex gap-2">
+                    <td className="border px-4 py-2 ">
+                      <div className="div d-flex gap-2">
                       <button
                         className="btn btn-primary"
                         onClick={() => industryedittoggle(item._id)}
@@ -157,6 +158,7 @@ const IntroCompDashPage = () => {
                       >
                         Delete
                       </button>
+                      </div>
                     </td>
                   </tr>
                 ))

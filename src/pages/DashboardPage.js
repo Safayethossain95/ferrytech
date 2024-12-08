@@ -98,7 +98,7 @@ const DashboardPage = () => {
             <MyNavbarDesk />
             <AdminSidebar />
           </div>
-          <div className="content_ad">
+          <div className="content_add">
             <div>
               <table className="table-auto m-auto w-full border-collapse">
                 <thead>

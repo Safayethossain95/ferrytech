@@ -158,7 +158,7 @@ const ProductDashPage = () => {
           <MyNavbarDesk />
           <AdminSidebar />
         </div>
-        <div className="content_ad">
+        <div className="content_add">
           <div className="m-auto" style={{width:"100%"}}>
             <div className="text-end">
               <div className="downloadbutton">

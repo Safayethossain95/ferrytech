@@ -121,7 +121,7 @@ const ContactInfoPage = () => {
           <MyNavbarDesk />
           <AdminSidebar />
         </div>
-        <div className="content_ad">
+        <div className="content_add">
           <h4 className="text-center mb-4">Contact Edit</h4>
           <table className="table-auto border-collapse border border-gray-400 w-full m-auto">
             <thead>

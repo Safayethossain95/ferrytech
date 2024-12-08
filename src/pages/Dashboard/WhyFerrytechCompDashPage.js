@@ -109,7 +109,7 @@ const WhyFerrytechCompDashPage = () => {
           <MyNavbarDesk />
           <AdminSidebar />
         </div>
-        <div className="content_ad">
+        <div className="content_add">
           <h4 className="text-center mb-4">Why Ferrytech</h4>
           <table className="table-auto m-auto w-full border-collapse">
             <thead>

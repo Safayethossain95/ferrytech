@@ -1,7 +1,7 @@
 @import "../../sassStyles/variables";
 @import "../../sassStyles/typography";
 @import "../../sassStyles/mixins";
-.sidebar_ad {
+.sidebar_add {
   background-color: #000f29;
   position: fixed;
   left: 0;
@@ -101,10 +101,9 @@
   }
 }
 
-
-.content_ad {
+.content_add {
   top: 80px;
-  left:0;
+  left: 0;
   position: relative;
   height: calc(100vh);
   background-color: #f9f9f9;
@@ -115,14 +114,14 @@
   .form {
     width: 400px; /* Set form width */
     padding: 20px;
-    margin:0 auto;
+    margin: 0 auto;
     background-color: #fff; /* White background */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
     display: flex;
     flex-direction: column;
   }
-  
+
   /* Input fields and textarea */
   .form input,
   .form textarea {
@@ -133,7 +132,7 @@
     border-radius: 4px; /* Rounded input corners */
     font-size: 14px;
   }
-  
+
   /* Button styling */
   .form button {
     background-color: #007bff; /* Blue button */
@@ -144,11 +143,11 @@
     cursor: pointer;
     font-size: 16px;
   }
-  
+
   .form button:hover {
     background-color: #0056b3; /* Darker blue on hover */
   }
-  
+
   /* Card styling */
   .card {
     background-color: #f1f1f1; /* Light grey background */
@@ -161,7 +160,7 @@
     align-items: center; /* Center card content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
   }
-  
+
   /* Card image */
   .card img {
     width: 100px;
@@ -170,24 +169,24 @@
     border-radius: 8px;
     margin-bottom: 10px;
   }
-  
+
   /* Card text */
   .card h4 {
     margin: 5px 0;
     font-size: 18px;
     text-align: center;
   }
-  
+
   .card p {
     font-size: 14px;
     text-align: center;
     color: #555;
   }
-  h4{
-    @include myfont(24px,600,$main_font);
+  h4 {
+    @include myfont(24px, 600, $main_font);
   }
-  table{
-    @include myfont(14px,400,$main_font);
+  table {
+    @include myfont(14px, 400, $main_font);
   }
   form {
     display: flex;
@@ -199,11 +198,12 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    label{
-      @include myfont(16px,500,$main_font);
+    label {
+      @include myfont(16px, 500, $main_font);
     }
-   
-    input,textarea {
+
+    input,
+    textarea {
       width: 100%;
       margin-bottom: 1rem;
       padding: 0.3rem 0.4rem;
@@ -211,20 +211,20 @@
       border: 1px solid #ddd;
       border-radius: 4px;
       transition: border-color 0.3s ease;
-  
+
       &:focus {
         outline: none;
         border-color: #007bff;
         box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
       }
     }
-  
+
     label {
       display: flex;
       align-items: center;
       font-size: 1rem;
       color: #333;
-  
+
       input[type="checkbox"] {
         margin-left: 0.5rem;
         width: 18px;
@@ -233,5 +233,4 @@
       }
     }
   }
-  
 }

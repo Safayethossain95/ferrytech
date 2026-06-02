@@ -20,16 +20,22 @@ const ReqAquoteComp = (props) => {
     });
   };
   const [contactData,setcontactData]= useState(contactsApi.data)
-  useEffect(()=>{
-    async function getcontacts(){
-      const res = await axios.get(`${API_URL}/contactgetall`)
-      if(!Only_Frontend){
-
-        setcontactData(res.data.data)
+  useEffect(() => {
+    let isMounted = true;
+  
+    async function getcontacts() {
+      const res = await axios.get(`${API_URL}/contactgetall`);
+      if (isMounted && !Only_Frontend) {
+        setcontactData(res.data.data);
       }
     }
-    getcontacts()
-  },[])
+  
+    getcontacts();
+  
+    return () => {
+      isMounted = false; // Prevent state update if component unmounts
+    };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", setDimension);

@@ -50,7 +50,7 @@ const ContactBannerMb = (props) => {
                           >
                             House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
                             Bangladesh.
-                          </a>{" "} <br/> <a>Fax: +88 02 9142822</a>
+                          </a>{" "} <br/> <a href="tel:+88029142822">Fax: +88 02 9142822</a>
                         </p>
                       </div>
                       <div className="contentdown">

@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import {FaArrowCircleUp} from 'react-icons/fa'
 import {BsChevronUp} from 'react-icons/bs'
 const ScrollTop = () => {
   const [visible, setVisible] = useState(false)
@@ -24,7 +23,7 @@ const ScrollTop = () => {
   window.addEventListener('scroll', toggleVisible);
   return (
     <>
-    <div className={`scrolltop ${visible==true?"visibleclass":""}`}>
+    <div className={`scrolltop ${visible===true?"visibleclass":""}`}>
       <BsChevronUp onClick={scrollToTop}
         style={{display: visible ? 'block' : 'none'}} />
      

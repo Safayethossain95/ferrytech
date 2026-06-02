@@ -1,8 +1,11 @@
 {
-    "rewrites":[
-        {
-            "source":"/(.*)",
-            "destination":"/"
-        }
-    ]
+  "env": {
+    "CI": "false"
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }

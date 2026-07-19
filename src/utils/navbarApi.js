@@ -24,34 +24,7 @@ const navbarApidata = [{
   "parentMenuId": "about",
   "status": false,
   "isActive": false,
-  "childNavbarVm": [
-    {
-      "menuId": 13,
-      "menuName": "Introduction",
-      "url": "/aboutus",
-      "sequence": 0,
-      "parentMenuId": "about",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286caa30280dc3b13e2a61"
-      }
-    },
-    {
-      "menuId": 14,
-      "menuName": "Board of Directors",
-      "url": "/boardofdirectors",
-      "sequence": 0,
-      "parentMenuId": "about",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286caa30280dc3b13e2a62"
-      }
-    }
-  ],
+  "childNavbarVm": [],
   "__v": 0
 },
 {

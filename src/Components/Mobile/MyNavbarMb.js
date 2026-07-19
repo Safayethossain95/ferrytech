@@ -1,12 +1,12 @@
 /* eslint-disable eqeqeq */
+import axios from "axios";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Accordion, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { navbarApidata } from "../../utils/navbarApi";
 import { API_URL, Only_Frontend } from "../../config";
-import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
+import { navbarApidata } from "../../utils/navbarApi";
 const MyNavbarMb = () => {
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -61,31 +61,31 @@ const MyNavbarMb = () => {
     };
     // window.onscroll = function() {myFunction()};
   }, []);
-  const [navdata,setnavdata] = useState(navbarApidata)
+  const [navdata, setnavdata] = useState(navbarApidata);
 
-  useEffect(()=>{
-    async function callnav(){
-      const res = await axios.get(`${API_URL}/navbarget`)
-      if(!Only_Frontend){
-        setnavdata(res.data.data)
+  useEffect(() => {
+    async function callnav() {
+      const res = await axios.get(`${API_URL}/navbarget`);
+      if (!Only_Frontend) {
+        setnavdata(res.data.data);
 
-        console.log(res.data)
-      }else{
-        setnavdata(navbarApidata)
+        console.log(res.data);
+      } else {
+        setnavdata(navbarApidata);
       }
     }
-    callnav()
-  },[])
-  const {isLogin,logout} = useAuth()
-  const handleLogout =async () => {
+    callnav();
+  }, []);
+  const { isLogin, logout } = useAuth();
+  const handleLogout = async () => {
     const res = await axios.post(`${API_URL}/logout`);
     if (res.data.success) {
-      
-      document.cookie = "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
-      navigate("/login")
+      document.cookie =
+        "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
+      navigate("/login");
     }
-    logout()
-  }
+    logout();
+  };
 
   return (
     <>
@@ -183,7 +183,7 @@ const MyNavbarMb = () => {
                   </div>
                 </div>
                 <div className="phone">
-                  <a style={{ cursor: "pointer" }} href="tel:+8802333312349">
+                  <a style={{ cursor: "pointer" }} href="tel:+8802334420156">
                     <img src="./assets/images/icon/phone.png" alt="" />
                   </a>
                   <div className="wrap">
@@ -193,25 +193,24 @@ const MyNavbarMb = () => {
                         textDecoration: "none",
                         color: "unset",
                       }}
-                      href="tel:+8802333312349"
+                      href="tel:+8802334420156"
                     >
                       <p>call us now</p>
-                      <h4>+8802333312349</h4>
+                      <h4>+8802334420156</h4>
                     </a>
                   </div>
                 </div>
                 <div className="downloadbutton">
-            {
-              !isLogin ?
-            <button>
-              <Link to="/login">Login</Link>
-            </button>
-              :
-              <button>
-              <Link onClick={handleLogout}>Logout</Link>
-            </button>
-            }
-          </div> 
+                  {!isLogin ? (
+                    <button>
+                      <Link to="/login">Login</Link>
+                    </button>
+                  ) : (
+                    <button>
+                      <Link onClick={handleLogout}>Logout</Link>
+                    </button>
+                  )}
+                </div>
               </div>
             </motion.div>
           </Nav>

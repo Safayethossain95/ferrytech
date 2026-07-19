@@ -1,40 +1,39 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { BsChevronDown } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import { navbarApidata } from "../../utils/navbarApi";
 import { API_URL, Only_Frontend } from "../../config";
-import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
+import { navbarApidata } from "../../utils/navbarApi";
 const MyNavbarDesk = () => {
-  const navigate = useNavigate()
-  const [navdata,setnavdata] = useState(navbarApidata)
-  const {isLogin,logout} = useAuth()
-  useEffect(()=>{
-    async function callnav(){
-      const res = await axios.get(`${API_URL}/navbarget`)
-      if(!Only_Frontend){
-        setnavdata(res.data.data)
+  const navigate = useNavigate();
+  const [navdata, setnavdata] = useState(navbarApidata);
+  const { isLogin, logout } = useAuth();
+  useEffect(() => {
+    async function callnav() {
+      const res = await axios.get(`${API_URL}/navbarget`);
+      if (!Only_Frontend) {
+        setnavdata(res.data.data);
 
-        console.log(res.data)
-      }else{
-        setnavdata(navbarApidata)
+        console.log(res.data);
+      } else {
+        setnavdata(navbarApidata);
       }
     }
-    callnav()
-  },[])
-  const handleLogout =async () => {
+    callnav();
+  }, []);
+  const handleLogout = async () => {
     const res = await axios.post(`${API_URL}/logout`);
     if (res.data.success) {
-      
-      document.cookie = "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
-      navigate("/login")
-      
+      document.cookie =
+        "jwtToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; SameSite=None";
+      navigate("/login");
     }
-    logout()
-  }
+    logout();
+  };
 
   useEffect(() => {
     const navbar = document.getElementById("mynavbardesk");
@@ -71,66 +70,72 @@ const MyNavbarDesk = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="me-auto">
-            {navdata?.map((element, index) => {
-              const isChildValue = element.childNavbarVm;
-              return (
-                <Link
-                  key={element?.menuId}
-                  className={
-                    element.childNavbarVm.some(
-                      (child) => window.location?.pathname === child?.url
-                    )
-                      ? "admissionclass activei"
-                      : "admissionclass"
-                  }
-                  to={element?.url}
-                >
-                  {element.childNavbarVm.length != 0 ? (
-                    <>
-                      {element?.menuName} <BsChevronDown />
-                      <div className="admissionmenu">
-                        <ul>
-                          {element?.childNavbarVm.map((item, key) => {
-                            return (
-                              <li key={item?.menuId}>
-                                <Link
-                                  className={
-                                    window.location.pathname == item?.url
-                                      ? `activei`
-                                      : ``
-                                  }
-                                  to={item?.url}
-                                >
-                                  {item?.menuName}
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {" "}
-                      <p
-                        className={
-                          window.location.pathname == element.url
-                            ? `activei`
-                            : ``
-                        }
-                      >
+            {navdata
+              ?.slice()
+              .sort((a, b) => Number(a.menuId) - Number(b.menuId))
+              .map((element, index) => {
+                const isChildValue = element.childNavbarVm;
+                return (
+                  <Link
+                    key={element?.menuId}
+                    className={
+                      element.childNavbarVm.some(
+                        (child) => window.location?.pathname === child?.url,
+                      )
+                        ? "admissionclass activei"
+                        : "admissionclass"
+                    }
+                    to={element?.url}
+                  >
+                    {element.childNavbarVm.length > 0 ? (
+                      <>
                         {element?.menuName}
-                      </p>{" "}
-                    </>
-                  )}
-                </Link>
-              );
-            })}
+                        {element?.childNavbarVm?.length > 0 && (
+                          <BsChevronDown />
+                        )}
+                        <div className="admissionmenu">
+                          <ul>
+                            {element?.childNavbarVm.map((item, key) => {
+                              return (
+                                <li key={item?.menuId}>
+                                  <Link
+                                    className={
+                                      window.location.pathname == item?.url
+                                        ? `activei`
+                                        : ``
+                                    }
+                                    to={item?.url}
+                                  >
+                                    {item?.menuName}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <p
+                          className={
+                            window.location.pathname == element.url
+                              ? `activei`
+                              : ``
+                          }
+                        >
+                          {element?.menuName}
+                        </p>{" "}
+                      </>
+                    )}
+                  </Link>
+                );
+              })}
           </Nav>
         </Navbar.Collapse>
         <div className="contactpart">
           <div className="phone">
-            <a style={{ cursor: "pointer" }} href="tel:+8802333312349">
+            <a style={{ cursor: "pointer" }} href="tel:+8802334420156">
               <img src="/assets/images/icon/phone.png" alt="" />
             </a>
             <div className="wrap">
@@ -140,10 +145,10 @@ const MyNavbarDesk = () => {
                   textDecoration: "none",
                   color: "unset",
                 }}
-                href="tel:+8802333312349"
+                href="tel:+8802334420156"
               >
                 <p>call us now</p>
-                <h4>+8802333312349</h4>
+                <h4>+8802334420156</h4>
               </a>
             </div>
           </div>
@@ -162,16 +167,15 @@ const MyNavbarDesk = () => {
             </div>
           </div>
           <div className="downloadbutton">
-            {
-              !isLogin ?
-            <button>
-              <Link to="/login">Login</Link>
-            </button>
-              :
+            {!isLogin ? (
               <button>
-              <Link onClick={handleLogout}>Logout</Link>
-            </button>
-            }
+                <Link to="/login">Login</Link>
+              </button>
+            ) : (
+              <button>
+                <Link onClick={handleLogout}>Logout</Link>
+              </button>
+            )}
           </div>
         </div>
       </Navbar>

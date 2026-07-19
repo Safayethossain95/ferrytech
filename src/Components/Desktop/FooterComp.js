@@ -208,9 +208,9 @@ const FooterComp = (props) => {
                             href="https://maps.app.goo.gl/qHrUDGWx5JT6GPXt6"
                             rel="noreferrer"
                           >
-                            Chittagong Office: Lokman Tower (4th Floor),1646
-                            Sheikh Mujib Road Chowmuhani, Chittagong,
-                            Bangladesh.
+                            Chittagong Office: Laila Nur Bhaban (4th floor),
+                            2814, Agrabad Access Road, Bepari Para, Agrabad,
+                            Chattogram, Bangladesh.
                           </a>
                         </li>
                       </ul>
@@ -238,7 +238,7 @@ const FooterComp = (props) => {
                       <ul>
                         <li>
                           {" "}
-                          <a href="tel:+8802333312349">+8802333312349</a>
+                          <a href="tel:+8802334420156">+8802334420156</a>
                         </li>
                         <li>
                           <a href="mailto:hq@ferrytech.net">hq@ferrytech.net</a>

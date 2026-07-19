@@ -52,7 +52,8 @@ const ContactInfoPage = () => {
       seteditmode(true);
       //   setData(response.data);
     } catch (error) {
-      console.error("Error deleting data:", error); // Handle any errors
+      console.log(myid)
+      console.error("Error editing data:", error); // Handle any errors
     }
   };
   const [loading, setLoading] = useState(true);

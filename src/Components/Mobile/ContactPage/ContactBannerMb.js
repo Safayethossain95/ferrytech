@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { motion } from "framer-motion";
-import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaPhone } from "react-icons/fa";
@@ -31,7 +30,7 @@ const ContactBannerMb = (props) => {
                     stiffness: 30,
                   }}
                 >
-                <div className="wrap">
+                  <div className="wrap">
                     <div className="upperpart">
                       <div className="contentup">
                         <h4>
@@ -50,7 +49,9 @@ const ContactBannerMb = (props) => {
                           >
                             House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
                             Bangladesh.
-                          </a>{" "} <br/> <a href="tel:+88029142822">Fax: +88 02 9142822</a>
+                          </a>{" "}
+                          <br />{" "}
+                          <a href="tel:+88029142822">Fax: +88 02 9142822</a>
                         </p>
                       </div>
                       <div className="contentdown">
@@ -59,10 +60,10 @@ const ContactBannerMb = (props) => {
                           {" "}
                           <a
                             target="_blank"
-                            href="https://maps.app.goo.gl/ZdwvJfXuP8Dy2uGz8"
+                            href="https://maps.app.goo.gl/JAvvBKUaBs69Ymjt7"
                           >
-                            Lokman Tower (4th Floor),1646 Sheikh Mujib Road
-                            Chowmuhani, Chittagong, Bangladesh.
+                            Laila Nur Bhaban (4th floor), 2814, Agrabad Access
+                            Road, Bepari Para, Agrabad, Chattogram, Bangladesh.
                           </a>{" "}
                         </p>
                       </div>
@@ -99,7 +100,7 @@ const ContactBannerMb = (props) => {
                     <div className="lowerpart">
                       <div className="contentdown">
                         <p>
-                          <a href="tel:+8802333312349">+8802333312349</a>
+                          <a href="tel:+8802334420156">+8802334420156</a>
                         </p>
                       </div>
                     </div>

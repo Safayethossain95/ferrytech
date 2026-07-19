@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable eqeqeq */
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaPhone } from "react-icons/fa";
@@ -41,16 +41,15 @@ const ContactBanner = (props) => {
               props.version == "mobile"
                 ? "mbContainer"
                 : screenSize.dynamicWidth >= 992 &&
-                  screenSize.dynamicWidth <= 1199
-                ? "myContainer896"
-                : screenSize.dynamicWidth >= 1200 &&
-                  screenSize.dynamicWidth <= 1399
-                ? "myContainerMinimini"
-                : "myContainerMini"
+                    screenSize.dynamicWidth <= 1199
+                  ? "myContainer896"
+                  : screenSize.dynamicWidth >= 1200 &&
+                      screenSize.dynamicWidth <= 1399
+                    ? "myContainerMinimini"
+                    : "myContainerMini"
             }
           >
             <Row>
-             
               <Col lg={4}>
                 <motion.div
                   className="contactbarcard"
@@ -80,7 +79,7 @@ const ContactBanner = (props) => {
                     <div className="lowerpart">
                       <div className="contentdown">
                         <p>
-                          <a href="tel:+8802333312349">+8802333312349</a>
+                          <a href="tel:+8802334420156">+8802334420156</a>
                         </p>
                       </div>
                     </div>
@@ -118,7 +117,8 @@ const ContactBanner = (props) => {
                           >
                             House# 79, Flat# 2B, Road# 12/A, Dhanmondi, Dhaka,
                             Bangladesh.
-                          </a>{" "}<br/> <a>Fax: +88 02 9142822</a>
+                          </a>{" "}
+                          <br /> <a>Fax: +88 02 9142822</a>
                         </p>
                       </div>
                       <div className="contentdown">
@@ -127,10 +127,10 @@ const ContactBanner = (props) => {
                           {" "}
                           <a
                             target="_blank"
-                            href="https://maps.app.goo.gl/ZdwvJfXuP8Dy2uGz8"
+                            href="https://maps.app.goo.gl/JAvvBKUaBs69Ymjt7"
                           >
-                            Lokman Tower (4th Floor),1646 Sheikh Mujib Road
-                            Chowmuhani, Chittagong, Bangladesh.
+                            Laila Nur Bhaban (4th floor), 2814, Agrabad Access
+                            Road, Bepari Para, Agrabad, Chattogram, Bangladesh.
                           </a>{" "}
                         </p>
                       </div>

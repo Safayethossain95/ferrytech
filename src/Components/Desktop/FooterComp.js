@@ -267,7 +267,7 @@ const FooterComp = (props) => {
           </div>
         </div>
         <div className="copyright">
-          <p>Website copyright &copy; BSSIT 2024</p>
+          <p>Website copyright &copy; FERRYTECH 2026</p>
         </div>
       </div>
     </>

@@ -1,184 +1,161 @@
 /* eslint-disable eqeqeq */
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import Slider from "react-slick";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import { Link } from "react-router-dom";
+import { useCallback, useEffect, useRef, useState } from "react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Banner = (props) => {
-  const PrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <button className="custom-arrow prev-arrow" onClick={onClick}>
-        &#10094; {/* or any custom icon */}
-      </button>
-    );
-  };
+  const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [textVisible, setTextVisible] = useState(false);
+  const textTimerRef = useRef(null);
 
-  const NextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <button className="custom-arrow next-arrow" onClick={onClick}>
-        &#10095; {/* or any custom icon */}
-      </button>
-    );
-  };
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [screenSize, getDimension] = useState({
-    dynamicWidth: window.innerWidth,
-    dynamicHeight: window.innerHeight,
-  });
-  const setDimension = () => {
-    getDimension({
-      dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight,
-    });
-  };
+  const total = props.bannerapi?.length || 0;
+  const isMobile = props.version === "mobile";
+
+  const showText = useCallback(() => {
+    setTextVisible(false);
+    clearTimeout(textTimerRef.current);
+    textTimerRef.current = setTimeout(() => setTextVisible(true), 200);
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", setDimension);
+    showText();
+    return () => clearTimeout(textTimerRef.current);
+  }, [activeIndex, showText]);
 
-    return () => {
-      window.removeEventListener("resize", setDimension);
-    };
-  }, [screenSize]);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 0,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: props.version!=="mobile" ? true : false,
-    fade: false,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    draggable: true,
-    pauseOnHover: false,
-    beforeChange: (current, next) => setActiveSlide(next),
-    appendDots: (dots) => <ul>{dots}</ul>,
-    customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.autoplay.start();
+    }
+  }, []);
+
+  if (!props.bannerapi || total === 0) return null;
+
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.realIndex);
   };
+
+  const currentItem = props.bannerapi[activeIndex];
+
   return (
-    <div className={window.innerHeight > 1080 ? "bannersection heightOverride mx-0" : "bannersection mx-0"}>
-      {props.version == "mobile" && <div style={{ height: "60px" }}></div>}
-      <div className="sliderWrapper">
-
-      <Slider {...settings}>
-        {props.bannerapi.map((item, key) => {
-          return (
-            <div className="div" key={key}>
-              <motion.div
-              className={window.innerHeight > 1080 ? "inneritem heightOverride" : "inneritem"}
-                initial={{ scale: 1 }} // Initial state
-                animate={{ scale: activeSlide === key ? 1 : 1 }} // Zoom only if it's the active slide
-                transition={{
-                  duration: 3, // Duration of the zoom effect (2 seconds)
-                  ease: "easeInOut", // Easing function
-                }}
-              >
-                {/* <img src={item.imgurl} alt="" /> */}
-             
-                <div
-                  className={
-                    props.version == "mobile"
-                      ? "myContainer"
-                      : screenSize.dynamicWidth >= 1200 &&
-                        screenSize.dynamicWidth <= 1399
-                      ? "myContainerMinimini"
-                      : screenSize.dynamicWidth >= 992 &&
-                        screenSize.dynamicWidth <= 1199
-                      ? "myContainer896"
-                      : "myContainerMini"
-                  }
-                >
-                  <Row className={`align-items-center ${key%2==0?"flex-row-reverse":""}`}>
-                    <Col lg={5}>
-                      <motion.h3
-                        initial={{ y: -20, opacity: 0 }} // Initial position and opacity
-                        animate={{
-                          y: activeSlide === key ? 0 : -20,
-                          opacity: activeSlide === key ? 1 : 0,
-                        }} // Slide up effect
-                        transition={{ duration: 0.5 }} // Duration of the slide effect
-                      >
-                        {item.smtext}
-                      </motion.h3>
-                      <h2>
-                        {/* Animate each word in bigtext */}
-                        {item?.bigtext.split(" ").map((word, index) => (
-                          <motion.span
-                            key={index}
-                            initial={{ y: 0, opacity: 0 }} // Use translateY for upward movement
-                            animate={{
-                              y: activeSlide === key ? 20 : 0,
-                              opacity: activeSlide === key ? 1 : 0,
-                            }} // Slide up effect
-                            transition={{ duration: 0.8, delay: index * 0.2 }} // Delay of 0.2 seconds based on index
-                          >
-                            {word + " "}
-                          </motion.span>
-                        ))}
-                      </h2>
-
-                      <div className="downloadbutton big d-flex">
-                        <motion.button
-                          initial={{ opacity: 0 }} // Initial position and opacity
-                          animate={{ opacity: activeSlide === key ? 1 : 0 }} // Slide up effect
-                          transition={{ duration: 0.5, delay: 0.5 }}
-                          style={{ width: "120px" }}
-                        >
-                          <Link
-                            to="/aboutus"
-                          >
-                            About Us
-                          </Link>
-                        </motion.button>
-                        <motion.button
-                        className="bannerbutton"
-                          initial={{ opacity: 0 }} // Initial position and opacity
-                          animate={{ opacity: activeSlide === key ? 1 : 0 }} // Slide up effect
-                          transition={{ duration: 0.5, delay: 0.7 }}
-                          
-                        >
-                          <a
-                           
-                            href="./assets/brochure/ferrytech_brochures_compressed.pdf"
-                            target="_blank"
-                          >
-                            Download Brochures
-                          </a>
-                        </motion.button>
-                      </div>
-                    </Col>
-                    <Col lg={7}>
-                      <motion.div className="theimage"
-                        initial={{ scale: 0.8, opacity: 0 }} // Start slightly smaller and fully transparent
-                        animate={{
-                          scale: activeSlide === key ? 1 : 0.8, // Zoom in if active slide, else stay slightly smaller
-                          opacity: activeSlide === key ? 1 : 0, // Fade in if active slide, else fade out
-                        }}
-                        transition={{ ease: "easeInOut",duration: 0.6 ,delay:0.2}} // Duration for both animations
-                      >
-                        <img src={item?.imgurl} alt="" />
-                      </motion.div>
-                    </Col>
-                  </Row>
-                </div>
-                
-              </motion.div>
+    <div className={`bm-banner-section ${isMobile ? "bm-banner-mobile" : ""}`}>
+      <Swiper
+        ref={swiperRef}
+        modules={[EffectFade, Autoplay, Pagination, Navigation]}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        speed={1200}
+        loop={total > 1}
+        autoplay={{
+          delay: 5500,
+          disableOnInteraction: false,
+        }}
+        pagination={
+          !isMobile
+            ? {
+                clickable: true,
+                el: ".bm-swiper-pagination",
+              }
+            : false
+        }
+        navigation={
+          !isMobile
+            ? {
+                prevEl: ".bm-swiper-prev",
+                nextEl: ".bm-swiper-next",
+              }
+            : false
+        }
+        onSlideChange={handleSlideChange}
+        className="bm-swiper"
+      >
+        {props.bannerapi.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="bm-slide-wrapper">
+              {/* Ken Burns zoom-in background */}
+              <div
+                className={`bm-ken-burns ${activeIndex === index ? "bm-ken-active" : ""}`}
+                style={{ backgroundImage: `url(${item?.imgurl})` }}
+              />
+              {/* Dark overlay */}
+              {/* <div className="bm-overlay" /> */}
             </div>
-          );
-        })}
-      </Slider>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Centered text content */}
+      <div
+        className={`bm-content-layer ${textVisible ? "bm-content-visible" : ""}`}
+      >
+        <div className="bm-content-inner">
+          {/* <span className="bm-tag">{currentItem?.smtext}</span> */}
+
+          <h1 className="bm-heading" key={activeIndex}>
+            {currentItem?.bigtext}
+          </h1>
+
+          <div className="bm-buttons">
+            {/* <a href="/aboutus" className="bm-btn bm-btn-primary">
+              About Us
+            </a> */}
+            <a
+              href="./assets/brochure/ferrytech_brochures_compressed.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="bm-btn bm-btn-outline"
+            >
+              <span className="bm-btn-icon">&#8595;</span>
+              Download Brochure
+            </a>
+          </div>
+        </div>
       </div>
 
-      {/* <div className="cimg">
-        <img src="./assets/images/Banner/cicon.png" alt="" />
-      </div> */}
+      {/* Navigation arrows */}
+      {!isMobile && (
+        <>
+          <button
+            className="bm-swiper-prev bm-arrow"
+            aria-label="Previous slide"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button className="bm-swiper-next bm-arrow" aria-label="Next slide">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {/* Pagination dots */}
+      {!isMobile && <div className="bm-swiper-pagination" />}
+
+      {/* Progress bar */}
+      <div className="bm-progress-bar">
+        <div key={activeIndex} className="bm-progress-fill" />
+      </div>
     </div>
   );
 };

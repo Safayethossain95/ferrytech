@@ -1,5 +1,3 @@
-import React from "react";
-
 export const partnerbrandsApi = [
   {
     img: "./assets/images/PartnerBrands/1.png",
@@ -25,12 +23,12 @@ const bannerApi = [
   {
     smtext: "Welcome to Ferrytech",
     bigtext: "Heavy Duty. No Compromise.",
-    imgurl: "./assets/images/Banner/bannerfloat1.webp",
+    imgurl: "./assets/images/Banner/1.jpg",
   },
   {
     smtext: "Your trusted place.",
     bigtext: "Built Tough. No Concessions.",
-    imgurl: "./assets/images/Banner/bannerfloat2.png",
+    imgurl: "./assets/images/Banner/2.jpg",
   },
 ];
 
@@ -178,39 +176,49 @@ const indcardApifr = [
 
 const productlineApiFr = [
   {
-    "_id": {
-      "$oid": "673840edf97cbcbcd55e23a4"
+    _id: {
+      $oid: "673840edf97cbcbcd55e23a4",
     },
-    "isActive": true,
-    "productname": "MANTSINEN 140",
-    "details": "Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
-    "img": "./assets/images/productLine/img1.png",
-    "__v": 0
+    isActive: true,
+    productname: "MANTSINEN 140",
+    details:
+      "Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
+    img: "./assets/images/productLine/img1.png",
+    __v: 0,
   },
-{
-  "_id": {
-    "$oid": "67384063f97cbcbcd55e239d"
+  {
+    _id: {
+      $oid: "67384063f97cbcbcd55e239d",
+    },
+    isActive: true,
+    productname: "MANTSINEN 540",
+    details:
+      "Mantsinen 540 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
+    img: "./assets/images/productLine/img2.png",
+    __v: 0,
   },
-  "isActive": true,
-  "productname": "MANTSINEN 540",
-  "details": "Mantsinen 540 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
-  "img": "./assets/images/productLine/img2.png",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "673840edf97cbcbcd55e23a4"
+  {
+    _id: {
+      $oid: "673840edf97cbcbcd55e23a4",
+    },
+    isActive: true,
+    productname: "MANTSINEN 140",
+    details:
+      "Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
+    img: "./assets/images/productLine/img1.png",
+    __v: 0,
   },
-  "isActive": true,
-  "productname": "MANTSINEN 140",
-  "details": "Mantsinen 140 is characterized by its energy efficiency and agility. With its economical and intelligent features, this machine makes material handling ever more productive.",
-  "img": "./assets/images/productLine/img1.png",
-  "__v": 0
-}]
+];
 
 const homepageApi = () => {
   return <></>;
 };
-export { bannerApi, indcardApifr, navbarApi, whyferrytechApi ,productlineApiFr};
+export {
+  bannerApi,
+  indcardApifr,
+  navbarApi,
+  productlineApiFr,
+  whyferrytechApi,
+};
 
 export default homepageApi;

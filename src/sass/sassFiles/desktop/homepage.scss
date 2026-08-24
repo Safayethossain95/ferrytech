@@ -9,47 +9,321 @@
    
 }
 
-.bannerbutton{
-    background-color:#fff!important;
-    transition: 0.4s all linear;
-    a{
-        color:#000!important;
-    }
-    &:hover{
-        
-        a{
-            color:#fff!important;
-        }
-    }
+// =============================================
+// Revolution-style Hero / Banner Section (Swiper)
+// =============================================
+
+@keyframes kenBurnsZoom {
+  0% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
-.custom-arrow {
-    background-color: transparent;
-    border: none;
-    color: white; /* Arrow color */
-    font-size: 24px; /* Adjust size */
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: scale(1.15) translateY(20px); filter: blur(30px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: scale(1.15) translateX(-15px); }
+  100% { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+@keyframes fadeInBtn {
+  0% { opacity: 0; transform: scale(1.1) translateY(15px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes dividerExpand {
+  0% { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes progressFill {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.bm-banner-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+
+  // --- Swiper container overrides ---
+  .bm-swiper,
+  .swiper,
+  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  // --- Slide wrapper ---
+  .bm-slide-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  // --- Ken Burns background layer ---
+  .bm-ken-burns {
+    position: absolute;
+    inset: -5%;
+    width: 110%;
+    height: 110%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: none;
+
+    &.bm-ken-active {
+      animation: kenBurnsZoom 8s ease-out forwards;
+    }
+  }
+
+  // --- Dark gradient overlay ---
+  .bm-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      rgba(0, 0, 0, 0.32) 0%,
+      rgba(0, 0, 0, 0.25) 55%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  }
+
+  // --- Content layer (centered text) ---
+  .bm-content-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.bm-content-visible {
+      opacity: 1;
+      pointer-events: auto;
+
+      .bm-tag {
+        animation: fadeInLeft 0.7s ease-out 0.1s both;
+      }
+      .bm-heading {
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+      .bm-divider {
+        animation: dividerExpand 0.7s ease-out 0.8s both;
+      }
+      .bm-btn-primary {
+        animation: fadeInBtn 0.55s ease-out 1.0s both;
+      }
+      .bm-btn-outline {
+        animation: fadeInBtn 0.55s ease-out 1.2s both;
+      }
+    }
+
+    @media (max-width: 768px) {
+      align-items: flex-end;
+      padding-bottom: 100px;
+    }
+  }
+
+  .bm-content-inner {
+    text-align: center;
+  }
+
+  .bm-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 93, 186, 0.85);
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    opacity: 0;
+
+    @media (max-width: 768px) {
+      font-size: 11px;
+    }
+  }  .bm-heading {
+    font-size: clamp(36px, 5.5vw, 72px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 24px;
+    white-space: nowrap;
+    text-align: center;
+    opacity: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .bm-divider {
+    width: 70px;
+    height: 4px;
+    background: #005DBA;
+    margin: 0 auto 32px;
+    transform-origin: center center;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  .bm-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
     cursor: pointer;
-    z-index: 10; /* Ensure it's above the slider */
+    transition: all 0.3s ease;
+    opacity: 0;
+
+    @media (max-width: 768px) {
+      padding: 12px 22px;
+      font-size: 13px;
+    }
   }
-  
-  .prev-arrow {
+
+  .bm-btn-primary {
+    background: #005DBA;
+    color: #fff;
+    border: 2px solid #005DBA;
+
+    &:hover {
+      background: #0070df;
+      border-color: #0070df;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 93, 186, 0.4);
+    }
+  }
+
+  .bm-btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+
+  .bm-btn-icon {
+    font-size: 16px;
+  }
+
+  // --- Arrow Navigation ---
+  .bm-arrow {
     position: absolute;
-    left: 0px; /* Adjust position */
-    top: 50%; /* Center vertically */
+    top: 50%;
     transform: translateY(-50%);
-    background-color: #000;
-    width:35px;
-    padding:30px 0;
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #005DBA;
+      border-color: #005DBA;
+      transform: translateY(-50%) scale(1.1);
+    }
   }
-  
-  .next-arrow {
+
+  .bm-swiper-prev {
+    left: 28px;
+  }
+
+  .bm-swiper-next {
+    right: 28px;
+  }
+
+  // --- Swiper Pagination Dots ---
+  .bm-swiper-pagination {
     position: absolute;
-    right: 0px; /* Adjust position */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    background-color: #000;
-    width:35px;
-    padding:30px 0;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.35s ease;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #fff;
+      width: 28px;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
   }
+
+  // --- Progress bar ---
+  .bm-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 20;
+  }
+
+  .bm-progress-fill {
+    height: 100%;
+    background: #005DBA;
+    transform-origin: left center;
+    transform: scaleX(0);
+    animation: progressFill 5.5s linear forwards;
+  }
+}
 .desktop{
     
       
@@ -279,113 +553,7 @@
         }
     }
 
-    .bannersection{
-        
-        &.heightOverride{
-            height: 50vh!important;
-        }
-        .slick-slider, .slick-list, .slick-track {
-            overflow: visible !important;
-           
-          }
-        
-          
-          height: 90vh;
-          overflow: visible !important;
-        position:relative;
-        .cimg{
-            position:absolute;
-            top: calc(100% + 7px);
-            left:40%;
-            transform: translateX(-50%);
-            img{
-
-                animation: myanim 2s infinite; 
-            }
-
-        }
-        @keyframes myanim{
-            0%{
-                transform:translateY(0)
-            }
-            50%{
-                transform:translateY(10px)
-            }
-            100%{
-                transform:translateY(0)
-            }
-        }
-
-        .ft-slick__dots--custom {
-            height: 20px;
-            width: 20px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius:50%;
-            position: relative;
-          }
-          .slick-dots{
-            bottom: 70px;
-            /* right: 40px; */
-            justify-content: flex-end;
-            display: flex;
-            right: 40px;
-            li{
-                margin:0 12px;
-            }
-          }
-          .slick-dots .slick-active .ft-slick__dots--custom {
-            background-color: #fff;
-          }
-        .div{
-            overflow: visible;
-            .inneritem{
-                // background-color: #016bd4;
-                background: url(../../../../public/assets/images/Banner/slider-home-1.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                position:relative;
-                height: 90vh;
-                padding-top: 100px;
-                overflow: visible !important;
-                
-                &.heightOverride{
-                    height: 50vh!important;
-                }
-                .downloadbutton{
-                    img{
-                        width:15px;
-                    }
-                }
-                img{
-                    width: 100%;
-                    position: relative;
-                     /* Adjust this value to control overflow direction */
-                    z-index: 1; 
-                }
-                h3{
-                    @include myfont(16px,400,$main_font);
-                    color:#fff;
-                    position:relative;
-                    &::after{
-                        content:'';
-                        position: absolute;
-                        top:50%;
-                        left:-40px;
-                        transform: translateY(-50%);
-                        height: 1px;
-                        width:25px;
-                        background-color: #000;
-                    }
-                }
-                h2{
-                    @include myfont(50px,600,$main_font);
-                    color:#fff;
-                }
-            }
-           
-        }
-    }
+    // old .bannersection removed — replaced by .bm-banner-section above
 
     .introsection{
         padding-top: 120px;

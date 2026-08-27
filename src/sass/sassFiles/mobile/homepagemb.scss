@@ -510,59 +510,49 @@
     }
   }
   .industriescomp {
-    padding-top: 10px;
-    .headingofsubsectioncomp {
-      padding-top: 40px;
-      margin-bottom: 37px;
-      h3 {
-        @include myfont(25px, 700, $main_font);
-      }
-    }
-    .indcardwrap {
-      .indcard {
-        width: 100%;
-        height: 150px;
-        position: relative;
-        background-color: red;
-        overflow: hidden;
-        margin-bottom: 20px;
+    padding-top: 30px;
+    background: #fff;
 
-        img {
-          width: 100%;
-          height: 100%;
-          transition: 0.4s ease-in-out;
-        }
-        &:hover {
-          img {
-            transform: scale(1.06);
-          }
-        }
-
-        .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            0deg,
-            rgba(0, 93, 186, 0.5),
-            rgba(0, 93, 186, 0.5)
-          );
-          z-index: 888;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          h4 {
-            @include myfont(25px, 700, $main_font);
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 0;
-          }
-        }
-      }
+    .industries-container {
+      padding: 0 20px;
     }
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding-top: 40px;
+  }
+
+  .industries-card {
+    cursor: pointer;
+  }
+
+  .industries-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #f0f0f0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .industries-card-title {
+    font-family: $main_font;
+    font-size: 13px;
+    font-weight: 700;
+    color: #231f20;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
   }
   .productlineup {
     .headingofsubsectioncomp {

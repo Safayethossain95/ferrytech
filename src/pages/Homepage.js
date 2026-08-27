@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import MyNavbarDesk from '../Components/Desktop/MyNavbarDesk';
 import IntroComp from '../Components/Desktop/IntroComp';
 import IndustriesComp from '../Components/Desktop/IndustriesComp';
+import ThreePanelShowcase from '../Components/Desktop/ThreePanelShowcase';
 import ProductLineComp from '../Components/Desktop/ProductLineComp';
 
 import WhyFerrytechComp from '../Components/Desktop/WhyFerrytechComp';
@@ -104,6 +105,7 @@ const Homepage = () => {
         <Banner version="desktop" bannerapi={bannerApidata}/>
         <IntroComp data={introCompApifinal} imgurl={imgurldesk}/>
         <IndustriesComp data={indcardApi}/>
+        <ThreePanelShowcase />
         <ProductLineComp data={productlineApifinal}/>
         <SubHeading
             version="desktop"

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <g transform="translate(15, 16)">
+    <g transform="translate(0, 4)">
+      <polygon points="0,16 22,2 14,38" fill="#E31E24"/>
+      <polygon points="22,2 38,18 22,22" fill="#B71318"/>
+      <polygon points="8,18 22,22 14,38" fill="#E31E24"/>
+    </g>
+    <text x="50" y="34" font-family="'Arial Black', sans-serif" font-weight="900" font-size="27" fill="#1B1B1B" letter-spacing="1">TERBERG</text>
+  </g>
+</svg>

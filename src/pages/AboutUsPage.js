@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import MyNavbarDesk from '../Components/Desktop/MyNavbarDesk'
 import FooterComp from '../Components/Desktop/FooterComp'
 import MyNavbarMb from '../Components/Mobile/MyNavbarMb'
@@ -20,61 +20,61 @@ import { API_URL, Only_Frontend } from '../config'
 import axios from 'axios'
 const AboutUsPage = () => {
   useEffect(() => {
-    AOS.init({once:true});
-    
+    AOS.init({ once: true });
+
   }, [])
-  const [partnerbrandsApifinal,setpartnerbrandsApi] = useState([])
-  useEffect(()=>{
+  const [partnerbrandsApifinal, setpartnerbrandsApi] = useState([])
+  useEffect(() => {
     const fetchProducts = async () => {
-        
+
       try {
-        if(Only_Frontend){
-  
+        if (Only_Frontend) {
+
           setpartnerbrandsApi(partnerbrandsApi)
           console.log("frontend")
-        }else{
+        } else {
           const partnerbrandsdata = await axios.get(`${API_URL}/partnerbrandsget`);
           setpartnerbrandsApi(partnerbrandsdata.data)
           console.log("backend")
         }
       } catch (error) {
         console.log(error.message || 'Something went wrong');
-      } 
+      }
     };
-   
+
     fetchProducts();
-   },[])
-  
-  
+  }, [])
+
+
   return (
     <>
-        <div className="mobile">
-        <MyNavbarMb/>
-        <AboutBannerCompmb version="mobile"/>
-        
-        <AboutFerrytechComp version="mobile"/>
-        <ConstructionQuote version="mobile" partnerbrandsdata={partnerbrandsApifinal}/>
-        <MeetOurFactory version="mobile"/>
-        <MeetOurCertificate version="mobile"/>
+      <div className="mobile">
+        <MyNavbarMb />
+        <AboutBannerCompmb version="mobile" />
+
+        <AboutFerrytechComp version="mobile" />
+        <ConstructionQuote version="mobile" partnerbrandsdata={partnerbrandsApifinal} />
+        <MeetOurFactory version="mobile" />
+        <MeetOurCertificate version="mobile" />
         {/* <WhyFerrytechComp version="mobile"/> */}
-        <FAQComp version="mobile"/>
-        <ReqAquoteComp  version="mobile"/>
-        <FooterComp version="mobile"/>
-    </div>
-    
-    <div className="desktop">
-        
-        <MyNavbarDesk/>
-        <AboutBannerComp/>
-        <AboutFerrytechComp/>
-        <ConstructionQuote partnerbrandsdata={partnerbrandsApifinal}/>
-        <MeetOurFactory/>
-        <MeetOurCertificate/>
+        <FAQComp version="mobile" />
+        <ReqAquoteComp version="mobile" />
+        <FooterComp version="mobile" />
+      </div>
+
+      <div className="desktop">
+
+        <MyNavbarDesk />
+        <AboutBannerComp />
+        <AboutFerrytechComp />
+        <ConstructionQuote partnerbrandsdata={partnerbrandsApifinal} />
+
+        <MeetOurCertificate />
         {/* <WhyFerrytechComp/> */}
-        <FAQComp/>
+        <FAQComp />
         <ReqAquoteComp />
-        <FooterComp/>
-    </div>
+        <FooterComp />
+      </div>
     </>
   )
 }

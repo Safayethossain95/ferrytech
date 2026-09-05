@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
 import { Link } from "react-scroll";
+import { partnerbrandsApi } from "../../../../utils/homepageApi";
 const ConstructionQuote = (props) => {
   const slider = useRef(null);
   const [screenSize, getDimension] = useState({
@@ -27,34 +28,44 @@ const ConstructionQuote = (props) => {
       window.removeEventListener("resize", setDimension);
     };
   }, [screenSize]);
+
+  const brandList =
+    props.partnerbrandsdata &&
+    props.partnerbrandsdata.length > 0 &&
+    props.partnerbrandsdata[0]?.url
+      ? props.partnerbrandsdata
+      : partnerbrandsApi;
+
   const settings4 = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
+    autoplaySpeed: 2500,
     loop: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
+    pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024, // When the screen width is 1024px or less
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 3, // Show 3 slides
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768, // When the screen width is 768px or less
+        breakpoint: 768,
         settings: {
-          slidesToShow: 2, // Show 2 slides
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480, // When the screen width is 480px or less
+        breakpoint: 480,
         settings: {
-          slidesToShow: 1, // Show 1 slide
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -86,26 +97,34 @@ const ConstructionQuote = (props) => {
         >
           <div className="marquee-containe ">
             <div className="marque quotemarquee">
-              {/* Render the items multiple times for seamless scrolling */}
+              {/* Render the items for seamless scrolling */}
               <Slider className="slidertesimoniald" ref={slider} {...settings4}>
                 {[
-                  ...props.partnerbrandsdata,
-                  ...props.partnerbrandsdata,
-                  ...props.partnerbrandsdata,
+                  ...brandList,
+                  ...brandList,
                 ].map((item, key) => (
                   <div className="cardwrap" key={key}>
                     <motion.div initial={{ opacity:0  }}
                     whileInView={{
                       opacity:1,
-                      transition: { delay: key * 0.1, duration: 0.3 },
+                      transition: { delay: (key % brandList.length) * 0.05, duration: 0.3 },
                     }}
                     
                     viewport={{ once: false }} className="brandcard px-4">
-                      <div className="overlay3"></div>
-                      <div className="overlay5"></div>
-                      <div className="overlay4">
-                        <img src={item.img} alt="" />
-                      </div>
+                      <a
+                        href={item.url || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="brandcard-link"
+                        style={{ display: "block", width: "100%", height: "100%", textDecoration: "none" }}
+                        title={item.name ? `Visit ${item.name} (${item.url})` : "Visit Partner Website"}
+                      >
+                        <div className="overlay3"></div>
+                        <div className="overlay5"></div>
+                        <div className="overlay4">
+                          <img src={item.img} alt={item.name || "Partner Brand"} />
+                        </div>
+                      </a>
                     </motion.div>
                   </div>
                 ))}

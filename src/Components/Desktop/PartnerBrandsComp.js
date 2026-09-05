@@ -41,36 +41,35 @@ const PartnerBrandsComp = (props) => {
     fetchData()
   },[])
 
+  const list = dataFinal && dataFinal.length > 0 && dataFinal[0]?.url ? dataFinal : partnerbrandsApi;
+
   return (
     <>
       <div className="partnerbrandscomp">
-        <div
-        // className={
-        //   props.version == "mobile"
-        //     ? "myContainer"
-        //     : screenSize.dynamicWidth >= 1200 &&
-        //       screenSize.dynamicWidth <= 1399
-        //     ? "myContainerMinimini"
-        //     : screenSize.dynamicWidth >= 992 &&
-        //       screenSize.dynamicWidth <= 1199
-        //     ? "myContainer896"
-        //     : "myContainerMini"
-        // }
-        >
+        <div>
           <SubHeading
             version={props.version == "mobile" ? "mobile" : ""}
             subheading="Partner Brands"
           />
           <div className="mobile">
             <div className="grid-cols-2">
-              {[...dataFinal].map((item, key) => (
+              {list.map((item, key) => (
                 <div className="cardwrap" key={key}>
                   <motion.div className="brandcard px-4">
-                    <div className="overlay3"></div>
-                    <div className="overlay5"></div>
-                    <div className="overlay4 text-center">
-                      <img src={item.img} alt="" />
-                    </div>
+                    <a
+                      href={item.url || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="brandcard-link"
+                      style={{ display: "block", width: "100%", height: "100%", textDecoration: "none" }}
+                      title={item.name ? `Visit ${item.name} (${item.url})` : "Visit Partner Website"}
+                    >
+                      <div className="overlay3"></div>
+                      <div className="overlay5"></div>
+                      <div className="overlay4 text-center">
+                        <img src={item.img} alt={item.name || "Partner Brand"} />
+                      </div>
+                    </a>
                   </motion.div>
                 </div>
               ))}
@@ -82,17 +81,25 @@ const PartnerBrandsComp = (props) => {
               <div className="marquee">
                 {/* Render the items multiple times for seamless scrolling */}
                 {[
-                  ...dataFinal,
-                  ...dataFinal,
-                  ...dataFinal,
+                  ...list,
+                  ...list,
                 ].map((item, key) => (
                   <div className="cardwrap" key={key}>
                     <motion.div className="brandcard px-4">
-                      <div className="overlay3"></div>
-                      <div className="overlay5"></div>
-                      <div className="overlay4">
-                        <img src={item.img} alt="" />
-                      </div>
+                      <a
+                        href={item.url || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="brandcard-link"
+                        style={{ display: "block", width: "100%", height: "100%", textDecoration: "none" }}
+                        title={item.name ? `Visit ${item.name} (${item.url})` : "Visit Partner Website"}
+                      >
+                        <div className="overlay3"></div>
+                        <div className="overlay5"></div>
+                        <div className="overlay4">
+                          <img src={item.img} alt={item.name || "Partner Brand"} />
+                        </div>
+                      </a>
                     </motion.div>
                   </div>
                 ))}

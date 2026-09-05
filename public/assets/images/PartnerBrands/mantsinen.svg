@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <g transform="translate(10, 8)">
+    <path d="M 10 32 C 10 12, 100 6, 110 6 C 120 6, 210 12, 210 32 C 190 20, 130 14, 110 14 C 90 14, 30 20, 10 32 Z" fill="#E31E24"/>
+    <circle cx="88" cy="14" r="6" fill="#231F20"/>
+    <path d="M 88 14 L 68 28 L 82 28 Z" fill="#E31E24"/>
+    <circle cx="132" cy="14" r="6" fill="#231F20"/>
+    <path d="M 132 14 L 152 28 L 138 28 Z" fill="#E31E24"/>
+    <text x="110" y="58" font-family="'Arial Black', 'Helvetica Black', sans-serif" font-weight="900" font-size="24" fill="#1B1B1B" text-anchor="middle" letter-spacing="1.5">MANTSINEN</text>
+  </g>
+</svg>

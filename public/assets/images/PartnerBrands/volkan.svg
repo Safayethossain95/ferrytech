@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <g transform="translate(25, 8)">
+    <g transform="translate(70, 2)">
+      <polygon points="0,24 24,0 24,24" fill="#D92525"/>
+      <polygon points="24,0 50,24 24,24" fill="#5A6268"/>
+      <polygon points="12,24 24,12 36,24" fill="#FFFFFF"/>
+    </g>
+    <text x="95" y="52" font-family="'Arial Black', sans-serif" font-weight="900" font-size="20" fill="#333333" text-anchor="middle" letter-spacing="4">VOLKAN</text>
+  </g>
+</svg>

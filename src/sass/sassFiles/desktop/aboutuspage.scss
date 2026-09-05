@@ -4,40 +4,47 @@
 @import "../../sassStyles/global";
 
 
-.boardofdirectors{
-  
-  .rightofdirector{
-   
-    img{
-      width:100%;
+.boardofdirectors {
+
+  .rightofdirector {
+
+    img {
+      width: 100%;
     }
-    &:first-child{
+
+    &:first-child {
       margin-top: 60px;
       padding-top: 60px;
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
 
       margin: 60px 0;
     }
-    h6{
+
+    h6 {
       @include myfont(14px, 700, $main_font);
-      color:#005DBA;
-      letter-spacing: 2px; 
-      @include allmobile(mb){
+      color: #005DBA;
+      letter-spacing: 2px;
+
+      @include allmobile(mb) {
         margin-top: 20px;
       }
-      
-  }
-  p{
-    @include myfont(25px, 700, $main_font);
-      color:#000;
-  }
-  h5{
-    @include myfont(18px, 400, $main_font);
-      color:#000;
+
+    }
+
+    p {
+      @include myfont(25px, 700, $main_font);
+      color: #000;
+    }
+
+    h5 {
+      @include myfont(18px, 400, $main_font);
+      color: #000;
       text-align: justify;
+    }
   }
-  }
+
   // .bdirectors{
   //   height: 60vh;
   //   background: url(../../../../public/assets/images/AboutPage/boss/directorsbg.png);
@@ -56,144 +63,198 @@
   //     color:#fff;
   //     text-align: center;
   //   }
-   
+
   // }
 }
 
-.sliderMeetOurCertificate2{
-  .slick-list{
-    .slick-track{
-      .slick-slide{
-        padding:0 5px!important;
+.sliderMeetOurCertificate2 {
+  .slick-list {
+    .slick-track {
+      .slick-slide {
+        padding: 0 5px !important;
       }
     }
   }
 }
-.slidermeetourfactory{
-  .slick-list{
-    .slick-track{
+
+.slidermeetourfactory {
+  .slick-list {
+    .slick-track {
       .slick-slide.slick-active {
-        border: none !important; /* Remove border on active slide */
-    }
-    
-    /* Remove border on focus */
-    .slick-slide.slick-active:focus {
-        outline: none; /* Prevent outline on focus */
-    }
-    
-    /* Optional: Remove any border or styling on all slides */
-    .slick-slide {
-        border: none !important; /* Remove border from all slides */
-    }
-    
-    /* Optionally, prevent outline on all slides */
-    .slick-slide:focus {
-        outline: none; /* Prevent outline on focus for all slides */
-    }
-    
-    .slick-slide{
         border: none !important;
-        padding:0 10px!important;
-       
+        /* Remove border on active slide */
+      }
+
+      /* Remove border on focus */
+      .slick-slide.slick-active:focus {
+        outline: none;
+        /* Prevent outline on focus */
+      }
+
+      /* Optional: Remove any border or styling on all slides */
+      .slick-slide {
+        border: none !important;
+        /* Remove border from all slides */
+      }
+
+      /* Optionally, prevent outline on all slides */
+      .slick-slide:focus {
+        outline: none;
+        /* Prevent outline on focus for all slides */
+      }
+
+      .slick-slide {
+        border: none !important;
+        padding: 0 10px !important;
+
       }
     }
   }
 }
 
-.quotemarquee{
+.quotemarquee {
   margin-top: 100px;
-    .slidertesimoniald{
-        
-        background-color: #2a76c2;
+
+  .slidertesimoniald {
+    background-color: #005dba;
+    align-items: center;
+    border-radius: 14px;
+    padding: 15px 0;
+
+    .cardwrap {
+      padding: 10px 14px;
+
+      .brandcard {
+        background: transparent;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        display: flex;
         align-items: center;
-        border-radius: 13px;
-        .cardwrap{
+        justify-content: center;
+        height: 105px;
+        padding: 14px 20px !important;
 
-            .brandcard{
-                .overlay4{
-                    padding: 40px 0;
-                    img{
-                        height:60px;
-                        
-                        margin:0 auto;
-                    }
-                }
-            }
+        &:hover {
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
         }
-    }
-}
-.aboutquotebg{
- position:relative;
 
-  .overlay{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+        .brandcard-link {
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .overlay4 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+
+          img {
+            max-height: 55px;
+            max-width: 180px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+.aboutquotebg {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(87, 86, 86, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
   }
+
   margin-top: 80px;
-    margin-bottom:100px;
-    
-    background-image: url("../../../../public/assets/images/AboutPage/quotebg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;
+  margin-bottom:100px;
+
+  background-image: url("../../../../public/assets/images/AboutPage/quotebg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  height: 500px;
+  margin-bottom: 50px;
+
+  @include media(lgDevice) {
     height: 500px;
-    margin-bottom: 50px;
-    @include media(lgDevice) {
-        height: 500px;
-    }
-   
+  }
+
 }
+
 .desktop {
   .aboutbannercomp {
     .aboutbanner {
       width: 100%;
       position: relative;
+
       @include media(lgDevice) {
         height: 600px;
       }
+
       .img {
         height: 100vh;
-        position:relative;
+        position: relative;
+
         .overlay {
-            position: absolute;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(110, 111, 111, 0.5);
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+
+          // padding-top: 140px;
+          img {
             width: 100%;
-            height: 100%;
-            background-color: rgba(110, 111, 111, 0.5);
-            top: 0;
-            left: 0;
-            display: flex;
-            align-items: center;
-            // padding-top: 140px;
-            img {
-              width: 100%;
+          }
+
+          .div {
+            h3 {
+              @include myfont(80px, 700, $main_font);
+              color: #fff;
+              text-transform: uppercase;
+              margin-bottom: 30px;
             }
-            .div {
-              h3 {
-                @include myfont(80px, 700, $main_font);
-                color: #fff;
-                text-transform: uppercase;
-                margin-bottom: 30px;
-              }
-              p {
-                @include myfont(20px, 400, $main_font);
-                color: #fff;
-                text-align: justify;
-              }
+
+            p {
+              @include myfont(20px, 400, $main_font);
+              color: #fff;
+              text-align: justify;
             }
           }
+        }
+
         img {
           height: 100%;
         }
       }
+
       .overlay2 {
         height: 22vh;
         max-height: 220px;
@@ -203,24 +264,29 @@
         left: 0;
         z-index: 99;
         background: rgba(51, 119, 207, 0.763);
-        .div{
-            text-align: center;
-            h3{
-                @include myfont(50px, 700, $main_font);
-                color: #fff;
-                text-transform: uppercase;
-                margin-bottom: 0px;
-  
-            }
-            p{
-                @include myfont(20px, 400, $main_font);
-                color: #fff;
-                
-            }
+
+        .div {
+          text-align: center;
+
+          h3 {
+            @include myfont(50px, 700, $main_font);
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 0px;
+
+          }
+
+          p {
+            @include myfont(20px, 400, $main_font);
+            color: #fff;
+
+          }
         }
+
         .coldiv {
           height: 100%;
         }
+
         .mbaboutcontainer,
         .myContainerMinimini,
         .myContainer896,
@@ -228,52 +294,62 @@
           height: 100%;
         }
       }
-      
+
     }
   }
+
   .aboutferrytech {
     padding-top: 120px;
+
     .para {
-      
+
       margin-top: 18px;
-      .leftside{
-        .listitems{
-            ul{
-                padding-left: 0;
-                list-style-type: none;
-                li{
-                    svg{
-                        margin-right: 10px;
-                    }
-                    @include myfont(16px, 500, $main_font);
-                    color:#000;
-                    line-height: 25px;
-                    
-                }
+
+      .leftside {
+        .listitems {
+          ul {
+            padding-left: 0;
+            list-style-type: none;
+
+            li {
+              svg {
+                margin-right: 10px;
+              }
+
+              @include myfont(16px, 500, $main_font);
+              color:#000;
+              line-height: 25px;
+
             }
+          }
         }
-        h6{
-            @include myfont(14px, 700, $main_font);
-            color:#005DBA;
-            letter-spacing: 2px; 
-            
+
+        h6 {
+          @include myfont(14px, 700, $main_font);
+          color: #005DBA;
+          letter-spacing: 2px;
+
         }
-        h2{
-            @include myfont(3.1rem, 700, $main_font);
-            color:#000;
-            
-            span{
-                color:#005DBA;
-            }
+
+        h2 {
+          @include myfont(3.1rem, 700, $main_font);
+          color: #000;
+
+          span {
+            color: #005DBA;
+          }
         }
-        p{
-            text-align: left;
-            text-align: justify;;
-            @include myfont(1rem, 400, $main_font);
-            padding-top: 30px;
-            line-height: 25px
+
+        p {
+          text-align: left;
+          text-align: justify;
+          ;
+          @include myfont(1rem, 400, $main_font);
+          padding-top: 30px;
+          line-height: 25px
         }
       }
+
       p {
         @include myfont(18px, 500, $main_font);
         color: #231f20;
@@ -281,11 +357,14 @@
       }
     }
   }
+
   .faqcomp {
     padding-top: 120px;
+
     .headingofsubsectioncomp {
       margin-bottom: 60px;
     }
+
     .myaccordion {
       .myacchead {
         h4 {
@@ -294,6 +373,7 @@
           margin-bottom: 0;
         }
       }
+
       .accbody {
         p {
           @include myfont(18px, 500, $main_font);
@@ -301,30 +381,36 @@
           padding: 30px 0 100px 0;
         }
       }
+
       .accordion-body {
         padding: 0 40px;
       }
+
       .accordion-item {
         margin-bottom: 20px;
         box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
         border: none;
       }
+
       .accordion-button {
         padding: 18px;
       }
-      
+
       .accordion-button:not(.collapsed) {
         background-color: #2a76c2;
         color: #231f20;
-        h4{
-          color:#fff;
+
+        h4 {
+          color: #fff;
         }
       }
+
       .accordion {
         --bs-accordion-btn-icon: url(../../../../public/assets/images/AboutPage/accordionicon.png) !important;
         --bs-accordion-btn-active-icon: url(../../../../public/assets/images/AboutPage/accordionicon.png) !important;
         --bs-accordion-btn-icon-width: 24px;
       }
+
       .accordion-button::after {
         background-image: url(../../../../public/assets/images/AboutPage/accordionicon.png) !important;
       }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <g transform="translate(15, 12)">
+    <rect x="115" y="6" width="90" height="4.5" fill="#E86C1F" rx="1"/>
+    <text x="105" y="42" font-family="'Arial Black', sans-serif" font-weight="900" font-size="32" fill="#004B9B" text-anchor="middle" letter-spacing="1">MECLIFT</text>
+    <rect x="115" y="49" width="90" height="4.5" fill="#E86C1F" rx="1"/>
+  </g>
+</svg>

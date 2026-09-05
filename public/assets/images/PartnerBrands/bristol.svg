@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <g transform="translate(15, 14)">
+    <text x="105" y="38" font-family="'Arial Black', sans-serif" font-weight="900" font-size="30" fill="#D92525" text-anchor="middle" letter-spacing="1.5">BRISTOL</text>
+    <circle cx="147" cy="27" r="8" fill="#D92525"/>
+    <path d="M 145 22 L 148 22 L 150 29 L 146 29 Z" fill="#FFFFFF"/>
+    <circle cx="147" cy="24" r="1.8" fill="#FFFFFF"/>
+  </g>
+</svg>

@@ -82,6 +82,8 @@ const MeetOurCertificate = (props) => {
     fetchfooter();
   }, []);
 
+  const displayCertificates = certificateImagesApi;
+
   return (
     <div className="divcontent">
       <motion.h6
@@ -112,10 +114,10 @@ const MeetOurCertificate = (props) => {
           props.version == "mobile"
             ? "mbContainer"
             : screenSize.dynamicWidth >= 1200 && screenSize.dynamicWidth <= 1399
-            ? "myContainerMinimini"
-            : screenSize.dynamicWidth >= 992 && screenSize.dynamicWidth <= 1199
-            ? "myContainer896"
-            : "myContainerMini"
+              ? "myContainerMinimini"
+              : screenSize.dynamicWidth >= 992 && screenSize.dynamicWidth <= 1199
+                ? "myContainer896"
+                : "myContainerMini"
         }
       >
         <Slider
@@ -123,14 +125,19 @@ const MeetOurCertificate = (props) => {
           ref={slider4}
           {...settings5}
         >
-          {certificatefinaldata.map((item, key) => {
+          {displayCertificates.map((item, key) => {
             return (
-              <div>
-                <img
-                  className="w-100"
-                  src={item.img}
-                  alt=""
-                />
+              <div key={key} className="certificate-slide-wrapper">
+                <div className="certificate-card-inner">
+                  <img
+                    className="w-100 certificate-img"
+                    src={item.img}
+                    alt={item.title || `Ferrytech Certificate ${key + 1}`}
+                  />
+                  {item.title && (
+                    <p className="certificate-caption">{item.title}</p>
+                  )}
+                </div>
               </div>
             );
           })}

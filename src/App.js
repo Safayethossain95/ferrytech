@@ -10,18 +10,12 @@ import IndustryCardPage from "./pages/Dashboard/IndustryCardPage";
 import IntroCompDashPage from "./pages/Dashboard/IntroCompDashPage";
 import PartnerBrandsPage from "./pages/Dashboard/PartnerBrandsPage";
 import DashboardPage from "./pages/DashboardPage";
-import ForkliftMountedCranePage from "./pages/ForkliftMountedCranePage";
-import ForkliftPage from "./pages/ForkliftPage";
 import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import ProductPage from "./pages/ProductPage";
-import SelfErectingCranePage from "./pages/SelfErectingCranePage";
 import ServicesPage from "./pages/ServicesPage";
-import SpiderCranePage from "./pages/SpiderCranePage";
 import TermsnConditionsPage from "./pages/TermsnConditionsPage";
-import TruckCraneProductsPage from "./pages/TruckCraneProductsPage";
-import TruckMountedCranePage from "./pages/TruckMountedCranePage";
 
 import { Toaster } from "react-hot-toast";
 import AboutDashPage from "./pages/Dashboard/AboutUsDashPage";
@@ -118,21 +112,6 @@ function App() {
             path="/product-single/:prodname"
             element={<ProductSingleCommonPage />}
           />
-          <Route path="/truck-crane" element={<TruckCraneProductsPage />} />
-          <Route
-            path="/truck-mounted-crane"
-            element={<TruckMountedCranePage />}
-          />
-          <Route
-            path="/forklift-mounted-crane"
-            element={<ForkliftMountedCranePage />}
-          />
-          <Route
-            path="/self-erecting-crane"
-            element={<SelfErectingCranePage />}
-          />
-          <Route path="/fork-lift" element={<ForkliftPage />} />
-          <Route path="/spider-crane" element={<SpiderCranePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/cookies-information" element={<CookiesInfoPage />} />
           <Route path="/terms-conditions" element={<TermsnConditionsPage />} />

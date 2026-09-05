@@ -1,9 +1,6 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { BsChevronDown } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL, Only_Frontend } from "../../config";
 import { useAuth } from "../../context/AuthContext";
@@ -90,9 +87,6 @@ const MyNavbarDesk = () => {
                     {element.childNavbarVm.length > 0 ? (
                       <>
                         {element?.menuName}
-                        {element?.childNavbarVm?.length > 0 && (
-                          <BsChevronDown />
-                        )}
                         <div className="admissionmenu">
                           <ul>
                             {element?.childNavbarVm.map((item, key) => {

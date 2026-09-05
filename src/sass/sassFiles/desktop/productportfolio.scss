@@ -1,0 +1,205 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/typography";
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/global";
+
+.product-portfolio-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 105px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+
+  &.mobile {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .portfolio-container {
+    width: 92%;
+    max-width: 1360px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  // --- Main 2-Column Section ---
+  .portfolio-main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: flex-start;
+    margin-bottom: 45px;
+
+    @media (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+  }
+
+  // --- Left Column: Text ---
+  .portfolio-text-col {
+    width: 100%;
+
+    @include media(lgDevice) {
+      flex: 1.15;
+      min-width: 0;
+    }
+
+    .portfolio-title {
+      @include myfont(34px, 700, $main_font);
+      color: #005dba;
+      margin-bottom: 22px;
+      line-height: 1.25;
+
+      @include media(lgDevice) {
+        font-size: 38px;
+        margin-bottom: 26px;
+      }
+
+      @include media(xlgDevice) {
+        font-size: 42px;
+      }
+    }
+
+    .portfolio-description {
+      @include myfont(14.5px, 400, $main_font);
+      color: #4a4a4a;
+      line-height: 1.78;
+      text-align: justify;
+      margin-bottom: 16px;
+      letter-spacing: 0.1px;
+
+      @include media(lgDevice) {
+        font-size: 15px;
+        line-height: 1.82;
+      }
+
+      @include media(xlgDevice) {
+        font-size: 15.5px;
+        line-height: 1.85;
+      }
+
+      &.secondary-paragraph {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // --- Right Column: 2-Column Staggered Image Gallery ---
+  .portfolio-gallery-col {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @include media(lgDevice) {
+      flex: 1;
+      min-width: 0;
+      gap: 18px;
+    }
+
+    @include media(xlgDevice) {
+      gap: 20px;
+    }
+
+    .gallery-subcol {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include media(lgDevice) {
+        gap: 18px;
+      }
+    }
+
+    .portfolio-img-card {
+      position: relative;
+      background-color: #ffffff;
+      border: 3.5px solid #009ca6;
+      border-radius: 0px;
+      overflow: hidden;
+      box-sizing: border-box;
+      box-shadow: 0 3px 10px rgba(0, 156, 166, 0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 156, 166, 0.22);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.03);
+      }
+
+      &.card-landscape {
+        aspect-ratio: 16 / 10.5;
+      }
+
+      &.card-portrait {
+        aspect-ratio: 3 / 4;
+      }
+
+      &.card-square {
+        aspect-ratio: 1 / 1.08;
+      }
+
+      &.card-tall {
+        aspect-ratio: 3 / 4.4;
+      }
+    }
+  }
+
+  // --- Bottom Slider / Carousel ---
+  .portfolio-slider-wrap {
+    width: 100%;
+    padding-top: 10px;
+    box-sizing: border-box;
+
+    .portfolio-swiper {
+      width: 100%;
+      padding: 8px 2px 14px 2px;
+    }
+
+    .portfolio-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-slide-card {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #ffffff;
+      border: 3px solid #009ca6;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 156, 166, 0.25);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+    }
+  }
+}

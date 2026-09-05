@@ -33,91 +33,12 @@ const navbarApidata = [{
   },
   "menuId": 10,
   "menuName": "Product",
-  "url": "/truck-crane",
+  "url": "/product",
   "sequence": 3,
   "parentMenuId": "product",
   "status": false,
   "isActive": false,
-  "childNavbarVm": [
-    {
-      "menuId": 15,
-      "menuName": "Truck Crane",
-      "url": "/truck-crane",
-      "sequence": 0,
-      "parentMenuId": "product",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286d6530280dc3b13e2a65"
-      }
-    },
-    {
-      "menuId": 16,
-      "menuName": "Truck Mounted Crane",
-      "url": "/truck-mounted-crane",
-      "sequence": 0,
-      "parentMenuId": "product",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286d6530280dc3b13e2a66"
-      }
-    },
-    {
-      "menuId": 17,
-      "menuName": "Forklift Mounted Crane",
-      "url": "/forklift-mounted-crane",
-      "sequence": 0,
-      "parentMenuId": "product",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286d6530280dc3b13e2a67"
-      }
-    },
-    {
-      "menuId": 19,
-      "menuName": "Self-Erecting Crane",
-      "url": "/self-erecting-crane",
-      "sequence": 0,
-      "parentMenuId": "product",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286d6530280dc3b13e2a68"
-      }
-    },
-    {
-      "menuId": 18,
-      "menuName": "Spider Crane",
-      "url": "/spider-crane",
-      "sequence": 0,
-      "parentMenuId": "product",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286d6530280dc3b13e2a69"
-      }
-    },
-    {
-      "menuId": 20,
-      "menuName": "Forklift",
-      "url": "/fork-lift",
-      "sequence": 0,
-      "parentMenuId": "product",
-      "status": false,
-      "isActive": false,
-      "childNavbarVm": [],
-      "_id": {
-        "$oid": "67286d6530280dc3b13e2a6a"
-      }
-    }
-  ],
+  "childNavbarVm": [],
   "__v": 0
 },
 {

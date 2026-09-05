@@ -3,47 +3,492 @@
 @import '../../sassStyles/mixins';
 @import '../../sassStyles/global';
 
+.desktop {
+  .servicemaincomp {
+    background-color: #ffffff;
+    padding-top: 65px;
 
-.desktop{
-    .servicemaincomp{
-
-        .servicesbanner{
-            padding:50px 0;
-            h4{
-                @include myfont(40px,700,$main_font);
-                color:#005DBA;
-            }
-            p{
-                @include myfont(20px,500,$main_font);
-                color:#231F20;
-            }
-        }
-        padding-top: 60px;
-        h5{
-            @include myfont(40px,700,$main_font);
-            color:#005DBA;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-        h3{
-            @include myfont(18px,600,$main_font);
-            color:#231F20;
-            line-height: 30px;
-        }
-        .textblock {
-            padding: 0 60px;            
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-            ul{
-                li{
-                    @include myfont(18px,600,$main_font);
-            color:#231F20;
-            line-height: 30px;
-                }
-            }
-        }
+    .services-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 30px;
     }
+
+    /* 1. Hero Banner */
+    .services-hero-section {
+      padding: 60px 0 50px;
+      background: linear-gradient(180deg, #f7faff 0%, #ffffff 100%);
+      border-bottom: 1px solid #edf2f7;
+
+      .hero-header-content {
+        max-width: 960px;
+        margin: 0 auto 50px;
+        text-align: center;
+      }
+
+      .hero-badge-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: #005dba;
+        color: #ffffff;
+        font-family: $main_font;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        padding: 5px 14px;
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+
+      .hero-tagline {
+        font-family: $main_font;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        color: #4a5568;
+        text-transform: uppercase;
+      }
+
+      .hero-main-title {
+        font-family: $main_font;
+        font-size: 46px;
+        font-weight: 700;
+        color: #231f20;
+        line-height: 1.2;
+        margin-bottom: 22px;
+        letter-spacing: -0.5px;
+
+        span {
+          color: #005dba;
+        }
+      }
+
+      .hero-main-desc {
+        font-family: $main_font;
+        font-size: 17px;
+        font-weight: 500;
+        color: #4a5568;
+        line-height: 1.65;
+        margin: 0 auto;
+        max-width: 880px;
+      }
+
+      /* 4-Metrics Grid */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .metric-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 26px 20px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 8px 24px rgba(0, 93, 186, 0.05);
+        border-top: 4px solid #005dba;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 14px 30px rgba(0, 93, 186, 0.1);
+        }
+
+        .metric-value {
+          font-family: $main_font;
+          font-size: 38px;
+          font-weight: 700;
+          color: #005dba;
+          line-height: 1;
+          margin-bottom: 8px;
+        }
+
+        .metric-label {
+          font-family: $main_font;
+          font-size: 16px;
+          font-weight: 700;
+          color: #231f20;
+          margin-bottom: 6px;
+        }
+
+        .metric-desc {
+          font-family: $main_font;
+          font-size: 13px;
+          color: #718096;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    /* Section Header Common */
+    .section-header-wrap {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+
+      .sub-title-badge {
+        font-family: $main_font;
+        font-size: 13px;
+        font-weight: 700;
+        color: #005dba;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+
+      .section-heading {
+        font-family: $main_font;
+        font-size: 36px;
+        font-weight: 700;
+        color: #231f20;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      .section-subtext {
+        font-family: $main_font;
+        font-size: 16px;
+        color: #718096;
+        line-height: 1.55;
+        margin: 0;
+      }
+    }
+
+    /* 2. Detailed Service Items */
+    .services-list-section {
+      padding: 80px 0;
+      background: #ffffff;
+
+      .services-items-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      .service-item-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+        background: #fbfcfe;
+        border: 1px solid #edf2f7;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 16px 36px rgba(0, 93, 186, 0.08);
+
+          .service-img-frame img {
+            transform: scale(1.04);
+          }
+        }
+
+        &.row-reverse {
+          .service-img-col {
+            order: 2;
+          }
+
+          .service-text-col {
+            order: 1;
+          }
+        }
+      }
+
+      .service-img-col {
+        height: 100%;
+      }
+
+      .service-img-frame {
+        width: 100%;
+        height: 100%;
+        min-height: 380px;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        background: #eef2f6;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .img-overlay-number {
+          position: absolute;
+          top: 16px;
+          right: 20px;
+          font-family: $main_font;
+          font-size: 40px;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.6);
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+          z-index: 2;
+          pointer-events: none;
+        }
+      }
+
+      .service-text-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .service-card-meta {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 12px;
+        }
+
+        .service-num-badge {
+          background: #005dba;
+          color: #ffffff;
+          font-family: $main_font;
+          font-size: 12px;
+          font-weight: 700;
+          padding: 3px 10px;
+          border-radius: 12px;
+        }
+
+        .service-category-tag {
+          font-family: $main_font;
+          font-size: 13px;
+          font-weight: 700;
+          color: #005dba;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        .service-title {
+          font-family: $main_font;
+          font-size: 32px;
+          font-weight: 700;
+          color: #231f20;
+          line-height: 1.25;
+          margin-bottom: 8px;
+        }
+
+        .service-subtitle {
+          font-family: $main_font;
+          font-size: 16px;
+          font-weight: 600;
+          color: #005dba;
+          margin-bottom: 12px;
+          line-height: 1.4;
+        }
+
+        .service-summary {
+          font-family: $main_font;
+          font-size: 15px;
+          color: #4a5568;
+          line-height: 1.6;
+          margin-bottom: 22px;
+        }
+
+        .service-capabilities-wrap {
+          background: #ffffff;
+          border: 1px solid #edf2f7;
+          border-radius: 10px;
+          padding: 20px 22px;
+
+          .capabilities-heading {
+            font-family: $main_font;
+            font-size: 14px;
+            font-weight: 700;
+            color: #231f20;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 14px;
+          }
+
+          .capabilities-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: $main_font;
+            font-size: 15px;
+            color: #2d3748;
+            line-height: 1.45;
+
+            .check-icon {
+              width: 20px;
+              height: 20px;
+              min-width: 20px;
+              border-radius: 50%;
+              background: rgba(0, 93, 186, 0.1);
+              color: #005dba;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 11px;
+              font-weight: 700;
+              margin-top: 1px;
+            }
+
+            .point-text {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+
+    /* 3. 4-Step Process Section */
+    .services-process-section {
+      padding: 80px 0;
+      background: #f8fafc;
+      border-top: 1px solid #edf2f7;
+      border-bottom: 1px solid #edf2f7;
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .process-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px 24px;
+        border: 1px solid #e2e8f0;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+
+          .process-accent-bar {
+            width: 50px;
+          }
+        }
+
+        .process-step-num {
+          font-family: $main_font;
+          font-size: 34px;
+          font-weight: 700;
+          color: #005dba;
+          line-height: 1;
+          margin-bottom: 14px;
+        }
+
+        .process-title {
+          font-family: $main_font;
+          font-size: 18px;
+          font-weight: 700;
+          color: #231f20;
+          margin-bottom: 10px;
+          line-height: 1.3;
+        }
+
+        .process-desc {
+          font-family: $main_font;
+          font-size: 14px;
+          color: #718096;
+          line-height: 1.55;
+          margin: 0;
+        }
+
+        .process-accent-bar {
+          height: 3px;
+          width: 30px;
+          background: #005dba;
+          margin-top: 18px;
+          border-radius: 2px;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+
+    /* 4. CTA Banner */
+    .services-cta-banner {
+      padding: 60px 0 80px;
+      background: #ffffff;
+
+      .cta-banner-card {
+        background: linear-gradient(135deg, #005dba 0%, #003e80 100%);
+        border-radius: 16px;
+        padding: 44px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        box-shadow: 0 20px 40px rgba(0, 93, 186, 0.2);
+
+        .cta-tag {
+          font-family: $main_font;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.85);
+          display: inline-block;
+          margin-bottom: 8px;
+        }
+
+        .cta-heading {
+          font-family: $main_font;
+          font-size: 28px;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 8px;
+          line-height: 1.25;
+        }
+
+        .cta-desc {
+          font-family: $main_font;
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.9);
+          margin: 0;
+          max-width: 650px;
+          line-height: 1.5;
+        }
+
+        .cta-action-wrap {
+          flex-shrink: 0;
+        }
+
+        .cta-btn-primary {
+          display: inline-block;
+          padding: 14px 32px;
+          background: #ffffff;
+          color: #005dba;
+          font-family: $main_font;
+          font-weight: 700;
+          font-size: 15px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: all 0.25s ease;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+
+          &:hover {
+            background: #f0f7ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
 }

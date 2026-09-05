@@ -3,35 +3,428 @@
 @import '../../sassStyles/mixins';
 @import '../../sassStyles/global';
 
+.mobile {
+  .servicemaincomp {
+    background-color: #ffffff;
 
-.mobile{
-    .servicemaincomp{
-        .servicesbanner{
-            padding:50px 0;
-            h4{
-                @include myfont(25px,700,$main_font);
-                color:#005DBA;
-            }
-            p{
-                @include myfont(15px,500,$main_font);
-                color:#231F20;
-            }
-        }
-        padding-top: 60px;
-        h5{
-            @include myfont(25px,700,$main_font);
-            color:#005DBA;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-        h3{
-            @include myfont(14px,600,$main_font);
-            color:#231F20;
-            line-height: 14px;
-        }
-       .textblock{
-        // padding: 0 60px;
-        padding: 20px 0;
-       }
+    .services-container {
+      padding: 0 18px;
     }
-}
+
+    /* 1. Mobile Hero Banner */
+    .services-hero-section {
+      padding: 40px 0 35px;
+      background: linear-gradient(180deg, #f7faff 0%, #ffffff 100%);
+      border-bottom: 1px solid #edf2f7;
+
+      .hero-header-content {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .hero-badge-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: #005dba;
+        color: #ffffff;
+        font-family: $main_font;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 4px 12px;
+        border-radius: 16px;
+        text-transform: uppercase;
+      }
+
+      .hero-tagline {
+        font-family: $main_font;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #718096;
+        text-transform: uppercase;
+      }
+
+      .hero-main-title {
+        font-family: $main_font;
+        font-size: 28px;
+        font-weight: 700;
+        color: #231f20;
+        line-height: 1.25;
+        margin-bottom: 14px;
+
+        span {
+          color: #005dba;
+        }
+      }
+
+      .hero-main-desc {
+        font-family: $main_font;
+        font-size: 14px;
+        font-weight: 500;
+        color: #4a5568;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Mobile Metrics Grid */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .metric-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 16px 14px;
+        border: 1px solid #e2e8f0;
+        border-top: 3px solid #005dba;
+        box-shadow: 0 4px 12px rgba(0, 93, 186, 0.04);
+
+        .metric-value {
+          font-family: $main_font;
+          font-size: 26px;
+          font-weight: 700;
+          color: #005dba;
+          line-height: 1;
+          margin-bottom: 6px;
+        }
+
+        .metric-label {
+          font-family: $main_font;
+          font-size: 13px;
+          font-weight: 700;
+          color: #231f20;
+          margin-bottom: 4px;
+        }
+
+        .metric-desc {
+          font-family: $main_font;
+          font-size: 11px;
+          color: #718096;
+          line-height: 1.35;
+        }
+      }
+    }
+
+    /* Mobile Section Header */
+    .section-header-wrap {
+      text-align: center;
+      margin-bottom: 35px;
+
+      .sub-title-badge {
+        font-family: $main_font;
+        font-size: 11px;
+        font-weight: 700;
+        color: #005dba;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+
+      .section-heading {
+        font-family: $main_font;
+        font-size: 24px;
+        font-weight: 700;
+        color: #231f20;
+        line-height: 1.25;
+        margin-bottom: 8px;
+      }
+
+      .section-subtext {
+        font-family: $main_font;
+        font-size: 13px;
+        color: #718096;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+
+    /* 2. Mobile Service Items */
+    .services-list-section {
+      padding: 50px 0;
+      background: #ffffff;
+
+      .services-items-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+      }
+
+      .service-item-row {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        background: #fbfcfe;
+        border: 1px solid #edf2f7;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+
+        &.row-reverse {
+          flex-direction: column;
+        }
+      }
+
+      .service-img-col {
+        width: 100%;
+      }
+
+      .service-img-frame {
+        width: 100%;
+        height: 220px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        background: #eef2f6;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .img-overlay-number {
+          position: absolute;
+          top: 10px;
+          right: 14px;
+          font-family: $main_font;
+          font-size: 26px;
+          font-weight: 700;
+          color: rgba(255, 255, 255, 0.7);
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          z-index: 2;
+        }
+      }
+
+      .service-text-col {
+        .service-card-meta {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 8px;
+        }
+
+        .service-num-badge {
+          background: #005dba;
+          color: #ffffff;
+          font-family: $main_font;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 2px 8px;
+          border-radius: 10px;
+        }
+
+        .service-category-tag {
+          font-family: $main_font;
+          font-size: 11px;
+          font-weight: 700;
+          color: #005dba;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+        }
+
+        .service-title {
+          font-family: $main_font;
+          font-size: 22px;
+          font-weight: 700;
+          color: #231f20;
+          line-height: 1.25;
+          margin-bottom: 6px;
+        }
+
+        .service-subtitle {
+          font-family: $main_font;
+          font-size: 13px;
+          font-weight: 600;
+          color: #005dba;
+          margin-bottom: 10px;
+          line-height: 1.35;
+        }
+
+        .service-summary {
+          font-family: $main_font;
+          font-size: 13px;
+          color: #4a5568;
+          line-height: 1.55;
+          margin-bottom: 16px;
+        }
+
+        .service-capabilities-wrap {
+          background: #ffffff;
+          border: 1px solid #edf2f7;
+          border-radius: 8px;
+          padding: 14px;
+
+          .capabilities-heading {
+            font-family: $main_font;
+            font-size: 12px;
+            font-weight: 700;
+            color: #231f20;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+          }
+
+          .capabilities-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-family: $main_font;
+            font-size: 13px;
+            color: #2d3748;
+            line-height: 1.4;
+
+            .check-icon {
+              width: 17px;
+              height: 17px;
+              min-width: 17px;
+              border-radius: 50%;
+              background: rgba(0, 93, 186, 0.1);
+              color: #005dba;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 10px;
+              font-weight: 700;
+              margin-top: 1px;
+            }
+
+            .point-text {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+
+    /* 3. Mobile Process Section */
+    .services-process-section {
+      padding: 50px 0;
+      background: #f8fafc;
+      border-top: 1px solid #edf2f7;
+      border-bottom: 1px solid #edf2f7;
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .process-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px 18px;
+        border: 1px solid #e2e8f0;
+
+        .process-step-num {
+          font-family: $main_font;
+          font-size: 26px;
+          font-weight: 700;
+          color: #005dba;
+          line-height: 1;
+          margin-bottom: 8px;
+        }
+
+        .process-title {
+          font-family: $main_font;
+          font-size: 16px;
+          font-weight: 700;
+          color: #231f20;
+          margin-bottom: 6px;
+        }
+
+        .process-desc {
+          font-family: $main_font;
+          font-size: 13px;
+          color: #718096;
+          line-height: 1.45;
+          margin: 0;
+        }
+
+        .process-accent-bar {
+          height: 3px;
+          width: 25px;
+          background: #005dba;
+          margin-top: 12px;
+          border-radius: 2px;
+        }
+      }
+    }
+
+    /* 4. Mobile CTA Banner */
+    .services-cta-banner {
+      padding: 40px 0 50px;
+      background: #ffffff;
+
+      .cta-banner-card {
+        background: linear-gradient(135deg, #005dba 0%, #003e80 100%);
+        border-radius: 12px;
+        padding: 26px 20px;
+        text-align: center;
+        box-shadow: 0 10px 24px rgba(0, 93, 186, 0.15);
+
+        .cta-tag {
+          font-family: $main_font;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1.2px;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.85);
+          display: inline-block;
+          margin-bottom: 6px;
+        }
+
+        .cta-heading {
+          font-family: $main_font;
+          font-size: 20px;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 8px;
+          line-height: 1.25;
+        }
+
+        .cta-desc {
+          font-family: $main_font;
+          font-size: 13px;
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: 18px;
+          line-height: 1.45;
+        }
+
+        .cta-btn-primary {
+          display: inline-block;
+          padding: 12px 24px;
+          background: #ffffff;
+          color: #005dba;
+          font-family: $main_font;
+          font-weight: 700;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          border-radius: 6px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

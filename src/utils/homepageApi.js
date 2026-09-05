@@ -139,38 +139,33 @@ const whyferrytechApi = [
 const indcardApifr = [
   {
     id: 1,
-    heading: "Ports & Terminals",
+    heading: "Passenger Vehicle",
     imgurl: "./assets/images/Industries/img1.png",
   },
   {
     id: 2,
-    heading: "Forest Industries",
+    heading: "Intelligence & Defense Division",
     imgurl: "./assets/images/Industries/img2.png",
   },
   {
     id: 3,
-    heading: "Recycling",
+    heading: "Energy & Power Division",
     imgurl: "./assets/images/Industries/img3.png",
   },
   {
     id: 4,
-    heading: "Steel Industries",
+    heading: "Marines Solution Division",
     imgurl: "./assets/images/Industries/img4.png",
   },
   {
     id: 5,
-    heading: "Transportation & Shipping",
+    heading: "Engineering & Construction",
     imgurl: "./assets/images/Industries/img5.png",
   },
   {
     id: 6,
-    heading: "Firefighting & Rescuing",
+    heading: "Heavy Equipment Division",
     imgurl: "./assets/images/Industries/img6.png",
-  },
-  {
-    id: 7,
-    heading: "Service and Maintainance",
-    imgurl: "./assets/images/Industries/img7.png",
   },
 ];
 

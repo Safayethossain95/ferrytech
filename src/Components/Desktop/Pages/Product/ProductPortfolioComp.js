@@ -89,7 +89,7 @@ const ProductPortfolioComp = ({ version = "desktop" }) => {
             </div>
 
             {/* Sub-column 2 */}
-            <div className="gallery-subcol subcol-2">
+            <div className="gallery-subcol subcol-2 mx-auto w-[80%]">
               <div className="portfolio-img-card card-landscape">
                 <img
                   src="/assets/images/product-portfolio/grid_terminal_tractor.jpg"
@@ -148,7 +148,7 @@ const ProductPortfolioComp = ({ version = "desktop" }) => {
             }}
             className="portfolio-swiper"
           >
-            {sliderImages.map((item) => (
+            {[...sliderImages, ...sliderImages].map((item) => (
               <SwiperSlide key={item.id} className="portfolio-slide">
                 <div className="portfolio-slide-card">
                   <img src={item.src} alt={item.alt} loading="lazy" />
